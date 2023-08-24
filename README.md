@@ -10,4 +10,4 @@ O **TechNight** é um projeto divertido e prático, onde nós, entusiastas da te
 
 Nós não somos apenas duas turmas, somos um time colaborativo e cheio de energia! Juntos, estamos enfrentando desafios complexos e aprendendo a trabalhar em equipe, algo essencial no mundo da programação.
 
-Juntos, vamos juntos para o desafio! 💪🎉
+Juntos, vamos juntos para o desafio! :handshake:🎉
