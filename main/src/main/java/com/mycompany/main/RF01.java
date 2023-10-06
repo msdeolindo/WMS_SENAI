@@ -26,143 +26,140 @@ public class RF01 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        pnl_PlanoDeFundo = new javax.swing.JPanel();
+        pnl_Titulo_ListaDoArmazem = new javax.swing.JPanel();
+        lbl_VoltarAoMenu = new javax.swing.JLabel();
+        lbl_Titulo_ListaDoArmazem = new javax.swing.JLabel();
+        pnl_Inf_ListaDoArmazen = new javax.swing.JPanel();
+        lbl_CodigoDaCarga = new javax.swing.JLabel();
+        txt_Categoria = new javax.swing.JTextField();
+        lbl_TipoDeCarga = new javax.swing.JLabel();
+        txt_CodigoDaCarga = new javax.swing.JTextField();
+        lbl_Categoria = new javax.swing.JLabel();
+        txt_TipoDeCarga = new javax.swing.JTextField();
+        txt_Situacao = new javax.swing.JTextField();
+        lbl_Situacao = new javax.swing.JLabel();
+        lbl_LupaParaPesquisa = new javax.swing.JLabel();
+        sln_Inf_CargasArmazenadas = new javax.swing.JScrollPane();
+        tbl_TabelaDasCargasArmazenadas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(217, 217, 217));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        pnl_PlanoDeFundo.setBackground(new java.awt.Color(217, 217, 217));
+        pnl_PlanoDeFundo.setPreferredSize(new java.awt.Dimension(1920, 1080));
 
-        jPanel2.setBackground(new java.awt.Color(36, 32, 171));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1920, 100));
+        pnl_Titulo_ListaDoArmazem.setBackground(new java.awt.Color(36, 32, 171));
+        pnl_Titulo_ListaDoArmazem.setPreferredSize(new java.awt.Dimension(1920, 100));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back (branco).png")); // NOI18N
+        lbl_Titulo_ListaDoArmazem.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_Titulo_ListaDoArmazem.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        lbl_Titulo_ListaDoArmazem.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_Titulo_ListaDoArmazem.setText("LISTA DO ARMAZEM");
 
-        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("LISTA DO ARMAZEM");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnl_Titulo_ListaDoArmazemLayout = new javax.swing.GroupLayout(pnl_Titulo_ListaDoArmazem);
+        pnl_Titulo_ListaDoArmazem.setLayout(pnl_Titulo_ListaDoArmazemLayout);
+        pnl_Titulo_ListaDoArmazemLayout.setHorizontalGroup(
+            pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_Titulo_ListaDoArmazemLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel7)
+                .addComponent(lbl_VoltarAoMenu)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel8)
-                .addContainerGap(1479, Short.MAX_VALUE))
+                .addComponent(lbl_Titulo_ListaDoArmazem)
+                .addContainerGap(1519, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        pnl_Titulo_ListaDoArmazemLayout.setVerticalGroup(
+            pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_Titulo_ListaDoArmazemLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7))
+                .addGroup(pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbl_Titulo_ListaDoArmazem)
+                    .addComponent(lbl_VoltarAoMenu))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(203, 200, 200));
-        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(204, 204, 204), null, null));
+        pnl_Inf_ListaDoArmazen.setBackground(new java.awt.Color(203, 200, 200));
+        pnl_Inf_ListaDoArmazen.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(204, 204, 204), null, null));
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        jLabel2.setText("Código da carga");
+        lbl_CodigoDaCarga.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_CodigoDaCarga.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        lbl_CodigoDaCarga.setText("Codigo da carga");
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txt_Categoria.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        jLabel3.setText("Tipo de carga");
+        lbl_TipoDeCarga.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_TipoDeCarga.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        lbl_TipoDeCarga.setText("Tipo de carga");
 
-        jTextField2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txt_CodigoDaCarga.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        jLabel4.setText("Categoria");
+        lbl_Categoria.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_Categoria.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        lbl_Categoria.setText("Categoria");
 
-        jTextField3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txt_TipoDeCarga.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
-        jTextField4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txt_Situacao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txt_Situacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txt_SituacaoActionPerformed(evt);
             }
         });
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        jLabel5.setText("Situação");
+        lbl_Situacao.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_Situacao.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        lbl_Situacao.setText("Situação");
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnl_Inf_ListaDoArmazenLayout = new javax.swing.GroupLayout(pnl_Inf_ListaDoArmazen);
+        pnl_Inf_ListaDoArmazen.setLayout(pnl_Inf_ListaDoArmazenLayout);
+        pnl_Inf_ListaDoArmazenLayout.setHorizontalGroup(
+            pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_Inf_ListaDoArmazenLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                .addGroup(pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_CodigoDaCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_CodigoDaCarga))
                 .addGap(61, 61, 61)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE))
+                .addGroup(pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txt_Categoria)
+                    .addComponent(lbl_Categoria, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE))
                 .addGap(62, 62, 62)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_TipoDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_TipoDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(61, 61, 61)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnl_Inf_ListaDoArmazenLayout.createSequentialGroup()
+                        .addComponent(txt_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
-                        .addComponent(jLabel6)))
+                        .addComponent(lbl_LupaParaPesquisa)))
                 .addContainerGap(662, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        pnl_Inf_ListaDoArmazenLayout.setVerticalGroup(
+            pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_Inf_ListaDoArmazenLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel5)))
+                .addGroup(pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbl_LupaParaPesquisa)
+                    .addGroup(pnl_Inf_ListaDoArmazenLayout.createSequentialGroup()
+                        .addGroup(pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_TipoDeCarga, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lbl_CodigoDaCarga)
+                                .addComponent(lbl_Categoria)
+                                .addComponent(lbl_Situacao)))
                         .addGap(17, 17, 17)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_CodigoDaCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_TipoDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
-        jTable1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_TabelaDasCargasArmazenadas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tbl_TabelaDasCargasArmazenadas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tbl_TabelaDasCargasArmazenadas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -219,52 +216,55 @@ public class RF01 extends javax.swing.JFrame {
                 "Código da carga", "Produto", "Categoria", "Tipo de carga", "Situação", "Localização"
             }
         ));
-        jTable1.setGridColor(new java.awt.Color(0, 0, 0));
-        jTable1.setSelectionBackground(new java.awt.Color(0, 0, 0));
-        jTable1.setShowGrid(true);
-        jScrollPane1.setViewportView(jTable1);
+        tbl_TabelaDasCargasArmazenadas.setGridColor(new java.awt.Color(0, 0, 0));
+        tbl_TabelaDasCargasArmazenadas.setMaximumSize(new java.awt.Dimension(1900, 1000));
+        tbl_TabelaDasCargasArmazenadas.setPreferredSize(new java.awt.Dimension(1900, 1000));
+        tbl_TabelaDasCargasArmazenadas.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        tbl_TabelaDasCargasArmazenadas.setShowGrid(true);
+        sln_Inf_CargasArmazenadas.setViewportView(tbl_TabelaDasCargasArmazenadas);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout pnl_PlanoDeFundoLayout = new javax.swing.GroupLayout(pnl_PlanoDeFundo);
+        pnl_PlanoDeFundo.setLayout(pnl_PlanoDeFundoLayout);
+        pnl_PlanoDeFundoLayout.setHorizontalGroup(
+            pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
+                .addComponent(pnl_Titulo_ListaDoArmazem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(sln_Inf_CargasArmazenadas)
+                    .addComponent(pnl_Inf_ListaDoArmazen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        pnl_PlanoDeFundoLayout.setVerticalGroup(
+            pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
+                .addComponent(pnl_Titulo_ListaDoArmazem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnl_Inf_ListaDoArmazen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE))
+                .addComponent(sln_Inf_CargasArmazenadas, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnl_PlanoDeFundo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
+            .addComponent(pnl_PlanoDeFundo, javax.swing.GroupLayout.DEFAULT_SIZE, 1074, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txt_SituacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_SituacaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txt_SituacaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,21 +305,21 @@ public class RF01 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel lbl_Categoria;
+    private javax.swing.JLabel lbl_CodigoDaCarga;
+    private javax.swing.JLabel lbl_LupaParaPesquisa;
+    private javax.swing.JLabel lbl_Situacao;
+    private javax.swing.JLabel lbl_TipoDeCarga;
+    private javax.swing.JLabel lbl_Titulo_ListaDoArmazem;
+    private javax.swing.JLabel lbl_VoltarAoMenu;
+    private javax.swing.JPanel pnl_Inf_ListaDoArmazen;
+    private javax.swing.JPanel pnl_PlanoDeFundo;
+    private javax.swing.JPanel pnl_Titulo_ListaDoArmazem;
+    private javax.swing.JScrollPane sln_Inf_CargasArmazenadas;
+    private javax.swing.JTable tbl_TabelaDasCargasArmazenadas;
+    private javax.swing.JTextField txt_Categoria;
+    private javax.swing.JTextField txt_CodigoDaCarga;
+    private javax.swing.JTextField txt_Situacao;
+    private javax.swing.JTextField txt_TipoDeCarga;
     // End of variables declaration//GEN-END:variables
 }
