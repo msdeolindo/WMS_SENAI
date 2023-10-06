@@ -56,7 +56,10 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="LabelBack" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="LabelBack" min="-2" max="-2" attributes="0"/>
+                      <Component id="Bt_Back" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="LabelT" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
@@ -68,10 +71,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="LabelT" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="Bt_Back" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="LabelBack" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelT" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="12" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -89,6 +93,13 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="LabelBack">
+        </Component>
+        <Component class="javax.swing.JLabel" name="Bt_Back">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="P:\TURMAS\HTC-DDS-16\&#xed;cones WMS\icon_back (branco).png"/>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -118,7 +129,7 @@
                       <Group type="102" attributes="0">
                           <Component id="TextCpf" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="Bt_Pes" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="LabelCpf" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -137,7 +148,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="Bt_Pes" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="TextCpf" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="TextN" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
@@ -201,7 +212,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="Bt_Pes">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="2" name="P:\TURMAS\HTC-DDS-16\&#xed;cones WMS\lupa_cinza.png"/>

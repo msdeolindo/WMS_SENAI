@@ -29,6 +29,7 @@ public class RF11 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         LabelT = new javax.swing.JLabel();
         LabelBack = new javax.swing.JLabel();
+        Bt_Back = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         LabelCargo = new javax.swing.JLabel();
         LabelN = new javax.swing.JLabel();
@@ -36,7 +37,7 @@ public class RF11 extends javax.swing.JFrame {
         TextCpf = new javax.swing.JTextField();
         TextN = new javax.swing.JTextField();
         TextCargo = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        Bt_Pes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
 
@@ -48,13 +49,17 @@ public class RF11 extends javax.swing.JFrame {
         LabelT.setForeground(new java.awt.Color(255, 255, 255));
         LabelT.setText("LISTA DE FUNCIONÁRIOS");
 
+        Bt_Back.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back (branco).png")); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LabelBack)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelBack)
+                    .addComponent(Bt_Back))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelT)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -64,9 +69,10 @@ public class RF11 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelT)
-                    .addComponent(LabelBack))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addComponent(Bt_Back)
+                    .addComponent(LabelBack)
+                    .addComponent(LabelT))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
@@ -86,7 +92,7 @@ public class RF11 extends javax.swing.JFrame {
 
         TextCargo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
+        Bt_Pes.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -106,7 +112,7 @@ public class RF11 extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(TextCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel1))
+                        .addComponent(Bt_Pes))
                     .addComponent(LabelCpf))
                 .addContainerGap(381, Short.MAX_VALUE))
         );
@@ -120,7 +126,7 @@ public class RF11 extends javax.swing.JFrame {
                     .addComponent(LabelN))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addComponent(Bt_Pes)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(TextCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(TextN, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -231,6 +237,8 @@ public class RF11 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Bt_Back;
+    private javax.swing.JLabel Bt_Pes;
     private javax.swing.JLabel LabelBack;
     private javax.swing.JLabel LabelCargo;
     private javax.swing.JLabel LabelCpf;
@@ -240,7 +248,6 @@ public class RF11 extends javax.swing.JFrame {
     private javax.swing.JTextField TextCargo;
     private javax.swing.JTextField TextCpf;
     private javax.swing.JTextField TextN;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
