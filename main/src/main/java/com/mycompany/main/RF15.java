@@ -27,7 +27,7 @@ public class RF15 extends javax.swing.JFrame {
     private void initComponents() {
 
         pnl_PlanoDeFundo = new javax.swing.JPanel();
-        pnl_TituloPNG = new javax.swing.JPanel();
+        pnl_TituloPGN = new javax.swing.JPanel();
         lbl_Titulo_RegistroDeCarga = new javax.swing.JLabel();
         lbl_BotaoVolta = new javax.swing.JLabel();
         pnl_Inf_RegistroDeCarga = new javax.swing.JPanel();
@@ -63,29 +63,29 @@ public class RF15 extends javax.swing.JFrame {
         pnl_PlanoDeFundo.setBackground(new java.awt.Color(217, 217, 217));
         pnl_PlanoDeFundo.setPreferredSize(new java.awt.Dimension(1920, 1080));
 
-        pnl_TituloPNG.setBackground(new java.awt.Color(32, 41, 171));
+        pnl_TituloPGN.setBackground(new java.awt.Color(32, 41, 171));
 
         lbl_Titulo_RegistroDeCarga.setBackground(new java.awt.Color(255, 255, 255));
         lbl_Titulo_RegistroDeCarga.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         lbl_Titulo_RegistroDeCarga.setForeground(new java.awt.Color(255, 255, 255));
         lbl_Titulo_RegistroDeCarga.setText("REGISTRO DE CARGA");
 
-        javax.swing.GroupLayout pnl_TituloPNGLayout = new javax.swing.GroupLayout(pnl_TituloPNG);
-        pnl_TituloPNG.setLayout(pnl_TituloPNGLayout);
-        pnl_TituloPNGLayout.setHorizontalGroup(
-            pnl_TituloPNGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_TituloPNGLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnl_TituloPGNLayout = new javax.swing.GroupLayout(pnl_TituloPGN);
+        pnl_TituloPGN.setLayout(pnl_TituloPGNLayout);
+        pnl_TituloPGNLayout.setHorizontalGroup(
+            pnl_TituloPGNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_TituloPGNLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(lbl_BotaoVolta)
                 .addGap(18, 18, 18)
                 .addComponent(lbl_Titulo_RegistroDeCarga)
                 .addContainerGap(1479, Short.MAX_VALUE))
         );
-        pnl_TituloPNGLayout.setVerticalGroup(
-            pnl_TituloPNGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_TituloPNGLayout.createSequentialGroup()
+        pnl_TituloPGNLayout.setVerticalGroup(
+            pnl_TituloPGNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_TituloPGNLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(pnl_TituloPNGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(pnl_TituloPGNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lbl_BotaoVolta)
                     .addComponent(lbl_Titulo_RegistroDeCarga))
                 .addContainerGap(49, Short.MAX_VALUE))
@@ -315,7 +315,7 @@ public class RF15 extends javax.swing.JFrame {
         pnl_PlanoDeFundoLayout.setHorizontalGroup(
             pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
-                .addComponent(pnl_TituloPNG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnl_TituloPGN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 17, Short.MAX_VALUE))
             .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
@@ -333,7 +333,7 @@ public class RF15 extends javax.swing.JFrame {
         pnl_PlanoDeFundoLayout.setVerticalGroup(
             pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
-                .addComponent(pnl_TituloPNG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnl_TituloPGN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
                 .addComponent(pnl_Inf_RegistroDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
@@ -423,7 +423,7 @@ public class RF15 extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_Titulo_RegistroDeCarga;
     private javax.swing.JPanel pnl_Inf_RegistroDeCarga;
     private javax.swing.JPanel pnl_PlanoDeFundo;
-    private javax.swing.JPanel pnl_TituloPNG;
+    private javax.swing.JPanel pnl_TituloPGN;
     private javax.swing.JTextField txt_Categoria;
     private javax.swing.JTextField txt_CodigoDaCarga;
     private javax.swing.JTextField txt_Corredor;
