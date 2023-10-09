@@ -26,212 +26,210 @@ public class RF02 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        Pnl_principal = new javax.swing.JPanel();
+        Pnl_barraAzul = new javax.swing.JPanel();
         Lb_iconeVoltar = new javax.swing.JLabel();
-        Lb_nomeAgendamento = new javax.swing.JLabel();
+        Lbl_nomeAgendamento = new javax.swing.JLabel();
         Lb_iconVoltar = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        Lb_cliente = new javax.swing.JLabel();
-        Tf_cliente = new javax.swing.JTextField();
-        Lb_nomeResponsalvel = new javax.swing.JLabel();
-        Tf_nomeResponsavel = new javax.swing.JTextField();
-        Lb_dataAgendamento = new javax.swing.JLabel();
-        Tf_dataAgendamento = new javax.swing.JTextField();
-        Lb_especificacao = new javax.swing.JLabel();
-        Tf_especificacao = new javax.swing.JTextField();
-        Lb_carga = new javax.swing.JLabel();
-        Tf_carga = new javax.swing.JTextField();
-        Lb_quantidade = new javax.swing.JLabel();
-        Tf_quantidade = new javax.swing.JTextField();
-        Lb_transportadora = new javax.swing.JLabel();
-        Tf_transportadora = new javax.swing.JTextField();
-        Lb_tipoAgendamento = new javax.swing.JLabel();
-        Cb_tipoAgendamento = new javax.swing.JComboBox<>();
-        Lb_tipo = new javax.swing.JLabel();
-        Cb_tipo = new javax.swing.JComboBox<>();
-        Bt_Salvar = new javax.swing.JButton();
-        Bt_cancelar = new javax.swing.JButton();
+        Pnl_conteudoCentral = new javax.swing.JPanel();
+        Lbl_cliente = new javax.swing.JLabel();
+        Tfd_cliente = new javax.swing.JTextField();
+        Lbl_nomeResponsalvel = new javax.swing.JLabel();
+        Tfd_nomeResponsavel = new javax.swing.JTextField();
+        Lbl_dataAgendamento = new javax.swing.JLabel();
+        Tfd_dataAgendamento = new javax.swing.JTextField();
+        Lbl_especificacao = new javax.swing.JLabel();
+        Tfd_especificacao = new javax.swing.JTextField();
+        Lbl_carga = new javax.swing.JLabel();
+        Tfd_carga = new javax.swing.JTextField();
+        Lbl_quantidade = new javax.swing.JLabel();
+        Tfd_quantidade = new javax.swing.JTextField();
+        Lbl_transportadora = new javax.swing.JLabel();
+        Tfd_transportadora = new javax.swing.JTextField();
+        Lbl_tipoAgendamento = new javax.swing.JLabel();
+        Cbx_tipoAgendamento = new javax.swing.JComboBox<>();
+        Lbl_tipo = new javax.swing.JLabel();
+        Cbx_tipo = new javax.swing.JComboBox<>();
+        Btn_Salvar = new javax.swing.JButton();
+        Btn_cancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(217, 217, 217));
+        Pnl_principal.setBackground(new java.awt.Color(217, 217, 217));
 
-        jPanel2.setBackground(new java.awt.Color(32, 41, 171));
+        Pnl_barraAzul.setBackground(new java.awt.Color(32, 41, 171));
 
-        Lb_nomeAgendamento.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Lb_nomeAgendamento.setForeground(new java.awt.Color(255, 255, 255));
-        Lb_nomeAgendamento.setText("AGENDAMENTO");
+        Lbl_nomeAgendamento.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Lbl_nomeAgendamento.setForeground(new java.awt.Color(255, 255, 255));
+        Lbl_nomeAgendamento.setText("AGENDAMENTO");
 
-        Lb_iconVoltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back (branco).png")); // NOI18N
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout Pnl_barraAzulLayout = new javax.swing.GroupLayout(Pnl_barraAzul);
+        Pnl_barraAzul.setLayout(Pnl_barraAzulLayout);
+        Pnl_barraAzulLayout.setHorizontalGroup(
+            Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Lb_iconVoltar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Lb_nomeAgendamento)
+                .addComponent(Lbl_nomeAgendamento)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Lb_iconeVoltar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+        Pnl_barraAzulLayout.setVerticalGroup(
+            Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
+                .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(Lb_iconVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lb_nomeAgendamento)
+                        .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Lbl_nomeAgendamento)
                             .addComponent(Lb_iconeVoltar))))
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(203, 200, 200));
+        Pnl_conteudoCentral.setBackground(new java.awt.Color(203, 200, 200));
 
-        Lb_cliente.setText("Cliente");
+        Lbl_cliente.setText("Cliente");
 
-        Lb_nomeResponsalvel.setText("Nome do Responsável");
+        Lbl_nomeResponsalvel.setText("Nome do Responsável");
 
-        Lb_dataAgendamento.setText("Data agendamento");
+        Lbl_dataAgendamento.setText("Data agendamento");
 
-        Lb_especificacao.setText("Especificação");
+        Lbl_especificacao.setText("Especificação");
 
-        Lb_carga.setText("Carga");
+        Lbl_carga.setText("Carga");
 
-        Lb_quantidade.setText("Quantidade");
+        Lbl_quantidade.setText("Quantidade");
 
-        Lb_transportadora.setText("Transportadora");
+        Lbl_transportadora.setText("Transportadora");
 
-        Lb_tipoAgendamento.setText("Tipo de agendamento");
+        Lbl_tipoAgendamento.setText("Tipo de agendamento");
 
-        Cb_tipoAgendamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Entrada", "Saída", " ", " " }));
+        Cbx_tipoAgendamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Entrada", "Saída", " ", " " }));
 
-        Lb_tipo.setText("Tipo");
+        Lbl_tipo.setText("Tipo");
 
-        Cb_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paletizada", "Manual", " " }));
+        Cbx_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paletizada", "Manual", " " }));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout Pnl_conteudoCentralLayout = new javax.swing.GroupLayout(Pnl_conteudoCentral);
+        Pnl_conteudoCentral.setLayout(Pnl_conteudoCentralLayout);
+        Pnl_conteudoCentralLayout.setHorizontalGroup(
+            Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pnl_conteudoCentralLayout.createSequentialGroup()
                 .addGap(120, 120, 120)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Lb_transportadora)
-                    .addComponent(Lb_cliente)
-                    .addComponent(Tf_cliente)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lb_nomeResponsalvel)
-                            .addComponent(Tf_nomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Lbl_transportadora)
+                    .addComponent(Lbl_cliente)
+                    .addComponent(Tfd_cliente)
+                    .addGroup(Pnl_conteudoCentralLayout.createSequentialGroup()
+                        .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Lbl_nomeResponsalvel)
+                            .addComponent(Tfd_nomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Lb_dataAgendamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Tf_dataAgendamento)
-                            .addComponent(Lb_quantidade)
-                            .addComponent(Tf_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lb_especificacao)
-                            .addComponent(Tf_especificacao, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Lbl_dataAgendamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Tfd_dataAgendamento)
+                            .addComponent(Lbl_quantidade)
+                            .addComponent(Tfd_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(Pnl_conteudoCentralLayout.createSequentialGroup()
+                        .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Lbl_especificacao)
+                            .addComponent(Tfd_especificacao, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Pnl_conteudoCentralLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(Lb_carga))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(Lbl_carga))
+                            .addGroup(Pnl_conteudoCentralLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(Tf_carga, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(Tf_transportadora, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Tfd_carga, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(Tfd_transportadora, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Lb_tipoAgendamento)
-                    .addComponent(Cb_tipoAgendamento, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Lb_tipo)
-                    .addComponent(Cb_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Lbl_tipoAgendamento)
+                    .addComponent(Cbx_tipoAgendamento, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Lbl_tipo)
+                    .addComponent(Cbx_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(115, 115, 115))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        Pnl_conteudoCentralLayout.setVerticalGroup(
+            Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pnl_conteudoCentralLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Lb_cliente)
-                    .addComponent(Lb_tipoAgendamento))
+                .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lbl_cliente)
+                    .addComponent(Lbl_tipoAgendamento))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Tf_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cb_tipoAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Tfd_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cbx_tipoAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Lb_nomeResponsalvel)
-                    .addComponent(Lb_dataAgendamento))
+                .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lbl_nomeResponsalvel)
+                    .addComponent(Lbl_dataAgendamento))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Tf_nomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Tf_dataAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Tfd_nomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Tfd_dataAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Lb_especificacao)
-                    .addComponent(Lb_carga)
-                    .addComponent(Lb_quantidade)
-                    .addComponent(Lb_tipo))
+                .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lbl_especificacao)
+                    .addComponent(Lbl_carga)
+                    .addComponent(Lbl_quantidade)
+                    .addComponent(Lbl_tipo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Tf_especificacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Tf_carga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Tf_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cb_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Tfd_especificacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Tfd_carga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Tfd_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cbx_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(Lb_transportadora)
+                .addComponent(Lbl_transportadora)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Tf_transportadora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Tfd_transportadora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(59, Short.MAX_VALUE))
         );
 
-        Bt_Salvar.setBackground(new java.awt.Color(32, 41, 171));
-        Bt_Salvar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Bt_Salvar.setForeground(new java.awt.Color(255, 255, 255));
-        Bt_Salvar.setText("Salvar");
-        Bt_Salvar.setToolTipText("");
+        Btn_Salvar.setBackground(new java.awt.Color(32, 41, 171));
+        Btn_Salvar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Btn_Salvar.setForeground(new java.awt.Color(255, 255, 255));
+        Btn_Salvar.setText("Salvar");
+        Btn_Salvar.setToolTipText("");
 
-        Bt_cancelar.setBackground(new java.awt.Color(32, 41, 171));
-        Bt_cancelar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Bt_cancelar.setForeground(new java.awt.Color(255, 255, 255));
-        Bt_cancelar.setText("Cancelar");
+        Btn_cancelar.setBackground(new java.awt.Color(32, 41, 171));
+        Btn_cancelar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Btn_cancelar.setForeground(new java.awt.Color(255, 255, 255));
+        Btn_cancelar.setText("Cancelar");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout Pnl_principalLayout = new javax.swing.GroupLayout(Pnl_principal);
+        Pnl_principal.setLayout(Pnl_principalLayout);
+        Pnl_principalLayout.setHorizontalGroup(
+            Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Pnl_barraAzul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(Pnl_principalLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(Pnl_conteudoCentral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(Pnl_principalLayout.createSequentialGroup()
                         .addGap(546, 546, 546)
-                        .addComponent(Bt_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Bt_Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Btn_Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        Pnl_principalLayout.setVerticalGroup(
+            Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pnl_principalLayout.createSequentialGroup()
+                .addComponent(Pnl_barraAzul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Pnl_conteudoCentral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Bt_Salvar)
-                    .addComponent(Bt_cancelar))
+                .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Btn_Salvar)
+                    .addComponent(Btn_cancelar))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
@@ -239,11 +237,11 @@ public class RF02 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Pnl_principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Pnl_principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -286,31 +284,31 @@ public class RF02 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Bt_Salvar;
-    private javax.swing.JButton Bt_cancelar;
-    private javax.swing.JComboBox<String> Cb_tipo;
-    private javax.swing.JComboBox<String> Cb_tipoAgendamento;
-    private javax.swing.JLabel Lb_carga;
-    private javax.swing.JLabel Lb_cliente;
-    private javax.swing.JLabel Lb_dataAgendamento;
-    private javax.swing.JLabel Lb_especificacao;
+    private javax.swing.JButton Btn_Salvar;
+    private javax.swing.JButton Btn_cancelar;
+    private javax.swing.JComboBox<String> Cbx_tipo;
+    private javax.swing.JComboBox<String> Cbx_tipoAgendamento;
     private javax.swing.JLabel Lb_iconVoltar;
     private javax.swing.JLabel Lb_iconeVoltar;
-    private javax.swing.JLabel Lb_nomeAgendamento;
-    private javax.swing.JLabel Lb_nomeResponsalvel;
-    private javax.swing.JLabel Lb_quantidade;
-    private javax.swing.JLabel Lb_tipo;
-    private javax.swing.JLabel Lb_tipoAgendamento;
-    private javax.swing.JLabel Lb_transportadora;
-    private javax.swing.JTextField Tf_carga;
-    private javax.swing.JTextField Tf_cliente;
-    private javax.swing.JTextField Tf_dataAgendamento;
-    private javax.swing.JTextField Tf_especificacao;
-    private javax.swing.JTextField Tf_nomeResponsavel;
-    private javax.swing.JTextField Tf_quantidade;
-    private javax.swing.JTextField Tf_transportadora;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel Lbl_carga;
+    private javax.swing.JLabel Lbl_cliente;
+    private javax.swing.JLabel Lbl_dataAgendamento;
+    private javax.swing.JLabel Lbl_especificacao;
+    private javax.swing.JLabel Lbl_nomeAgendamento;
+    private javax.swing.JLabel Lbl_nomeResponsalvel;
+    private javax.swing.JLabel Lbl_quantidade;
+    private javax.swing.JLabel Lbl_tipo;
+    private javax.swing.JLabel Lbl_tipoAgendamento;
+    private javax.swing.JLabel Lbl_transportadora;
+    private javax.swing.JPanel Pnl_barraAzul;
+    private javax.swing.JPanel Pnl_conteudoCentral;
+    private javax.swing.JPanel Pnl_principal;
+    private javax.swing.JTextField Tfd_carga;
+    private javax.swing.JTextField Tfd_cliente;
+    private javax.swing.JTextField Tfd_dataAgendamento;
+    private javax.swing.JTextField Tfd_especificacao;
+    private javax.swing.JTextField Tfd_nomeResponsavel;
+    private javax.swing.JTextField Tfd_quantidade;
+    private javax.swing.JTextField Tfd_transportadora;
     // End of variables declaration//GEN-END:variables
 }

@@ -23,17 +23,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="Pnl_principal" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="Pnl_principal" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="Pnl_principal">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="d9" green="d9" red="d9" type="rgb"/>
@@ -43,16 +43,16 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+              <Component id="Pnl_barraAzul" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Pnl_conteudoCentral" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="546" max="-2" attributes="0"/>
-                          <Component id="Bt_cancelar" min="-2" pref="110" max="-2" attributes="0"/>
+                          <Component id="Btn_cancelar" min="-2" pref="110" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="Bt_Salvar" min="-2" pref="110" max="-2" attributes="0"/>
+                          <Component id="Btn_Salvar" min="-2" pref="110" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="25" max="32767" attributes="0"/>
@@ -62,13 +62,13 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  <Component id="Pnl_barraAzul" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Pnl_conteudoCentral" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Bt_Salvar" min="-2" max="-2" attributes="0"/>
-                      <Component id="Bt_cancelar" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="Btn_Salvar" min="-2" max="-2" attributes="0"/>
+                      <Component id="Btn_cancelar" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="43" max="32767" attributes="0"/>
               </Group>
@@ -76,7 +76,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel2">
+        <Container class="javax.swing.JPanel" name="Pnl_barraAzul">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ab" green="29" red="20" type="rgb"/>
@@ -90,7 +90,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Lb_iconVoltar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="Lb_nomeAgendamento" min="-2" max="-2" attributes="0"/>
+                      <Component id="Lbl_nomeAgendamento" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Lb_iconeVoltar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
@@ -108,7 +108,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Lb_nomeAgendamento" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Lbl_nomeAgendamento" min="-2" max="-2" attributes="0"/>
                                   <Component id="Lb_iconeVoltar" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -121,7 +121,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="Lb_iconeVoltar">
             </Component>
-            <Component class="javax.swing.JLabel" name="Lb_nomeAgendamento">
+            <Component class="javax.swing.JLabel" name="Lbl_nomeAgendamento">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="1"/>
@@ -133,15 +133,10 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="Lb_iconVoltar">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="P:\TURMAS\HTC-DDS-16\&#xed;cones WMS\icon_back (branco).png"/>
-                </Property>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel3">
+        <Container class="javax.swing.JPanel" name="Pnl_conteudoCentral">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="c8" green="c8" red="cb" type="rgb"/>
@@ -154,46 +149,46 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="Lb_transportadora" min="-2" max="-2" attributes="0"/>
-                          <Component id="Lb_cliente" min="-2" max="-2" attributes="0"/>
-                          <Component id="Tf_cliente" alignment="0" max="32767" attributes="0"/>
+                          <Component id="Lbl_transportadora" min="-2" max="-2" attributes="0"/>
+                          <Component id="Lbl_cliente" min="-2" max="-2" attributes="0"/>
+                          <Component id="Tfd_cliente" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Lb_nomeResponsalvel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Tf_nomeResponsavel" min="-2" pref="237" max="-2" attributes="0"/>
+                                  <Component id="Lbl_nomeResponsalvel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Tfd_nomeResponsavel" min="-2" pref="237" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="Lb_dataAgendamento" max="32767" attributes="0"/>
-                                  <Component id="Tf_dataAgendamento" max="32767" attributes="0"/>
-                                  <Component id="Lb_quantidade" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Tf_quantidade" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                                  <Component id="Lbl_dataAgendamento" max="32767" attributes="0"/>
+                                  <Component id="Tfd_dataAgendamento" max="32767" attributes="0"/>
+                                  <Component id="Lbl_quantidade" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Tfd_quantidade" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Lb_especificacao" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Tf_especificacao" min="-2" pref="122" max="-2" attributes="0"/>
+                                  <Component id="Lbl_especificacao" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Tfd_especificacao" min="-2" pref="122" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="Lb_carga" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Lbl_carga" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Component id="Tf_carga" min="-2" pref="97" max="-2" attributes="0"/>
+                                      <Component id="Tfd_carga" min="-2" pref="97" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <Component id="Tf_transportadora" alignment="0" min="-2" pref="357" max="-2" attributes="0"/>
+                          <Component id="Tfd_transportadora" alignment="0" min="-2" pref="357" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="63" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="Lb_tipoAgendamento" min="-2" max="-2" attributes="0"/>
-                          <Component id="Cb_tipoAgendamento" max="32767" attributes="0"/>
-                          <Component id="Lb_tipo" min="-2" max="-2" attributes="0"/>
-                          <Component id="Cb_tipo" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
+                          <Component id="Lbl_tipoAgendamento" min="-2" max="-2" attributes="0"/>
+                          <Component id="Cbx_tipoAgendamento" max="32767" attributes="0"/>
+                          <Component id="Lbl_tipo" min="-2" max="-2" attributes="0"/>
+                          <Component id="Cbx_tipo" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                   </Group>
@@ -204,103 +199,103 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Lb_cliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Lb_tipoAgendamento" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Lbl_cliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Lbl_tipoAgendamento" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Tf_cliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Cb_tipoAgendamento" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Tfd_cliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Cbx_tipoAgendamento" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Lb_nomeResponsalvel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Lb_dataAgendamento" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Lbl_nomeResponsalvel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Lbl_dataAgendamento" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Tf_nomeResponsavel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Tf_dataAgendamento" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Tfd_nomeResponsavel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Tfd_dataAgendamento" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Lb_especificacao" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Lb_carga" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Lb_quantidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Lb_tipo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Lbl_especificacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Lbl_carga" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Lbl_quantidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Lbl_tipo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Tf_especificacao" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Tf_carga" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Tf_quantidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Cb_tipo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Tfd_especificacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Tfd_carga" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Tfd_quantidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Cbx_tipo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="Lb_transportadora" min="-2" max="-2" attributes="0"/>
+                      <Component id="Lbl_transportadora" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Tf_transportadora" min="-2" max="-2" attributes="0"/>
+                      <Component id="Tfd_transportadora" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="59" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="Lb_cliente">
+            <Component class="javax.swing.JLabel" name="Lbl_cliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cliente"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="Tf_cliente">
+            <Component class="javax.swing.JTextField" name="Tfd_cliente">
             </Component>
-            <Component class="javax.swing.JLabel" name="Lb_nomeResponsalvel">
+            <Component class="javax.swing.JLabel" name="Lbl_nomeResponsalvel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nome do Respons&#xe1;vel"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="Tf_nomeResponsavel">
+            <Component class="javax.swing.JTextField" name="Tfd_nomeResponsavel">
             </Component>
-            <Component class="javax.swing.JLabel" name="Lb_dataAgendamento">
+            <Component class="javax.swing.JLabel" name="Lbl_dataAgendamento">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Data agendamento"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="Tf_dataAgendamento">
+            <Component class="javax.swing.JTextField" name="Tfd_dataAgendamento">
             </Component>
-            <Component class="javax.swing.JLabel" name="Lb_especificacao">
+            <Component class="javax.swing.JLabel" name="Lbl_especificacao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Especifica&#xe7;&#xe3;o"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="Tf_especificacao">
+            <Component class="javax.swing.JTextField" name="Tfd_especificacao">
             </Component>
-            <Component class="javax.swing.JLabel" name="Lb_carga">
+            <Component class="javax.swing.JLabel" name="Lbl_carga">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Carga"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="Tf_carga">
+            <Component class="javax.swing.JTextField" name="Tfd_carga">
             </Component>
-            <Component class="javax.swing.JLabel" name="Lb_quantidade">
+            <Component class="javax.swing.JLabel" name="Lbl_quantidade">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Quantidade"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="Tf_quantidade">
+            <Component class="javax.swing.JTextField" name="Tfd_quantidade">
             </Component>
-            <Component class="javax.swing.JLabel" name="Lb_transportadora">
+            <Component class="javax.swing.JLabel" name="Lbl_transportadora">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Transportadora"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="Tf_transportadora">
+            <Component class="javax.swing.JTextField" name="Tfd_transportadora">
             </Component>
-            <Component class="javax.swing.JLabel" name="Lb_tipoAgendamento">
+            <Component class="javax.swing.JLabel" name="Lbl_tipoAgendamento">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tipo de agendamento"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="Cb_tipoAgendamento">
+            <Component class="javax.swing.JComboBox" name="Cbx_tipoAgendamento">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -315,12 +310,12 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="Lb_tipo">
+            <Component class="javax.swing.JLabel" name="Lbl_tipo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tipo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="Cb_tipo">
+            <Component class="javax.swing.JComboBox" name="Cbx_tipo">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -336,7 +331,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="Bt_Salvar">
+        <Component class="javax.swing.JButton" name="Btn_Salvar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ab" green="29" red="20" type="rgb"/>
@@ -351,7 +346,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="Bt_cancelar">
+        <Component class="javax.swing.JButton" name="Btn_cancelar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ab" green="29" red="20" type="rgb"/>
