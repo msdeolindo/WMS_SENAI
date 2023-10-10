@@ -65,7 +65,7 @@ public class RF31 extends javax.swing.JFrame {
                 .addComponent(lbl_Icone_Voltar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblTitulo)
-                .addContainerGap(1484, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlCabecalhoLayout.setVerticalGroup(
             pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,7 +200,7 @@ public class RF31 extends javax.swing.JFrame {
                                 .addComponent(txtDataRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(lbl_icon_pesquisar)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 784, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         pnlTabelaLayout.setVerticalGroup(
