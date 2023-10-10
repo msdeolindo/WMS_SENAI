@@ -89,7 +89,12 @@ public class RF18 extends javax.swing.JFrame {
         lbl_recebimento.setText("RECEBIMENTO");
 
         lbl_icone_voltar.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_icone_voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back (branco).png")); // NOI18N
+        lbl_icone_voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        lbl_icone_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_icone_voltarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel_topo_azulLayout = new javax.swing.GroupLayout(jPanel_topo_azul);
         jPanel_topo_azul.setLayout(jPanel_topo_azulLayout);
@@ -169,7 +174,7 @@ public class RF18 extends javax.swing.JFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Jeremias", "Paletizada", "DEDE Transportadora", "Alimentícia", "01/01/2001"},
+                {"", "", "", "", ""},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null}
@@ -300,6 +305,14 @@ public class RF18 extends javax.swing.JFrame {
     private void bt_devoluçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_devoluçãoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bt_devoluçãoActionPerformed
+
+    private void lbl_icone_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_icone_voltarMouseClicked
+        RF30 FrameMenu = new RF30();
+        FrameMenu.setVisible(true);
+        
+        this.dispose();
+        
+    }//GEN-LAST:event_lbl_icone_voltarMouseClicked
 
     /**
      * @param args the command line arguments
