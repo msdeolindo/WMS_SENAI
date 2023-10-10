@@ -161,8 +161,8 @@ public class RF16_LIST extends javax.swing.JFrame {
     private void setaVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setaVoltarMouseClicked
         // TODO add your handling code here:
        
-        RF30 novoFrame_1 = new RF30();
-        novoFrame_1.setVisible(true);
+        RF30 jFrame16 = new RF30();
+        jFrame16.setVisible(true);
         this.dispose();
         
     }//GEN-LAST:event_setaVoltarMouseClicked
