@@ -30,6 +30,7 @@ public class RF01 extends javax.swing.JFrame {
         pnl_Titulo_ListaDoArmazem = new javax.swing.JPanel();
         lbl_VoltarAoMenu = new javax.swing.JLabel();
         lbl_Titulo_ListaDoArmazem = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         pnl_Inf_ListaDoArmazen = new javax.swing.JPanel();
         lbl_CodigoDaCarga = new javax.swing.JLabel();
         txt_Categoria = new javax.swing.JTextField();
@@ -72,14 +73,18 @@ public class RF01 extends javax.swing.JFrame {
                 .addComponent(lbl_VoltarAoMenu)
                 .addGap(18, 18, 18)
                 .addComponent(lbl_Titulo_ListaDoArmazem)
-                .addContainerGap(1479, Short.MAX_VALUE))
+                .addGap(105, 105, 105)
+                .addComponent(jLabel1)
+                .addContainerGap(1374, Short.MAX_VALUE))
         );
         pnl_Titulo_ListaDoArmazemLayout.setVerticalGroup(
             pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_Titulo_ListaDoArmazemLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbl_Titulo_ListaDoArmazem)
+                    .addGroup(pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbl_Titulo_ListaDoArmazem)
+                        .addComponent(jLabel1))
                     .addComponent(lbl_VoltarAoMenu))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
@@ -319,6 +324,7 @@ public class RF01 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_Categoria;
     private javax.swing.JLabel lbl_CodigoDaCarga;
     private javax.swing.JLabel lbl_LupaParaPesquisa;
