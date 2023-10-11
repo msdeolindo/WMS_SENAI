@@ -36,6 +36,7 @@ public class RF18 extends javax.swing.JFrame {
         jPanel_topo_azul = new javax.swing.JPanel();
         lbl_recebimento = new javax.swing.JLabel();
         lbl_icone_voltar = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel_tela_informação = new javax.swing.JPanel();
         lbl_obeservação = new javax.swing.JLabel();
         lbl_avarias = new javax.swing.JLabel();
@@ -89,7 +90,14 @@ public class RF18 extends javax.swing.JFrame {
         lbl_recebimento.setText("RECEBIMENTO");
 
         lbl_icone_voltar.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_icone_voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back (branco).png")); // NOI18N
+        lbl_icone_voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        lbl_icone_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_icone_voltarMouseClicked(evt);
+            }
+        });
+
+        jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout jPanel_topo_azulLayout = new javax.swing.GroupLayout(jPanel_topo_azul);
         jPanel_topo_azul.setLayout(jPanel_topo_azulLayout);
@@ -100,6 +108,8 @@ public class RF18 extends javax.swing.JFrame {
                 .addComponent(lbl_icone_voltar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbl_recebimento)
+                .addGap(292, 292, 292)
+                .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel_topo_azulLayout.setVerticalGroup(
@@ -107,7 +117,9 @@ public class RF18 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_topo_azulLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel_topo_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lbl_recebimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel_topo_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbl_recebimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2))
                     .addComponent(lbl_icone_voltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -169,7 +181,7 @@ public class RF18 extends javax.swing.JFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Jeremias", "Paletizada", "DEDE Transportadora", "Alimentícia", "01/01/2001"},
+                {"", "", "", "", ""},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null}
@@ -301,6 +313,14 @@ public class RF18 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bt_devoluçãoActionPerformed
 
+    private void lbl_icone_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_icone_voltarMouseClicked
+        RF30 FrameMenu = new RF30();
+        FrameMenu.setVisible(true);
+        
+        this.dispose();
+        
+    }//GEN-LAST:event_lbl_icone_voltarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -342,6 +362,7 @@ public class RF18 extends javax.swing.JFrame {
     private javax.swing.JButton bt_salvar;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel_principal;
     private javax.swing.JPanel jPanel_tela_informação;
