@@ -30,7 +30,6 @@ public class RF01 extends javax.swing.JFrame {
         pnl_Titulo_ListaDoArmazem = new javax.swing.JPanel();
         lbl_VoltarAoMenu = new javax.swing.JLabel();
         lbl_Titulo_ListaDoArmazem = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         pnl_Inf_ListaDoArmazen = new javax.swing.JPanel();
         lbl_CodigoDaCarga = new javax.swing.JLabel();
         txt_Categoria = new javax.swing.JTextField();
@@ -43,6 +42,8 @@ public class RF01 extends javax.swing.JFrame {
         lbl_LupaParaPesquisa = new javax.swing.JLabel();
         sln_Inf_CargasArmazenadas = new javax.swing.JScrollPane();
         tbl_TabelaDasCargasArmazenadas = new javax.swing.JTable();
+        btn_Abrir_RegistroDeCarga = new javax.swing.JButton();
+        btn_Alterar_MovimEstoque = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,18 +74,14 @@ public class RF01 extends javax.swing.JFrame {
                 .addComponent(lbl_VoltarAoMenu)
                 .addGap(18, 18, 18)
                 .addComponent(lbl_Titulo_ListaDoArmazem)
-                .addGap(105, 105, 105)
-                .addComponent(jLabel1)
-                .addContainerGap(1374, Short.MAX_VALUE))
+                .addContainerGap(1479, Short.MAX_VALUE))
         );
         pnl_Titulo_ListaDoArmazemLayout.setVerticalGroup(
             pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_Titulo_ListaDoArmazemLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lbl_Titulo_ListaDoArmazem)
-                        .addComponent(jLabel1))
+                    .addComponent(lbl_Titulo_ListaDoArmazem)
                     .addComponent(lbl_VoltarAoMenu))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
@@ -120,6 +117,8 @@ public class RF01 extends javax.swing.JFrame {
         lbl_Situacao.setBackground(new java.awt.Color(255, 255, 255));
         lbl_Situacao.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         lbl_Situacao.setText("Situação");
+
+        lbl_LupaParaPesquisa.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
 
         javax.swing.GroupLayout pnl_Inf_ListaDoArmazenLayout = new javax.swing.GroupLayout(pnl_Inf_ListaDoArmazen);
         pnl_Inf_ListaDoArmazen.setLayout(pnl_Inf_ListaDoArmazenLayout);
@@ -235,6 +234,26 @@ public class RF01 extends javax.swing.JFrame {
         tbl_TabelaDasCargasArmazenadas.setShowGrid(true);
         sln_Inf_CargasArmazenadas.setViewportView(tbl_TabelaDasCargasArmazenadas);
 
+        btn_Abrir_RegistroDeCarga.setBackground(new java.awt.Color(32, 41, 173));
+        btn_Abrir_RegistroDeCarga.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
+        btn_Abrir_RegistroDeCarga.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Abrir_RegistroDeCarga.setText("Abrir");
+        btn_Abrir_RegistroDeCarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Abrir_RegistroDeCargaActionPerformed(evt);
+            }
+        });
+
+        btn_Alterar_MovimEstoque.setBackground(new java.awt.Color(32, 41, 173));
+        btn_Alterar_MovimEstoque.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
+        btn_Alterar_MovimEstoque.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Alterar_MovimEstoque.setText("Alterar");
+        btn_Alterar_MovimEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Alterar_MovimEstoqueActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnl_PlanoDeFundoLayout = new javax.swing.GroupLayout(pnl_PlanoDeFundo);
         pnl_PlanoDeFundo.setLayout(pnl_PlanoDeFundoLayout);
         pnl_PlanoDeFundoLayout.setHorizontalGroup(
@@ -248,6 +267,12 @@ public class RF01 extends javax.swing.JFrame {
                     .addComponent(sln_Inf_CargasArmazenadas)
                     .addComponent(pnl_Inf_ListaDoArmazen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_PlanoDeFundoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_Alterar_MovimEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77)
+                .addComponent(btn_Abrir_RegistroDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66))
         );
         pnl_PlanoDeFundoLayout.setVerticalGroup(
             pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,7 +282,11 @@ public class RF01 extends javax.swing.JFrame {
                 .addComponent(pnl_Inf_ListaDoArmazen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(sln_Inf_CargasArmazenadas, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_Abrir_RegistroDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Alterar_MovimEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -284,6 +313,19 @@ public class RF01 extends javax.swing.JFrame {
         MenuPrincipal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lbl_VoltarAoMenuMouseClicked
+
+    private void btn_Alterar_MovimEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Alterar_MovimEstoqueActionPerformed
+        // TODO add your handling code here:
+        RF28 MovimentacaoDeEstoque = new RF28 ();
+        MovimentacaoDeEstoque.setVisible (true);
+    }//GEN-LAST:event_btn_Alterar_MovimEstoqueActionPerformed
+
+    private void btn_Abrir_RegistroDeCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Abrir_RegistroDeCargaActionPerformed
+        // TODO add your handling code here:
+        RF15 RegistroDeCarga = new RF15();
+        RegistroDeCarga.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_Abrir_RegistroDeCargaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,7 +366,8 @@ public class RF01 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btn_Abrir_RegistroDeCarga;
+    private javax.swing.JButton btn_Alterar_MovimEstoque;
     private javax.swing.JLabel lbl_Categoria;
     private javax.swing.JLabel lbl_CodigoDaCarga;
     private javax.swing.JLabel lbl_LupaParaPesquisa;
