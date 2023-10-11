@@ -29,12 +29,12 @@ public class RF16_LIST extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
-        Novo = new javax.swing.JButton();
+        bt_Novo = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabela_endereco = new javax.swing.JTable();
+        tb_Endereco = new javax.swing.JTable();
         barra = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        setaVoltar = new javax.swing.JLabel();
+        lb_Titulo = new javax.swing.JLabel();
+        lb_Voltar = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -50,14 +50,14 @@ public class RF16_LIST extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CADASTRO DE ARMAZENAGEM");
 
-        Novo.setText("Novo");
-        Novo.addActionListener(new java.awt.event.ActionListener() {
+        bt_Novo.setText("Novo");
+        bt_Novo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NovoActionPerformed(evt);
+                bt_NovoActionPerformed(evt);
             }
         });
 
-        tabela_endereco.setModel(new javax.swing.table.DefaultTableModel(
+        tb_Endereco.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -75,7 +75,7 @@ public class RF16_LIST extends javax.swing.JFrame {
                 "Endereco", "Rua", "Corredor", "Pilha", "Nivel"
             }
         ));
-        jScrollPane1.setViewportView(tabela_endereco);
+        jScrollPane1.setViewportView(tb_Endereco);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -87,14 +87,14 @@ public class RF16_LIST extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(Novo)
+                .addComponent(bt_Novo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(62, 62, 62)
-                .addComponent(Novo)
+                .addComponent(bt_Novo)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -102,12 +102,17 @@ public class RF16_LIST extends javax.swing.JFrame {
 
         barra.setBackground(new java.awt.Color(0, 51, 153));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("ENDEREÇO DE ARMAZENAGEM");
+        lb_Titulo.setBackground(new java.awt.Color(255, 255, 255));
+        lb_Titulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lb_Titulo.setForeground(new java.awt.Color(255, 255, 255));
+        lb_Titulo.setText("ENDEREÇO DE ARMAZENAGEM");
 
-        setaVoltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back (branco).png")); // NOI18N
+        lb_Voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        lb_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_VoltarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout barraLayout = new javax.swing.GroupLayout(barra);
         barra.setLayout(barraLayout);
@@ -115,9 +120,9 @@ public class RF16_LIST extends javax.swing.JFrame {
             barraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(barraLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(setaVoltar)
+                .addComponent(lb_Voltar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         barraLayout.setVerticalGroup(
@@ -125,8 +130,8 @@ public class RF16_LIST extends javax.swing.JFrame {
             .addGroup(barraLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(barraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(setaVoltar))
+                    .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_Voltar))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -149,9 +154,21 @@ public class RF16_LIST extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NovoActionPerformed
+    private void bt_NovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_NovoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NovoActionPerformed
+        RF16_POP jFrame16_POP = new RF16_POP();
+        jFrame16_POP.setVisible(true);
+        
+    }//GEN-LAST:event_bt_NovoActionPerformed
+
+    private void lb_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_VoltarMouseClicked
+        // TODO add your handling code here:
+       
+        RF30 jFrame30 = new RF30();
+        jFrame30.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_lb_VoltarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -192,14 +209,14 @@ public class RF16_LIST extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Novo;
     private javax.swing.JPanel barra;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton bt_Novo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel setaVoltar;
-    private javax.swing.JTable tabela_endereco;
+    private javax.swing.JLabel lb_Titulo;
+    private javax.swing.JLabel lb_Voltar;
+    private javax.swing.JTable tb_Endereco;
     // End of variables declaration//GEN-END:variables
 }
