@@ -47,12 +47,12 @@ public class RF15 extends javax.swing.JFrame {
         txt_Situacao = new javax.swing.JTextField();
         lbl_Localizacao = new javax.swing.JLabel();
         lbl_Rua = new javax.swing.JLabel();
-        txt_Rua = new javax.swing.JTextField();
         lbl_Corredor = new javax.swing.JLabel();
-        txt_Corredor = new javax.swing.JTextField();
         lbl_Pilha = new javax.swing.JLabel();
-        txt_Pilha = new javax.swing.JTextField();
         lbl_Nivel = new javax.swing.JLabel();
+        txt_Corredor = new javax.swing.JTextField();
+        txt_Rua = new javax.swing.JTextField();
+        txt_Pilha = new javax.swing.JTextField();
         txt_Nivel = new javax.swing.JTextField();
         btn_Alterar = new javax.swing.JButton();
         brn_Salvar = new javax.swing.JButton();
@@ -69,6 +69,13 @@ public class RF15 extends javax.swing.JFrame {
         lbl_Titulo_RegistroDeCarga.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         lbl_Titulo_RegistroDeCarga.setForeground(new java.awt.Color(255, 255, 255));
         lbl_Titulo_RegistroDeCarga.setText("REGISTRO DE CARGA");
+
+        lbl_BotaoVolta.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        lbl_BotaoVolta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_BotaoVoltaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_TituloPGNLayout = new javax.swing.GroupLayout(pnl_TituloPGN);
         pnl_TituloPGN.setLayout(pnl_TituloPGNLayout);
@@ -152,23 +159,23 @@ public class RF15 extends javax.swing.JFrame {
         lbl_Rua.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
         lbl_Rua.setText("Rua");
 
-        txt_Rua.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-
         lbl_Corredor.setBackground(new java.awt.Color(255, 255, 255));
         lbl_Corredor.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
         lbl_Corredor.setText("Corredor");
-
-        txt_Corredor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
         lbl_Pilha.setBackground(new java.awt.Color(255, 255, 255));
         lbl_Pilha.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
         lbl_Pilha.setText("Pilha");
 
-        txt_Pilha.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-
         lbl_Nivel.setBackground(new java.awt.Color(255, 255, 255));
         lbl_Nivel.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
         lbl_Nivel.setText("Nível");
+
+        txt_Corredor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+
+        txt_Rua.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+
+        txt_Pilha.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
         txt_Nivel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
@@ -187,24 +194,23 @@ public class RF15 extends javax.swing.JFrame {
                         .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_Localizacao)
                             .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
-                                .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbl_Rua)
-                                    .addComponent(txt_Rua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
-                                        .addGap(66, 66, 66)
-                                        .addComponent(txt_Corredor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(71, 71, 71))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lbl_Rua)
+                                        .addGap(54, 54, 54)
                                         .addComponent(lbl_Corredor)
-                                        .addGap(39, 39, 39)))
-                                .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txt_Pilha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lbl_Pilha))
+                                        .addGap(39, 39, 39))
+                                    .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
+                                        .addComponent(txt_Rua, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txt_Corredor, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(75, 75, 75)))
+                                .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbl_Pilha)
+                                    .addComponent(txt_Pilha, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(66, 66, 66)
-                                .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txt_Nivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txt_Nivel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lbl_Nivel))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
@@ -275,7 +281,9 @@ public class RF15 extends javax.swing.JFrame {
                                     .addComponent(lbl_Corredor, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(lbl_Rua))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_Rua, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_Corredor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_Rua, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
@@ -283,16 +291,12 @@ public class RF15 extends javax.swing.JFrame {
                             .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
                                 .addComponent(lbl_Nivel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_Nivel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
-                                    .addComponent(lbl_Pilha)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txt_Pilha, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
-                                    .addGap(42, 42, 42)
-                                    .addComponent(txt_Corredor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(197, 197, 197))))
+                                .addComponent(txt_Nivel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
+                                .addComponent(lbl_Pilha)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_Pilha, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(203, 203, 203))))
         );
 
         btn_Alterar.setBackground(new java.awt.Color(32, 40, 171));
@@ -316,7 +320,7 @@ public class RF15 extends javax.swing.JFrame {
             pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
                 .addComponent(pnl_TituloPGN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 17, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(pnl_Inf_RegistroDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 1848, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -365,6 +369,13 @@ public class RF15 extends javax.swing.JFrame {
     private void txt_DataDeEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_DataDeEntradaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_DataDeEntradaActionPerformed
+
+    private void lbl_BotaoVoltaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_BotaoVoltaMouseClicked
+        // TODO add your handling code here:
+        RF01 ListaDeArmazem = new RF01();
+        ListaDeArmazem.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lbl_BotaoVoltaMouseClicked
 
     /**
      * @param args the command line arguments

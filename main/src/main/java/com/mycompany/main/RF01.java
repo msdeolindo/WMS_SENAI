@@ -51,6 +51,13 @@ public class RF01 extends javax.swing.JFrame {
         pnl_Titulo_ListaDoArmazem.setBackground(new java.awt.Color(36, 32, 171));
         pnl_Titulo_ListaDoArmazem.setPreferredSize(new java.awt.Dimension(1920, 100));
 
+        lbl_VoltarAoMenu.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        lbl_VoltarAoMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_VoltarAoMenuMouseClicked(evt);
+            }
+        });
+
         lbl_Titulo_ListaDoArmazem.setBackground(new java.awt.Color(255, 255, 255));
         lbl_Titulo_ListaDoArmazem.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         lbl_Titulo_ListaDoArmazem.setForeground(new java.awt.Color(255, 255, 255));
@@ -65,7 +72,7 @@ public class RF01 extends javax.swing.JFrame {
                 .addComponent(lbl_VoltarAoMenu)
                 .addGap(18, 18, 18)
                 .addComponent(lbl_Titulo_ListaDoArmazem)
-                .addContainerGap(1519, Short.MAX_VALUE))
+                .addContainerGap(1479, Short.MAX_VALUE))
         );
         pnl_Titulo_ListaDoArmazemLayout.setVerticalGroup(
             pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,6 +272,13 @@ public class RF01 extends javax.swing.JFrame {
     private void txt_SituacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_SituacaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_SituacaoActionPerformed
+
+    private void lbl_VoltarAoMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_VoltarAoMenuMouseClicked
+        // TODO add your handling code here:
+        RF30 MenuPrincipal = new RF30();
+        MenuPrincipal.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lbl_VoltarAoMenuMouseClicked
 
     /**
      * @param args the command line arguments
