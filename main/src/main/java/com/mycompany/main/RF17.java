@@ -27,7 +27,7 @@ public class RF17 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lbl_voltar = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -68,11 +68,11 @@ public class RF17 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(32, 41, 171));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
-        jLabel1.setText("jLabel1");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbl_voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        lbl_voltar.setText("jLabel1");
+        lbl_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                lbl_voltarMouseClicked(evt);
             }
         });
 
@@ -86,7 +86,7 @@ public class RF17 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbl_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -96,7 +96,7 @@ public class RF17 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(lbl_voltar)
                     .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -359,11 +359,11 @@ public class RF17 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_salvarActionPerformed
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void lbl_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_voltarMouseClicked
         RF30 novoFrame = new RF30();
         novoFrame.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_lbl_voltarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -406,7 +406,6 @@ public class RF17 extends javax.swing.JFrame {
     private javax.swing.JButton btn_alterar;
     private javax.swing.JButton btn_excluir;
     private javax.swing.JButton btn_salvar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
@@ -426,6 +425,7 @@ public class RF17 extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_respons;
     private javax.swing.JLabel lbl_rua;
     private javax.swing.JLabel lbl_uf;
+    private javax.swing.JLabel lbl_voltar;
     private javax.swing.JTextField txt_ativ_come;
     private javax.swing.JTextField txt_bairro;
     private javax.swing.JTextField txt_cep;
