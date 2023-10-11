@@ -302,7 +302,7 @@ public class RF15 extends javax.swing.JFrame {
         btn_Alterar.setBackground(new java.awt.Color(32, 40, 171));
         btn_Alterar.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
         btn_Alterar.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Alterar.setText("Alterar");
+        btn_Alterar.setText("Editar");
 
         brn_Salvar.setBackground(new java.awt.Color(32, 40, 171));
         brn_Salvar.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
