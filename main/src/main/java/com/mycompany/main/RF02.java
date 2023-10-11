@@ -32,6 +32,7 @@ public class RF02 extends javax.swing.JFrame {
         Pnl_barraAzul = new javax.swing.JPanel();
         Lbl_nomeAgendamento = new javax.swing.JLabel();
         Lbl_iconeBotaoVoltar = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         Pnl_conteudoCentral = new javax.swing.JPanel();
         Lbl_cliente = new javax.swing.JLabel();
         Tfd_cliente = new javax.swing.JTextField();
@@ -71,6 +72,8 @@ public class RF02 extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout Pnl_barraAzulLayout = new javax.swing.GroupLayout(Pnl_barraAzul);
         Pnl_barraAzul.setLayout(Pnl_barraAzulLayout);
         Pnl_barraAzulLayout.setHorizontalGroup(
@@ -80,13 +83,17 @@ public class RF02 extends javax.swing.JFrame {
                 .addComponent(Lbl_iconeBotaoVoltar)
                 .addGap(18, 18, 18)
                 .addComponent(Lbl_nomeAgendamento)
+                .addGap(122, 122, 122)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Pnl_barraAzulLayout.setVerticalGroup(
             Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_barraAzulLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Lbl_nomeAgendamento)
+                .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lbl_nomeAgendamento)
+                    .addComponent(jLabel1))
                 .addGap(22, 22, 22))
             .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
                 .addComponent(Lbl_iconeBotaoVoltar)
@@ -321,5 +328,6 @@ public class RF02 extends javax.swing.JFrame {
     private javax.swing.JTextField Tfd_nomeResponsavel;
     private javax.swing.JTextField Tfd_quantidade;
     private javax.swing.JTextField Tfd_transportadora;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
