@@ -84,9 +84,9 @@ public class RF08 extends javax.swing.JFrame {
         pnlMenuSuperiorLayout.setHorizontalGroup(
             pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMenuSuperiorLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(23, 23, 23)
                 .addComponent(lbl_VoltarMenuPrincipal)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblCadastramentoDeFuncionarios)
                 .addContainerGap(1395, Short.MAX_VALUE))
         );
@@ -94,9 +94,9 @@ public class RF08 extends javax.swing.JFrame {
             pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMenuSuperiorLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCadastramentoDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_VoltarMenuPrincipal))
+                .addGroup(pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_VoltarMenuPrincipal)
+                    .addComponent(lblCadastramentoDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
