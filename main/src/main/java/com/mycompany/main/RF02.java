@@ -31,7 +31,7 @@ public class RF02 extends javax.swing.JFrame {
         Pnl_principal = new javax.swing.JPanel();
         Pnl_barraAzul = new javax.swing.JPanel();
         Lbl_nomeAgendamento = new javax.swing.JLabel();
-        Lbl_iconeVoltar = new javax.swing.JLabel();
+        Lbl_iconeBotaoVoltar = new javax.swing.JLabel();
         Pnl_conteudoCentral = new javax.swing.JPanel();
         Lbl_cliente = new javax.swing.JLabel();
         Tfd_cliente = new javax.swing.JTextField();
@@ -64,10 +64,10 @@ public class RF02 extends javax.swing.JFrame {
         Lbl_nomeAgendamento.setForeground(new java.awt.Color(255, 255, 255));
         Lbl_nomeAgendamento.setText("AGENDAMENTO");
 
-        Lbl_iconeVoltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
-        Lbl_iconeVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+        Lbl_iconeBotaoVoltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        Lbl_iconeBotaoVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Lbl_iconeVoltarMouseClicked(evt);
+                Lbl_iconeBotaoVoltarMouseClicked(evt);
             }
         });
 
@@ -77,7 +77,7 @@ public class RF02 extends javax.swing.JFrame {
             Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addComponent(Lbl_iconeVoltar)
+                .addComponent(Lbl_iconeBotaoVoltar)
                 .addGap(18, 18, 18)
                 .addComponent(Lbl_nomeAgendamento)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -89,7 +89,7 @@ public class RF02 extends javax.swing.JFrame {
                 .addComponent(Lbl_nomeAgendamento)
                 .addGap(22, 22, 22))
             .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                .addComponent(Lbl_iconeVoltar)
+                .addComponent(Lbl_iconeBotaoVoltar)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -249,15 +249,15 @@ public class RF02 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Lbl_iconeVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lbl_iconeVoltarMouseClicked
+    private void Lbl_iconeBotaoVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lbl_iconeBotaoVoltarMouseClicked
 
         RF30 FrameMenu = new RF30();
         FrameMenu.setVisible(true);
-        //this.dispose();
+        this.dispose();
         
 
         
-    }//GEN-LAST:event_Lbl_iconeVoltarMouseClicked
+    }//GEN-LAST:event_Lbl_iconeBotaoVoltarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -304,7 +304,7 @@ public class RF02 extends javax.swing.JFrame {
     private javax.swing.JLabel Lbl_cliente;
     private javax.swing.JLabel Lbl_dataAgendamento;
     private javax.swing.JLabel Lbl_especificacao;
-    private javax.swing.JLabel Lbl_iconeVoltar;
+    private javax.swing.JLabel Lbl_iconeBotaoVoltar;
     private javax.swing.JLabel Lbl_nomeAgendamento;
     private javax.swing.JLabel Lbl_nomeResponsalvel;
     private javax.swing.JLabel Lbl_quantidade;
