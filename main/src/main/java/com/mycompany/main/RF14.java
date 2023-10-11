@@ -50,7 +50,12 @@ public class RF14 extends javax.swing.JFrame {
         LabelT.setForeground(new java.awt.Color(255, 255, 255));
         LabelT.setText("AGENDAMENTOS");
 
-        Bt_Back.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back (branco).png")); // NOI18N
+        Bt_Back.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        Bt_Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Bt_BackMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -219,6 +224,12 @@ public class RF14 extends javax.swing.JFrame {
     private void ComBoxSitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComBoxSitActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ComBoxSitActionPerformed
+
+    private void Bt_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bt_BackMouseClicked
+        RF30 novoFrame = new RF30();
+        novoFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Bt_BackMouseClicked
 
     /**
      * @param args the command line arguments

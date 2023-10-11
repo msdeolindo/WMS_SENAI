@@ -107,7 +107,12 @@ public class RF16_LIST extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ENDEREÇO DE ARMAZENAGEM");
 
-        setaVoltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back (branco).png")); // NOI18N
+        setaVoltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        setaVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                setaVoltarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout barraLayout = new javax.swing.GroupLayout(barra);
         barra.setLayout(barraLayout);
@@ -152,6 +157,15 @@ public class RF16_LIST extends javax.swing.JFrame {
     private void NovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NovoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NovoActionPerformed
+
+    private void setaVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setaVoltarMouseClicked
+        // TODO add your handling code here:
+       
+        RF30 jFrame16 = new RF30();
+        jFrame16.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_setaVoltarMouseClicked
 
     /**
      * @param args the command line arguments
