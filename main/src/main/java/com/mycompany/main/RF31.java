@@ -49,7 +49,12 @@ public class RF31 extends javax.swing.JFrame {
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setText("LISTA DE REGISTRO DE CLIENTES");
 
-        lbl_Icone_Voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back (branco).png")); // NOI18N
+        lbl_Icone_Voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        lbl_Icone_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_Icone_VoltarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlCabecalhoLayout = new javax.swing.GroupLayout(pnlCabecalho);
         pnlCabecalho.setLayout(pnlCabecalhoLayout);
@@ -60,7 +65,7 @@ public class RF31 extends javax.swing.JFrame {
                 .addComponent(lbl_Icone_Voltar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblTitulo)
-                .addContainerGap(1484, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlCabecalhoLayout.setVerticalGroup(
             pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,7 +200,7 @@ public class RF31 extends javax.swing.JFrame {
                                 .addComponent(txtDataRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(lbl_icon_pesquisar)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 784, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         pnlTabelaLayout.setVerticalGroup(
@@ -249,6 +254,12 @@ public class RF31 extends javax.swing.JFrame {
     private void txtDataRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataRegistroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDataRegistroActionPerformed
+
+    private void lbl_Icone_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Icone_VoltarMouseClicked
+        RF30 novoFrame = new RF30();
+        novoFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lbl_Icone_VoltarMouseClicked
 
     /**
      * @param args the command line arguments
