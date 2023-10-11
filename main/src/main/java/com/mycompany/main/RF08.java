@@ -28,7 +28,7 @@ public class RF08 extends javax.swing.JFrame {
 
         pnlMenuSuperior = new javax.swing.JPanel();
         lblCadastramentoDeFuncionarios = new javax.swing.JLabel();
-        lblIconeVoltar = new javax.swing.JLabel();
+        lbl_VoltarMenuPrincipal = new javax.swing.JLabel();
         pnlInformacoes = new javax.swing.JPanel();
         lblDataDeNascimento = new javax.swing.JLabel();
         txtNomeCompleto = new javax.swing.JTextField();
@@ -71,16 +71,22 @@ public class RF08 extends javax.swing.JFrame {
         lblCadastramentoDeFuncionarios.setForeground(new java.awt.Color(255, 255, 255));
         lblCadastramentoDeFuncionarios.setText("CADASTRAMENTO DE FUNCIONÁRIOS");
 
-        lblIconeVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/cadastramento_de_funcionarios/icons/icon_back.png"))); // NOI18N
+        lbl_VoltarMenuPrincipal.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        lbl_VoltarMenuPrincipal.setToolTipText("");
+        lbl_VoltarMenuPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_VoltarMenuPrincipalMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMenuSuperiorLayout = new javax.swing.GroupLayout(pnlMenuSuperior);
         pnlMenuSuperior.setLayout(pnlMenuSuperiorLayout);
         pnlMenuSuperiorLayout.setHorizontalGroup(
             pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMenuSuperiorLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(lblIconeVoltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(23, 23, 23)
+                .addComponent(lbl_VoltarMenuPrincipal)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblCadastramentoDeFuncionarios)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -89,7 +95,7 @@ public class RF08 extends javax.swing.JFrame {
             .addGroup(pnlMenuSuperiorLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblIconeVoltar)
+                    .addComponent(lbl_VoltarMenuPrincipal)
                     .addComponent(lblCadastramentoDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
@@ -327,7 +333,7 @@ public class RF08 extends javax.swing.JFrame {
                     .addComponent(btn_editar_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_excluir_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tbn_salvar_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 89, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         pnlMenuSuperior.getAccessibleContext().setAccessibleName("");
@@ -343,6 +349,13 @@ public class RF08 extends javax.swing.JFrame {
     private void tbn_salvar_CadastroDeFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbn_salvar_CadastroDeFuncionariosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tbn_salvar_CadastroDeFuncionariosActionPerformed
+
+    private void lbl_VoltarMenuPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_VoltarMenuPrincipalMouseClicked
+        // TODO add your handling code here:
+        RF30 Frame_RF30 = new RF30();
+        Frame_RF30.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lbl_VoltarMenuPrincipalMouseClicked
 
     /**
      * @param args the command line arguments
@@ -396,11 +409,11 @@ public class RF08 extends javax.swing.JFrame {
     private javax.swing.JLabel lblEndereco;
     private javax.swing.JLabel lblEscolaridade;
     private javax.swing.JLabel lblEstadoCivil;
-    private javax.swing.JLabel lblIconeVoltar;
     private javax.swing.JLabel lblNomeCompleto;
     private javax.swing.JLabel lblRG;
     private javax.swing.JLabel lblSenhaParaLogin;
     private javax.swing.JLabel lblTelefone;
+    private javax.swing.JLabel lbl_VoltarMenuPrincipal;
     private javax.swing.JPanel pnlInformacoes;
     private javax.swing.JPanel pnlMenuSuperior;
     private javax.swing.JPasswordField pwdSenhaParaLogin;
