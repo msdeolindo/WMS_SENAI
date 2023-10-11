@@ -54,7 +54,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="pnl_TituloPGN" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="14" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
@@ -105,7 +105,7 @@
                       <Component id="lbl_BotaoVolta" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="lbl_Titulo_RegistroDeCarga" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="1479" max="32767" attributes="0"/>
+                      <EmptySpace pref="1442" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -178,7 +178,7 @@
                                   <Component id="lbl_Situacao" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="txt_Situacao" alignment="0" min="-2" pref="244" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="328" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="327" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lbl_Localizacao" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">

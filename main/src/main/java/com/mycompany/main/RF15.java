@@ -86,7 +86,7 @@ public class RF15 extends javax.swing.JFrame {
                 .addComponent(lbl_BotaoVolta)
                 .addGap(18, 18, 18)
                 .addComponent(lbl_Titulo_RegistroDeCarga)
-                .addContainerGap(1479, Short.MAX_VALUE))
+                .addContainerGap(1442, Short.MAX_VALUE))
         );
         pnl_TituloPGNLayout.setVerticalGroup(
             pnl_TituloPGNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,7 +190,7 @@ public class RF15 extends javax.swing.JFrame {
                         .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_Situacao)
                             .addComponent(txt_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(328, 328, 328)
+                        .addGap(327, 327, 327)
                         .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_Localizacao)
                             .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
@@ -320,7 +320,7 @@ public class RF15 extends javax.swing.JFrame {
             pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
                 .addComponent(pnl_TituloPGN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 14, Short.MAX_VALUE))
             .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(pnl_Inf_RegistroDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 1848, javax.swing.GroupLayout.PREFERRED_SIZE)
