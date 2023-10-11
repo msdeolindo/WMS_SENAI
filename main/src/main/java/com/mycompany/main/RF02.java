@@ -4,6 +4,8 @@
  */
 package com.mycompany.main;
 
+import java.util.Set;
+
 /**
  *
  * @author tripl
@@ -28,9 +30,8 @@ public class RF02 extends javax.swing.JFrame {
 
         Pnl_principal = new javax.swing.JPanel();
         Pnl_barraAzul = new javax.swing.JPanel();
-        Lb_iconeVoltar = new javax.swing.JLabel();
         Lbl_nomeAgendamento = new javax.swing.JLabel();
-        Lb_iconVoltar = new javax.swing.JLabel();
+        Lbl_iconeVoltar = new javax.swing.JLabel();
         Pnl_conteudoCentral = new javax.swing.JPanel();
         Lbl_cliente = new javax.swing.JLabel();
         Tfd_cliente = new javax.swing.JTextField();
@@ -57,38 +58,39 @@ public class RF02 extends javax.swing.JFrame {
 
         Pnl_principal.setBackground(new java.awt.Color(217, 217, 217));
 
-        Pnl_barraAzul.setBackground(new java.awt.Color(32, 41, 171));
+        Pnl_barraAzul.setBackground(new java.awt.Color(32, 41, 173));
 
-        Lbl_nomeAgendamento.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Lbl_nomeAgendamento.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         Lbl_nomeAgendamento.setForeground(new java.awt.Color(255, 255, 255));
         Lbl_nomeAgendamento.setText("AGENDAMENTO");
+
+        Lbl_iconeVoltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        Lbl_iconeVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Lbl_iconeVoltarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout Pnl_barraAzulLayout = new javax.swing.GroupLayout(Pnl_barraAzul);
         Pnl_barraAzul.setLayout(Pnl_barraAzulLayout);
         Pnl_barraAzulLayout.setHorizontalGroup(
             Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Lb_iconVoltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(13, 13, 13)
+                .addComponent(Lbl_iconeVoltar)
+                .addGap(18, 18, 18)
                 .addComponent(Lbl_nomeAgendamento)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Lb_iconeVoltar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Pnl_barraAzulLayout.setVerticalGroup(
             Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_barraAzulLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Lbl_nomeAgendamento)
+                .addGap(22, 22, 22))
             .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Lb_iconVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lbl_nomeAgendamento)
-                            .addComponent(Lb_iconeVoltar))))
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addComponent(Lbl_iconeVoltar)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         Pnl_conteudoCentral.setBackground(new java.awt.Color(203, 200, 200));
@@ -193,13 +195,13 @@ public class RF02 extends javax.swing.JFrame {
                 .addContainerGap(59, Short.MAX_VALUE))
         );
 
-        Btn_Salvar.setBackground(new java.awt.Color(32, 41, 171));
+        Btn_Salvar.setBackground(new java.awt.Color(32, 41, 173));
         Btn_Salvar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Btn_Salvar.setForeground(new java.awt.Color(255, 255, 255));
         Btn_Salvar.setText("Salvar");
         Btn_Salvar.setToolTipText("");
 
-        Btn_cancelar.setBackground(new java.awt.Color(32, 41, 171));
+        Btn_cancelar.setBackground(new java.awt.Color(32, 41, 173));
         Btn_cancelar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Btn_cancelar.setForeground(new java.awt.Color(255, 255, 255));
         Btn_cancelar.setText("Cancelar");
@@ -223,14 +225,14 @@ public class RF02 extends javax.swing.JFrame {
         Pnl_principalLayout.setVerticalGroup(
             Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pnl_principalLayout.createSequentialGroup()
-                .addComponent(Pnl_barraAzul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(Pnl_barraAzul, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
                 .addComponent(Pnl_conteudoCentral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Btn_Salvar)
                     .addComponent(Btn_cancelar))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -246,6 +248,16 @@ public class RF02 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Lbl_iconeVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lbl_iconeVoltarMouseClicked
+
+        RF30 FrameMenu = new RF30();
+        FrameMenu.setVisible(true);
+        //this.dispose();
+        
+
+        
+    }//GEN-LAST:event_Lbl_iconeVoltarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -288,12 +300,11 @@ public class RF02 extends javax.swing.JFrame {
     private javax.swing.JButton Btn_cancelar;
     private javax.swing.JComboBox<String> Cbx_tipo;
     private javax.swing.JComboBox<String> Cbx_tipoAgendamento;
-    private javax.swing.JLabel Lb_iconVoltar;
-    private javax.swing.JLabel Lb_iconeVoltar;
     private javax.swing.JLabel Lbl_carga;
     private javax.swing.JLabel Lbl_cliente;
     private javax.swing.JLabel Lbl_dataAgendamento;
     private javax.swing.JLabel Lbl_especificacao;
+    private javax.swing.JLabel Lbl_iconeVoltar;
     private javax.swing.JLabel Lbl_nomeAgendamento;
     private javax.swing.JLabel Lbl_nomeResponsalvel;
     private javax.swing.JLabel Lbl_quantidade;
