@@ -44,7 +44,7 @@ public class RF30 extends javax.swing.JFrame {
         button_recebimento = new javax.swing.JButton();
         button_armazem = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        Menu = new javax.swing.JMenu();
         mni_senha = new javax.swing.JMenuItem();
         mni_sair = new javax.swing.JMenuItem();
 
@@ -217,7 +217,7 @@ public class RF30 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("File");
+        Menu.setText("File");
 
         mni_senha.setText("Alterar senha");
         mni_senha.addActionListener(new java.awt.event.ActionListener() {
@@ -225,12 +225,12 @@ public class RF30 extends javax.swing.JFrame {
                 mni_senhaActionPerformed(evt);
             }
         });
-        jMenu1.add(mni_senha);
+        Menu.add(mni_senha);
 
         mni_sair.setText("Sair");
-        jMenu1.add(mni_sair);
+        Menu.add(mni_sair);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(Menu);
 
         setJMenuBar(jMenuBar1);
 
@@ -347,6 +347,7 @@ public class RF30 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Menu;
     private javax.swing.JButton button_agendamento;
     private javax.swing.JButton button_armazem;
     private javax.swing.JButton button_estoque;
@@ -354,7 +355,6 @@ public class RF30 extends javax.swing.JFrame {
     private javax.swing.JButton button_recebimento;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel9;
