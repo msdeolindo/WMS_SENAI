@@ -101,6 +101,11 @@ public class RF11 extends javax.swing.JFrame {
         Bt_Pes.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
 
         Bt_Novo.setText("Novo");
+        Bt_Novo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bt_NovoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -119,9 +124,9 @@ public class RF11 extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(TextCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(40, 40, 40)
                         .addComponent(Bt_Pes)
-                        .addGap(89, 89, 89)
+                        .addGap(67, 67, 67)
                         .addComponent(Bt_Novo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(LabelCpf))
                 .addContainerGap(185, Short.MAX_VALUE))
@@ -216,6 +221,12 @@ public class RF11 extends javax.swing.JFrame {
         novoFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Bt_BackMouseClicked
+
+    private void Bt_NovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_NovoActionPerformed
+        RF08 novoFrame = new RF08();
+        novoFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Bt_NovoActionPerformed
 
     /**
      * @param args the command line arguments
