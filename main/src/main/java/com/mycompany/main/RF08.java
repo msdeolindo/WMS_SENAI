@@ -29,7 +29,6 @@ public class RF08 extends javax.swing.JFrame {
         pnlMenuSuperior = new javax.swing.JPanel();
         lblCadastramentoDeFuncionarios = new javax.swing.JLabel();
         lbl_VoltarMenuPrincipal = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         pnlInformacoes = new javax.swing.JPanel();
         lblDataDeNascimento = new javax.swing.JLabel();
         txtNomeCompleto = new javax.swing.JTextField();
@@ -80,8 +79,6 @@ public class RF08 extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("jLabel1");
-
         javax.swing.GroupLayout pnlMenuSuperiorLayout = new javax.swing.GroupLayout(pnlMenuSuperior);
         pnlMenuSuperior.setLayout(pnlMenuSuperiorLayout);
         pnlMenuSuperiorLayout.setHorizontalGroup(
@@ -91,8 +88,6 @@ public class RF08 extends javax.swing.JFrame {
                 .addComponent(lbl_VoltarMenuPrincipal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblCadastramentoDeFuncionarios)
-                .addGap(227, 227, 227)
-                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlMenuSuperiorLayout.setVerticalGroup(
@@ -101,9 +96,7 @@ public class RF08 extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl_VoltarMenuPrincipal)
-                    .addGroup(pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblCadastramentoDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1)))
+                    .addComponent(lblCadastramentoDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -115,42 +108,50 @@ public class RF08 extends javax.swing.JFrame {
         lblDataDeNascimento.setText("Data de nascimento:");
 
         txtNomeCompleto.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtNomeCompleto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblNomeCompleto.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblNomeCompleto.setText("Nome completo:");
 
         txtDataDeNascimento.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtDataDeNascimento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblCPF.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblCPF.setText("CPF:");
 
         txtCPF.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtCPF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblRG.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblRG.setText("RG:");
 
         txtRG.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtRG.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblEndereco.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblEndereco.setText("Endereço:");
 
         txtEndereco.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtEndereco.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblTelefone.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblTelefone.setText("Telefone:");
 
         txtTelefone.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtTelefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblEmail.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblEmail.setText("Email:");
 
         txtEmail.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblCargo.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblCargo.setText("Cargo:");
 
         cbxCargo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         cbxCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente", "Supervisor", "Coordenador Inventário", "Operador Empilhadeira", "Conferente", "Auxiliar Armazém" }));
+        cbxCargo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cbxCargo.setPreferredSize(new java.awt.Dimension(88, 28));
 
         lblEscolaridade.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -158,6 +159,7 @@ public class RF08 extends javax.swing.JFrame {
 
         cbxEscolaridade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         cbxEscolaridade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fundamental incompleto", "Ensino médio incompleto", "Ensino médio completo", "Superior incompleto", "Superior completo", "" }));
+        cbxEscolaridade.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cbxEscolaridade.setPreferredSize(new java.awt.Dimension(88, 28));
 
         lblEstadoCivil.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -165,22 +167,28 @@ public class RF08 extends javax.swing.JFrame {
 
         cbxEstadoCivil.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         cbxEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solteiro", "Casado", "Divorciado", "Viúvo" }));
+        cbxEstadoCivil.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cbxEstadoCivil.setPreferredSize(new java.awt.Dimension(88, 28));
 
         lblCodigoDoFuncionario.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblCodigoDoFuncionario.setText("Código do funcionário:");
 
         txtCodigoDoFuncionario.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtCodigoDoFuncionario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblDataDeAdmissao.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblDataDeAdmissao.setText("Data de admissão:");
 
         txtDataDeAdmissao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtDataDeAdmissao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblSenhaParaLogin.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblSenhaParaLogin.setText("Senha para login:");
 
         pwdSenhaParaLogin.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        pwdSenhaParaLogin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pwdSenhaParaLogin.setMinimumSize(new java.awt.Dimension(64, 30));
+        pwdSenhaParaLogin.setPreferredSize(new java.awt.Dimension(64, 30));
 
         javax.swing.GroupLayout pnlInformacoesLayout = new javax.swing.GroupLayout(pnlInformacoes);
         pnlInformacoes.setLayout(pnlInformacoesLayout);
@@ -269,17 +277,16 @@ public class RF08 extends javax.swing.JFrame {
                     .addComponent(lblCodigoDoFuncionario)
                     .addComponent(lblDataDeAdmissao))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(cbxEstadoCivil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(cbxEscolaridade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtCodigoDoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtDataDeAdmissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cbxEstadoCivil, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(cbxEscolaridade, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(txtCodigoDoFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(txtDataDeAdmissao))
                 .addGap(69, 69, 69)
                 .addComponent(lblSenhaParaLogin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pwdSenhaParaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         btn_editar_CadastroDeFuncionarios.setBackground(new java.awt.Color(32, 41, 173));
@@ -404,7 +411,6 @@ public class RF08 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxCargo;
     private javax.swing.JComboBox<String> cbxEscolaridade;
     private javax.swing.JComboBox<String> cbxEstadoCivil;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCPF;
     private javax.swing.JLabel lblCadastramentoDeFuncionarios;
     private javax.swing.JLabel lblCargo;
