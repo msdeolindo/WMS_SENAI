@@ -43,7 +43,6 @@ public class RF01 extends javax.swing.JFrame {
         sln_Inf_CargasArmazenadas = new javax.swing.JScrollPane();
         tbl_TabelaDasCargasArmazenadas = new javax.swing.JTable();
         btn_Abrir_RegistroDeCarga = new javax.swing.JButton();
-        btn_Alterar_MovimEstoque = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,7 +52,6 @@ public class RF01 extends javax.swing.JFrame {
         pnl_Titulo_ListaDoArmazem.setBackground(new java.awt.Color(36, 32, 171));
         pnl_Titulo_ListaDoArmazem.setPreferredSize(new java.awt.Dimension(1920, 100));
 
-        lbl_VoltarAoMenu.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         lbl_VoltarAoMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_VoltarAoMenuMouseClicked(evt);
@@ -74,7 +72,7 @@ public class RF01 extends javax.swing.JFrame {
                 .addComponent(lbl_VoltarAoMenu)
                 .addGap(18, 18, 18)
                 .addComponent(lbl_Titulo_ListaDoArmazem)
-                .addContainerGap(1479, Short.MAX_VALUE))
+                .addContainerGap(1519, Short.MAX_VALUE))
         );
         pnl_Titulo_ListaDoArmazemLayout.setVerticalGroup(
             pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,8 +115,6 @@ public class RF01 extends javax.swing.JFrame {
         lbl_Situacao.setBackground(new java.awt.Color(255, 255, 255));
         lbl_Situacao.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         lbl_Situacao.setText("Situação");
-
-        lbl_LupaParaPesquisa.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
 
         javax.swing.GroupLayout pnl_Inf_ListaDoArmazenLayout = new javax.swing.GroupLayout(pnl_Inf_ListaDoArmazen);
         pnl_Inf_ListaDoArmazen.setLayout(pnl_Inf_ListaDoArmazenLayout);
@@ -172,59 +168,59 @@ public class RF01 extends javax.swing.JFrame {
         tbl_TabelaDasCargasArmazenadas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         tbl_TabelaDasCargasArmazenadas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Código da carga", "Produto", "Categoria", "Tipo de carga", "Situação", "Localização"
+                "Código da carga", "Produto", "Categoria", "Quatindade / Uni", "Tipo de carga", "Situação", "Localização"
             }
         ));
         tbl_TabelaDasCargasArmazenadas.setGridColor(new java.awt.Color(0, 0, 0));
@@ -244,16 +240,6 @@ public class RF01 extends javax.swing.JFrame {
             }
         });
 
-        btn_Alterar_MovimEstoque.setBackground(new java.awt.Color(32, 41, 173));
-        btn_Alterar_MovimEstoque.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
-        btn_Alterar_MovimEstoque.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Alterar_MovimEstoque.setText("Alterar");
-        btn_Alterar_MovimEstoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_Alterar_MovimEstoqueActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout pnl_PlanoDeFundoLayout = new javax.swing.GroupLayout(pnl_PlanoDeFundo);
         pnl_PlanoDeFundo.setLayout(pnl_PlanoDeFundoLayout);
         pnl_PlanoDeFundoLayout.setHorizontalGroup(
@@ -269,8 +255,6 @@ public class RF01 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_PlanoDeFundoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_Alterar_MovimEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
                 .addComponent(btn_Abrir_RegistroDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66))
         );
@@ -283,9 +267,7 @@ public class RF01 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(sln_Inf_CargasArmazenadas, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Abrir_RegistroDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Alterar_MovimEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btn_Abrir_RegistroDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(91, Short.MAX_VALUE))
         );
 
@@ -313,12 +295,6 @@ public class RF01 extends javax.swing.JFrame {
         MenuPrincipal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lbl_VoltarAoMenuMouseClicked
-
-    private void btn_Alterar_MovimEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Alterar_MovimEstoqueActionPerformed
-        // TODO add your handling code here:
-        RF28 MovimentacaoDeEstoque = new RF28 ();
-        MovimentacaoDeEstoque.setVisible (true);
-    }//GEN-LAST:event_btn_Alterar_MovimEstoqueActionPerformed
 
     private void btn_Abrir_RegistroDeCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Abrir_RegistroDeCargaActionPerformed
         // TODO add your handling code here:
@@ -367,7 +343,6 @@ public class RF01 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Abrir_RegistroDeCarga;
-    private javax.swing.JButton btn_Alterar_MovimEstoque;
     private javax.swing.JLabel lbl_Categoria;
     private javax.swing.JLabel lbl_CodigoDaCarga;
     private javax.swing.JLabel lbl_LupaParaPesquisa;

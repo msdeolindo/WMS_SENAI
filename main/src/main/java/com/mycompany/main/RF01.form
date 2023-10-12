@@ -60,8 +60,6 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btn_Alterar_MovimEstoque" min="-2" pref="199" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                   <Component id="btn_Abrir_RegistroDeCarga" min="-2" pref="199" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
               </Group>
@@ -76,10 +74,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="sln_Inf_CargasArmazenadas" min="-2" pref="634" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btn_Abrir_RegistroDeCarga" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                      <Component id="btn_Alterar_MovimEstoque" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="btn_Abrir_RegistroDeCarga" min="-2" pref="52" max="-2" attributes="0"/>
                   <EmptySpace pref="91" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -104,7 +99,7 @@
                       <Component id="lbl_VoltarAoMenu" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="lbl_Titulo_ListaDoArmazem" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="1479" max="32767" attributes="0"/>
+                      <EmptySpace pref="1519" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -123,11 +118,6 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="lbl_VoltarAoMenu">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="P:\TURMAS\HTC-DDS-16\&#xed;cones WMS\icon_back.png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_VoltarAoMenuMouseClicked"/>
               </Events>
@@ -300,11 +290,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lbl_LupaParaPesquisa">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="P:\TURMAS\HTC-DDS-16\&#xed;cones WMS\lupa_cinza.png"/>
-                </Property>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -326,10 +311,11 @@
                   <Font name="Arial" size="14" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="6" rowCount="50">
+                  <Table columnCount="7" rowCount="50">
                     <Column editable="true" title="C&#xf3;digo da carga" type="java.lang.Object"/>
                     <Column editable="true" title="Produto" type="java.lang.Object"/>
                     <Column editable="true" title="Categoria" type="java.lang.Object"/>
+                    <Column editable="true" title="Quatindade / Uni" type="java.lang.Object"/>
                     <Column editable="true" title="Tipo de carga" type="java.lang.Object"/>
                     <Column editable="true" title="Situa&#xe7;&#xe3;o" type="java.lang.Object"/>
                     <Column editable="true" title="Localiza&#xe7;&#xe3;o" type="java.lang.Object"/>
@@ -367,23 +353,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Abrir_RegistroDeCargaActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn_Alterar_MovimEstoque">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ad" green="29" red="20" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="32" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Alterar"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Alterar_MovimEstoqueActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
