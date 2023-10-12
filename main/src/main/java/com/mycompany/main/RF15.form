@@ -54,7 +54,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="pnl_TituloPGN" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="14" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
@@ -62,13 +62,13 @@
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btn_Cancelar" min="-2" pref="199" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                  <Component id="btn_Alterar" min="-2" pref="199" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                  <EmptySpace pref="1147" max="32767" attributes="0"/>
                   <Component id="brn_Salvar" min="-2" pref="199" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="btn_Editar" min="-2" pref="199" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                  <Component id="btn_Retirar" min="-2" pref="199" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -80,8 +80,8 @@
                   <Component id="pnl_Inf_RegistroDeCarga" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btn_Alterar" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                      <Component id="btn_Cancelar" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="btn_Editar" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="btn_Retirar" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="brn_Salvar" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="82" max="32767" attributes="0"/>
@@ -138,11 +138,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lbl_BotaoVolta">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="P:\TURMAS\HTC-DDS-16\&#xed;cones WMS\icon_back.png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_BotaoVoltaMouseClicked"/>
               </Events>
@@ -335,7 +330,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="30" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Protudo"/>
+                <Property name="text" type="java.lang.String" value="Produto"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txt_Produto">
@@ -552,7 +547,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btn_Alterar">
+        <Component class="javax.swing.JButton" name="btn_Editar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ab" green="28" red="20" type="rgb"/>
@@ -580,7 +575,7 @@
             <Property name="text" type="java.lang.String" value="Salvar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_Cancelar">
+        <Component class="javax.swing.JButton" name="btn_Retirar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ab" green="28" red="20" type="rgb"/>
@@ -591,7 +586,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Cancelar"/>
+            <Property name="text" type="java.lang.String" value="Retirar"/>
           </Properties>
         </Component>
       </SubComponents>

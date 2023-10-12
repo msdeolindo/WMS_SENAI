@@ -315,8 +315,8 @@
                     <Column editable="true" title="C&#xf3;digo da carga" type="java.lang.Object"/>
                     <Column editable="true" title="Produto" type="java.lang.Object"/>
                     <Column editable="true" title="Categoria" type="java.lang.Object"/>
-                    <Column editable="true" title="Quatindade / Uni" type="java.lang.Object"/>
-                    <Column editable="true" title="Tipo de carga" type="java.lang.Object"/>
+                    <Column editable="true" title="Quantidade / Uni" type="java.lang.Object"/>
+                    <Column editable="true" title="Tipo da carga" type="java.lang.Object"/>
                     <Column editable="true" title="Situa&#xe7;&#xe3;o" type="java.lang.Object"/>
                     <Column editable="true" title="Localiza&#xe7;&#xe3;o" type="java.lang.Object"/>
                   </Table>

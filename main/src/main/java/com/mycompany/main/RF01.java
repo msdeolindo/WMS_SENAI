@@ -220,7 +220,7 @@ public class RF01 extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Código da carga", "Produto", "Categoria", "Quatindade / Uni", "Tipo de carga", "Situação", "Localização"
+                "Código da carga", "Produto", "Categoria", "Quantidade / Uni", "Tipo da carga", "Situação", "Localização"
             }
         ));
         tbl_TabelaDasCargasArmazenadas.setGridColor(new java.awt.Color(0, 0, 0));

@@ -54,9 +54,9 @@ public class RF15 extends javax.swing.JFrame {
         txt_Rua = new javax.swing.JTextField();
         txt_Pilha = new javax.swing.JTextField();
         txt_Nivel = new javax.swing.JTextField();
-        btn_Alterar = new javax.swing.JButton();
+        btn_Editar = new javax.swing.JButton();
         brn_Salvar = new javax.swing.JButton();
-        btn_Cancelar = new javax.swing.JButton();
+        btn_Retirar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,7 +70,6 @@ public class RF15 extends javax.swing.JFrame {
         lbl_Titulo_RegistroDeCarga.setForeground(new java.awt.Color(255, 255, 255));
         lbl_Titulo_RegistroDeCarga.setText("REGISTRO DE CARGA");
 
-        lbl_BotaoVolta.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         lbl_BotaoVolta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_BotaoVoltaMouseClicked(evt);
@@ -104,7 +103,7 @@ public class RF15 extends javax.swing.JFrame {
 
         lbl_Produto.setBackground(new java.awt.Color(255, 255, 255));
         lbl_Produto.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
-        lbl_Produto.setText("Protudo");
+        lbl_Produto.setText("Produto");
 
         txt_Produto.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
@@ -299,20 +298,20 @@ public class RF15 extends javax.swing.JFrame {
                         .addGap(203, 203, 203))))
         );
 
-        btn_Alterar.setBackground(new java.awt.Color(32, 40, 171));
-        btn_Alterar.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
-        btn_Alterar.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Alterar.setText("Editar");
+        btn_Editar.setBackground(new java.awt.Color(32, 40, 171));
+        btn_Editar.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
+        btn_Editar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Editar.setText("Editar");
 
         brn_Salvar.setBackground(new java.awt.Color(32, 40, 171));
         brn_Salvar.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
         brn_Salvar.setForeground(new java.awt.Color(255, 255, 255));
         brn_Salvar.setText("Salvar");
 
-        btn_Cancelar.setBackground(new java.awt.Color(32, 40, 171));
-        btn_Cancelar.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
-        btn_Cancelar.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Cancelar.setText("Cancelar");
+        btn_Retirar.setBackground(new java.awt.Color(32, 40, 171));
+        btn_Retirar.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
+        btn_Retirar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Retirar.setText("Retirar");
 
         javax.swing.GroupLayout pnl_PlanoDeFundoLayout = new javax.swing.GroupLayout(pnl_PlanoDeFundo);
         pnl_PlanoDeFundo.setLayout(pnl_PlanoDeFundoLayout);
@@ -320,19 +319,19 @@ public class RF15 extends javax.swing.JFrame {
             pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
                 .addComponent(pnl_TituloPGN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 14, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(pnl_Inf_RegistroDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 1848, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_PlanoDeFundoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(btn_Alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addContainerGap(1147, Short.MAX_VALUE)
                 .addComponent(brn_Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(125, 125, 125))
+                .addGap(39, 39, 39)
+                .addComponent(btn_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61)
+                .addComponent(btn_Retirar, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
         );
         pnl_PlanoDeFundoLayout.setVerticalGroup(
             pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -342,8 +341,8 @@ public class RF15 extends javax.swing.JFrame {
                 .addComponent(pnl_Inf_RegistroDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addGroup(pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Retirar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(brn_Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 82, Short.MAX_VALUE))
         );
@@ -415,8 +414,8 @@ public class RF15 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton brn_Salvar;
-    private javax.swing.JButton btn_Alterar;
-    private javax.swing.JButton btn_Cancelar;
+    private javax.swing.JButton btn_Editar;
+    private javax.swing.JButton btn_Retirar;
     private javax.swing.JComboBox<String> cbx_TipoDaCarga;
     private javax.swing.JLabel lbl_BotaoVolta;
     private javax.swing.JLabel lbl_Categoria;
