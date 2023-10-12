@@ -29,6 +29,7 @@ public class RF08 extends javax.swing.JFrame {
         pnlMenuSuperior = new javax.swing.JPanel();
         lblCadastramentoDeFuncionarios = new javax.swing.JLabel();
         lbl_VoltarMenuPrincipal = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         pnlInformacoes = new javax.swing.JPanel();
         lblDataDeNascimento = new javax.swing.JLabel();
         txtNomeCompleto = new javax.swing.JTextField();
@@ -79,6 +80,8 @@ public class RF08 extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout pnlMenuSuperiorLayout = new javax.swing.GroupLayout(pnlMenuSuperior);
         pnlMenuSuperior.setLayout(pnlMenuSuperiorLayout);
         pnlMenuSuperiorLayout.setHorizontalGroup(
@@ -88,6 +91,8 @@ public class RF08 extends javax.swing.JFrame {
                 .addComponent(lbl_VoltarMenuPrincipal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblCadastramentoDeFuncionarios)
+                .addGap(238, 238, 238)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlMenuSuperiorLayout.setVerticalGroup(
@@ -95,6 +100,7 @@ public class RF08 extends javax.swing.JFrame {
             .addGroup(pnlMenuSuperiorLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addComponent(lbl_VoltarMenuPrincipal)
                     .addComponent(lblCadastramentoDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
@@ -411,6 +417,7 @@ public class RF08 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxCargo;
     private javax.swing.JComboBox<String> cbxEscolaridade;
     private javax.swing.JComboBox<String> cbxEstadoCivil;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCPF;
     private javax.swing.JLabel lblCadastramentoDeFuncionarios;
     private javax.swing.JLabel lblCargo;
