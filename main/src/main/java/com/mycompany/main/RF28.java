@@ -205,6 +205,7 @@ public class RF28 extends javax.swing.JFrame {
 
         REGISTRAR.setBackground(new java.awt.Color(32, 38, 173));
         REGISTRAR.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        REGISTRAR.setForeground(new java.awt.Color(255, 255, 255));
         REGISTRAR.setText("Registrar");
         REGISTRAR.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
