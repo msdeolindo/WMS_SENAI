@@ -100,6 +100,11 @@ public class RF22 extends javax.swing.JFrame {
         btn_confirmar.setBackground(new java.awt.Color(41, 41, 171));
         btn_confirmar.setForeground(new java.awt.Color(242, 242, 242));
         btn_confirmar.setText("Confirmar");
+        btn_confirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_confirmarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -162,6 +167,13 @@ public class RF22 extends javax.swing.JFrame {
       novoFrame.setVisible(true);
       this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void btn_confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_confirmarActionPerformed
+        RF30 FrameMenu = new RF30();
+        FrameMenu.setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_confirmarActionPerformed
 
     /**
      * @param args the command line arguments

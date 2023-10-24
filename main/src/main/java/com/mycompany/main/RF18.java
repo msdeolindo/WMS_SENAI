@@ -293,6 +293,9 @@ public class RF18 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bt_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salvarActionPerformed
+        RF23 FrameLocalizacao = new RF23();
+        FrameLocalizacao.setVisible(true);
+        this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_bt_salvarActionPerformed
 
@@ -309,6 +312,11 @@ public class RF18 extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_observaçãoActionPerformed
 
     private void bt_devoluçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_devoluçãoActionPerformed
+        RF22 FrameDevolucao = new RF22();
+        FrameDevolucao.setVisible(true);
+        this.dispose();
+
+
         // TODO add your handling code here:
     }//GEN-LAST:event_bt_devoluçãoActionPerformed
 

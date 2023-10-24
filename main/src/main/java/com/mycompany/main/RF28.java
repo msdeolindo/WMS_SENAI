@@ -207,6 +207,11 @@ public class RF28 extends javax.swing.JFrame {
         REGISTRAR.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         REGISTRAR.setForeground(new java.awt.Color(255, 255, 255));
         REGISTRAR.setText("Registrar");
+        REGISTRAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                REGISTRARActionPerformed(evt);
+            }
+        });
         REGISTRAR.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 REGISTRARKeyPressed(evt);
@@ -418,8 +423,8 @@ public class RF28 extends javax.swing.JFrame {
 
     private void VOLTARMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VOLTARMouseClicked
         // TODO add your handling code here:
-        RF01 voltar = new RF01();
-        voltar.setVisible (true);
+        RF15 FrameRegistroDeCarga = new RF15();
+        FrameRegistroDeCarga.setVisible (true);
         this.dispose();
         
     }//GEN-LAST:event_VOLTARMouseClicked
@@ -430,6 +435,15 @@ public class RF28 extends javax.swing.JFrame {
         REGISTRAR.setVisible (true);
         this.dispose();
     }//GEN-LAST:event_REGISTRARKeyPressed
+
+    private void REGISTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_REGISTRARActionPerformed
+        RF25 FrameEtiqueta = new RF25();
+        FrameEtiqueta.setVisible(true);
+        this.dispose();
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_REGISTRARActionPerformed
 
     /**
      * @param args the command line arguments

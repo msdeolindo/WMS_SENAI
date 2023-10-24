@@ -318,6 +318,11 @@ public class RF15 extends javax.swing.JFrame {
         btn_Retirar.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
         btn_Retirar.setForeground(new java.awt.Color(255, 255, 255));
         btn_Retirar.setText("Retirar");
+        btn_Retirar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_RetirarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_PlanoDeFundoLayout = new javax.swing.GroupLayout(pnl_PlanoDeFundo);
         pnl_PlanoDeFundo.setLayout(pnl_PlanoDeFundoLayout);
@@ -387,6 +392,13 @@ public class RF15 extends javax.swing.JFrame {
         RF28 MovimentarCarga = new RF28();
         MovimentarCarga.setVisible(true);
     }//GEN-LAST:event_btn_EditarActionPerformed
+
+    private void btn_RetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RetirarActionPerformed
+        RF02 Agendamento = new RF02();
+        Agendamento.setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_RetirarActionPerformed
 
     /**
      * @param args the command line arguments

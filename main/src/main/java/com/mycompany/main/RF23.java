@@ -90,6 +90,11 @@ public class RF23 extends javax.swing.JFrame {
         Btn_salvar.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         Btn_salvar.setForeground(new java.awt.Color(255, 255, 255));
         Btn_salvar.setText("Salvar");
+        Btn_salvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_salvarActionPerformed(evt);
+            }
+        });
 
         Lbl_contagem.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Lbl_contagem.setText("Contagem : ");
@@ -175,6 +180,13 @@ public class RF23 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Btn_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_salvarActionPerformed
+        RF25 FrameEtiqueta = new RF25();
+        FrameEtiqueta.setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_salvarActionPerformed
 
     /**
      * @param args the command line arguments
