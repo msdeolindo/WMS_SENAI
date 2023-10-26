@@ -36,7 +36,6 @@ public class RF18 extends javax.swing.JFrame {
         jPanel_topo_azul = new javax.swing.JPanel();
         lbl_recebimento = new javax.swing.JLabel();
         lbl_icone_voltar = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel_tela_informação = new javax.swing.JPanel();
         lbl_obeservação = new javax.swing.JLabel();
         lbl_avarias = new javax.swing.JLabel();
@@ -51,6 +50,7 @@ public class RF18 extends javax.swing.JFrame {
         jsp_tabela_agendamento = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jScrollPane1.setViewportView(jEditorPane1);
 
@@ -97,8 +97,6 @@ public class RF18 extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("jLabel2");
-
         javax.swing.GroupLayout jPanel_topo_azulLayout = new javax.swing.GroupLayout(jPanel_topo_azul);
         jPanel_topo_azul.setLayout(jPanel_topo_azulLayout);
         jPanel_topo_azulLayout.setHorizontalGroup(
@@ -108,8 +106,6 @@ public class RF18 extends javax.swing.JFrame {
                 .addComponent(lbl_icone_voltar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbl_recebimento)
-                .addGap(292, 292, 292)
-                .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel_topo_azulLayout.setVerticalGroup(
@@ -117,9 +113,7 @@ public class RF18 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_topo_azulLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel_topo_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel_topo_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lbl_recebimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2))
+                    .addComponent(lbl_recebimento)
                     .addComponent(lbl_icone_voltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -194,6 +188,8 @@ public class RF18 extends javax.swing.JFrame {
         jTable2.setSelectionBackground(new java.awt.Color(255, 255, 255));
         jsp_tabela_agendamento.setViewportView(jTable2);
 
+        jLabel2.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza4.0.png")); // NOI18N
+
         javax.swing.GroupLayout jPanel_tela_informaçãoLayout = new javax.swing.GroupLayout(jPanel_tela_informação);
         jPanel_tela_informação.setLayout(jPanel_tela_informaçãoLayout);
         jPanel_tela_informaçãoLayout.setHorizontalGroup(
@@ -227,6 +223,8 @@ public class RF18 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tf_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel1)))
                         .addGap(0, 34, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -238,7 +236,8 @@ public class RF18 extends javax.swing.JFrame {
                 .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lbl_codigo_carga, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(tf_codigo)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(jsp_tabela_agendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -294,6 +293,9 @@ public class RF18 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bt_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salvarActionPerformed
+        RF23 FrameLocalizacao = new RF23();
+        FrameLocalizacao.setVisible(true);
+        this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_bt_salvarActionPerformed
 
@@ -310,6 +312,11 @@ public class RF18 extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_observaçãoActionPerformed
 
     private void bt_devoluçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_devoluçãoActionPerformed
+        RF22 FrameDevolucao = new RF22();
+        FrameDevolucao.setVisible(true);
+        this.dispose();
+
+
         // TODO add your handling code here:
     }//GEN-LAST:event_bt_devoluçãoActionPerformed
 

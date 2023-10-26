@@ -158,7 +158,7 @@ public class RF08 extends javax.swing.JFrame {
         lblEscolaridade.setText("Escolaridade:");
 
         cbxEscolaridade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        cbxEscolaridade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fundamental incompleto", "Ensino médio incompleto", "Ensino médio completo", "Superior incompleto", "Superior completo", "" }));
+        cbxEscolaridade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fundamental incompleto", "Ensino médio incompleto", "Ensino médio completo", "Superior incompleto", "Superior completo" }));
         cbxEscolaridade.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cbxEscolaridade.setPreferredSize(new java.awt.Dimension(88, 28));
 

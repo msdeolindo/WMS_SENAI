@@ -70,6 +70,7 @@ public class RF15 extends javax.swing.JFrame {
         lbl_Titulo_RegistroDeCarga.setForeground(new java.awt.Color(255, 255, 255));
         lbl_Titulo_RegistroDeCarga.setText("REGISTRO DE CARGA");
 
+        lbl_BotaoVolta.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         lbl_BotaoVolta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_BotaoVoltaMouseClicked(evt);
@@ -302,6 +303,11 @@ public class RF15 extends javax.swing.JFrame {
         btn_Editar.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
         btn_Editar.setForeground(new java.awt.Color(255, 255, 255));
         btn_Editar.setText("Editar");
+        btn_Editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_EditarActionPerformed(evt);
+            }
+        });
 
         brn_Salvar.setBackground(new java.awt.Color(32, 40, 171));
         brn_Salvar.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
@@ -312,6 +318,11 @@ public class RF15 extends javax.swing.JFrame {
         btn_Retirar.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
         btn_Retirar.setForeground(new java.awt.Color(255, 255, 255));
         btn_Retirar.setText("Retirar");
+        btn_Retirar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_RetirarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_PlanoDeFundoLayout = new javax.swing.GroupLayout(pnl_PlanoDeFundo);
         pnl_PlanoDeFundo.setLayout(pnl_PlanoDeFundoLayout);
@@ -375,6 +386,19 @@ public class RF15 extends javax.swing.JFrame {
         ListaDeArmazem.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lbl_BotaoVoltaMouseClicked
+
+    private void btn_EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EditarActionPerformed
+        // TODO add your handling code here:
+        RF28 MovimentarCarga = new RF28();
+        MovimentarCarga.setVisible(true);
+    }//GEN-LAST:event_btn_EditarActionPerformed
+
+    private void btn_RetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RetirarActionPerformed
+        RF02 Agendamento = new RF02();
+        Agendamento.setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_RetirarActionPerformed
 
     /**
      * @param args the command line arguments
