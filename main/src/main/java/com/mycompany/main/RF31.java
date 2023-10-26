@@ -29,7 +29,6 @@ public class RF31 extends javax.swing.JFrame {
         pnlCabecalho = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         lbl_Icone_Voltar = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         pnlTabela = new javax.swing.JPanel();
         scrTabela = new javax.swing.JScrollPane();
         tblRegistroClientes = new javax.swing.JTable();
@@ -58,27 +57,21 @@ public class RF31 extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("jLabel1");
-
         javax.swing.GroupLayout pnlCabecalhoLayout = new javax.swing.GroupLayout(pnlCabecalho);
         pnlCabecalho.setLayout(pnlCabecalhoLayout);
         pnlCabecalhoLayout.setHorizontalGroup(
             pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCabecalhoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addGroup(pnlCabecalhoLayout.createSequentialGroup()
-                        .addComponent(lbl_Icone_Voltar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblTitulo)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lbl_Icone_Voltar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblTitulo)
+                .addContainerGap(1484, Short.MAX_VALUE))
         );
         pnlCabecalhoLayout.setVerticalGroup(
             pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCabecalhoLayout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(24, 24, 24)
+                .addGap(40, 40, 40)
                 .addGroup(pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lbl_Icone_Voltar)
                     .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -331,7 +324,6 @@ public class RF31 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_novo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCNPJ;
     private javax.swing.JLabel lblCodigoCliente;
     private javax.swing.JLabel lblDataRegistro;
