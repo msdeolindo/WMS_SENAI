@@ -29,6 +29,7 @@ public class RF31 extends javax.swing.JFrame {
         pnlCabecalho = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         lbl_Icone_Voltar = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         pnlTabela = new javax.swing.JPanel();
         scrTabela = new javax.swing.JScrollPane();
         tblRegistroClientes = new javax.swing.JTable();
@@ -39,6 +40,7 @@ public class RF31 extends javax.swing.JFrame {
         txtCodCliente = new javax.swing.JTextField();
         txtDataRegistro = new javax.swing.JTextField();
         lbl_icon_pesquisar = new javax.swing.JLabel();
+        btn_novo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1920, 1080));
@@ -56,21 +58,27 @@ public class RF31 extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout pnlCabecalhoLayout = new javax.swing.GroupLayout(pnlCabecalho);
         pnlCabecalho.setLayout(pnlCabecalhoLayout);
         pnlCabecalhoLayout.setHorizontalGroup(
             pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCabecalhoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbl_Icone_Voltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTitulo)
+                .addGroup(pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addGroup(pnlCabecalhoLayout.createSequentialGroup()
+                        .addComponent(lbl_Icone_Voltar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblTitulo)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlCabecalhoLayout.setVerticalGroup(
             pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCabecalhoLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addComponent(jLabel1)
+                .addGap(24, 24, 24)
                 .addGroup(pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lbl_Icone_Voltar)
                     .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -177,6 +185,17 @@ public class RF31 extends javax.swing.JFrame {
 
         lbl_icon_pesquisar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
 
+        btn_novo.setBackground(new java.awt.Color(32, 41, 171));
+        btn_novo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btn_novo.setForeground(new java.awt.Color(255, 255, 255));
+        btn_novo.setText("Novo");
+        btn_novo.setPreferredSize(new java.awt.Dimension(170, 35));
+        btn_novo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_novoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlTabelaLayout = new javax.swing.GroupLayout(pnlTabela);
         pnlTabela.setLayout(pnlTabelaLayout);
         pnlTabelaLayout.setHorizontalGroup(
@@ -195,12 +214,16 @@ public class RF31 extends javax.swing.JFrame {
                             .addComponent(lblCNPJ))
                         .addGap(18, 18, 18)
                         .addGroup(pnlTabelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblDataRegistro)
+                            .addGroup(pnlTabelaLayout.createSequentialGroup()
+                                .addComponent(lblDataRegistro)
+                                .addGap(58, 1037, Short.MAX_VALUE))
                             .addGroup(pnlTabelaLayout.createSequentialGroup()
                                 .addComponent(txtDataRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(lbl_icon_pesquisar)))
-                        .addGap(0, 784, Short.MAX_VALUE)))
+                                .addComponent(lbl_icon_pesquisar)
+                                .addGap(286, 286, 286)
+                                .addComponent(btn_novo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         pnlTabelaLayout.setVerticalGroup(
@@ -216,7 +239,8 @@ public class RF31 extends javax.swing.JFrame {
                     .addComponent(lbl_icon_pesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtDataRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtCNPJ, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtCodCliente, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(txtCodCliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_novo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(29, 29, 29)
                 .addComponent(scrTabela, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -261,6 +285,12 @@ public class RF31 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_lbl_Icone_VoltarMouseClicked
 
+    private void btn_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_novoActionPerformed
+        RF17 novoFrame = new RF17();
+        novoFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_novoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -300,6 +330,8 @@ public class RF31 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_novo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCNPJ;
     private javax.swing.JLabel lblCodigoCliente;
     private javax.swing.JLabel lblDataRegistro;
