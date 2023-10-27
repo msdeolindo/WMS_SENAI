@@ -29,7 +29,6 @@ public class RF22 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         lbl_dev_Carga = new javax.swing.JLabel();
-        btn_fechar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         txt_motiv_dev = new javax.swing.JTextField();
@@ -55,12 +54,7 @@ public class RF22 extends javax.swing.JFrame {
         lbl_dev_Carga.setForeground(new java.awt.Color(242, 242, 242));
         lbl_dev_Carga.setText("Devolucao de Cargas");
 
-        btn_fechar.setBackground(new java.awt.Color(41, 41, 171));
-        btn_fechar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btn_fechar.setForeground(new java.awt.Color(242, 242, 242));
-        btn_fechar.setText("x");
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/main/icon_back.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -77,9 +71,7 @@ public class RF22 extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
                 .addComponent(lbl_dev_Carga)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addComponent(btn_fechar)
-                .addContainerGap())
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,7 +79,6 @@ public class RF22 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_dev_Carga)
-                    .addComponent(btn_fechar)
                     .addComponent(jLabel1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -125,7 +116,7 @@ public class RF22 extends javax.swing.JFrame {
                 .addComponent(lbl_motiv_dev)
                 .addGap(24, 24, 24)
                 .addComponent(txt_motiv_dev, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(btn_confirmar))
         );
 
@@ -201,7 +192,6 @@ public class RF22 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_confirmar;
-    private javax.swing.JButton btn_fechar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

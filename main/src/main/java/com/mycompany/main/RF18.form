@@ -356,6 +356,7 @@
                 <Property name="text" type="java.lang.String" value="DEVOLU&#xc7;&#xc3;O"/>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt_devolu&#xe7;&#xe3;oMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_devolu&#xe7;&#xe3;oActionPerformed"/>
               </Events>
             </Component>

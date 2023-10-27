@@ -171,6 +171,11 @@ public class RF18 extends javax.swing.JFrame {
         bt_devolução.setBackground(new java.awt.Color(32, 41, 171));
         bt_devolução.setForeground(new java.awt.Color(255, 255, 255));
         bt_devolução.setText("DEVOLUÇÃO");
+        bt_devolução.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_devoluçãoMouseClicked(evt);
+            }
+        });
         bt_devolução.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_devoluçãoActionPerformed(evt);
@@ -320,6 +325,10 @@ public class RF18 extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_lbl_icone_voltarMouseClicked
+
+    private void bt_devoluçãoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_devoluçãoMouseClicked
+       
+    }//GEN-LAST:event_bt_devoluçãoMouseClicked
 
     /**
      * @param args the command line arguments
