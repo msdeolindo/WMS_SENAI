@@ -375,6 +375,8 @@ public class RF08 extends javax.swing.JFrame {
         st = conn.createStatement();
         st.executeUpdate("DELETE FROM cadastro_funcionario WHERE txtCodigoDoFuncionario='"+this.txtCodigoDoFuncionario.getText()+"'");
         
+         JOptionPane.showMessageDialog(rootPane,"Funcionario Demitido.");
+        
         } catch (SQLException ex) {
             Logger.getLogger(RF08.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -406,7 +408,7 @@ public class RF08 extends javax.swing.JFrame {
                        +this.txtDataDeAdmissao.getText()+"','"
                        +this.pwdSenhaParaLogin.getText()+"');");
                        
-               JOptionPane.showMessageDialog(rootPane,"Aluno Cadastrado");
+               JOptionPane.showMessageDialog(rootPane,"Funcionario Inserido.");
                
             } catch (SQLException ex) {
                 Logger.getLogger(RF08.class.getName()).log(Level.SEVERE, null, ex);
@@ -447,7 +449,7 @@ public class RF08 extends javax.swing.JFrame {
                     +this.pwdSenhaParaLogin.getText()
                     +"'WHERE txtCodigoDoFuncionario='" + this.txtCodigoDoFuncionario.getText()+"'");
             
-            JOptionPane.showMessageDialog(rootPane, "Aluno atualizado");
+            JOptionPane.showMessageDialog(rootPane, "Funcionario atualizado");
             
          } catch (SQLException ex) {
             Logger.getLogger(RF08.class.getName()).log(Level.SEVERE, null, ex);
