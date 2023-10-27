@@ -401,7 +401,7 @@ public class RF15 extends javax.swing.JFrame {
     private void brn_SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brn_SalvarActionPerformed
         // TODO add your handling code here:
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_wms_prd", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
             java.sql.Statement st = conn.createStatement();
             st.executeUpdate("INSERT INTO registrar_carga(txt_Produto, txt_CodigoDaCarga, txt_Categoria ,txt_Quantidade, cbx_TipoDaCarga, txt_DataDeEntrada, txt_Situacao, txt_Rua, txt_Corredor, txt_Pilha, txt_Nivel) VALUES ('"
                     +this.txt_Produto.getText()+"',"
