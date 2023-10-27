@@ -1,5 +1,12 @@
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -43,7 +50,7 @@ public class RF18 extends javax.swing.JFrame {
         bt_salvar = new javax.swing.JButton();
         tf_quantidade = new javax.swing.JTextField();
         tf_avarias = new javax.swing.JTextField();
-        tf_observação = new javax.swing.JTextField();
+        tf_observacao = new javax.swing.JTextField();
         bt_devolução = new javax.swing.JButton();
         tf_codigo = new javax.swing.JTextField();
         jsp_tabela_agendamento = new javax.swing.JScrollPane();
@@ -154,9 +161,9 @@ public class RF18 extends javax.swing.JFrame {
             }
         });
 
-        tf_observação.addActionListener(new java.awt.event.ActionListener() {
+        tf_observacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_observaçãoActionPerformed(evt);
+                tf_observacaoActionPerformed(evt);
             }
         });
 
@@ -217,7 +224,7 @@ public class RF18 extends javax.swing.JFrame {
                                 .addGap(47, 47, 47)
                                 .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lbl_obeservação)
-                                    .addComponent(tf_observação, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tf_observacao, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(48, 48, 48)
                                 .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(tf_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -252,7 +259,7 @@ public class RF18 extends javax.swing.JFrame {
                     .addComponent(lbl_quantidade_avarias))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tf_observação, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_observacao, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_avarias)
                     .addComponent(tf_quantidade))
                 .addGap(94, 94, 94)
@@ -306,6 +313,26 @@ public class RF18 extends javax.swing.JFrame {
         FrameLocalizacao.setVisible(true);
         this.dispose();
         // TODO add your handling code here:
+        try {        
+            Class.forName("com.mysql.jdbc.Driver");
+             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_wms_prod","root","");
+            java.sql.Statement st = conn.createStatement();
+            
+            st.executeUpdate("INSERT INTO recebimento (id_carga,avarias,observacao,quantidade) VALUES ("
+            +this.tf_codigo.getText() + ","
+            +this.tf_avarias.getText() + ","
+            +this.tf_observacao.getText() + ","
+            +this.tf_quantidade.getText() + ")");
+            
+           JOptionPane.showMessageDialog(rootPane,"Recebimento salvo.");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+        
+            
     }//GEN-LAST:event_bt_salvarActionPerformed
 
     private void tf_quantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_quantidadeActionPerformed
@@ -316,9 +343,9 @@ public class RF18 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_avariasActionPerformed
 
-    private void tf_observaçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_observaçãoActionPerformed
+    private void tf_observacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_observacaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_observaçãoActionPerformed
+    }//GEN-LAST:event_tf_observacaoActionPerformed
 
     private void bt_devoluçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_devoluçãoActionPerformed
         RF22 FrameDevolucao = new RF22();
@@ -396,7 +423,7 @@ public class RF18 extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_recebimento;
     private javax.swing.JTextField tf_avarias;
     private javax.swing.JTextField tf_codigo;
-    private javax.swing.JTextField tf_observação;
+    private javax.swing.JTextField tf_observacao;
     private javax.swing.JTextField tf_quantidade;
     // End of variables declaration//GEN-END:variables
 }
