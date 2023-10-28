@@ -406,8 +406,8 @@ public class RF15 extends javax.swing.JFrame {
             st.executeUpdate("INSERT INTO registrar_carga(txt_Produto, txt_CodigoDaCarga, txt_Categoria ,txt_Quantidade, cbx_TipoDaCarga, txt_DataDeEntrada, txt_Situacao, txt_Rua, txt_Corredor, txt_Pilha, txt_Nivel) VALUES ('"
                     +this.txt_Produto.getText()+"',"
                     +this.txt_CodigoDaCarga.getText()+",'"
-                    +this.txt_Categoria.getText()+"',"
-                    +this.txt_Quantidade.getText()+",'"
+                    +this.txt_Categoria.getText()+"','"
+                    +this.txt_Quantidade.getText()+"','"
                     +this.cbx_TipoDaCarga.getSelectedItem().toString()+"',"
                     +this.txt_Data.getText()+",'"
                     +this.txt_Situacao.getText()+"',"
@@ -419,9 +419,6 @@ public class RF15 extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(RF15.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-
-                
     }//GEN-LAST:event_brn_SalvarActionPerformed
 
     /**
