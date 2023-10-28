@@ -33,12 +33,12 @@ public class RF14 extends javax.swing.JFrame {
         LabelCargo = new javax.swing.JLabel();
         LabelN = new javax.swing.JLabel();
         LabelCpf = new javax.swing.JLabel();
-        TextCliente = new javax.swing.JTextField();
-        TextAgen = new javax.swing.JTextField();
-        TextCod = new javax.swing.JTextField();
-        ComBoxSit = new javax.swing.JComboBox<>();
+        txt_cliente = new javax.swing.JTextField();
+        txt_Agen = new javax.swing.JTextField();
+        txt_Cod = new javax.swing.JTextField();
+        cbx_Situacao = new javax.swing.JComboBox<>();
         LabelCpf1 = new javax.swing.JLabel();
-        Bt_Pes = new javax.swing.JLabel();
+        btn_Pes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -91,23 +91,23 @@ public class RF14 extends javax.swing.JFrame {
         LabelCpf.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         LabelCpf.setText("Situação");
 
-        TextCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txt_cliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        TextAgen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txt_Agen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        TextCod.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txt_Cod.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        ComBoxSit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Agendado", "Finalizado", "Cancelado" }));
-        ComBoxSit.addActionListener(new java.awt.event.ActionListener() {
+        cbx_Situacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Agendado", "Finalizado", "Cancelado" }));
+        cbx_Situacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComBoxSitActionPerformed(evt);
+                cbx_SituacaoActionPerformed(evt);
             }
         });
 
         LabelCpf1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         LabelCpf1.setText("Cliente");
 
-        Bt_Pes.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
+        btn_Pes.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -117,21 +117,21 @@ public class RF14 extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LabelN)
-                    .addComponent(TextAgen, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_Agen, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TextCod, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_Cod, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelCargo))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LabelCpf1)
-                    .addComponent(TextCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(ComBoxSit, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbx_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
-                        .addComponent(Bt_Pes))
+                        .addComponent(btn_Pes))
                     .addComponent(LabelCpf))
                 .addContainerGap(293, Short.MAX_VALUE))
         );
@@ -146,14 +146,14 @@ public class RF14 extends javax.swing.JFrame {
                     .addComponent(LabelCpf1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ComBoxSit)
+                    .addComponent(cbx_Situacao)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(TextCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(TextCod, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(TextAgen, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Bt_Pes))
+                                .addComponent(txt_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txt_Cod, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txt_Agen, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btn_Pes))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -295,9 +295,9 @@ public class RF14 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ComBoxSitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComBoxSitActionPerformed
+    private void cbx_SituacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_SituacaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ComBoxSitActionPerformed
+    }//GEN-LAST:event_cbx_SituacaoActionPerformed
 
     private void Bt_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bt_BackMouseClicked
         RF30 novoFrame = new RF30();
@@ -345,19 +345,19 @@ public class RF14 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Bt_Back;
-    private javax.swing.JLabel Bt_Pes;
-    private javax.swing.JComboBox<String> ComBoxSit;
     private javax.swing.JLabel LabelCargo;
     private javax.swing.JLabel LabelCpf;
     private javax.swing.JLabel LabelCpf1;
     private javax.swing.JLabel LabelN;
     private javax.swing.JLabel LabelT;
-    private javax.swing.JTextField TextAgen;
-    private javax.swing.JTextField TextCliente;
-    private javax.swing.JTextField TextCod;
+    private javax.swing.JLabel btn_Pes;
+    private javax.swing.JComboBox<String> cbx_Situacao;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField txt_Agen;
+    private javax.swing.JTextField txt_Cod;
+    private javax.swing.JTextField txt_cliente;
     // End of variables declaration//GEN-END:variables
 }

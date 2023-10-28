@@ -4,6 +4,13 @@
  */
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jamille Galazzi
@@ -294,6 +301,11 @@ public class RF08 extends javax.swing.JFrame {
         btn_editar_CadastroDeFuncionarios.setForeground(new java.awt.Color(255, 255, 255));
         btn_editar_CadastroDeFuncionarios.setText("Editar");
         btn_editar_CadastroDeFuncionarios.setPreferredSize(new java.awt.Dimension(170, 35));
+        btn_editar_CadastroDeFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editar_CadastroDeFuncionariosActionPerformed(evt);
+            }
+        });
 
         btn_excluir_CadastroDeFuncionarios.setBackground(new java.awt.Color(32, 41, 173));
         btn_excluir_CadastroDeFuncionarios.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -356,9 +368,54 @@ public class RF08 extends javax.swing.JFrame {
 
     private void btn_excluir_CadastroDeFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_excluir_CadastroDeFuncionariosActionPerformed
         // TODO add your handling code here:
+         Connection conn;
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/DB_WMS_PRD","root","");
+        java.sql.Statement st;
+        st = conn.createStatement();
+        st.executeUpdate("DELETE FROM cadastro_funcionario WHERE txtCodigoDoFuncionario='"+this.txtCodigoDoFuncionario.getText()+"'");
+        
+         JOptionPane.showMessageDialog(rootPane,"Funcionario Demitido.");
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(RF08.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_btn_excluir_CadastroDeFuncionariosActionPerformed
 
     private void tbn_salvar_CadastroDeFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbn_salvar_CadastroDeFuncionariosActionPerformed
+             Connection conn;
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/DB_WMS_PRD","root","");
+                     Class.forName("com.mysql.cj.jdbc.Driver");
+                
+            
+             java.sql.Statement st;
+            st = conn.createStatement();
+        
+               st.executeUpdate("INSERT INTO cadastro_funcionario (txtNomeCompleto,txtDataDeNascimento,txtCPF,txtRG,txtEndereco,txtTelefone,txtEmail, cbxCargo ,cbxEscolaridade,cbxEstadoCivil,txtCodigoDoFuncionario,txtDataDeAdmissao,pwdSenhaParaLogin  ) VALUES ('"
+                       +this.txtNomeCompleto.getText()+"','"
+                       +this.txtDataDeNascimento.getText()+"','"
+                       +this.txtCPF.getText()+"','"
+                       +this.txtRG.getText()+"','"
+                       +this.txtEndereco.getText()+"','"
+                       +this.txtTelefone.getText()+"','"
+                       +this.txtEmail.getText()+"','"
+                      +this.cbxCargo.getSelectedItem().toString()+"','"
+                       +this.cbxEscolaridade.getSelectedItem().toString()+"','"
+                       +this.cbxEstadoCivil.getSelectedItem().toString()+"','"
+                       +this.txtCodigoDoFuncionario.getText()+"','"
+                       +this.txtDataDeAdmissao.getText()+"','"
+                       +this.pwdSenhaParaLogin.getText()+"');");
+                       
+               JOptionPane.showMessageDialog(rootPane,"Funcionario Inserido.");
+               
+            } catch (SQLException ex) {
+                Logger.getLogger(RF08.class.getName()).log(Level.SEVERE, null, ex);
+                
+            }catch (ClassNotFoundException ex) {
+                     Logger.getLogger(RF08.class.getName()).log(Level.SEVERE, null, ex);
+                 }
         // TODO add your handling code here:
     }//GEN-LAST:event_tbn_salvar_CadastroDeFuncionariosActionPerformed
 
@@ -368,6 +425,36 @@ public class RF08 extends javax.swing.JFrame {
         Frame_RF30.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lbl_VoltarMenuPrincipalMouseClicked
+
+    private void btn_editar_CadastroDeFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editar_CadastroDeFuncionariosActionPerformed
+        // TODO add your handling code here:
+        
+        Connection conn;
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","");
+       
+            java.sql.Statement st = conn.createStatement();
+            st.executeUpdate("UPDATE cadastro_funcionario SET txtNomeCompleto ='"
+                    +this.txtNomeCompleto.getText()+"',txtDataDeNascimento='"
+                    +this.txtDataDeNascimento.getText()+"',txtCPF='"
+                    +this.txtCPF.getText()+"',txtRG='"
+                    +this.txtRG.getText()+"',txtEndereco='"
+                    +this.txtEndereco.getText()+"',txtTelefone='"
+                    +this.txtTelefone.getText()+"',txtEmail='"
+                    +this.txtEmail.getText()+"',cbxCargo='"
+                    +this.cbxCargo.getSelectedItem().toString()+"',cbxEscolaridade='"
+                    +this.cbxEscolaridade.getSelectedItem().toString()+"',cbxEstadoCivil='"
+                    +this.cbxEstadoCivil.getSelectedItem().toString()+"',txtDataDeAdmissao='"
+                    +this.txtDataDeAdmissao.getText()+"',pwdSenhaParaLogin='"
+                    +this.pwdSenhaParaLogin.getText()
+                    +"'WHERE txtCodigoDoFuncionario='" + this.txtCodigoDoFuncionario.getText()+"'");
+            
+            JOptionPane.showMessageDialog(rootPane, "Funcionario atualizado");
+            
+         } catch (SQLException ex) {
+            Logger.getLogger(RF08.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_editar_CadastroDeFuncionariosActionPerformed
 
     /**
      * @param args the command line arguments
