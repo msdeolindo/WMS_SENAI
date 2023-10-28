@@ -592,6 +592,9 @@
           <Dimension value="[170, 35]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_editar_CadastroDeFuncionariosActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_excluir_CadastroDeFuncionarios">
       <Properties>
