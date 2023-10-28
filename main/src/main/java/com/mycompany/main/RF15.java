@@ -415,7 +415,7 @@ public class RF15 extends javax.swing.JFrame {
                     +this.txt_Corredor.getText()+","
                     +this.txt_Pilha.getText()+","
                     +this.txt_Nivel.getText()+")");
-            JOptionPane.showMessageDialog(rootPane, "Ok");
+            JOptionPane.showMessageDialog(rootPane, "Carga registrada");
         } catch (SQLException ex) {
             Logger.getLogger(RF15.class.getName()).log(Level.SEVERE, null, ex);
         }
