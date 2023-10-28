@@ -4,6 +4,13 @@
  */
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pmedeiros
@@ -182,9 +189,31 @@ public class RF23 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_salvarActionPerformed
+        
+        try{   
+        
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_LOCALIZACAO", "root", "");
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        java.sql.Statement st = conn.createStatement();
+        st.executeUpdate("INSERT INTO localizacao_ (quantidade, rua, pilha, corredor, nivel) VALUES ("
+                +this.Tfd_quantidade.getText()+","
+                +this.Tfd_rua.getText()+","
+                +this.Tfd_pilha.getText()+","
+                +this.Tfd_corredor.getText()+","
+                +this.Tfd_nivel.getText()+");");
+                
+        JOptionPane.showMessageDialog(rootPane, "Aluno Inserido");        
+        
+     }catch(SQLException ex){  
+         Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);             
+     }catch(ClassNotFoundException ex){
+         Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);
+     }
+        
         RF25 FrameEtiqueta = new RF25();
         FrameEtiqueta.setVisible(true);
         this.dispose();
+
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_salvarActionPerformed
 
