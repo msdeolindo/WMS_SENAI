@@ -35,8 +35,8 @@ public class RF11 extends javax.swing.JFrame {
         LabelN = new javax.swing.JLabel();
         LabelCpf = new javax.swing.JLabel();
         TextCpf = new javax.swing.JTextField();
-        TextN = new javax.swing.JTextField();
-        Bt_Pes = new javax.swing.JLabel();
+        txt_Nome = new javax.swing.JTextField();
+        btn_Pes = new javax.swing.JLabel();
         Bt_Novo = new javax.swing.JButton();
         cbxCargo = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -96,9 +96,9 @@ public class RF11 extends javax.swing.JFrame {
 
         TextCpf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        TextN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txt_Nome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        Bt_Pes.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
+        btn_Pes.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
 
         Bt_Novo.setText("Novo");
         Bt_Novo.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +117,7 @@ public class RF11 extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LabelN)
-                    .addComponent(TextN, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LabelCargo)
@@ -128,7 +128,7 @@ public class RF11 extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(TextCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
-                        .addComponent(Bt_Pes)
+                        .addComponent(btn_Pes)
                         .addGap(107, 107, 107)
                         .addComponent(Bt_Novo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -148,10 +148,10 @@ public class RF11 extends javax.swing.JFrame {
                             .addComponent(Bt_Novo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(TextCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(TextN, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txt_Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(cbxCargo)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(Bt_Pes)
+                        .addComponent(btn_Pes)
                         .addGap(2, 2, 2)))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
@@ -343,7 +343,6 @@ public class RF11 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Bt_Back;
     private javax.swing.JButton Bt_Novo;
-    private javax.swing.JLabel Bt_Pes;
     private javax.swing.JLabel LabelBack;
     private javax.swing.JLabel LabelCargo;
     private javax.swing.JLabel LabelCpf;
@@ -351,10 +350,11 @@ public class RF11 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelT;
     private javax.swing.JTable Table;
     private javax.swing.JTextField TextCpf;
-    private javax.swing.JTextField TextN;
+    private javax.swing.JLabel btn_Pes;
     private javax.swing.JComboBox<String> cbxCargo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField txt_Nome;
     // End of variables declaration//GEN-END:variables
 }
