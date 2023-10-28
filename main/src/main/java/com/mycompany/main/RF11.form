@@ -128,7 +128,7 @@
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="LabelN" min="-2" max="-2" attributes="0"/>
-                      <Component id="TextN" min="-2" pref="300" max="-2" attributes="0"/>
+                      <Component id="txt_Nome" min="-2" pref="300" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -141,7 +141,7 @@
                       <Group type="102" attributes="0">
                           <Component id="TextCpf" min="-2" pref="200" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="Bt_Pes" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_Pes" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
                           <Component id="Bt_Novo" min="-2" pref="107" max="-2" attributes="0"/>
                       </Group>
@@ -166,13 +166,13 @@
                               <Component id="Bt_Novo" min="-2" pref="37" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="TextCpf" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="TextN" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="txt_Nome" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               </Group>
                               <Component id="cbxCargo" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="Bt_Pes" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_Pes" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -215,7 +215,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="TextN">
+        <Component class="javax.swing.JTextField" name="txt_Nome">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -224,7 +224,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="Bt_Pes">
+        <Component class="javax.swing.JLabel" name="btn_Pes">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="2" name="P:\TURMAS\HTC-DDS-16\&#xed;cones WMS\lupa_cinza.png"/>
