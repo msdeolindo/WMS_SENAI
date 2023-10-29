@@ -77,9 +77,6 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lbl_voltar">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="P:\TURMAS\HTC-DDS-16\&#xed;cones WMS\icon_back.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="jLabel1"/>
           </Properties>
           <Events>
@@ -175,27 +172,8 @@
                                       <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="lbl_cnpj" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="txt_cnpj" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
-                                      <Component id="txt_razaoSocial" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="txt_rua" min="-2" pref="240" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="txt_bairro" min="-2" pref="118" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="lbl_cidade" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="txt_cidade" min="-2" pref="116" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lbl_uf" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txt_num_rua" min="-2" pref="28" max="-2" attributes="0"/>
-                                              <Component id="txt_uf" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <Component id="txt_NomeFanta" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txt_Razao_soci" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="lbl_rua" min="-2" pref="31" max="-2" attributes="0"/>
@@ -226,6 +204,30 @@
                               </Group>
                               <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="txt_rua" min="-2" pref="240" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="txt_bairro" min="-2" pref="118" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lbl_cidade" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txt_cidade" min="-2" pref="116" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txt_num_rua" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lbl_uf" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbx_Uf" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
@@ -251,7 +253,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txt_Razao_soci" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txt_respons" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txt_contato_resp" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -262,7 +264,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txt_razaoSocial" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txt_NomeFanta" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txt_email" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -285,9 +287,9 @@
                               </Group>
                               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txt_uf" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txt_cidade" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txt_bairro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbx_Uf" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="lbl_cep" min="-2" max="-2" attributes="0"/>
@@ -318,14 +320,14 @@
                 <Property name="text" type="java.lang.String" value="Raz&#xe3;o Social"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField2">
+            <Component class="javax.swing.JTextField" name="txt_Razao_soci">
             </Component>
             <Component class="javax.swing.JLabel" name="lbl_razaoSocial">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nome Fantasia"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_razaoSocial">
+            <Component class="javax.swing.JTextField" name="txt_NomeFanta">
             </Component>
             <Component class="javax.swing.JLabel" name="lbl_rua">
               <Properties>
@@ -362,11 +364,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="UF"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txt_uf">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_ufActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lbl_cep">
               <Properties>
@@ -412,6 +409,44 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_observacoesActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbx_Uf">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="27">
+                    <StringItem index="0" value="AC"/>
+                    <StringItem index="1" value="AL"/>
+                    <StringItem index="2" value="AP"/>
+                    <StringItem index="3" value="AM"/>
+                    <StringItem index="4" value="BA"/>
+                    <StringItem index="5" value="CE"/>
+                    <StringItem index="6" value="DF"/>
+                    <StringItem index="7" value="ES"/>
+                    <StringItem index="8" value="GO"/>
+                    <StringItem index="9" value="MA"/>
+                    <StringItem index="10" value="MT"/>
+                    <StringItem index="11" value="MS"/>
+                    <StringItem index="12" value="MG"/>
+                    <StringItem index="13" value="PA"/>
+                    <StringItem index="14" value="PB"/>
+                    <StringItem index="15" value="PR"/>
+                    <StringItem index="16" value="PE"/>
+                    <StringItem index="17" value="PI"/>
+                    <StringItem index="18" value="RJ"/>
+                    <StringItem index="19" value="RN"/>
+                    <StringItem index="20" value="RS"/>
+                    <StringItem index="21" value="RO"/>
+                    <StringItem index="22" value="RR"/>
+                    <StringItem index="23" value="SC"/>
+                    <StringItem index="24" value="SP"/>
+                    <StringItem index="25" value="SE"/>
+                    <StringItem index="26" value="TO"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>

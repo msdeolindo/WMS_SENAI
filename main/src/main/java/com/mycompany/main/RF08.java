@@ -63,13 +63,14 @@ public class RF08 extends javax.swing.JFrame {
         txtDataDeAdmissao = new javax.swing.JTextField();
         lblSenhaParaLogin = new javax.swing.JLabel();
         pwdSenhaParaLogin = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
         btn_editar_CadastroDeFuncionarios = new javax.swing.JButton();
         btn_excluir_CadastroDeFuncionarios = new javax.swing.JButton();
         tbn_salvar_CadastroDeFuncionarios = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastramento de funcionários");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setFocusCycleRoot(false);
         setPreferredSize(new java.awt.Dimension(1920, 1080));
         setSize(new java.awt.Dimension(1920, 1080));
 
@@ -198,8 +199,6 @@ public class RF08 extends javax.swing.JFrame {
         pwdSenhaParaLogin.setMinimumSize(new java.awt.Dimension(64, 30));
         pwdSenhaParaLogin.setPreferredSize(new java.awt.Dimension(64, 30));
 
-        jLabel1.setText("a");
-
         javax.swing.GroupLayout pnlInformacoesLayout = new javax.swing.GroupLayout(pnlInformacoes);
         pnlInformacoes.setLayout(pnlInformacoesLayout);
         pnlInformacoesLayout.setHorizontalGroup(
@@ -250,10 +249,6 @@ public class RF08 extends javax.swing.JFrame {
                             .addComponent(lblSenhaParaLogin)
                             .addComponent(pwdSenhaParaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(pnlInformacoesLayout.createSequentialGroup()
-                .addGap(486, 486, 486)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlInformacoesLayout.setVerticalGroup(
             pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -284,9 +279,7 @@ public class RF08 extends javax.swing.JFrame {
                         .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(109, 109, 109)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(131, 131, 131)
                 .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEscolaridade)
                     .addComponent(lblEstadoCivil)
@@ -508,7 +501,6 @@ public class RF08 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxCargo;
     private javax.swing.JComboBox<String> cbxEscolaridade;
     private javax.swing.JComboBox<String> cbxEstadoCivil;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCPF;
     private javax.swing.JLabel lblCadastramentoDeFuncionarios;
     private javax.swing.JLabel lblCargo;
