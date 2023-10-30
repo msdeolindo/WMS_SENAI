@@ -2,6 +2,7 @@ package com.mycompany.main;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -318,20 +319,29 @@ public class RF18 extends javax.swing.JFrame {
         FrameLocalizacao.setVisible(true);
         this.dispose();
         // TODO add your handling code here:
+        
+        Connection conexao = null;
+        PreparedStatement statement = null;
+        
+        String url = "jdbc:mysql://localhost:3306/db_wms_prod";
+        String usuario = "root";
+        String senha = "";
+        
         try {        
-            Class.forName("com.mysql.jdbc.Driver");
-             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_wms_prod","root","");
-            java.sql.Statement st = conn.createStatement();
+          conexao = DriverManager.getConnection(url,usuario,senha);
             
-            st.executeUpdate("INSERT INTO recebimento (id_carga,avarias,observacao,quantidade) VALUES ("
-            +this.tf_codigo.getText() + ","
-            +this.tf_avarias.getText() + ","
-            +this.tf_observacao.getText() + ","
-            +this.tf_quantidade.getText() + ")");
+            String sql = "INSERT INTO recebimento (id_carga,avarias,observacao,quantidade) VALUES (?, ?, ?, ?)";
+           
+             statement = conexao.prepareCall(sql);
+             
+            statement.setString(1,tf_codigo.getText());
+            statement.setString(2,tf_avarias.getText());
+            statement.setString(3,tf_observacao.getText());
+            statement.setString(4,tf_quantidade.getText());
+            
             
            JOptionPane.showMessageDialog(rootPane,"Recebimento salvo.");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);
+           
         } catch (SQLException ex) {
             Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);
         }
