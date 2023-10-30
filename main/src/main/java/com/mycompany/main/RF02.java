@@ -4,7 +4,13 @@
  */
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -243,16 +249,31 @@ public class RF02 extends javax.swing.JFrame {
         Btn_Salvar.setForeground(new java.awt.Color(255, 255, 255));
         Btn_Salvar.setText("Salvar");
         Btn_Salvar.setToolTipText("");
+        Btn_Salvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_SalvarActionPerformed(evt);
+            }
+        });
 
         Btn_cancelar.setBackground(new java.awt.Color(32, 41, 173));
         Btn_cancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         Btn_cancelar.setForeground(new java.awt.Color(255, 255, 255));
         Btn_cancelar.setText("Cancelar");
+        Btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_cancelarActionPerformed(evt);
+            }
+        });
 
         Btn_editar.setBackground(new java.awt.Color(32, 41, 173));
         Btn_editar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         Btn_editar.setForeground(new java.awt.Color(255, 255, 255));
         Btn_editar.setText("Editar");
+        Btn_editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_editarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Pnl_principalLayout = new javax.swing.GroupLayout(Pnl_principal);
         Pnl_principal.setLayout(Pnl_principalLayout);
@@ -315,6 +336,104 @@ public class RF02 extends javax.swing.JFrame {
     private void Tfd_quantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tfd_quantidadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Tfd_quantidadeActionPerformed
+
+    private void Btn_SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SalvarActionPerformed
+       
+        Connection conn = null;
+        java.sql.Statement st = null;
+        
+        try{
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO","root","");
+            st = conn.createStatement();
+
+            st.executeUpdate("INSET INTO agendamento (cliente,nome_resonsavel,data_agendamento,especificacao,carga,quantidade,transportadora,tipo_agendamento,cod_carga,tipo_carga) VALUES ('"
+                    +this.Tfd_cliente.getText()+"','"
+                    +this.Tfd_nomeResponsavel.getText()+"','"
+                    +this.Tfd_dataAgendamento.getText()+"','"
+                    +this.Tfd_especificacao.getText()+"','"
+                    +this.Tfd_carga.getText()+"',"
+                    +this.Tfd_quantidade.getText()+",'"
+                    +this.Tfd_transportadora.getText()+"','"
+                    +this.Cbx_tipoAgendamento.getSelectedItem()+"','"
+                    +this.Tfd_codCarga.getText()+"','"
+                    +this.Cbx_tipo.getSelectedItem()+"')"        
+
+            );
+        }catch(ClassNotFoundException | SQLException ex){
+            Logger.getLogger(RF02.class.getName()).log(Level.SEVERE,null,ex);
+        }
+        
+        JOptionPane.showMessageDialog(Pnl_principal,"Agendamento salvo!!");
+        
+        // TODO add your handling code here:
+        
+            
+        
+       
+        
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_SalvarActionPerformed
+
+    private void Btn_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_editarActionPerformed
+       
+        Connection conn = null;
+        java.sql.Statement st = null;
+        
+        try{
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO","root","");
+            st = conn.createStatement();
+
+            st.executeUpdate("UPDATE agendamento SET cliente = '"
+                    +this.Tfd_cliente.getText()+"',nome_responsavel = '"
+                    +this.Tfd_nomeResponsavel.getText()+"',data_agendamento = '"
+                    +this.Tfd_dataAgendamento.getText()+"',especificacao = '"
+                    +this.Tfd_especificacao.getText()+"',carga = '"
+                    +this.Tfd_carga.getText()+"', quantidade = "
+                    +this.Tfd_quantidade.getText()+",transportadora = '"
+                    +this.Tfd_transportadora.getText()+"',tipo_agendamento = '"
+                    +this.Cbx_tipoAgendamento.getSelectedItem()+"',cod_carga = '"
+                    +this.Tfd_codCarga.getText()+"',tipo_carga = '"
+                    +this.Cbx_tipo.getSelectedItem()+"' WHERE id = 1"        
+
+            );
+        }catch(ClassNotFoundException | SQLException ex){
+            Logger.getLogger(RF02.class.getName()).log(Level.SEVERE,null,ex);
+        }
+        
+        JOptionPane.showMessageDialog(Pnl_principal,"Agendamento Atualizado!!");
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_editarActionPerformed
+
+    private void Btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_cancelarActionPerformed
+               
+        Connection conn = null;
+        java.sql.Statement st = null;
+        
+        try{
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO","root","");
+            st = conn.createStatement();
+
+            st.executeUpdate("DELETE FROM agendamento WHERE id = 1"
+                    
+            );
+        }catch(ClassNotFoundException | SQLException ex){
+            Logger.getLogger(RF02.class.getName()).log(Level.SEVERE,null,ex);
+        }
+        
+        JOptionPane.showMessageDialog(Pnl_principal,"Agendamento cancelado!!");
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_cancelarActionPerformed
 
     /**
      * @param args the command line arguments

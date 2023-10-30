@@ -426,6 +426,9 @@
             <Property name="text" type="java.lang.String" value="Salvar"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_SalvarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Btn_cancelar">
           <Properties>
@@ -440,6 +443,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_cancelarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Btn_editar">
           <Properties>
@@ -454,6 +460,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Editar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_editarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
