@@ -321,7 +321,7 @@ public class RF18 extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         Connection conexao = null;
-        PreparedStatement statement = null;
+         
         
         String url = "jdbc:mysql://localhost:3306/db_wms_prod";
         String usuario = "root";
@@ -332,7 +332,7 @@ public class RF18 extends javax.swing.JFrame {
             
             String sql = "INSERT INTO recebimento (id_carga,avarias,observacao,quantidade) VALUES (?, ?, ?, ?)";
            
-             statement = conexao.prepareCall(sql);
+            PreparedStatement statement = conexao.prepareStatement(sql);
              
             statement.setString(1,tf_codigo.getText());
             statement.setString(2,tf_avarias.getText());
@@ -341,6 +341,9 @@ public class RF18 extends javax.swing.JFrame {
             
             
            JOptionPane.showMessageDialog(rootPane,"Recebimento salvo.");
+           
+           statement.execute();
+           statement.close();
            
         } catch (SQLException ex) {
             Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);
