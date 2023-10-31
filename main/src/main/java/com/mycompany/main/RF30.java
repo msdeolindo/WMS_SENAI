@@ -273,7 +273,7 @@ public class RF30 extends javax.swing.JFrame {
     }//GEN-LAST:event_mni_senhaActionPerformed
 
     private void button_cadastro(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_cadastro
-        RF15 tela_cadastro = new RF15();
+        RF16_LIST tela_cadastro = new RF16_LIST();
         tela_cadastro.setVisible(true);
         this.dispose();
 
