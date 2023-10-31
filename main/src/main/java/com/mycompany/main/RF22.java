@@ -157,7 +157,7 @@ public class RF22 extends javax.swing.JFrame {
     private void btn_confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_confirmarActionPerformed
         
         try {
-            //Class.forName("com.mysql.jdbc.Driver");
+           // Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO", "root", "");
             
             
@@ -171,6 +171,8 @@ public class RF22 extends javax.swing.JFrame {
             );
             
             JOptionPane.showMessageDialog(rootPane, "Salvo!");
+            
+            st.close();
             
             RF30 FrameMenu = new RF30();
             FrameMenu.setVisible(true);

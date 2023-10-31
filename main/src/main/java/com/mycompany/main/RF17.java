@@ -7,6 +7,11 @@ package com.mycompany.main;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,7 +38,6 @@ public class RF17 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lbl_voltar = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         lbl_cnpj = new javax.swing.JLabel();
@@ -73,6 +77,7 @@ public class RF17 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(32, 41, 171));
 
+        lbl_voltar.setIcon(new javax.swing.ImageIcon("C:\\Users\\mbalonecker\\Desktop\\WMS_SENAI_GIT\\main\\src\\main\\java\\com\\mycompany\\main\\icon_back.png")); // NOI18N
         lbl_voltar.setText("jLabel1");
         lbl_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -84,8 +89,6 @@ public class RF17 extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(242, 242, 242));
         jLabel2.setText("Cadastro de Clientes");
 
-        jLabel1.setText("jLabel1");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -95,9 +98,7 @@ public class RF17 extends javax.swing.JFrame {
                 .addComponent(lbl_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(24, 24, 24))
+                .addContainerGap(545, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,8 +106,7 @@ public class RF17 extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_voltar)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -365,7 +365,58 @@ public class RF17 extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_bairroActionPerformed
 
     private void btn_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvarActionPerformed
+
+        Connection Conn = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
       
+        
+        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRO";
+        String user = "root";
+        String senha = "";
+        
+        try {
+            Conn = DriverManager.getConnection(url,user,senha);
+        
+        
+        
+        String sql = "INSERT INTO cadastro_cliente (cnpj,razaoSocial,nomeFantasia,rua,numRua,bairro,cidade,uf,cep,atv_comercial,nome_Responsavel,contato,email,obs) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+        
+         PreparedStatement st = Conn.prepareStatement(sql);
+         
+         st.setString(1, txt_cnpj.getText());
+         st.setString(2,txt_Razao_soci.getText());
+         st.setString(3,txt_NomeFanta.getText());
+         st.setString(4,txt_rua.getText());
+         st.setString(5, txt_num_rua.getText());
+         st.setString(6,txt_bairro.getText());
+         st.setString(7, txt_cidade.getText());
+         st.setString(8, (String) cbx_Uf.getSelectedItem());
+         st.setString(9,txt_cep.getText());
+         st.setString(10, txt_ativ_come.getText());
+         st.setString(11, txt_respons.getText());
+         st.setString(12, txt_contato_resp.getText());
+         st.setString(13, txt_email.getText());
+         st.setString(14,txt_observacoes.getText());
+         
+         st.execute();
+         st.close();
+        
+         JOptionPane.showMessageDialog(rootPane, "Cliente Inserido");
+         
+         btn_salvar.setVisible(false);
+         btn_agendamento.setVisible(true);
+         btn_alterar.setVisible(true);
+         btn_excluir.setVisible(true);
+         
+       } catch (SQLException ex) {
+            Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+       
     }//GEN-LAST:event_btn_salvarActionPerformed
 
     private void lbl_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_voltarMouseClicked
@@ -422,7 +473,6 @@ public class RF17 extends javax.swing.JFrame {
     private javax.swing.JButton btn_excluir;
     private javax.swing.JButton btn_salvar;
     private javax.swing.JComboBox<String> cbx_Uf;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
