@@ -1,5 +1,13 @@
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -28,26 +36,26 @@ public class RF21 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabeltitulo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        chaveAcesso = new javax.swing.JLabel();
+        Field_acesso = new javax.swing.JTextField();
+        senha = new javax.swing.JLabel();
+        confSenha = new javax.swing.JLabel();
+        field_confSenha = new javax.swing.JPasswordField();
+        field_senha = new javax.swing.JPasswordField();
+        bt_confirm = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
 
         jPanel1.setBackground(new java.awt.Color(32, 41, 173));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Alterar Senha");
+        jLabeltitulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabeltitulo.setForeground(new java.awt.Color(255, 255, 255));
+        jLabeltitulo.setText("Alterar Senha");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -59,7 +67,7 @@ public class RF21 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel1)
+                .addComponent(jLabeltitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(20, 20, 20))
@@ -69,7 +77,7 @@ public class RF21 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(jLabeltitulo)
                     .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -78,31 +86,31 @@ public class RF21 extends javax.swing.JFrame {
 
         jPanel3.setInheritsPopupMenu(true);
 
-        jLabel5.setText("Insira a chave de acesso ");
+        chaveAcesso.setText("Insira a chave de acesso ");
 
-        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("dica: (data de nascimento)");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        Field_acesso.setBackground(new java.awt.Color(204, 204, 204));
+        Field_acesso.setForeground(new java.awt.Color(153, 153, 153));
+        Field_acesso.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Field_acesso.setText("dica: (data de nascimento)");
+        Field_acesso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                Field_acessoActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Insira sua nova senha ");
+        senha.setText("Insira sua nova senha ");
 
-        jLabel4.setText("Confirme a sua nova senha ");
+        confSenha.setText("Confirme a sua nova senha ");
 
-        jPasswordField1.setBackground(new java.awt.Color(204, 204, 204));
-        jPasswordField1.setForeground(new java.awt.Color(153, 153, 153));
-        jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPasswordField1.setText("jPasswordField1");
+        field_confSenha.setBackground(new java.awt.Color(204, 204, 204));
+        field_confSenha.setForeground(new java.awt.Color(153, 153, 153));
+        field_confSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        field_confSenha.setText("jPasswordField1");
 
-        jPasswordField2.setBackground(new java.awt.Color(204, 204, 204));
-        jPasswordField2.setForeground(new java.awt.Color(153, 153, 153));
-        jPasswordField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPasswordField2.setText("jPasswordField1");
+        field_senha.setBackground(new java.awt.Color(204, 204, 204));
+        field_senha.setForeground(new java.awt.Color(153, 153, 153));
+        field_senha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        field_senha.setText("jPasswordField1");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -112,46 +120,46 @@ public class RF21 extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(146, 146, 146)
-                        .addComponent(jLabel5))
+                        .addComponent(chaveAcesso))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(140, 140, 140)
-                        .addComponent(jLabel4))
+                        .addComponent(confSenha))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
-                        .addComponent(jLabel3))
+                        .addComponent(senha))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(field_confSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
-                                .addComponent(jPasswordField2)))))
+                                .addComponent(Field_acesso, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
+                                .addComponent(field_senha)))))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel5)
+                .addComponent(chaveAcesso)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Field_acesso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
-                .addComponent(jLabel3)
+                .addComponent(senha)
                 .addGap(12, 12, 12)
-                .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(field_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
+                .addComponent(confSenha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(field_confSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        jButton1.setBackground(new java.awt.Color(32, 41, 173));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Confirmar ");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bt_confirm.setBackground(new java.awt.Color(32, 41, 173));
+        bt_confirm.setForeground(new java.awt.Color(255, 255, 255));
+        bt_confirm.setText("Confirmar ");
+        bt_confirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bt_confirmActionPerformed(evt);
             }
         });
 
@@ -163,7 +171,7 @@ public class RF21 extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(195, 195, 195)
-                        .addComponent(jButton1))
+                        .addComponent(bt_confirm))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -175,7 +183,7 @@ public class RF21 extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(bt_confirm)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -197,13 +205,26 @@ public class RF21 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void Field_acessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Field_acessoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_Field_acessoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void bt_confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_confirmActionPerformed
+    try{ 
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_alterPass", "root", ""); 
+ java.sql.Statement st = conn.createStatement(); 
+ st.executeUpdate ("UPDATE alteracao set chaveAcesso = '"
+ +this.Field_acesso.getText()+ "' , senha ='" 
+         +this.field_senha.getText() + "' , confSenha ='" 
+         +this.field_confSenha.getText()+"'"); 
+ JOptionPane.showMessageDialog(rootPane, "Senha Alterada!"); 
+    }catch (SQLException ex){ 
+        Logger.getLogger(RF21.class.getName()) .log(Level.SEVERE,null, ex);
+        JOptionPane.showMessageDialog(null, ex.getMessage());
+    } 
+         
+
+    }//GEN-LAST:event_bt_confirmActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,17 +263,17 @@ public class RF21 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField Field_acesso;
+    private javax.swing.JButton bt_confirm;
+    private javax.swing.JLabel chaveAcesso;
+    private javax.swing.JLabel confSenha;
+    private javax.swing.JPasswordField field_confSenha;
+    private javax.swing.JPasswordField field_senha;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabeltitulo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel senha;
     // End of variables declaration//GEN-END:variables
 }
