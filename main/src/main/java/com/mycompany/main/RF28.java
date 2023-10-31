@@ -6,6 +6,7 @@ package com.mycompany.main;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -445,23 +446,21 @@ public class RF28 extends javax.swing.JFrame {
 
     private void REGISTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_REGISTRARActionPerformed
 
-        Connection conn = null;
-        java.sql.Statement st = null;
+        Connection conn ;
+        PreparedStatement statement;
         
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO","root","");
-            st = conn.createStatement();
-
-            st.executeUpdate("UPDATE localização SET rua = '"
-                    +this.DESTINO_RUA.getText()+"',corredor = '"
-                    +this.DESTINO_CORREDOR.getText()+"',pilha = '"
-                    +this.DESTINO_PILHA.getText()+"',nivel = '"
-                    +this.DESTINO_NIVEL.getText()+"'WHERE cod_carga = "
-                    +this.NUN_CARGA.getText()+""
-
-            );
+            
+            statement = conn.prepareStatement("UPDATE localização SET rua = ?, corredor = ?, pilha = ?, nivel = ? WHERE cod_carga = ? ");
+                    statement.setString(1, DESTINO_RUA.getText());
+                    statement.setString(2, DESTINO_CORREDOR.getText());
+                    statement.setString(3, DESTINO_PILHA.getText());
+                    statement.setString(4, DESTINO_NIVEL.getText());
+                    statement.setString(5, NUN_CARGA.getText());
+                    
         }catch(ClassNotFoundException | SQLException ex){
             Logger.getLogger(RF28.class.getName()).log(Level.SEVERE,null,ex);
         }
