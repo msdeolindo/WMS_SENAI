@@ -348,7 +348,7 @@ public class RF02 extends javax.swing.JFrame {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO","root","");
             st = conn.createStatement();
 
-            st.executeUpdate("INSET INTO agendamento (cliente,nome_resonsavel,data_agendamento,especificacao,carga,quantidade,transportadora,tipo_agendamento,cod_carga,tipo_carga) VALUES ('"
+            st.executeUpdate("INSERT INTO agendamento (cliente,nome_responsavel,data_agendamento,especificacao,carga,quantidade,transportadora,tipo_agendamento,cod_carga,tipo_carga) VALUES ('"
                     +this.Tfd_cliente.getText()+"','"
                     +this.Tfd_nomeResponsavel.getText()+"','"
                     +this.Tfd_dataAgendamento.getText()+"','"
