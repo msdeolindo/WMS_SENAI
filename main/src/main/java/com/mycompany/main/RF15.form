@@ -228,7 +228,7 @@
                                   <Component id="lbl_Categoria" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="txt_Categoria" alignment="0" min="-2" pref="317" max="-2" attributes="0"/>
                                   <Component id="lbl_DataDeEntrada" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txt_Data" min="-2" pref="240" max="-2" attributes="0"/>
+                                  <Component id="txt_DataDeEntrada" min="-2" pref="240" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
                           </Group>
@@ -273,7 +273,7 @@
                           <Group type="102" attributes="0">
                               <Component id="lbl_DataDeEntrada" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txt_Data" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="txt_DataDeEntrada" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
@@ -537,7 +537,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_Data">
+            <Component class="javax.swing.JTextField" name="txt_DataDeEntrada">
             </Component>
           </SubComponents>
         </Container>
