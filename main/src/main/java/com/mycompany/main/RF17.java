@@ -7,6 +7,11 @@ package com.mycompany.main;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,15 +38,14 @@ public class RF17 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lbl_voltar = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         lbl_cnpj = new javax.swing.JLabel();
         txt_cnpj = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txt_Razao_soci = new javax.swing.JTextField();
         lbl_razaoSocial = new javax.swing.JLabel();
-        txt_razaoSocial = new javax.swing.JTextField();
+        txt_NomeFanta = new javax.swing.JTextField();
         lbl_rua = new javax.swing.JLabel();
         txt_rua = new javax.swing.JTextField();
         lbl_num_rua = new javax.swing.JLabel();
@@ -51,7 +55,6 @@ public class RF17 extends javax.swing.JFrame {
         lbl_cidade = new javax.swing.JLabel();
         txt_cidade = new javax.swing.JTextField();
         lbl_uf = new javax.swing.JLabel();
-        txt_uf = new javax.swing.JTextField();
         lbl_cep = new javax.swing.JLabel();
         txt_cep = new javax.swing.JTextField();
         lbl_atv_come = new javax.swing.JLabel();
@@ -64,6 +67,7 @@ public class RF17 extends javax.swing.JFrame {
         txt_email = new javax.swing.JTextField();
         lbl_observacoes = new javax.swing.JLabel();
         txt_observacoes = new javax.swing.JTextField();
+        cbx_Uf = new javax.swing.JComboBox<>();
         btn_agendamento = new javax.swing.JButton();
         btn_salvar = new javax.swing.JButton();
         btn_alterar = new javax.swing.JButton();
@@ -73,7 +77,7 @@ public class RF17 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(32, 41, 171));
 
-        lbl_voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        lbl_voltar.setIcon(new javax.swing.ImageIcon("C:\\Users\\mbalonecker\\Desktop\\WMS_SENAI_GIT\\main\\src\\main\\java\\com\\mycompany\\main\\icon_back.png")); // NOI18N
         lbl_voltar.setText("jLabel1");
         lbl_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -85,8 +89,6 @@ public class RF17 extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(242, 242, 242));
         jLabel2.setText("Cadastro de Clientes");
 
-        jLabel1.setText("jLabel1");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -96,9 +98,7 @@ public class RF17 extends javax.swing.JFrame {
                 .addComponent(lbl_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(24, 24, 24))
+                .addContainerGap(545, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,8 +106,7 @@ public class RF17 extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_voltar)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -135,12 +134,6 @@ public class RF17 extends javax.swing.JFrame {
 
         lbl_uf.setText("UF");
 
-        txt_uf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_ufActionPerformed(evt);
-            }
-        });
-
         lbl_cep.setText("CEP");
 
         lbl_atv_come.setText("Atividade Comercial");
@@ -158,6 +151,8 @@ public class RF17 extends javax.swing.JFrame {
                 txt_observacoesActionPerformed(evt);
             }
         });
+
+        cbx_Uf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -181,22 +176,8 @@ public class RF17 extends javax.swing.JFrame {
                                 .addComponent(jLabel3)
                                 .addComponent(lbl_cnpj)
                                 .addComponent(txt_cnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txt_razaoSocial)
-                                .addComponent(jTextField2)
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(txt_rua, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel4Layout.createSequentialGroup()
-                                            .addComponent(txt_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(lbl_cidade)
-                                                .addComponent(txt_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lbl_uf)
-                                        .addComponent(txt_num_rua, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txt_uf, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txt_NomeFanta)
+                                .addComponent(txt_Razao_soci))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                                 .addComponent(lbl_rua, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(215, 215, 215)
@@ -218,7 +199,24 @@ public class RF17 extends javax.swing.JFrame {
                                 .addComponent(lbl_email, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txt_email))
                             .addComponent(lbl_observacoes))
-                        .addGap(18, 18, 18))))
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txt_rua, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(txt_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbl_cidade)
+                                    .addComponent(txt_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_num_rua, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbl_uf)
+                                    .addComponent(cbx_Uf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,7 +236,7 @@ public class RF17 extends javax.swing.JFrame {
                     .addComponent(lbl_contato_resp))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_Razao_soci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_respons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_contato_resp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -247,7 +245,7 @@ public class RF17 extends javax.swing.JFrame {
                     .addComponent(lbl_email))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_razaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_NomeFanta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -266,9 +264,9 @@ public class RF17 extends javax.swing.JFrame {
                             .addComponent(lbl_uf))
                         .addGap(5, 5, 5)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_uf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbx_Uf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lbl_cep)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -362,16 +360,63 @@ public class RF17 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_observacoesActionPerformed
 
-    private void txt_ufActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ufActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_ufActionPerformed
-
     private void txt_bairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_bairroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_bairroActionPerformed
 
     private void btn_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvarActionPerformed
+
+        Connection Conn = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
       
+        
+        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRO";
+        String user = "root";
+        String senha = "";
+        
+        try {
+            Conn = DriverManager.getConnection(url,user,senha);
+        
+        
+        
+        String sql = "INSERT INTO cadastro_cliente (cnpj,razaoSocial,nomeFantasia,rua,numRua,bairro,cidade,uf,cep,atv_comercial,nome_Responsavel,contato,email,obs) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+        
+         PreparedStatement st = Conn.prepareStatement(sql);
+         
+         st.setString(1, txt_cnpj.getText());
+         st.setString(2,txt_Razao_soci.getText());
+         st.setString(3,txt_NomeFanta.getText());
+         st.setString(4,txt_rua.getText());
+         st.setString(5, txt_num_rua.getText());
+         st.setString(6,txt_bairro.getText());
+         st.setString(7, txt_cidade.getText());
+         st.setString(8, (String) cbx_Uf.getSelectedItem());
+         st.setString(9,txt_cep.getText());
+         st.setString(10, txt_ativ_come.getText());
+         st.setString(11, txt_respons.getText());
+         st.setString(12, txt_contato_resp.getText());
+         st.setString(13, txt_email.getText());
+         st.setString(14,txt_observacoes.getText());
+         
+         st.execute();
+         st.close();
+        
+         JOptionPane.showMessageDialog(rootPane, "Cliente Inserido");
+         
+         btn_salvar.setVisible(false);
+         btn_agendamento.setVisible(true);
+         btn_alterar.setVisible(true);
+         btn_excluir.setVisible(true);
+         
+       } catch (SQLException ex) {
+            Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+       
     }//GEN-LAST:event_btn_salvarActionPerformed
 
     private void lbl_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_voltarMouseClicked
@@ -427,13 +472,12 @@ public class RF17 extends javax.swing.JFrame {
     private javax.swing.JButton btn_alterar;
     private javax.swing.JButton btn_excluir;
     private javax.swing.JButton btn_salvar;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> cbx_Uf;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lbl_atv_come;
     private javax.swing.JLabel lbl_bairro;
     private javax.swing.JLabel lbl_cep;
@@ -448,6 +492,8 @@ public class RF17 extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_rua;
     private javax.swing.JLabel lbl_uf;
     private javax.swing.JLabel lbl_voltar;
+    private javax.swing.JTextField txt_NomeFanta;
+    private javax.swing.JTextField txt_Razao_soci;
     private javax.swing.JTextField txt_ativ_come;
     private javax.swing.JTextField txt_bairro;
     private javax.swing.JTextField txt_cep;
@@ -457,9 +503,7 @@ public class RF17 extends javax.swing.JFrame {
     private javax.swing.JTextField txt_email;
     private javax.swing.JTextField txt_num_rua;
     private javax.swing.JTextField txt_observacoes;
-    private javax.swing.JTextField txt_razaoSocial;
     private javax.swing.JTextField txt_respons;
     private javax.swing.JTextField txt_rua;
-    private javax.swing.JTextField txt_uf;
     // End of variables declaration//GEN-END:variables
 }
