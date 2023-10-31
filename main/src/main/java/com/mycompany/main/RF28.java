@@ -461,6 +461,9 @@ public class RF28 extends javax.swing.JFrame {
                     statement.setString(4, DESTINO_NIVEL.getText());
                     statement.setString(5, NUN_CARGA.getText());
                     
+                    statement.execute();
+                    statement.close();
+                    
         }catch(ClassNotFoundException | SQLException ex){
             Logger.getLogger(RF28.class.getName()).log(Level.SEVERE,null,ex);
         }
