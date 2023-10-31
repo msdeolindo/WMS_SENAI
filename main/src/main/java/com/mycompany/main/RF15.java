@@ -6,6 +6,7 @@ package com.mycompany.main;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,6 +23,8 @@ public class RF15 extends javax.swing.JFrame {
      */
     public RF15() {
         initComponents();
+        btn_Editar.setVisible(false);
+        btn_Retirar.setVisible(false);
     }
 
     /**
@@ -60,7 +63,7 @@ public class RF15 extends javax.swing.JFrame {
         txt_Rua = new javax.swing.JTextField();
         txt_Pilha = new javax.swing.JTextField();
         txt_Nivel = new javax.swing.JTextField();
-        txt_Data = new javax.swing.JTextField();
+        txt_DataDeEntrada = new javax.swing.JTextField();
         btn_Editar = new javax.swing.JButton();
         brn_Salvar = new javax.swing.JButton();
         btn_Retirar = new javax.swing.JButton();
@@ -106,6 +109,7 @@ public class RF15 extends javax.swing.JFrame {
         );
 
         pnl_Inf_RegistroDeCarga.setBackground(new java.awt.Color(203, 200, 200));
+        pnl_Inf_RegistroDeCarga.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), null, null));
         pnl_Inf_RegistroDeCarga.setPreferredSize(new java.awt.Dimension(1900, 732));
 
         lbl_Produto.setBackground(new java.awt.Color(255, 255, 255));
@@ -228,7 +232,7 @@ public class RF15 extends javax.swing.JFrame {
                             .addComponent(lbl_Categoria)
                             .addComponent(txt_Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbl_DataDeEntrada)
-                            .addComponent(txt_Data, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt_DataDeEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(201, 201, 201))))
         );
         pnl_Inf_RegistroDeCargaLayout.setVerticalGroup(
@@ -261,7 +265,7 @@ public class RF15 extends javax.swing.JFrame {
                     .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
                         .addComponent(lbl_DataDeEntrada)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_Data, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txt_DataDeEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(78, 78, 78)
                 .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_Situacao)
@@ -399,22 +403,30 @@ public class RF15 extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_RetirarActionPerformed
 
     private void brn_SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brn_SalvarActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:       
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
-            java.sql.Statement st = conn.createStatement();
-            st.executeUpdate("INSERT INTO registrar_carga(txt_Produto, txt_CodigoDaCarga, txt_Categoria ,txt_Quantidade, cbx_TipoDaCarga, txt_DataDeEntrada, txt_Situacao, txt_Rua, txt_Corredor, txt_Pilha, txt_Nivel) VALUES ('"
-                    +this.txt_Produto.getText()+"',"
-                    +this.txt_CodigoDaCarga.getText()+",'"
-                    +this.txt_Categoria.getText()+"','"
-                    +this.txt_Quantidade.getText()+"','"
-                    +this.cbx_TipoDaCarga.getSelectedItem().toString()+"',"
-                    +this.txt_Data.getText()+",'"
-                    +this.txt_Situacao.getText()+"',"
-                    +this.txt_Rua.getText()+","
-                    +this.txt_Corredor.getText()+","
-                    +this.txt_Pilha.getText()+","
-                    +this.txt_Nivel.getText()+")");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");        
+            PreparedStatement statement;
+            statement = conn.prepareStatement("INSERT INTO registrar_carga(txt_Produto, txt_CodigoDaCarga, txt_Categoria ,txt_Quantidade, cbx_TipoDaCarga, txt_DataDeEntrada, txt_Situacao, txt_Rua, txt_Corredor, txt_Pilha, txt_Nivel) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            statement.setString(1, txt_Produto.getText());
+            statement.setString(2, txt_CodigoDaCarga.getText());
+            statement.setString(3, txt_Categoria.getText());
+            statement.setString(4, txt_Quantidade.getText());
+            statement.setString(5, cbx_TipoDaCarga.getSelectedItem().toString());
+            statement.setString(6, txt_DataDeEntrada.getText());
+            statement.setString(7, txt_Situacao.getText());
+            statement.setString(8, txt_Rua.getText());
+            statement.setString(9, txt_Corredor.getText());
+            statement.setString(10, txt_Pilha.getText());
+            statement.setString(11, txt_Nivel.getText());
+            
+            statement.execute();
+            statement.close();
+            
+            btn_Editar.setVisible(true);
+            btn_Retirar.setVisible(true);
+            
             JOptionPane.showMessageDialog(rootPane, "Carga registrada");
         } catch (SQLException ex) {
             Logger.getLogger(RF15.class.getName()).log(Level.SEVERE, null, ex);
@@ -482,7 +494,7 @@ public class RF15 extends javax.swing.JFrame {
     private javax.swing.JTextField txt_Categoria;
     private javax.swing.JTextField txt_CodigoDaCarga;
     private javax.swing.JTextField txt_Corredor;
-    private javax.swing.JTextField txt_Data;
+    private javax.swing.JTextField txt_DataDeEntrada;
     private javax.swing.JTextField txt_Nivel;
     private javax.swing.JTextField txt_Pilha;
     private javax.swing.JTextField txt_Produto;
