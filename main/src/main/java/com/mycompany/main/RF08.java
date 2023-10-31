@@ -6,6 +6,7 @@ package com.mycompany.main;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -384,38 +385,43 @@ public class RF08 extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_excluir_CadastroDeFuncionariosActionPerformed
 
     private void tbn_salvar_CadastroDeFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbn_salvar_CadastroDeFuncionariosActionPerformed
-             Connection conn;
+             Connection conexao=null;
+             
+             String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+             String usuario = "root";
+             String senha = "";
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/DB_WMS_PRD","root","");
-                     Class.forName("com.mysql.cj.jdbc.Driver");
+                conexao = DriverManager.getConnection(url,usuario,senha);
+                Class.forName("com.mysql.cj.jdbc.Driver");
                 
-            
-             java.sql.Statement st;
-            st = conn.createStatement();
-        
-               st.executeUpdate("INSERT INTO cadastro_funcionario (txtNomeCompleto,txtDataDeNascimento,txtCPF,txtRG,txtEndereco,txtTelefone,txtEmail, cbxCargo ,cbxEscolaridade,cbxEstadoCivil,txtCodigoDoFuncionario,txtDataDeAdmissao,pwdSenhaParaLogin  ) VALUES ('"
-                       +this.txtNomeCompleto.getText()+"','"
-                       +this.txtDataDeNascimento.getText()+"','"
-                       +this.txtCPF.getText()+"','"
-                       +this.txtRG.getText()+"','"
-                       +this.txtEndereco.getText()+"','"
-                       +this.txtTelefone.getText()+"','"
-                       +this.txtEmail.getText()+"','"
-                      +this.cbxCargo.getSelectedItem().toString()+"','"
-                       +this.cbxEscolaridade.getSelectedItem().toString()+"','"
-                       +this.cbxEstadoCivil.getSelectedItem().toString()+"','"
-                       +this.txtCodigoDoFuncionario.getText()+"','"
-                       +this.txtDataDeAdmissao.getText()+"','"
-                       +this.pwdSenhaParaLogin.getText()+"');");
+               String sql = "INSERT INTO cadastro_funcionario (txtNomeCompleto,txtDataDeNascimento,txtCPF,txtRG,txtEndereco,txtTelefone,txtEmail, cbxCargo ,cbxEscolaridade,cbxEstadoCivil,txtCodigoDoFuncionario,txtDataDeAdmissao,pwdSenhaParaLogin  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                        
+                PreparedStatement statement = conexao.prepareStatement(sql);
+               
+               statement.setString(1, txtNomeCompleto.getText());
+               statement.setString(2, txtDataDeNascimento.getText());
+               statement.setString(3, txtCPF.getText());
+               statement.setString(4, txtRG.getText());
+               statement.setString(5, txtEndereco.getText());
+               statement.setString(6, txtTelefone.getText());
+               statement.setString(7, txtEmail.getText());
+               statement.setString(8, cbxCargo.getSelectedItem().toString());
+               statement.setString(9, cbxEscolaridade.getSelectedItem().toString());
+               statement.setString(10, cbxEstadoCivil.getSelectedItem().toString());
+               statement.setString(11, txtCodigoDoFuncionario.getText());
+               statement.setString(12, txtDataDeAdmissao.getText());
+               statement.setString(13, pwdSenhaParaLogin.getText());
+                   
+               statement.execute();
+               statement.close();
                JOptionPane.showMessageDialog(rootPane,"Funcionario Inserido.");
                
             } catch (SQLException ex) {
                 Logger.getLogger(RF08.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RF08.class.getName()).log(Level.SEVERE, null, ex);
+        }
                 
-            }catch (ClassNotFoundException ex) {
-                     Logger.getLogger(RF08.class.getName()).log(Level.SEVERE, null, ex);
-                 }
         // TODO add your handling code here:
     }//GEN-LAST:event_tbn_salvar_CadastroDeFuncionariosActionPerformed
 
