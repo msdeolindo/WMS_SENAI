@@ -1,5 +1,13 @@
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -43,7 +51,7 @@ public class RF18 extends javax.swing.JFrame {
         bt_salvar = new javax.swing.JButton();
         tf_quantidade = new javax.swing.JTextField();
         tf_avarias = new javax.swing.JTextField();
-        tf_observação = new javax.swing.JTextField();
+        tf_observacao = new javax.swing.JTextField();
         bt_devolução = new javax.swing.JButton();
         tf_codigo = new javax.swing.JTextField();
         jsp_tabela_agendamento = new javax.swing.JScrollPane();
@@ -154,15 +162,20 @@ public class RF18 extends javax.swing.JFrame {
             }
         });
 
-        tf_observação.addActionListener(new java.awt.event.ActionListener() {
+        tf_observacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_observaçãoActionPerformed(evt);
+                tf_observacaoActionPerformed(evt);
             }
         });
 
         bt_devolução.setBackground(new java.awt.Color(32, 41, 171));
         bt_devolução.setForeground(new java.awt.Color(255, 255, 255));
         bt_devolução.setText("DEVOLUÇÃO");
+        bt_devolução.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_devoluçãoMouseClicked(evt);
+            }
+        });
         bt_devolução.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_devoluçãoActionPerformed(evt);
@@ -217,7 +230,7 @@ public class RF18 extends javax.swing.JFrame {
                                 .addGap(47, 47, 47)
                                 .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lbl_obeservação)
-                                    .addComponent(tf_observação, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tf_observacao, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(48, 48, 48)
                                 .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(tf_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -252,7 +265,7 @@ public class RF18 extends javax.swing.JFrame {
                     .addComponent(lbl_quantidade_avarias))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tf_observação, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_observacao, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_avarias)
                     .addComponent(tf_quantidade))
                 .addGap(94, 94, 94)
@@ -306,6 +319,38 @@ public class RF18 extends javax.swing.JFrame {
         FrameLocalizacao.setVisible(true);
         this.dispose();
         // TODO add your handling code here:
+        
+        Connection conexao = null;
+         
+        
+        String url = "jdbc:mysql://localhost:3306/db_wms_prod";
+        String usuario = "root";
+        String senha = "";
+        
+        try {        
+          conexao = DriverManager.getConnection(url,usuario,senha);
+            
+            String sql = "INSERT INTO recebimento (id_carga,avarias,observacao,quantidade) VALUES (?, ?, ?, ?)";
+           
+            PreparedStatement statement = conexao.prepareStatement(sql);
+             
+            statement.setString(1,tf_codigo.getText());
+            statement.setString(2,tf_avarias.getText());
+            statement.setString(3,tf_observacao.getText());
+            statement.setString(4,tf_quantidade.getText());
+            
+            
+           JOptionPane.showMessageDialog(rootPane,"Recebimento salvo.");
+           
+           statement.execute();
+           statement.close();
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+        
+            
     }//GEN-LAST:event_bt_salvarActionPerformed
 
     private void tf_quantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_quantidadeActionPerformed
@@ -316,9 +361,9 @@ public class RF18 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_avariasActionPerformed
 
-    private void tf_observaçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_observaçãoActionPerformed
+    private void tf_observacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_observacaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_observaçãoActionPerformed
+    }//GEN-LAST:event_tf_observacaoActionPerformed
 
     private void bt_devoluçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_devoluçãoActionPerformed
         RF22 FrameDevolucao = new RF22();
@@ -336,6 +381,10 @@ public class RF18 extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_lbl_icone_voltarMouseClicked
+
+    private void bt_devoluçãoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_devoluçãoMouseClicked
+       
+    }//GEN-LAST:event_bt_devoluçãoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -396,7 +445,7 @@ public class RF18 extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_recebimento;
     private javax.swing.JTextField tf_avarias;
     private javax.swing.JTextField tf_codigo;
-    private javax.swing.JTextField tf_observação;
+    private javax.swing.JTextField tf_observacao;
     private javax.swing.JTextField tf_quantidade;
     // End of variables declaration//GEN-END:variables
 }

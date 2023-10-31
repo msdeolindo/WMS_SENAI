@@ -227,7 +227,7 @@
                                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="lbl_obeservação" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tf_observação" alignment="0" min="-2" pref="481" max="-2" attributes="0"/>
+                                          <Component id="tf_observacao" alignment="0" min="-2" pref="481" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -276,7 +276,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="tf_observação" min="-2" pref="44" max="-2" attributes="0"/>
+                          <Component id="tf_observacao" min="-2" pref="44" max="-2" attributes="0"/>
                           <Component id="tf_avarias" max="32767" attributes="0"/>
                           <Component id="tf_quantidade" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -339,9 +339,9 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_avariasActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf_observa&#xe7;&#xe3;o">
+            <Component class="javax.swing.JTextField" name="tf_observacao">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_observa&#xe7;&#xe3;oActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_observacaoActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bt_devolu&#xe7;&#xe3;o">
@@ -355,6 +355,7 @@
                 <Property name="text" type="java.lang.String" value="DEVOLU&#xc7;&#xc3;O"/>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt_devolu&#xe7;&#xe3;oMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_devolu&#xe7;&#xe3;oActionPerformed"/>
               </Events>
             </Component>

@@ -4,6 +4,13 @@
  */
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author meggi
@@ -29,8 +36,7 @@ public class RF22 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         lbl_dev_Carga = new javax.swing.JLabel();
-        btn_fechar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         txt_motiv_dev = new javax.swing.JTextField();
         lbl_motiv_dev = new javax.swing.JLabel();
@@ -55,18 +61,7 @@ public class RF22 extends javax.swing.JFrame {
         lbl_dev_Carga.setForeground(new java.awt.Color(242, 242, 242));
         lbl_dev_Carga.setText("Devolucao de Cargas");
 
-        btn_fechar.setBackground(new java.awt.Color(41, 41, 171));
-        btn_fechar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btn_fechar.setForeground(new java.awt.Color(242, 242, 242));
-        btn_fechar.setText("x");
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
-        jLabel1.setText("jLabel1");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
+        jLabel2.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -74,12 +69,10 @@ public class RF22 extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(lbl_dev_Carga)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addComponent(btn_fechar)
-                .addContainerGap())
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,9 +80,8 @@ public class RF22 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_dev_Carga)
-                    .addComponent(btn_fechar)
-                    .addComponent(jLabel1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(217, 217, 217));
@@ -130,7 +122,7 @@ public class RF22 extends javax.swing.JFrame {
                 .addComponent(lbl_motiv_dev)
                 .addGap(24, 24, 24)
                 .addComponent(txt_motiv_dev, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(btn_confirmar))
         );
 
@@ -162,17 +154,33 @@ public class RF22 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-      RF18 novoFrame = new RF18();
-      novoFrame.setVisible(true);
-      this.dispose();
-    }//GEN-LAST:event_jLabel1MouseClicked
-
     private void btn_confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_confirmarActionPerformed
-        RF30 FrameMenu = new RF30();
-        FrameMenu.setVisible(true);
-        this.dispose();
-        // TODO add your handling code here:
+        
+        try {
+           // Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO", "root", "");
+            
+            
+            
+            
+            java.sql.Statement st = conn.createStatement();
+            
+            st.executeUpdate("INSERT INTO devolucao(motivo) VALUES ("
+                    +this.txt_motiv_dev.getText()+")"
+     
+            );
+            
+            JOptionPane.showMessageDialog(rootPane, "Salvo!");
+            
+            st.close();
+            
+            RF30 FrameMenu = new RF30();
+            FrameMenu.setVisible(true);
+            this.dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(RF22.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
     }//GEN-LAST:event_btn_confirmarActionPerformed
 
     /**
@@ -213,8 +221,7 @@ public class RF22 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_confirmar;
-    private javax.swing.JButton btn_fechar;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
