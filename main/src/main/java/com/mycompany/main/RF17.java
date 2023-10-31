@@ -4,6 +4,10 @@
  */
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+
 /**
  *
  * @author mbalonecker
@@ -29,6 +33,7 @@ public class RF17 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lbl_voltar = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         lbl_cnpj = new javax.swing.JLabel();
@@ -80,6 +85,8 @@ public class RF17 extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(242, 242, 242));
         jLabel2.setText("Cadastro de Clientes");
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -89,7 +96,9 @@ public class RF17 extends javax.swing.JFrame {
                 .addComponent(lbl_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(24, 24, 24))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,7 +106,8 @@ public class RF17 extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_voltar)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -273,6 +283,11 @@ public class RF17 extends javax.swing.JFrame {
         btn_agendamento.setBackground(new java.awt.Color(32, 41, 171));
         btn_agendamento.setForeground(new java.awt.Color(242, 242, 242));
         btn_agendamento.setText("Agendamento");
+        btn_agendamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agendamentoActionPerformed(evt);
+            }
+        });
 
         btn_salvar.setBackground(new java.awt.Color(32, 41, 171));
         btn_salvar.setForeground(new java.awt.Color(242, 242, 242));
@@ -356,7 +371,7 @@ public class RF17 extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_bairroActionPerformed
 
     private void btn_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvarActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_btn_salvarActionPerformed
 
     private void lbl_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_voltarMouseClicked
@@ -364,6 +379,12 @@ public class RF17 extends javax.swing.JFrame {
         novoFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lbl_voltarMouseClicked
+
+    private void btn_agendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agendamentoActionPerformed
+       RF02 novoFrame = new RF02();
+       novoFrame.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_btn_agendamentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -406,6 +427,7 @@ public class RF17 extends javax.swing.JFrame {
     private javax.swing.JButton btn_alterar;
     private javax.swing.JButton btn_excluir;
     private javax.swing.JButton btn_salvar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
