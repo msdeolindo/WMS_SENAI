@@ -4,6 +4,13 @@
  */
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jsantos
@@ -437,6 +444,30 @@ public class RF28 extends javax.swing.JFrame {
     }//GEN-LAST:event_REGISTRARKeyPressed
 
     private void REGISTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_REGISTRARActionPerformed
+
+        Connection conn = null;
+        java.sql.Statement st = null;
+        
+        try{
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO","root","");
+            st = conn.createStatement();
+
+            st.executeUpdate("UPDATE localização SET rua = '"
+                    +this.DESTINO_RUA.getText()+"',corredor = '"
+                    +this.DESTINO_CORREDOR.getText()+"',pilha = '"
+                    +this.DESTINO_PILHA.getText()+"',nivel = '"
+                    +this.DESTINO_NIVEL.getText()+"'WHERE cod_carga = "
+                    +this.NUN_CARGA.getText()+""
+
+            );
+        }catch(ClassNotFoundException | SQLException ex){
+            Logger.getLogger(RF28.class.getName()).log(Level.SEVERE,null,ex);
+        }
+        
+        JOptionPane.showMessageDialog(jPanel1,"Localização Atualizada!!");    
+
         RF25 FrameEtiqueta = new RF25();
         FrameEtiqueta.setVisible(true);
         this.dispose();

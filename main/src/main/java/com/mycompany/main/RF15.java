@@ -4,6 +4,14 @@
  */
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author braya
@@ -15,6 +23,8 @@ public class RF15 extends javax.swing.JFrame {
      */
     public RF15() {
         initComponents();
+        btn_Editar.setVisible(false);
+        btn_Retirar.setVisible(false);
     }
 
     /**
@@ -42,7 +52,6 @@ public class RF15 extends javax.swing.JFrame {
         lbl_TipoDaCarga = new javax.swing.JLabel();
         cbx_TipoDaCarga = new javax.swing.JComboBox<>();
         lbl_DataDeEntrada = new javax.swing.JLabel();
-        txt_DataDeEntrada = new javax.swing.JFormattedTextField();
         lbl_Situacao = new javax.swing.JLabel();
         txt_Situacao = new javax.swing.JTextField();
         lbl_Localizacao = new javax.swing.JLabel();
@@ -54,6 +63,7 @@ public class RF15 extends javax.swing.JFrame {
         txt_Rua = new javax.swing.JTextField();
         txt_Pilha = new javax.swing.JTextField();
         txt_Nivel = new javax.swing.JTextField();
+        txt_DataDeEntrada = new javax.swing.JTextField();
         btn_Editar = new javax.swing.JButton();
         brn_Salvar = new javax.swing.JButton();
         btn_Retirar = new javax.swing.JButton();
@@ -136,14 +146,6 @@ public class RF15 extends javax.swing.JFrame {
         lbl_DataDeEntrada.setBackground(new java.awt.Color(255, 255, 255));
         lbl_DataDeEntrada.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
         lbl_DataDeEntrada.setText("Data da entrada");
-
-        txt_DataDeEntrada.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        txt_DataDeEntrada.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_DataDeEntrada.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_DataDeEntradaActionPerformed(evt);
-            }
-        });
 
         lbl_Situacao.setBackground(new java.awt.Color(255, 255, 255));
         lbl_Situacao.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
@@ -229,9 +231,8 @@ public class RF15 extends javax.swing.JFrame {
                         .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_Categoria)
                             .addComponent(txt_Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txt_DataDeEntrada, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lbl_DataDeEntrada, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(lbl_DataDeEntrada)
+                            .addComponent(txt_DataDeEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(201, 201, 201))))
         );
         pnl_Inf_RegistroDeCargaLayout.setVerticalGroup(
@@ -263,8 +264,8 @@ public class RF15 extends javax.swing.JFrame {
                             .addComponent(cbx_TipoDaCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
                         .addComponent(lbl_DataDeEntrada)
-                        .addGap(3, 3, 3)
-                        .addComponent(txt_DataDeEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_DataDeEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(78, 78, 78)
                 .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_Situacao)
@@ -313,6 +314,11 @@ public class RF15 extends javax.swing.JFrame {
         brn_Salvar.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
         brn_Salvar.setForeground(new java.awt.Color(255, 255, 255));
         brn_Salvar.setText("Salvar");
+        brn_Salvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                brn_SalvarActionPerformed(evt);
+            }
+        });
 
         btn_Retirar.setBackground(new java.awt.Color(32, 40, 171));
         btn_Retirar.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
@@ -376,10 +382,6 @@ public class RF15 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_DataDeEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_DataDeEntradaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_DataDeEntradaActionPerformed
-
     private void lbl_BotaoVoltaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_BotaoVoltaMouseClicked
         // TODO add your handling code here:
         RF01 ListaDeArmazem = new RF01();
@@ -399,6 +401,37 @@ public class RF15 extends javax.swing.JFrame {
         this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_RetirarActionPerformed
+
+    private void brn_SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brn_SalvarActionPerformed
+        // TODO add your handling code here:       
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");        
+            PreparedStatement statement;
+            statement = conn.prepareStatement("INSERT INTO registrar_carga(txt_Produto, txt_CodigoDaCarga, txt_Categoria ,txt_Quantidade, cbx_TipoDaCarga, txt_DataDeEntrada, txt_Situacao, txt_Rua, txt_Corredor, txt_Pilha, txt_Nivel) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            statement.setString(1, txt_Produto.getText());
+            statement.setString(2, txt_CodigoDaCarga.getText());
+            statement.setString(3, txt_Categoria.getText());
+            statement.setString(4, txt_Quantidade.getText());
+            statement.setString(5, cbx_TipoDaCarga.getSelectedItem().toString());
+            statement.setString(6, txt_DataDeEntrada.getText());
+            statement.setString(7, txt_Situacao.getText());
+            statement.setString(8, txt_Rua.getText());
+            statement.setString(9, txt_Corredor.getText());
+            statement.setString(10, txt_Pilha.getText());
+            statement.setString(11, txt_Nivel.getText());
+            
+            statement.execute();
+            statement.close();
+            
+            btn_Editar.setVisible(true);
+            btn_Retirar.setVisible(true);
+            
+            JOptionPane.showMessageDialog(rootPane, "Carga registrada");
+        } catch (SQLException ex) {
+            Logger.getLogger(RF15.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_brn_SalvarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -461,7 +494,7 @@ public class RF15 extends javax.swing.JFrame {
     private javax.swing.JTextField txt_Categoria;
     private javax.swing.JTextField txt_CodigoDaCarga;
     private javax.swing.JTextField txt_Corredor;
-    private javax.swing.JFormattedTextField txt_DataDeEntrada;
+    private javax.swing.JTextField txt_DataDeEntrada;
     private javax.swing.JTextField txt_Nivel;
     private javax.swing.JTextField txt_Pilha;
     private javax.swing.JTextField txt_Produto;
