@@ -359,7 +359,9 @@ public class RF02 extends javax.swing.JFrame {
                     statement.setString(8, (String) Cbx_tipoAgendamento.getSelectedItem());
                     statement.setString(9, Tfd_codCarga.getText());
                     statement.setString(10,(String) Cbx_tipo.getSelectedItem());
-                          
+        
+                    statement.execute();
+                    statement.close();
         }catch(ClassNotFoundException | SQLException ex){
             Logger.getLogger(RF02.class.getName()).log(Level.SEVERE,null,ex);
         }

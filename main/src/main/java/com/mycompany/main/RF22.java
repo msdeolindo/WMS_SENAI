@@ -6,6 +6,7 @@ package com.mycompany.main;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -70,17 +71,17 @@ public class RF22 extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_dev_Carga)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_dev_Carga)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_dev_Carga))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -108,11 +109,11 @@ public class RF22 extends javax.swing.JFrame {
                         .addGap(15, 15, 15)
                         .addComponent(txt_motiv_dev, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addComponent(lbl_motiv_dev))
+                        .addGap(171, 171, 171)
+                        .addComponent(btn_confirmar))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(180, 180, 180)
-                        .addComponent(btn_confirmar)))
+                        .addGap(144, 144, 144)
+                        .addComponent(lbl_motiv_dev)))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -122,8 +123,9 @@ public class RF22 extends javax.swing.JFrame {
                 .addComponent(lbl_motiv_dev)
                 .addGap(24, 24, 24)
                 .addComponent(txt_motiv_dev, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(btn_confirmar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addComponent(btn_confirmar)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -157,30 +159,51 @@ public class RF22 extends javax.swing.JFrame {
     private void btn_confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_confirmarActionPerformed
         
         try {
-           // Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO", "root", "");
-            
-            
-            
-            
+            /*   try {
+            // Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO", "root", "")
             java.sql.Statement st = conn.createStatement();
             
             st.executeUpdate("INSERT INTO devolucao(motivo) VALUES ("
-                    +this.txt_motiv_dev.getText()+")"
-     
+            +this.txt_motiv_dev.getText()+")"
+            
             );
             
             JOptionPane.showMessageDialog(rootPane, "Salvo!");
             
             st.close();
             
-            RF30 FrameMenu = new RF30();
+
+            } catch (SQLException ex) {
+            Logger.getLogger(RF22.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            */
+            Connection conexao=null;
+            
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRO";
+            String usuario = "root";
+            String senha = "";
+            
+            conexao = DriverManager.getConnection(url,usuario,senha);
+            
+            String sql = "INSERT INTO devolucao (motivo) VALUES (?)";
+            PreparedStatement statement = conexao.prepareStatement(sql);
+            statement.setString (1,txt_motiv_dev.getText());
+            statement.execute();
+            
+            
+            JOptionPane.showMessageDialog(rootPane, "Salvo!");
+            statement.close();
+             RF30 FrameMenu = new RF30();
             FrameMenu.setVisible(true);
             this.dispose();
+            
+            
         } catch (SQLException ex) {
+           
             Logger.getLogger(RF22.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
+     
     }//GEN-LAST:event_btn_confirmarActionPerformed
 
     /**
