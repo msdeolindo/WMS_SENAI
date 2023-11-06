@@ -46,8 +46,8 @@ public class RF02 extends javax.swing.JFrame {
         Tfd_nomeResponsavel = new javax.swing.JTextField();
         Lbl_dataAgendamento = new javax.swing.JLabel();
         Tfd_dataAgendamento = new javax.swing.JTextField();
-        Lbl_especificacao = new javax.swing.JLabel();
-        Tfd_especificacao = new javax.swing.JTextField();
+        Lbl_categoria = new javax.swing.JLabel();
+        Tfd_categoria = new javax.swing.JTextField();
         Lbl_carga = new javax.swing.JLabel();
         Tfd_carga = new javax.swing.JTextField();
         Lbl_quantidade = new javax.swing.JLabel();
@@ -114,8 +114,8 @@ public class RF02 extends javax.swing.JFrame {
         Lbl_dataAgendamento.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Lbl_dataAgendamento.setText("Data agendamento");
 
-        Lbl_especificacao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        Lbl_especificacao.setText("Especificação");
+        Lbl_categoria.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        Lbl_categoria.setText("Categoria");
 
         Lbl_carga.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Lbl_carga.setText("Carga");
@@ -169,8 +169,8 @@ public class RF02 extends javax.swing.JFrame {
                                         .addComponent(Lbl_nomeResponsalvel))
                                     .addGroup(Pnl_conteudoCentralLayout.createSequentialGroup()
                                         .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Tfd_especificacao, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Lbl_especificacao))
+                                            .addComponent(Tfd_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Lbl_categoria))
                                         .addGap(36, 36, 36)
                                         .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(Lbl_carga)
@@ -225,14 +225,14 @@ public class RF02 extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_conteudoCentralLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Lbl_especificacao)
+                            .addComponent(Lbl_categoria)
                             .addComponent(Lbl_carga))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Tfd_carga, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Tfd_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Tfd_especificacao, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Tfd_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Cbx_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(86, 86, 86)
                 .addGroup(Pnl_conteudoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -348,17 +348,15 @@ public class RF02 extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO","root","");
            
-            statement = conn.prepareStatement ("INSERT INTO agendamento (cliente,nome_responsavel,data_agendamento,especificacao,carga,quantidade,transportadora,tipo_agendamento,cod_carga,tipo_carga) VALUES (?,?,?,?,?,?,?,?,?,?)");
-                    statement.setString(1, Tfd_cliente.getText());
-                    statement.setString(2, Tfd_nomeResponsavel.getText());
-                    statement.setString(3, Tfd_dataAgendamento.getText());
-                    statement.setString(4, Tfd_especificacao.getText());
-                    statement.setString(5, Tfd_carga.getText());
-                    statement.setString(6, Tfd_quantidade.getText());
-                    statement.setString(7, Tfd_transportadora.getText());
-                    statement.setString(8, (String) Cbx_tipoAgendamento.getSelectedItem());
-                    statement.setString(9, Tfd_codCarga.getText());
-                    statement.setString(10,(String) Cbx_tipo.getSelectedItem());
+            statement = conn.prepareStatement ("INSERT INTO agendamentos (cliente_id,data_agendamento,categoria,carga,quantidade,transportadora,tipo_agendamento,tipo_carga) VALUES (?,?,?,?,?,?,?,?)");
+                    statement.setInt(1, Integer.parseInt(Tfd_cliente.getText()));
+                    statement.setString(2, Tfd_dataAgendamento.getText());
+                    statement.setString(3, Tfd_categoria.getText());
+                    statement.setString(4, Tfd_carga.getText());
+                    statement.setInt(5, Integer.parseInt(Tfd_quantidade.getText()));
+                    statement.setString(6, Tfd_transportadora.getText());
+                    statement.setString(7, (String) Cbx_tipoAgendamento.getSelectedItem());
+                    statement.setString(8,(String) Cbx_tipo.getSelectedItem());
         
                     statement.execute();
                     statement.close();
@@ -389,18 +387,20 @@ public class RF02 extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO","root","");
 
-            statement = conn.prepareStatement ("UPDATE agendamento SET cliente = ?,nome_responsavel = ?, data_agendamento = ?, especificacao = ?, carga = ?, quantidade = ?, transportadora = ?,tipo_agendamento = ?,cod_carga = ?,tipo_carga = ? WHERE id = 1");
+            statement = conn.prepareStatement ("UPDATE agendamentos SET cliente_id = ?, data_agendamento = ?, categoria = ?, carga = ?, quantidade = ?, transportadora = ?,tipo_agendamento = ?,tipo_carga = ? WHERE id = ?");
             
-                    statement.setString(1, Tfd_cliente.getText());
-                    statement.setString(2, Tfd_nomeResponsavel.getText());
-                    statement.setString(3, Tfd_dataAgendamento.getText());
-                    statement.setString(4, Tfd_especificacao.getText());
-                    statement.setString(5, Tfd_carga.getText());
-                    statement.setString(6, Tfd_quantidade.getText());
-                    statement.setString(7, Tfd_transportadora.getText());
-                    statement.setString(8, (String) Cbx_tipoAgendamento.getSelectedItem());
-                    statement.setString(9, Tfd_codCarga.getText());
-                    statement.setString(10,(String) Cbx_tipo.getSelectedItem());
+                    statement.setInt(1, Integer.parseInt(Tfd_cliente.getText()));
+                    statement.setString(2, Tfd_dataAgendamento.getText());
+                    statement.setString(3, Tfd_categoria.getText());
+                    statement.setString(4, Tfd_carga.getText());
+                    statement.setInt(5, Integer.parseInt(Tfd_quantidade.getText()));
+                    statement.setString(6, Tfd_transportadora.getText());
+                    statement.setString(7, (String) Cbx_tipoAgendamento.getSelectedItem());
+                    statement.setString(8,(String) Cbx_tipo.getSelectedItem());
+                    statement.setInt(9, Integer.parseInt(Tfd_nomeResponsavel.getText()));
+                    
+                    statement.execute();
+                    statement.close();
                          
         }catch(ClassNotFoundException | SQLException ex){
             Logger.getLogger(RF02.class.getName()).log(Level.SEVERE,null,ex);
@@ -415,17 +415,17 @@ public class RF02 extends javax.swing.JFrame {
     private void Btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_cancelarActionPerformed
                
         Connection conn ;
-        java.sql.Statement st ;
+        PreparedStatement statement;
         
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO","root","");
-            st = conn.createStatement();
-
-            st.executeUpdate("DELETE FROM agendamento WHERE id = 1"
-                    
-            );
+            statement = conn.prepareStatement("DELETE FROM agendamentos WHERE id = ?" );
+            statement.setInt(1, Integer.parseInt(Tfd_nomeResponsavel.getText()));
+       
+             statement.execute();
+             statement.close();
         }catch(ClassNotFoundException | SQLException ex){
             Logger.getLogger(RF02.class.getName()).log(Level.SEVERE,null,ex);
         }
@@ -478,10 +478,10 @@ public class RF02 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Cbx_tipo;
     private javax.swing.JComboBox<String> Cbx_tipoAgendamento;
     private javax.swing.JLabel Lbl_carga;
+    private javax.swing.JLabel Lbl_categoria;
     private javax.swing.JLabel Lbl_cliente;
     private javax.swing.JLabel Lbl_codCarga;
     private javax.swing.JLabel Lbl_dataAgendamento;
-    private javax.swing.JLabel Lbl_especificacao;
     private javax.swing.JLabel Lbl_iconeBotaoVoltar;
     private javax.swing.JLabel Lbl_nomeAgendamento;
     private javax.swing.JLabel Lbl_nomeResponsalvel;
@@ -493,10 +493,10 @@ public class RF02 extends javax.swing.JFrame {
     private javax.swing.JPanel Pnl_conteudoCentral;
     private javax.swing.JPanel Pnl_principal;
     private javax.swing.JTextField Tfd_carga;
+    private javax.swing.JTextField Tfd_categoria;
     private javax.swing.JTextField Tfd_cliente;
     private javax.swing.JTextField Tfd_codCarga;
     private javax.swing.JTextField Tfd_dataAgendamento;
-    private javax.swing.JTextField Tfd_especificacao;
     private javax.swing.JTextField Tfd_nomeResponsavel;
     private javax.swing.JTextField Tfd_quantidade;
     private javax.swing.JTextField Tfd_transportadora;

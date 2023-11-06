@@ -46,10 +46,10 @@ public class RF16_POP extends javax.swing.JFrame {
         txt_Nivel = new javax.swing.JTextField();
         btn_Salvar = new javax.swing.JButton();
         btn_Editar = new javax.swing.JButton();
-        lbl_Tipo_Carga = new javax.swing.JLabel();
-        lbl_Tipo_Armazenagem = new javax.swing.JLabel();
-        cbx_tipo_armazenagem = new javax.swing.JComboBox<>();
-        cbx_tipo_carga = new javax.swing.JComboBox<>();
+        lbl_categoria = new javax.swing.JLabel();
+        lbl_tipoCarga = new javax.swing.JLabel();
+        cbx_tipoCarga = new javax.swing.JComboBox<>();
+        cbx_categoria = new javax.swing.JComboBox<>();
         btn_Excluir = new javax.swing.JButton();
         lbl_Pilha = new javax.swing.JLabel();
         txt_endereco = new javax.swing.JTextField();
@@ -90,18 +90,18 @@ public class RF16_POP extends javax.swing.JFrame {
             }
         });
 
-        lbl_Tipo_Carga.setText("TIPO DE CARGA");
+        lbl_categoria.setText("CATEGORIA");
 
-        lbl_Tipo_Armazenagem.setText("TIPO DE ARMAZENAGEM");
+        lbl_tipoCarga.setText("TIPO DE CARGA");
 
-        cbx_tipo_armazenagem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paletizada", "Normal" }));
-        cbx_tipo_armazenagem.addActionListener(new java.awt.event.ActionListener() {
+        cbx_tipoCarga.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paletizada", "Normal" }));
+        cbx_tipoCarga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbx_tipo_armazenagemActionPerformed(evt);
+                cbx_tipoCargaActionPerformed(evt);
             }
         });
 
-        cbx_tipo_carga.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A granel", "Secas", "Frágeis" }));
+        cbx_categoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A granel", "Secas", "Frágeis" }));
 
         btn_Excluir.setText("EXCLUIR");
         btn_Excluir.addActionListener(new java.awt.event.ActionListener() {
@@ -135,15 +135,15 @@ public class RF16_POP extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(cbx_tipo_carga, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cbx_categoria, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(lbl_Rua)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txt_Rua, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(91, 91, 91))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lbl_Tipo_Carga)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 221, Short.MAX_VALUE)))))
+                                .addComponent(lbl_categoria)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lbl_Nivel)
@@ -151,8 +151,8 @@ public class RF16_POP extends javax.swing.JFrame {
                         .addComponent(txt_Nivel))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Tipo_Armazenagem)
-                            .addComponent(cbx_tipo_armazenagem, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbl_tipoCarga)
+                            .addComponent(cbx_tipoCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(lbl_Corredor)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -182,12 +182,12 @@ public class RF16_POP extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_Tipo_Carga)
-                    .addComponent(lbl_Tipo_Armazenagem))
+                    .addComponent(lbl_categoria)
+                    .addComponent(lbl_tipoCarga))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbx_tipo_armazenagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbx_tipo_carga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbx_tipoCarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbx_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_Rua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -221,7 +221,6 @@ public class RF16_POP extends javax.swing.JFrame {
         lb_Titulo.setForeground(new java.awt.Color(255, 255, 255));
         lb_Titulo.setText("Cadastro de Armazenagem");
 
-        lb_Voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         lb_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lb_VoltarMouseClicked(evt);
@@ -279,19 +278,22 @@ public class RF16_POP extends javax.swing.JFrame {
 
     private void btn_ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExcluirActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
-            java.sql.Statement st = conn.createStatement();
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO", "root", "");
+            PreparedStatement statement;
+            statement = conn.prepareStatement("DELETE FROM enderecos WHERE id = ?");
+            statement.setInt(1,Integer.parseInt(lbl_id.getText()));
+            statement.execute();
+            statement.close();
             
-            st.executeUpdate("DELETE FROM cadastro_de_endereco WHERE id_endereco='" + this.lbl_id.getText()+"'");
             JOptionPane.showMessageDialog(rootPane, "local excluido");
         } catch (SQLException ex) {
             Logger.getLogger(RF16_POP.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btn_ExcluirActionPerformed
 
-    private void cbx_tipo_armazenagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_tipo_armazenagemActionPerformed
+    private void cbx_tipoCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_tipoCargaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbx_tipo_armazenagemActionPerformed
+    }//GEN-LAST:event_cbx_tipoCargaActionPerformed
 
     private void btn_EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EditarActionPerformed
         /*try {
@@ -309,18 +311,18 @@ public class RF16_POP extends javax.swing.JFrame {
         }*/
         
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO", "root", "");
             PreparedStatement statement;
             
-            statement = conn.prepareStatement("UPDATE cadastro_de_endereco SET tipo_carga=?, tipo_armazenagem=?, rua=?, corredor=?, pilha=?, nivel=? WHERE id_endereco = ?");
+            statement = conn.prepareStatement("UPDATE enderecos SET categoria=?, tipo_carga=?, rua=?, corredor=?, pilha=?, nivel=? WHERE id = ?");
             
-            statement.setString(1, cbx_tipo_carga.getSelectedItem().toString());
-            statement.setString(2, cbx_tipo_armazenagem.getSelectedItem().toString());
-            statement.setString(3, txt_Rua.getText());
-            statement.setString(4, txt_Corredor.getText());
-            statement.setString(5, txt_Pilha.getText());
-            statement.setString(6, txt_Nivel.getText());
-            statement.setString(7, lbl_id.getText());
+            statement.setString(1, cbx_categoria.getSelectedItem().toString());
+            statement.setString(2, cbx_tipoCarga.getSelectedItem().toString());
+            statement.setInt(3, Integer.parseInt(txt_Rua.getText()));
+            statement.setInt(4, Integer.parseInt(txt_Corredor.getText()));
+            statement.setInt(5, Integer.parseInt(txt_Pilha.getText()));
+            statement.setInt(6, Integer.parseInt(txt_Nivel.getText()));
+            statement.setInt(7, Integer.parseInt(lbl_id.getText()));
             
             statement.execute();
             statement.close();
@@ -345,16 +347,16 @@ public class RF16_POP extends javax.swing.JFrame {
 
     private void btn_SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalvarActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO", "root", "");
             PreparedStatement statement;
-            statement = conn.prepareStatement("INSERT INTO cadastro_de_endereco(tipo_carga, tipo_armazenagem, rua, corredor, pilha, nivel) VALUES (?, ?, ?, ?, ?, ?)");
+            statement = conn.prepareStatement("INSERT INTO enderecos(categoria, tipo_carga, rua, corredor, pilha, nivel) VALUES (?, ?, ?, ?, ?, ?)");
             
-            statement.setString(1, cbx_tipo_carga.getSelectedItem().toString());
-            statement.setString(2, cbx_tipo_armazenagem.getSelectedItem().toString());
-            statement.setString(3, txt_Rua.getText());
-            statement.setString(4, txt_Corredor.getText());
-            statement.setString(5, txt_Pilha.getText());
-            statement.setString(6, txt_Nivel.getText());
+            statement.setString(1, cbx_categoria.getSelectedItem().toString());
+            statement.setString(2, cbx_tipoCarga.getSelectedItem().toString());
+            statement.setInt(3, Integer.parseInt(txt_Rua.getText()));
+            statement.setInt(4, Integer.parseInt(txt_Corredor.getText()));
+            statement.setInt(5, Integer.parseInt(txt_Pilha.getText()));
+            statement.setInt(6, Integer.parseInt(txt_Nivel.getText()));
             
             statement.execute();
             statement.close();
@@ -409,8 +411,8 @@ public class RF16_POP extends javax.swing.JFrame {
     private javax.swing.JButton btn_Editar;
     private javax.swing.JButton btn_Excluir;
     private javax.swing.JButton btn_Salvar;
-    private javax.swing.JComboBox<String> cbx_tipo_armazenagem;
-    private javax.swing.JComboBox<String> cbx_tipo_carga;
+    private javax.swing.JComboBox<String> cbx_categoria;
+    private javax.swing.JComboBox<String> cbx_tipoCarga;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_Titulo;
@@ -420,9 +422,9 @@ public class RF16_POP extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_Nivel;
     private javax.swing.JLabel lbl_Pilha;
     private javax.swing.JLabel lbl_Rua;
-    private javax.swing.JLabel lbl_Tipo_Armazenagem;
-    private javax.swing.JLabel lbl_Tipo_Carga;
+    private javax.swing.JLabel lbl_categoria;
     private javax.swing.JTextField lbl_id;
+    private javax.swing.JLabel lbl_tipoCarga;
     private javax.swing.JPanel paTitulo;
     private javax.swing.JTextField txt_Corredor;
     private javax.swing.JTextField txt_Nivel;

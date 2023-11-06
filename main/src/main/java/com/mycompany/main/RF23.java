@@ -195,11 +195,11 @@ public class RF23 extends javax.swing.JFrame {
         try{   
     
             
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_LOCALIZACAO", "root", "");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO", "root", "");
         
         PreparedStatement statement;  
         
-        statement = conn.prepareStatement("INSERT INTO localizacao_ (quantidade, rua, pilha, corredor, nivel) VALUES (?,?,?,?,?)");
+        statement = conn.prepareStatement("INSERT INTO cargas (quantidade, rua, pilha, corredor, nivel) VALUES (?,?,?,?,?)");
                 
         statement.setString(1,Tfd_quantidade.getText());
         statement.setString(2,Tfd_rua.getText());        

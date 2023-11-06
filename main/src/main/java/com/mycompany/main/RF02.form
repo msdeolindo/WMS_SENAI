@@ -170,8 +170,8 @@
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="Tfd_especificacao" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
-                                                  <Component id="Lbl_especificacao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="Tfd_categoria" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
+                                                  <Component id="Lbl_categoria" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
@@ -246,7 +246,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="Lbl_especificacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Lbl_categoria" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="Lbl_carga" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -256,7 +256,7 @@
                           <Component id="Tfd_carga" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="Tfd_quantidade" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="Tfd_especificacao" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="Tfd_categoria" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="Cbx_tipo" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -306,15 +306,15 @@
             </Component>
             <Component class="javax.swing.JTextField" name="Tfd_dataAgendamento">
             </Component>
-            <Component class="javax.swing.JLabel" name="Lbl_especificacao">
+            <Component class="javax.swing.JLabel" name="Lbl_categoria">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Especifica&#xe7;&#xe3;o"/>
+                <Property name="text" type="java.lang.String" value="Categoria"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="Tfd_especificacao">
+            <Component class="javax.swing.JTextField" name="Tfd_categoria">
             </Component>
             <Component class="javax.swing.JLabel" name="Lbl_carga">
               <Properties>

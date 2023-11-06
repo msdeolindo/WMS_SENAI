@@ -77,7 +77,6 @@ public class RF17 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(32, 41, 171));
 
-        lbl_voltar.setIcon(new javax.swing.ImageIcon("C:\\Users\\mbalonecker\\Desktop\\WMS_SENAI_GIT\\main\\src\\main\\java\\com\\mycompany\\main\\icon_back.png")); // NOI18N
         lbl_voltar.setText("jLabel1");
         lbl_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -299,6 +298,11 @@ public class RF17 extends javax.swing.JFrame {
         btn_alterar.setBackground(new java.awt.Color(32, 41, 171));
         btn_alterar.setForeground(new java.awt.Color(255, 255, 255));
         btn_alterar.setText("Alterar");
+        btn_alterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_alterarActionPerformed(evt);
+            }
+        });
 
         btn_excluir.setBackground(new java.awt.Color(32, 41, 171));
         btn_excluir.setForeground(new java.awt.Color(255, 255, 255));
@@ -380,7 +384,7 @@ public class RF17 extends javax.swing.JFrame {
         
         
         
-        String sql = "INSERT INTO cadastro_cliente (cnpj,razaoSocial,nomeFantasia,rua,numRua,bairro,cidade,uf,cep,atv_comercial,nome_Responsavel,contato,email,obs) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+        String sql = "INSERT INTO clientes (cnpj,razao_social,nome_fantasia,rua,numero_residencia,bairro,cidade,uf,cep,atividade_comercial,nome_responsavel,contato,email,observacao) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
         
          PreparedStatement st = Conn.prepareStatement(sql);
          
@@ -388,7 +392,7 @@ public class RF17 extends javax.swing.JFrame {
          st.setString(2,txt_Razao_soci.getText());
          st.setString(3,txt_NomeFanta.getText());
          st.setString(4,txt_rua.getText());
-         st.setString(5, txt_num_rua.getText());
+         st.setInt(5, Integer.parseInt(txt_num_rua.getText()));
          st.setString(6,txt_bairro.getText());
          st.setString(7, txt_cidade.getText());
          st.setString(8, (String) cbx_Uf.getSelectedItem());
@@ -430,6 +434,10 @@ public class RF17 extends javax.swing.JFrame {
        novoFrame.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_btn_agendamentoActionPerformed
+
+    private void btn_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_alterarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_alterarActionPerformed
 
     /**
      * @param args the command line arguments

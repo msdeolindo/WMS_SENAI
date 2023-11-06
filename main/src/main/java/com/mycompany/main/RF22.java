@@ -186,7 +186,7 @@ public class RF22 extends javax.swing.JFrame {
             
             conexao = DriverManager.getConnection(url,usuario,senha);
             
-            String sql = "INSERT INTO devolucao (motivo) VALUES (?)";
+            String sql = "INSERT INTO devolucoes_cargas (descricao) VALUES (?)";
             PreparedStatement statement = conexao.prepareStatement(sql);
             statement.setString (1,txt_motiv_dev.getText());
             statement.execute();

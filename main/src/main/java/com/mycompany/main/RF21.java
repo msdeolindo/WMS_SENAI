@@ -211,12 +211,11 @@ public class RF21 extends javax.swing.JFrame {
 
     private void bt_confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_confirmActionPerformed
     try{ 
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_alterPass", "root", ""); 
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO", "root", ""); 
  java.sql.Statement st = conn.createStatement(); 
- st.executeUpdate ("UPDATE alteracao set chaveAcesso = '"
- +this.Field_acesso.getText()+ "' , senha ='" 
-         +this.field_senha.getText() + "' , confSenha ='" 
-         +this.field_confSenha.getText()+"'"); 
+ st.executeUpdate ("UPDATE funcionarios SET senha = '"
+         +this.field_senha.getText() + "' WHERE data_nascimento = '" 
+         +this.Field_acesso.getText()+"'"); 
  JOptionPane.showMessageDialog(rootPane, "Senha Alterada!"); 
     }catch (SQLException ex){ 
         Logger.getLogger(RF21.class.getName()) .log(Level.SEVERE,null, ex);

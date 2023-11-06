@@ -63,7 +63,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="cbx_tipo_carga" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="cbx_categoria" alignment="0" max="32767" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="lbl_Rua" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -73,8 +73,8 @@
                                   <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="lbl_Tipo_Carga" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="221" max="32767" attributes="0"/>
+                                  <Component id="lbl_categoria" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -87,8 +87,8 @@
                       </Group>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lbl_Tipo_Armazenagem" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbx_tipo_armazenagem" min="-2" pref="236" max="-2" attributes="0"/>
+                              <Component id="lbl_tipoCarga" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbx_tipoCarga" min="-2" pref="236" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="lbl_Corredor" min="-2" max="-2" attributes="0"/>
@@ -128,13 +128,13 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbl_Tipo_Carga" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbl_Tipo_Armazenagem" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_categoria" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_tipoCarga" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="cbx_tipo_armazenagem" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cbx_tipo_carga" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cbx_tipoCarga" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cbx_categoria" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -215,17 +215,17 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_EditarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lbl_Tipo_Carga">
+        <Component class="javax.swing.JLabel" name="lbl_categoria">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CATEGORIA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_tipoCarga">
           <Properties>
             <Property name="text" type="java.lang.String" value="TIPO DE CARGA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lbl_Tipo_Armazenagem">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="TIPO DE ARMAZENAGEM"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="cbx_tipo_armazenagem">
+        <Component class="javax.swing.JComboBox" name="cbx_tipoCarga">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -235,13 +235,13 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbx_tipo_armazenagemActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbx_tipoCargaActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cbx_tipo_carga">
+        <Component class="javax.swing.JComboBox" name="cbx_categoria">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="3">
@@ -333,11 +333,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lb_Voltar">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="P:\TURMAS\HTC-DDS-16\&#xed;cones WMS\icon_back.png"/>
-            </Property>
-          </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_VoltarMouseClicked"/>
           </Events>

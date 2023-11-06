@@ -375,10 +375,10 @@ public class RF08 extends javax.swing.JFrame {
         // TODO add your handling code here:
          Connection conn;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/DB_WMS_PRD","root","");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/DB_WMS_PRO","root","");
         java.sql.Statement st;
         st = conn.createStatement();
-        st.executeUpdate("DELETE FROM cadastro_funcionario WHERE txtCodigoDoFuncionario='"+this.txtCodigoDoFuncionario.getText()+"'");
+        st.executeUpdate("DELETE FROM funcionarios WHERE codigo_funcionario='"+this.txtCodigoDoFuncionario.getText()+"'");
         
          JOptionPane.showMessageDialog(rootPane,"Funcionario Demitido.");
         
@@ -392,7 +392,7 @@ public class RF08 extends javax.swing.JFrame {
 
              Connection conexao=null;
              
-             String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+             String url = "jdbc:mysql://localhost:3306/DB_WMS_PRO";
              String usuario = "root";
              String senha = "";
 
@@ -401,7 +401,7 @@ public class RF08 extends javax.swing.JFrame {
                 conexao = DriverManager.getConnection(url,usuario,senha);
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 
-               String sql = "INSERT INTO cadastro_funcionario (txtNomeCompleto,txtDataDeNascimento,txtCPF,txtRG,txtEndereco,txtTelefone,txtEmail, cbxCargo ,cbxEscolaridade,cbxEstadoCivil,txtCodigoDoFuncionario,txtDataDeAdmissao,pwdSenhaParaLogin  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+               String sql = "INSERT INTO funcionarios (nome,data_nascimento,cpf,rg,endereco,contato,email, cargo ,escolaridade,estado_civil,codigo_funcionario,data_admissao,senha  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                        
                 PreparedStatement statement = conexao.prepareStatement(sql);
                
@@ -444,14 +444,14 @@ public class RF08 extends javax.swing.JFrame {
         
         Connection conn;
         
-        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRO";
         String usuario = "root";
         String senha = "";
         try {
             
             Connection conexao = DriverManager.getConnection(url,usuario,senha);
             
-            String sql = "UPDATE cadastro_funcionario SET txtNomeCompleto= ?,txtDataDeNascimento=?,txtCPF=?,txtRG=?,txtEndereco=?,txtTelefone=?,txtEmail=?, cbxCargo=?, cbxEscolaridade=?, cbxEstadoCivil=?,txtDataDeAdmissao=?,pwdSenhaParaLogin=? WHERE txtCodigoDoFuncionario = ?; ";
+            String sql = "UPDATE funcionarios SET nome= ?,data_nascimento=?,cpf=?,rg=?,endereco=?,contato=?,email=?, cargo=?, escolaridade=?, estado_civil=?,data_admissao=?,senha=? WHERE codigo_funcionario = ?; ";
                 
                PreparedStatement statement = conexao.prepareStatement(sql);
                     
