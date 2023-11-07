@@ -383,7 +383,7 @@ public class RF17 extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
       
         
-        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRO";
+        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
         String user = "root";
         String senha = "";
         
@@ -452,7 +452,7 @@ public class RF17 extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
         
             
-        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRO";
+        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
         String user = "root";
         String senha = "";
             
@@ -511,7 +511,7 @@ public class RF17 extends javax.swing.JFrame {
         
         
             
-        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRO";
+        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
         String user = "root";
         String senha = "";
             

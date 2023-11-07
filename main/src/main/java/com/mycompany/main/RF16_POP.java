@@ -278,7 +278,7 @@ public class RF16_POP extends javax.swing.JFrame {
 
     private void btn_ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExcluirActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
             PreparedStatement statement;
             statement = conn.prepareStatement("DELETE FROM enderecos WHERE id = ?");
             statement.setInt(1,Integer.parseInt(lbl_id.getText()));
@@ -311,7 +311,7 @@ public class RF16_POP extends javax.swing.JFrame {
         }*/
         
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
             PreparedStatement statement;
             
             statement = conn.prepareStatement("UPDATE enderecos SET categoria=?, tipo_carga=?, rua=?, corredor=?, pilha=?, nivel=? WHERE id = ?");
@@ -347,7 +347,7 @@ public class RF16_POP extends javax.swing.JFrame {
 
     private void btn_SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalvarActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
             PreparedStatement statement;
             statement = conn.prepareStatement("INSERT INTO enderecos(categoria, tipo_carga, rua, corredor, pilha, nivel) VALUES (?, ?, ?, ?, ?, ?)");
             

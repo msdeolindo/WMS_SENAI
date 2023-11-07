@@ -375,7 +375,7 @@ public class RF08 extends javax.swing.JFrame {
         // TODO add your handling code here:
          Connection conn;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/DB_WMS_PRO","root","");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/DB_WMS_PRD","root","");
         java.sql.Statement st;
         st = conn.createStatement();
         st.executeUpdate("DELETE FROM funcionarios WHERE codigo_funcionario='"+this.txtCodigoDoFuncionario.getText()+"'");
@@ -392,7 +392,7 @@ public class RF08 extends javax.swing.JFrame {
 
              Connection conexao=null;
              
-             String url = "jdbc:mysql://localhost:3306/DB_WMS_PRO";
+             String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
              String usuario = "root";
              String senha = "";
 
@@ -444,7 +444,7 @@ public class RF08 extends javax.swing.JFrame {
         
         Connection conn;
         
-        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRO";
+        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
         String usuario = "root";
         String senha = "";
         try {

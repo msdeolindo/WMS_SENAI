@@ -211,7 +211,7 @@ public class RF21 extends javax.swing.JFrame {
 
     private void bt_confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_confirmActionPerformed
     try{ 
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO", "root", ""); 
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", ""); 
  java.sql.Statement st = conn.createStatement(); 
  st.executeUpdate ("UPDATE funcionarios SET senha = '"
          +this.field_senha.getText() + "' WHERE data_nascimento = '" 
