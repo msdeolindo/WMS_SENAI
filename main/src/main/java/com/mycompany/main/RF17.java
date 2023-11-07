@@ -307,6 +307,11 @@ public class RF17 extends javax.swing.JFrame {
         btn_excluir.setBackground(new java.awt.Color(32, 41, 171));
         btn_excluir.setForeground(new java.awt.Color(255, 255, 255));
         btn_excluir.setText("Excluir");
+        btn_excluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_excluirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -370,6 +375,9 @@ public class RF17 extends javax.swing.JFrame {
 
     private void btn_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvarActionPerformed
 
+       
+         
+         
         Connection Conn = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -408,10 +416,7 @@ public class RF17 extends javax.swing.JFrame {
         
          JOptionPane.showMessageDialog(rootPane, "Cliente Inserido");
          
-         btn_salvar.setVisible(false);
-         btn_agendamento.setVisible(true);
-         btn_alterar.setVisible(true);
-         btn_excluir.setVisible(true);
+       
          
        } catch (SQLException ex) {
             Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
@@ -419,6 +424,11 @@ public class RF17 extends javax.swing.JFrame {
           } catch (ClassNotFoundException ex) {
             Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+          btn_salvar.setVisible(false);
+         btn_agendamento.setVisible(true);
+         btn_alterar.setVisible(true);
+         btn_excluir.setVisible(true);
        
        
     }//GEN-LAST:event_btn_salvarActionPerformed
@@ -436,8 +446,103 @@ public class RF17 extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_agendamentoActionPerformed
 
     private void btn_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_alterarActionPerformed
-        // TODO add your handling code here:
+        Connection conn = null;
+        
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        
+            
+        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRO";
+        String user = "root";
+        String senha = "";
+            
+        
+           
+                conn = DriverManager.getConnection(url,user,senha);
+            
+           String sql = "UPDATE  clientes SET cnpj = ?,razao_social = ?,nome_fantasia = ?,rua = ?,numero_residencia = ?,bairro = ?,cidade = ?,uf = ?,cep = ?,atividade_comercial = ?,nome_responsavel = ?,contato = ?,email = ?,observacao = ? WHERE cnpj = ? "; 
+            
+            PreparedStatement st = conn.prepareStatement(sql);
+            
+          st.setString(1, txt_cnpj.getText());
+         st.setString(2,txt_Razao_soci.getText());
+         st.setString(3,txt_NomeFanta.getText());
+         st.setString(4,txt_rua.getText());
+         st.setInt(5, Integer.parseInt(txt_num_rua.getText()));
+         st.setString(6,txt_bairro.getText());
+         st.setString(7, txt_cidade.getText());
+         st.setString(8, (String) cbx_Uf.getSelectedItem());
+         st.setString(9,txt_cep.getText());
+         st.setString(10, txt_ativ_come.getText());
+         st.setString(11, txt_respons.getText());
+         st.setString(12, txt_contato_resp.getText());
+         st.setString(13, txt_email.getText());
+         st.setString(14,txt_observacoes.getText());
+         st.setString(15, txt_cnpj.getText());
+         
+         
+         st.execute();
+         st.close();
+        
+         JOptionPane.showMessageDialog(rootPane, "Cliente Alterado!");
+         
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         catch (SQLException ex) {
+                Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        btn_excluir.setVisible(false);
+        btn_agendamento.setVisible(false);
+        btn_salvar.setVisible(true);
+        btn_alterar.setVisible(true);
+        
     }//GEN-LAST:event_btn_alterarActionPerformed
+
+    private void btn_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_excluirActionPerformed
+        Connection conn = null;
+        
+       
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        
+        
+        
+            
+        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRO";
+        String user = "root";
+        String senha = "";
+            
+        
+                conn = DriverManager.getConnection(url,user,senha);
+            
+                String sql = "DELETE FROM clientes WHERE cnpj = ?";
+                
+                PreparedStatement st = conn.prepareStatement(sql);
+                
+                st.setString(1,txt_cnpj.getText());
+                
+                
+                st.execute();
+                st.close();
+                
+                JOptionPane.showMessageDialog(rootPane, "Cliente Excluido"); 
+                
+           
+            
+     } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
+        }  
+       catch (SQLException ex) {
+                Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+       
+        
+        
+    }//GEN-LAST:event_btn_excluirActionPerformed
 
     /**
      * @param args the command line arguments
