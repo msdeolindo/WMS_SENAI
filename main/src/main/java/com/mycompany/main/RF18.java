@@ -323,21 +323,21 @@ public class RF18 extends javax.swing.JFrame {
         Connection conexao = null;
          
         
-        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRO";
+        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
         String usuario = "root";
         String senha = "";
         
         try {        
-          conexao = DriverManager.getConnection(url,usuario,senha);
+            conexao = DriverManager.getConnection(url,usuario,senha);
             
-            String sql = "INSERT INTO recebimentos (agendamento_id,quantidade_avarias,observacao,quantidade) VALUES (?, ?, ?, ?)";
+            String sql = "UPDATE agendamentos SET quantidade_avarias = ?,observacao = ?,quantidade_recebida = ? WHERE id = ?";
            
             PreparedStatement statement = conexao.prepareStatement(sql);
              
-            statement.setInt(1,Integer.parseInt(tf_codigo.getText()));
-            statement.setInt(2,Integer.parseInt(tf_avarias.getText()));
-            statement.setString(3,tf_observacao.getText());
-            statement.setInt(4,Integer.parseInt(tf_quantidade.getText()));
+            statement.setInt(1,Integer.parseInt(tf_avarias.getText()));
+            statement.setString(2,tf_observacao.getText());
+            statement.setInt(3,Integer.parseInt(tf_quantidade.getText()));
+            statement.setInt(4,Integer.parseInt(tf_codigo.getText()));
             
             
            JOptionPane.showMessageDialog(rootPane,"Recebimento salvo.");

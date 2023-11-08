@@ -180,13 +180,13 @@ public class RF22 extends javax.swing.JFrame {
             */
             Connection conexao=null;
             
-            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRO";
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
             String usuario = "root";
             String senha = "";
             
             conexao = DriverManager.getConnection(url,usuario,senha);
             
-            String sql = "INSERT INTO devolucoes_cargas (descricao) VALUES (?)";
+            String sql = "UPDATE agendamentos SET devolucao_carga = ? WHERE id = 1";
             PreparedStatement statement = conexao.prepareStatement(sql);
             statement.setString (1,txt_motiv_dev.getText());
             statement.execute();

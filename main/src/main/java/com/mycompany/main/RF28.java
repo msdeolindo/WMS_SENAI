@@ -398,7 +398,7 @@ public class RF28 extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO","root","");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","");
             
             statement = conn.prepareStatement("UPDATE cargas SET rua = ?, corredor = ?, pilha = ?, nivel = ? WHERE id = ? ");
                     statement.setString(1, DESTINO_RUA.getText());

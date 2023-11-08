@@ -195,7 +195,7 @@ public class RF23 extends javax.swing.JFrame {
         try{   
     
             
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO", "root", "");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
         
         PreparedStatement statement;  
         
