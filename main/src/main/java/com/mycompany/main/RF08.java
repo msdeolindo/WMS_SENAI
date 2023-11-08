@@ -38,6 +38,7 @@ public class RF08 extends javax.swing.JFrame {
         pnlMenuSuperior = new javax.swing.JPanel();
         lblCadastramentoDeFuncionarios = new javax.swing.JLabel();
         lbl_VoltarMenuPrincipal = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         pnlInformacoes = new javax.swing.JPanel();
         lblDataDeNascimento = new javax.swing.JLabel();
         txtNomeCompleto = new javax.swing.JTextField();
@@ -59,8 +60,6 @@ public class RF08 extends javax.swing.JFrame {
         cbxEscolaridade = new javax.swing.JComboBox<>();
         lblEstadoCivil = new javax.swing.JLabel();
         cbxEstadoCivil = new javax.swing.JComboBox<>();
-        lblCodigoDoFuncionario = new javax.swing.JLabel();
-        txtCodigoDoFuncionario = new javax.swing.JTextField();
         lblDataDeAdmissao = new javax.swing.JLabel();
         txtDataDeAdmissao = new javax.swing.JTextField();
         lblSenhaParaLogin = new javax.swing.JLabel();
@@ -90,15 +89,24 @@ public class RF08 extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlMenuSuperiorLayout = new javax.swing.GroupLayout(pnlMenuSuperior);
         pnlMenuSuperior.setLayout(pnlMenuSuperiorLayout);
         pnlMenuSuperiorLayout.setHorizontalGroup(
             pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMenuSuperiorLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(lbl_VoltarMenuPrincipal)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblCadastramentoDeFuncionarios)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbl_VoltarMenuPrincipal)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlMenuSuperiorLayout.setVerticalGroup(
@@ -106,9 +114,10 @@ public class RF08 extends javax.swing.JFrame {
             .addGroup(pnlMenuSuperiorLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addComponent(lbl_VoltarMenuPrincipal)
                     .addComponent(lblCadastramentoDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pnlInformacoes.setBackground(new java.awt.Color(204, 204, 204));
@@ -181,12 +190,6 @@ public class RF08 extends javax.swing.JFrame {
         cbxEstadoCivil.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cbxEstadoCivil.setPreferredSize(new java.awt.Dimension(88, 28));
 
-        lblCodigoDoFuncionario.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        lblCodigoDoFuncionario.setText("Código do funcionário:");
-
-        txtCodigoDoFuncionario.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        txtCodigoDoFuncionario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
         lblDataDeAdmissao.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblDataDeAdmissao.setText("Data de admissão:");
 
@@ -208,24 +211,24 @@ public class RF08 extends javax.swing.JFrame {
             .addGroup(pnlInformacoesLayout.createSequentialGroup()
                 .addGap(119, 119, 119)
                 .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNomeCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNomeCompleto)
+                    .addComponent(lblEndereco)
+                    .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEscolaridade)
+                    .addComponent(cbxEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(148, 148, 148)
+                .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtTelefone, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblDataDeNascimento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtDataDeNascimento, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(lblTelefone)
+                    .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lblEstadoCivil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cbxEstadoCivil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlInformacoesLayout.createSequentialGroup()
-                        .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNomeCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNomeCompleto)
-                            .addComponent(lblEndereco)
-                            .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblEscolaridade)
-                            .addComponent(cbxEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(148, 148, 148)
-                        .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtTelefone, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblDataDeNascimento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtDataDeNascimento, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(lblTelefone)
-                            .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblEstadoCivil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cbxEstadoCivil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                         .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblEmail)
@@ -233,24 +236,24 @@ public class RF08 extends javax.swing.JFrame {
                                 .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblCPF)
-                                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(txtCodigoDoFuncionario, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblCodigoDoFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(82, 82, 82)
                                 .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(lblRG)
                                     .addComponent(txtRG)
                                     .addComponent(lblCargo)
-                                    .addComponent(cbxCargo, 0, 221, Short.MAX_VALUE)
-                                    .addComponent(lblDataDeAdmissao)
-                                    .addComponent(txtDataDeAdmissao))))
+                                    .addComponent(cbxCargo, 0, 221, Short.MAX_VALUE))))
                         .addGap(103, 103, 103))
                     .addGroup(pnlInformacoesLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
                         .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblSenhaParaLogin)
-                            .addComponent(pwdSenhaParaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(lblDataDeAdmissao)
+                            .addComponent(txtDataDeAdmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(98, 98, 98)
+                        .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pwdSenhaParaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblSenhaParaLogin))
+                        .addContainerGap(141, Short.MAX_VALUE))))
         );
         pnlInformacoesLayout.setVerticalGroup(
             pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,19 +288,16 @@ public class RF08 extends javax.swing.JFrame {
                 .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEscolaridade)
                     .addComponent(lblEstadoCivil)
-                    .addComponent(lblCodigoDoFuncionario)
-                    .addComponent(lblDataDeAdmissao))
+                    .addComponent(lblDataDeAdmissao)
+                    .addComponent(lblSenhaParaLogin))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtCodigoDoFuncionario)
-                    .addComponent(txtDataDeAdmissao)
-                    .addComponent(cbxEstadoCivil, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addGroup(pnlInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cbxEstadoCivil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtDataDeAdmissao)
+                        .addComponent(pwdSenhaParaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(cbxEscolaridade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(69, 69, 69)
-                .addComponent(lblSenhaParaLogin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pwdSenhaParaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
 
         btn_editar_CadastroDeFuncionarios.setBackground(new java.awt.Color(32, 41, 173));
@@ -339,17 +339,16 @@ public class RF08 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlMenuSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(btn_editar_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
-                .addComponent(btn_excluir_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(tbn_salvar_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(129, 129, 129))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(pnlInformacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 1589, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btn_editar_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(100, 100, 100)
+                        .addComponent(btn_excluir_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tbn_salvar_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlInformacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 1589, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(155, 155, 155))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -362,7 +361,7 @@ public class RF08 extends javax.swing.JFrame {
                     .addComponent(tbn_salvar_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_excluir_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_editar_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         pnlMenuSuperior.getAccessibleContext().setAccessibleName("");
@@ -378,7 +377,7 @@ public class RF08 extends javax.swing.JFrame {
             conn = DriverManager.getConnection("jdbc:mysql://localhost/DB_WMS_PRO","root","");
         java.sql.Statement st;
         st = conn.createStatement();
-        st.executeUpdate("DELETE FROM funcionarios WHERE codigo_funcionario='"+this.txtCodigoDoFuncionario.getText()+"'");
+        st.executeUpdate("DELETE FROM funcionarios WHERE cpf='"+this.txtCPF.getText()+"'");
         
          JOptionPane.showMessageDialog(rootPane,"Funcionario Demitido.");
         
@@ -401,7 +400,7 @@ public class RF08 extends javax.swing.JFrame {
                 conexao = DriverManager.getConnection(url,usuario,senha);
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 
-               String sql = "INSERT INTO funcionarios (nome,data_nascimento,cpf,rg,endereco,contato,email, cargo ,escolaridade,estado_civil,codigo_funcionario,data_admissao,senha  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+               String sql = "INSERT INTO funcionarios (nome,data_nascimento,cpf,rg,endereco,contato,email, cargo ,escolaridade,estado_civil,data_admissao,senha  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                        
                 PreparedStatement statement = conexao.prepareStatement(sql);
                
@@ -415,9 +414,8 @@ public class RF08 extends javax.swing.JFrame {
                statement.setString(8, cbxCargo.getSelectedItem().toString());
                statement.setString(9, cbxEscolaridade.getSelectedItem().toString());
                statement.setString(10, cbxEstadoCivil.getSelectedItem().toString());
-               statement.setString(11, txtCodigoDoFuncionario.getText());
-               statement.setString(12, txtDataDeAdmissao.getText());
-               statement.setString(13, pwdSenhaParaLogin.getText());
+               statement.setString(11, txtDataDeAdmissao.getText());
+               statement.setString(12, pwdSenhaParaLogin.getText());
                    
                statement.execute();
                statement.close();
@@ -451,23 +449,22 @@ public class RF08 extends javax.swing.JFrame {
             
             Connection conexao = DriverManager.getConnection(url,usuario,senha);
             
-            String sql = "UPDATE funcionarios SET nome= ?,data_nascimento=?,cpf=?,rg=?,endereco=?,contato=?,email=?, cargo=?, escolaridade=?, estado_civil=?,data_admissao=?,senha=? WHERE codigo_funcionario = ?; ";
+            String sql = "UPDATE funcionarios SET nome= ?,data_nascimento=?,rg=?,endereco=?,contato=?,email=?, cargo=?, escolaridade=?, estado_civil=?,data_admissao=?,senha=? WHERE cpf=?; ";
                 
                PreparedStatement statement = conexao.prepareStatement(sql);
                     
                statement.setString(1, txtNomeCompleto.getText());
                statement.setString(2, txtDataDeNascimento.getText());
-               statement.setString(3, txtCPF.getText());
-               statement.setString(4, txtRG.getText());
-               statement.setString(5, txtEndereco.getText());
-               statement.setString(6, txtTelefone.getText());
-               statement.setString(7, txtEmail.getText());
-               statement.setString(8, cbxCargo.getSelectedItem().toString());
-               statement.setString(9, cbxEscolaridade.getSelectedItem().toString());
-               statement.setString(10, cbxEstadoCivil.getSelectedItem().toString());
-               statement.setString(13, txtCodigoDoFuncionario.getText());
-               statement.setString(11, txtDataDeAdmissao.getText());
-               statement.setString(12, pwdSenhaParaLogin.getText());
+               statement.setString(3, txtRG.getText());
+               statement.setString(4, txtEndereco.getText());
+               statement.setString(5, txtTelefone.getText());
+               statement.setString(6, txtEmail.getText());
+               statement.setString(7, cbxCargo.getSelectedItem().toString());
+               statement.setString(8, cbxEscolaridade.getSelectedItem().toString());
+               statement.setString(9, cbxEstadoCivil.getSelectedItem().toString());
+               statement.setString(10, txtDataDeAdmissao.getText());
+               statement.setString(11, pwdSenhaParaLogin.getText());
+               statement.setString(12, txtCPF.getText());
                    
                statement.execute();
                statement.close();
@@ -479,6 +476,15 @@ public class RF08 extends javax.swing.JFrame {
             Logger.getLogger(RF08.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btn_editar_CadastroDeFuncionariosActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        RF30 Frame_RF30 = new RF30();
+        Frame_RF30.setVisible(true);
+        this.dispose();
+        //botao voltar
+        
+// TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -522,10 +528,10 @@ public class RF08 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxCargo;
     private javax.swing.JComboBox<String> cbxEscolaridade;
     private javax.swing.JComboBox<String> cbxEstadoCivil;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCPF;
     private javax.swing.JLabel lblCadastramentoDeFuncionarios;
     private javax.swing.JLabel lblCargo;
-    private javax.swing.JLabel lblCodigoDoFuncionario;
     private javax.swing.JLabel lblDataDeAdmissao;
     private javax.swing.JLabel lblDataDeNascimento;
     private javax.swing.JLabel lblEmail;
@@ -542,7 +548,6 @@ public class RF08 extends javax.swing.JFrame {
     private javax.swing.JPasswordField pwdSenhaParaLogin;
     private javax.swing.JButton tbn_salvar_CadastroDeFuncionarios;
     private javax.swing.JTextField txtCPF;
-    private javax.swing.JTextField txtCodigoDoFuncionario;
     private javax.swing.JTextField txtDataDeAdmissao;
     private javax.swing.JTextField txtDataDeNascimento;
     private javax.swing.JTextField txtEmail;

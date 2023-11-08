@@ -36,18 +36,18 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="pnlMenuSuperior" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Component id="btn_editar_CadastroDeFuncionarios" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-              <Component id="btn_excluir_CadastroDeFuncionarios" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="tbn_salvar_CadastroDeFuncionarios" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-              <Component id="pnlInformacoes" min="-2" pref="1589" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="165" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="btn_editar_CadastroDeFuncionarios" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="btn_excluir_CadastroDeFuncionarios" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="tbn_salvar_CadastroDeFuncionarios" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="pnlInformacoes" min="-2" pref="1589" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -63,7 +63,7 @@
                   <Component id="btn_excluir_CadastroDeFuncionarios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btn_editar_CadastroDeFuncionarios" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="49" max="32767" attributes="0"/>
+              <EmptySpace pref="105" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -85,10 +85,12 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                  <Component id="lbl_VoltarMenuPrincipal" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="lblCadastramentoDeFuncionarios" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lbl_VoltarMenuPrincipal" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -98,10 +100,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <Component id="lbl_VoltarMenuPrincipal" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="lblCadastramentoDeFuncionarios" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="30" max="32767" attributes="0"/>
+                  <EmptySpace pref="42" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -124,6 +127,16 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_VoltarMenuPrincipalMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="P:\TURMAS\HTC-DDS-16\&#xed;cones WMS\icon_back.png"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseClicked"/>
           </Events>
         </Component>
       </SubComponents>
@@ -149,28 +162,28 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="txtNomeCompleto" min="-2" pref="350" max="-2" attributes="0"/>
+                      <Component id="lblNomeCompleto" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblEndereco" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtEndereco" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
+                      <Component id="lblEscolaridade" min="-2" max="-2" attributes="0"/>
+                      <Component id="cbxEscolaridade" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="txtTelefone" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblDataDeNascimento" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtDataDeNascimento" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="lblTelefone" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lblEstadoCivil" max="32767" attributes="0"/>
+                          <Component id="cbxEstadoCivil" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtNomeCompleto" min="-2" pref="350" max="-2" attributes="0"/>
-                              <Component id="lblNomeCompleto" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblEndereco" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtEndereco" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
-                              <Component id="lblEscolaridade" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbxEscolaridade" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="txtTelefone" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lblDataDeNascimento" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtDataDeNascimento" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="lblTelefone" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lblEstadoCivil" max="32767" attributes="0"/>
-                                  <Component id="cbxEstadoCivil" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
                           <EmptySpace pref="66" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="lblEmail" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -179,10 +192,6 @@
                                       <Component id="txtCPF" min="-2" pref="221" max="-2" attributes="0"/>
                                       <Component id="lblCPF" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtEmail" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="txtCodigoDoFuncionario" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="lblCodigoDoFuncionario" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -190,19 +199,23 @@
                                       <Component id="txtRG" max="32767" attributes="0"/>
                                       <Component id="lblCargo" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="cbxCargo" alignment="0" pref="221" max="32767" attributes="0"/>
-                                      <Component id="lblDataDeAdmissao" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtDataDeAdmissao" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblSenhaParaLogin" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="pwdSenhaParaLogin" min="-2" pref="275" max="-2" attributes="0"/>
+                              <Component id="lblDataDeAdmissao" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtDataDeAdmissao" alignment="0" min="-2" pref="221" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="pwdSenhaParaLogin" min="-2" pref="275" max="-2" attributes="0"/>
+                              <Component id="lblSenhaParaLogin" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="141" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -247,21 +260,19 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblEscolaridade" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblCodigoDoFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblDataDeAdmissao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblSenhaParaLogin" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtCodigoDoFuncionario" max="32767" attributes="0"/>
-                      <Component id="txtDataDeAdmissao" alignment="0" max="32767" attributes="0"/>
-                      <Component id="cbxEstadoCivil" alignment="0" pref="30" max="32767" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="cbxEstadoCivil" alignment="3" max="32767" attributes="0"/>
+                          <Component id="txtDataDeAdmissao" alignment="3" max="32767" attributes="0"/>
+                          <Component id="pwdSenhaParaLogin" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <Component id="cbxEscolaridade" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                  <Component id="lblSenhaParaLogin" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="pwdSenhaParaLogin" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="43" max="32767" attributes="0"/>
+                  <EmptySpace pref="176" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -511,26 +522,6 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblCodigoDoFuncionario">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="24" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="C&#xf3;digo do funcion&#xe1;rio:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtCodigoDoFuncionario">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="18" style="0"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder/>
-              </Border>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblDataDeAdmissao">
           <Properties>
