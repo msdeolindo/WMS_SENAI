@@ -86,12 +86,9 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="754" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="logo" alignment="0" min="-2" pref="359" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="login_txt" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="senha_txt" alignment="0" pref="263" max="32767" attributes="0"/>
-                                  </Group>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="login_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="senha_txt" alignment="0" pref="263" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -102,17 +99,21 @@
                               <EmptySpace min="-2" pref="790" max="-2" attributes="0"/>
                               <Component id="bot_entrar" min="-2" pref="172" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="706" max="-2" attributes="0"/>
+                              <Component id="logo" min="-2" pref="359" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="754" max="32767" attributes="0"/>
+                      <EmptySpace pref="802" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="152" max="32767" attributes="0"/>
+                      <EmptySpace pref="159" max="32767" attributes="0"/>
                       <Component id="logo" min="-2" pref="460" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Component id="login_txt" min="-2" pref="46" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="senha_txt" min="-2" pref="42" max="-2" attributes="0"/>

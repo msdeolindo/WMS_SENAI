@@ -1,5 +1,14 @@
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -75,25 +84,26 @@ public class RF27 extends javax.swing.JFrame {
                 .addGroup(panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel_brancLayout.createSequentialGroup()
                         .addGap(754, 754, 754)
-                        .addGroup(panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(login_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(senha_txt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE))))
+                        .addGroup(panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(login_txt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(senha_txt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)))
                     .addGroup(panel_brancLayout.createSequentialGroup()
                         .addGap(815, 815, 815)
                         .addComponent(senha))
                     .addGroup(panel_brancLayout.createSequentialGroup()
                         .addGap(790, 790, 790)
-                        .addComponent(bot_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(754, Short.MAX_VALUE))
+                        .addComponent(bot_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel_brancLayout.createSequentialGroup()
+                        .addGap(706, 706, 706)
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(802, Short.MAX_VALUE))
         );
         panel_brancLayout.setVerticalGroup(
             panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_brancLayout.createSequentialGroup()
-                .addContainerGap(152, Short.MAX_VALUE)
+                .addContainerGap(159, Short.MAX_VALUE)
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
+                .addGap(47, 47, 47)
                 .addComponent(login_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(senha_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -148,10 +158,44 @@ public class RF27 extends javax.swing.JFrame {
     }//GEN-LAST:event_senhaMouseClicked
 
     private void bot_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bot_entrarActionPerformed
-    RF30 tela_menu = new RF30 ();
+    Connection conexao = null;
+        PreparedStatement statement = null;
+        
+          String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+          String usuario = "root";
+          String senha= "";
+    try{
+        Class.forName ("com.mysql.jdbc.Driver");
+        conexao = DriverManager.getConnection (url,usuario,senha); 
+        String confi = "SELECT * FROM funcionarios WHERE cpf=? AND senha cpf=?"; 
+        statement = conexao.prepareStatement(confi);
+   statement.setString(1,login_txt.getText());
+   statement.setString(2,new String (senha_txt.getPassword()));
+   
+   ResultSet result = statement.executeQuery();
+   boolean val = result.next();
+   
+   if (val == true) {
+       RF30 tela_menu = new RF30 ();
       tela_menu.setVisible (true);
       this.dispose();
-            // TODO add your handling code here:
+   }else{
+      JOptionPane.showMessageDialog(rootPane, "Dados invalidos"); 
+   }
+    
+    
+    }catch (SQLException ex){
+        System.out.print("erro:" + ex.getMessage());
+
+    }   catch (ClassNotFoundException ex) {
+            Logger.getLogger(RF27.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+        
+        
+        
+        
+           
     }//GEN-LAST:event_bot_entrarActionPerformed
 
     /**
