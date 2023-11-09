@@ -4,6 +4,15 @@
  */
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author m.sousa
@@ -44,6 +53,11 @@ public class RF14 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1920, 1080));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 153));
 
@@ -108,6 +122,11 @@ public class RF14 extends javax.swing.JFrame {
         LabelCpf1.setText("Cliente");
 
         btn_Pes.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
+        btn_Pes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_PesMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -160,106 +179,7 @@ public class RF14 extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Código", "Cliente", "Data Reserva", "Data agendamento", "Tipo de carga", "Tipo", "Situação", "Transportadora"
@@ -268,6 +188,11 @@ public class RF14 extends javax.swing.JFrame {
         jTable1.setGridColor(new java.awt.Color(0, 0, 0));
         jTable1.setSelectionBackground(new java.awt.Color(204, 204, 204));
         jTable1.setShowGrid(true);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -295,6 +220,50 @@ public class RF14 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+     public void PopularjTable1(String sql) {
+          
+        
+         
+        try {
+            //Class.forName("com.mysql.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String usuario = "root";
+            String senha = "";
+            
+            Connection con = (Connection)DriverManager.getConnection(url,usuario,senha);
+            PreparedStatement banco = con.prepareStatement(sql);
+            banco.execute();
+            
+            ResultSet resultado = banco.executeQuery(sql);
+            
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setNumRows(0);
+            
+            while(resultado.next())
+            {
+                model.addRow(new Object[]
+                {
+                    resultado.getString("Código"),
+                    resultado.getString("Cliente"),
+                    resultado.getString("Data Reserva"),
+                    resultado.getString("Data agendamento"),
+                    resultado.getString("Tipo de carga"),
+                    resultado.getString("Tipo"),
+                    resultado.getString("Situação"),
+                    resultado.getString("Transportadora")
+                });
+            }
+            
+            banco.execute();
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(RF14.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
+      
+    }
+    
     private void cbx_SituacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_SituacaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbx_SituacaoActionPerformed
@@ -304,6 +273,79 @@ public class RF14 extends javax.swing.JFrame {
         novoFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Bt_BackMouseClicked
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void btn_PesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_PesMouseClicked
+       Connection conexao = null;
+          
+          String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+          String usuario = "root";
+          String senha = "";
+          
+        try {
+            conexao = DriverManager.getConnection(url,usuario,senha);
+       
+       
+          Class.forName("com.mysql.cj.jdbc.Driver");
+          
+          
+          Connection conn;
+          
+          String sql = "SELECT * FROM agendamentos WHERE data_agendamento=? , id=? , cliente_id=? , situacao=?";
+          
+          PreparedStatement statement = conexao.prepareStatement(sql);
+          
+          statement.setString(1,txt_Agen.getText());
+           statement.setInt(2,Integer.parseInt(txt_Cod.getText()));
+             statement.setInt(3,Integer.parseInt(txt_cliente.getText()));
+            statement.setString(4,cbx_Situacao.getSelectedItem().toString());
+            
+            statement.execute();
+         statement.close(); 
+            
+       // this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento=?,id=?,cliente_id=?,situacao=?");
+        
+        
+         } catch (SQLException ex) {
+            Logger.getLogger(RF14.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RF14.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        /*int lin } catch (SQLException ex) {
+            Logger.getLogger(RF14.class.getName()).log(Level.SEVERE, null, ex);
+        }ha = jTable1.getSelectedRow(); 
+        txt_Agen.setText(jTable1.getValueAt(linha,0).toString());
+        txt_Cod.setText(jTable1.getValueAt(linha,1).toString());
+        txt_cliente.setText(jTable1.getValueAt(linha,2).toString());*/
+
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_PesMouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        Connection conexao = null;
+        
+        String url ="jdbc:mysql://localhost:3306/DB_WMS_PRD";
+        String usuario = "root";
+        String senha = "";
+        
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+          conexao = DriverManager.getConnection(url,usuario,senha);
+            this.PopularjTable1("SELECT * FROM clientes ORDER BY id DESC");
+            
+            } catch (SQLException ex) {
+            Logger.getLogger(RF14.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RF14.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments

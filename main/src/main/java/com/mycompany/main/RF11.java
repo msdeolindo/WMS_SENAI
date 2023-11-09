@@ -4,6 +4,15 @@
  */
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author miril
@@ -15,6 +24,58 @@ public class RF11 extends javax.swing.JFrame {
      */
     public RF11() {
         initComponents();
+    }
+    
+    public void PopularJTable (String sql){
+        
+        Connection Con = null;
+        
+        try {
+        
+         Class.forName("com.mysql.cj.jdbc.Driver");
+         
+         
+         String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+        String user = "root";
+        String senha = "";
+        
+         
+          Con = DriverManager.getConnection(url,user,senha);
+          PreparedStatement banco = Con.prepareStatement(sql);
+          banco.execute();
+          
+           ResultSet resultado = banco.executeQuery(sql);
+           
+            DefaultTableModel model = (DefaultTableModel) Table.getModel();
+            model.setNumRows(0);
+            
+            
+             while(resultado.next()) {
+                 model.addRow(new Object[]
+                 {
+                         
+                         resultado.getString("Nome"),
+                         resultado.getString("Cargo"),
+                         resultado.getString("CPF"),
+                         resultado.getString("Contato"),
+                         resultado.getString("E-mail")
+                         
+                 });       
+           
+             }
+                 
+             banco.close();
+        
+            Con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (ClassNotFoundException ex) {
+            Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                 
+        
+        
     }
 
     /**
@@ -30,10 +91,13 @@ public class RF11 extends javax.swing.JFrame {
         LabelT = new javax.swing.JLabel();
         LabelBack = new javax.swing.JLabel();
         Bt_Back = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         LabelCargo = new javax.swing.JLabel();
         LabelN = new javax.swing.JLabel();
-        LabelCpf = new javax.swing.JLabel();
+        lbl_cpf = new javax.swing.JLabel();
         TextCpf = new javax.swing.JTextField();
         txt_Nome = new javax.swing.JTextField();
         btn_Pes = new javax.swing.JLabel();
@@ -43,7 +107,11 @@ public class RF11 extends javax.swing.JFrame {
         Table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 153));
 
@@ -58,6 +126,12 @@ public class RF11 extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("jLabel1");
+
+        jLabel2.setText("jLabel2");
+
+        jLabel3.setText("jLabel3");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -69,6 +143,12 @@ public class RF11 extends javax.swing.JFrame {
                     .addComponent(Bt_Back))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelT)
+                .addGap(464, 464, 464)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -78,7 +158,11 @@ public class RF11 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Bt_Back)
                     .addComponent(LabelBack)
-                    .addComponent(LabelT))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(LabelT)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel3)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -91,15 +175,22 @@ public class RF11 extends javax.swing.JFrame {
         LabelN.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         LabelN.setText("Nome:");
 
-        LabelCpf.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        LabelCpf.setText("CPF:");
+        lbl_cpf.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_cpf.setText("CPF:");
 
         TextCpf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         txt_Nome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btn_Pes.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
+        btn_Pes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_PesMouseClicked(evt);
+            }
+        });
 
+        Bt_Novo.setBackground(new java.awt.Color(32, 41, 173));
+        Bt_Novo.setForeground(new java.awt.Color(255, 255, 255));
         Bt_Novo.setText("Novo");
         Bt_Novo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,7 +215,7 @@ public class RF11 extends javax.swing.JFrame {
                     .addComponent(cbxCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelCpf)
+                    .addComponent(lbl_cpf)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(TextCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
@@ -140,7 +231,7 @@ public class RF11 extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LabelCpf)
+                            .addComponent(lbl_cpf)
                             .addComponent(LabelCargo)
                             .addComponent(LabelN))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -159,106 +250,7 @@ public class RF11 extends javax.swing.JFrame {
         Table.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Nome", "Cargo", "CPF", "Contato", "E-mail"
@@ -274,7 +266,7 @@ public class RF11 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1914, Short.MAX_VALUE)
                 .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -286,7 +278,7 @@ public class RF11 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 902, Short.MAX_VALUE))
         );
 
         pack();
@@ -303,6 +295,75 @@ public class RF11 extends javax.swing.JFrame {
         novoFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Bt_NovoActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        try {
+            Connection Con = null;
+            
+            
+         
+                Class.forName("com.mysql.cj.jdbc.Driver");
+           
+            
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String user = "root";
+            String senha = "";
+            
+            Con = DriverManager.getConnection(url,user,senha);
+            
+            this.PopularJTable("SELECT * FROM funcionarios");
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (ClassNotFoundException ex) {
+                Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        
+        
+        
+    }//GEN-LAST:event_formWindowOpened
+
+    private void btn_PesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_PesMouseClicked
+       // NOME FILTROS
+       //CARGO FILTROS
+       //CPF FILTROS/
+       
+        Connection Con = null;
+            
+         try {   
+         
+         
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            
+           
+            
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String user = "root";
+            String senha = "";
+            
+            Con = DriverManager.getConnection(url,user,senha);
+            
+       
+            String sql = "SELECT * FROM funcionarios WHERE nome = ? ";
+     this.PopularJTable(sql);
+       
+       PreparedStatement st = Con.prepareStatement(sql);
+       
+            st.setString(1, txt_Nome.getText());
+            
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          catch (ClassNotFoundException ex) {
+                Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
+            }
+      
+       
+    }//GEN-LAST:event_btn_PesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -345,16 +406,19 @@ public class RF11 extends javax.swing.JFrame {
     private javax.swing.JButton Bt_Novo;
     private javax.swing.JLabel LabelBack;
     private javax.swing.JLabel LabelCargo;
-    private javax.swing.JLabel LabelCpf;
     private javax.swing.JLabel LabelN;
     private javax.swing.JLabel LabelT;
     private javax.swing.JTable Table;
     private javax.swing.JTextField TextCpf;
     private javax.swing.JLabel btn_Pes;
     private javax.swing.JComboBox<String> cbxCargo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbl_cpf;
     private javax.swing.JTextField txt_Nome;
     // End of variables declaration//GEN-END:variables
 }

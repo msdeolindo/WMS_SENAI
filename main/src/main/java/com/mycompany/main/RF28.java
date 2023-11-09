@@ -72,7 +72,6 @@ public class RF28 extends javax.swing.JFrame {
 
         NUN_CARGA.setBackground(new java.awt.Color(228, 217, 217));
         NUN_CARGA.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        NUN_CARGA.setText("000021");
         NUN_CARGA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NUN_CARGAActionPerformed(evt);
@@ -85,7 +84,6 @@ public class RF28 extends javax.swing.JFrame {
         ORIGEM_RUA.setBackground(new java.awt.Color(228, 217, 217));
         ORIGEM_RUA.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
         ORIGEM_RUA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ORIGEM_RUA.setText("A4");
         ORIGEM_RUA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ORIGEM_RUAActionPerformed(evt);
@@ -98,7 +96,6 @@ public class RF28 extends javax.swing.JFrame {
         ORIGEM_CORREDOR.setBackground(new java.awt.Color(228, 217, 217));
         ORIGEM_CORREDOR.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
         ORIGEM_CORREDOR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ORIGEM_CORREDOR.setText("C0");
         ORIGEM_CORREDOR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ORIGEM_CORREDORActionPerformed(evt);
@@ -111,7 +108,6 @@ public class RF28 extends javax.swing.JFrame {
         ORINGEM_PILHA.setBackground(new java.awt.Color(228, 217, 217));
         ORINGEM_PILHA.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
         ORINGEM_PILHA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ORINGEM_PILHA.setText("P4");
         ORINGEM_PILHA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ORINGEM_PILHAActionPerformed(evt);
@@ -124,7 +120,6 @@ public class RF28 extends javax.swing.JFrame {
         ORIGEM_NIVEL.setBackground(new java.awt.Color(228, 217, 217));
         ORIGEM_NIVEL.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
         ORIGEM_NIVEL.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ORIGEM_NIVEL.setText("6");
         ORIGEM_NIVEL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ORIGEM_NIVELActionPerformed(evt);
@@ -139,7 +134,6 @@ public class RF28 extends javax.swing.JFrame {
 
         DESTINO_RUA.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
         DESTINO_RUA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        DESTINO_RUA.setText("A2");
         DESTINO_RUA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DESTINO_RUAActionPerformed(evt);
@@ -151,7 +145,6 @@ public class RF28 extends javax.swing.JFrame {
 
         DESTINO_CORREDOR.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
         DESTINO_CORREDOR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        DESTINO_CORREDOR.setText("C0");
         DESTINO_CORREDOR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DESTINO_CORREDORActionPerformed(evt);
@@ -163,7 +156,6 @@ public class RF28 extends javax.swing.JFrame {
 
         DESTINO_PILHA.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
         DESTINO_PILHA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        DESTINO_PILHA.setText("P1");
         DESTINO_PILHA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DESTINO_PILHAActionPerformed(evt);
@@ -175,7 +167,6 @@ public class RF28 extends javax.swing.JFrame {
 
         DESTINO_NIVEL.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
         DESTINO_NIVEL.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        DESTINO_NIVEL.setText("3");
         DESTINO_NIVEL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DESTINO_NIVELActionPerformed(evt);
