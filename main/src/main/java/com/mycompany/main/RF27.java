@@ -46,6 +46,7 @@ public class RF27 extends javax.swing.JFrame {
         logo = new javax.swing.JLabel();
         senha = new javax.swing.JLabel();
         login_txt = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +77,8 @@ public class RF27 extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout panel_brancLayout = new javax.swing.GroupLayout(panel_branc);
         panel_branc.setLayout(panel_brancLayout);
         panel_brancLayout.setHorizontalGroup(
@@ -95,7 +98,10 @@ public class RF27 extends javax.swing.JFrame {
                         .addComponent(bot_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panel_brancLayout.createSequentialGroup()
                         .addGap(706, 706, 706)
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel_brancLayout.createSequentialGroup()
+                        .addGap(248, 248, 248)
+                        .addComponent(jLabel1)))
                 .addContainerGap(802, Short.MAX_VALUE))
         );
         panel_brancLayout.setVerticalGroup(
@@ -103,7 +109,9 @@ public class RF27 extends javax.swing.JFrame {
             .addGroup(panel_brancLayout.createSequentialGroup()
                 .addContainerGap(159, Short.MAX_VALUE)
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1)
+                .addGap(11, 11, 11)
                 .addComponent(login_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(senha_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -236,6 +244,7 @@ public class RF27 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bot_entrar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField login_txt;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel panel_azul;
