@@ -4,6 +4,16 @@
  */
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author pmerlo
@@ -16,7 +26,46 @@ public class RF31 extends javax.swing.JFrame {
     public RF31() {
         initComponents();
     }
-
+    public void PesquisaJTable (String sql) {
+        
+        
+    }
+    public void PopularJTable (String sql) {
+        
+        try {
+            String url = "jdbc:mysql://localhost:3306/db_wms_prd";
+            String usuario = "root";
+            String senha = "";
+            
+            Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
+            PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
+            
+            ResultSet resultado = banco.executeQuery(sql);
+          
+            DefaultTableModel model = (DefaultTableModel) tblRegistroClientes.getModel();
+            model.setNumRows(0);
+            
+            while(resultado.next())
+            {
+                
+                model.addRow(new Object[]
+                {
+                    //retorna os dados da tabela do BD, cada campo e uma coluna.
+                    resultado.getString("id"),
+                    resultado.getString("cnpj"),
+                    resultado.getString("razao_social"),
+                    resultado.getString("contato"),
+                    resultado.getString("id"),
+                    resultado.getString("nome_responsavel")
+                });
+            }
+            banco.close();
+            con.close();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,6 +92,11 @@ public class RF31 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1920, 1080));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         pnlCabecalho.setBackground(new java.awt.Color(43, 31, 173));
 
@@ -87,7 +141,15 @@ public class RF31 extends javax.swing.JFrame {
             new String [] {
                 "Código Cliente", "CNPJ", "Razão Social", "Telefone", "Data Registro", "Nome Contato"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblRegistroClientes.setGridColor(new java.awt.Color(0, 0, 0));
         tblRegistroClientes.setSelectionBackground(new java.awt.Color(0, 0, 0));
         tblRegistroClientes.setShowHorizontalLines(true);
@@ -128,6 +190,11 @@ public class RF31 extends javax.swing.JFrame {
         });
 
         lbl_icon_pesquisar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
+        lbl_icon_pesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_icon_pesquisarMouseClicked(evt);
+            }
+        });
 
         btn_novo.setBackground(new java.awt.Color(32, 41, 171));
         btn_novo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -234,6 +301,63 @@ public class RF31 extends javax.swing.JFrame {
         novoFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_novoActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        try {
+            // TODO add your handling code here:
+            
+            Connection conexao = null;
+            PreparedStatement statement = null;
+            
+            String url = "jdbc:mysql://localhost:3306/db_wms_prd";
+            String usuario = "root";
+            String senha = "";
+            
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conexao = DriverManager.getConnection(url,usuario,senha);
+            
+            this.PopularJTable("SELECT * FROM clientes order by id ASC");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
+        }
+             
+             
+    }//GEN-LAST:event_formWindowOpened
+
+    private void lbl_icon_pesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_icon_pesquisarMouseClicked
+        try {
+            // TODO add your handling code here:
+
+           
+        PreparedStatement statement = null;
+        
+            String url = "jdbc:mysql://localhost:3306/db_wms_prd";
+            String usuario = "root";
+            String senha = "";
+            
+             
+            Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
+            String sql = "SELECT * FROM clientes WHERE id = ?";
+            
+            statement  = con.prepareCall(sql);
+             statement.setString(1,txtCodCliente.getText());
+            
+            this.PopularJTable(sql);
+            
+            
+           
+            
+            JOptionPane.showMessageDialog(rootPane, "teste");
+            
+           
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_lbl_icon_pesquisarMouseClicked
 
     /**
      * @param args the command line arguments
