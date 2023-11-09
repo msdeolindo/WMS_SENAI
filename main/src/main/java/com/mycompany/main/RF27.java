@@ -36,8 +36,7 @@ public class RF27 extends javax.swing.JFrame {
         senha_txt = new javax.swing.JPasswordField();
         logo = new javax.swing.JLabel();
         senha = new javax.swing.JLabel();
-        scroll_login = new javax.swing.JScrollPane();
-        login_txt = new javax.swing.JTextArea();
+        login_txt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,6 +47,7 @@ public class RF27 extends javax.swing.JFrame {
 
         bot_entrar.setBackground(new java.awt.Color(32, 41, 173));
         bot_entrar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        bot_entrar.setForeground(new java.awt.Color(255, 255, 255));
         bot_entrar.setText("ENTRAR");
         bot_entrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,45 +67,41 @@ public class RF27 extends javax.swing.JFrame {
             }
         });
 
-        login_txt.setColumns(20);
-        login_txt.setRows(5);
-        scroll_login.setViewportView(login_txt);
-
         javax.swing.GroupLayout panel_brancLayout = new javax.swing.GroupLayout(panel_branc);
         panel_branc.setLayout(panel_brancLayout);
         panel_brancLayout.setHorizontalGroup(
             panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_brancLayout.createSequentialGroup()
-                .addGap(0, 757, Short.MAX_VALUE)
-                .addGroup(panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(senha_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(scroll_login, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(756, 756, 756))
             .addGroup(panel_brancLayout.createSequentialGroup()
                 .addGroup(panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_brancLayout.createSequentialGroup()
+                        .addGap(754, 754, 754)
+                        .addGroup(panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(login_txt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(senha_txt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE))))
                     .addGroup(panel_brancLayout.createSequentialGroup()
                         .addGap(815, 815, 815)
                         .addComponent(senha))
                     .addGroup(panel_brancLayout.createSequentialGroup()
                         .addGap(790, 790, 790)
                         .addComponent(bot_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(754, Short.MAX_VALUE))
         );
         panel_brancLayout.setVerticalGroup(
             panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_brancLayout.createSequentialGroup()
-                .addContainerGap(96, Short.MAX_VALUE)
+                .addContainerGap(152, Short.MAX_VALUE)
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(scroll_login, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(login_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(senha_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
+                .addGap(35, 35, 35)
                 .addComponent(senha)
                 .addGap(74, 74, 74)
                 .addComponent(bot_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
+                .addGap(80, 80, 80))
         );
 
         javax.swing.GroupLayout panel_azulLayout = new javax.swing.GroupLayout(panel_azul);
@@ -113,14 +109,14 @@ public class RF27 extends javax.swing.JFrame {
         panel_azulLayout.setHorizontalGroup(
             panel_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_azulLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(23, 23, 23)
                 .addComponent(panel_branc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         panel_azulLayout.setVerticalGroup(
             panel_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_azulLayout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(panel_branc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
@@ -130,13 +126,16 @@ public class RF27 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(14, 14, 14)
                 .addComponent(panel_azul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel_azul, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(panel_azul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -193,11 +192,10 @@ public class RF27 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bot_entrar;
-    private javax.swing.JTextArea login_txt;
+    private javax.swing.JTextField login_txt;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel panel_azul;
     private javax.swing.JPanel panel_branc;
-    private javax.swing.JScrollPane scroll_login;
     private javax.swing.JLabel senha;
     private javax.swing.JPasswordField senha_txt;
     // End of variables declaration//GEN-END:variables
