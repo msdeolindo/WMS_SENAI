@@ -94,7 +94,7 @@ public class RF11 extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         LabelCargo = new javax.swing.JLabel();
         LabelN = new javax.swing.JLabel();
-        LabelCpf = new javax.swing.JLabel();
+        lbl_cpf = new javax.swing.JLabel();
         TextCpf = new javax.swing.JTextField();
         txt_Nome = new javax.swing.JTextField();
         btn_Pes = new javax.swing.JLabel();
@@ -157,8 +157,8 @@ public class RF11 extends javax.swing.JFrame {
         LabelN.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         LabelN.setText("Nome:");
 
-        LabelCpf.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        LabelCpf.setText("CPF:");
+        lbl_cpf.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_cpf.setText("CPF:");
 
         TextCpf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -197,7 +197,7 @@ public class RF11 extends javax.swing.JFrame {
                     .addComponent(cbxCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelCpf)
+                    .addComponent(lbl_cpf)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(TextCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
@@ -213,7 +213,7 @@ public class RF11 extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LabelCpf)
+                            .addComponent(lbl_cpf)
                             .addComponent(LabelCargo)
                             .addComponent(LabelN))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -388,7 +388,6 @@ public class RF11 extends javax.swing.JFrame {
     private javax.swing.JButton Bt_Novo;
     private javax.swing.JLabel LabelBack;
     private javax.swing.JLabel LabelCargo;
-    private javax.swing.JLabel LabelCpf;
     private javax.swing.JLabel LabelN;
     private javax.swing.JLabel LabelT;
     private javax.swing.JTable Table;
@@ -398,6 +397,7 @@ public class RF11 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbl_cpf;
     private javax.swing.JTextField txt_Nome;
     // End of variables declaration//GEN-END:variables
 }
