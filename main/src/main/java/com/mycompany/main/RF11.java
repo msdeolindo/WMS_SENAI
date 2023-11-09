@@ -4,6 +4,15 @@
  */
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author miril
@@ -15,6 +24,58 @@ public class RF11 extends javax.swing.JFrame {
      */
     public RF11() {
         initComponents();
+    }
+    
+    public void PopularJTable (String sql){
+        
+        Connection Con = null;
+        
+        try {
+        
+         Class.forName("com.mysql.cj.jdbc.Driver");
+         
+         
+         String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+        String user = "root";
+        String senha = "";
+        
+         
+          Con = DriverManager.getConnection(url,user,senha);
+          PreparedStatement banco = Con.prepareStatement(sql);
+          banco.execute();
+          
+           ResultSet resultado = banco.executeQuery(sql);
+           
+            DefaultTableModel model = (DefaultTableModel) Table.getModel();
+            model.setNumRows(0);
+            
+            
+             while(resultado.next()) {
+                 model.addRow(new Object[]
+                 {
+                         
+                         resultado.getString("Nome"),
+                         resultado.getString("Cargo"),
+                         resultado.getString("CPF"),
+                         resultado.getString("Contato"),
+                         resultado.getString("E-mail")
+                         
+                 });       
+           
+             }
+                 
+             banco.close();
+        
+            Con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (ClassNotFoundException ex) {
+            Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                 
+        
+        
     }
 
     /**
@@ -44,6 +105,11 @@ public class RF11 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1920, 1080));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 153));
 
@@ -99,7 +165,14 @@ public class RF11 extends javax.swing.JFrame {
         txt_Nome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btn_Pes.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
+        btn_Pes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_PesMouseClicked(evt);
+            }
+        });
 
+        Bt_Novo.setBackground(new java.awt.Color(32, 41, 173));
+        Bt_Novo.setForeground(new java.awt.Color(255, 255, 255));
         Bt_Novo.setText("Novo");
         Bt_Novo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,106 +232,7 @@ public class RF11 extends javax.swing.JFrame {
         Table.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Nome", "Cargo", "CPF", "Contato", "E-mail"
@@ -303,6 +277,75 @@ public class RF11 extends javax.swing.JFrame {
         novoFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Bt_NovoActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        try {
+            Connection Con = null;
+            
+            
+         
+                Class.forName("com.mysql.cj.jdbc.Driver");
+           
+            
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String user = "root";
+            String senha = "";
+            
+            Con = DriverManager.getConnection(url,user,senha);
+            
+            this.PopularJTable("SELECT * FROM funcionarios");
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (ClassNotFoundException ex) {
+                Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        
+        
+        
+    }//GEN-LAST:event_formWindowOpened
+
+    private void btn_PesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_PesMouseClicked
+       // NOME FILTROS
+       //CARGO FILTROS
+       //CPF FILTROS/
+       
+        Connection Con = null;
+            
+         try {   
+         
+         
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            
+           
+            
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String user = "root";
+            String senha = "";
+            
+            Con = DriverManager.getConnection(url,user,senha);
+            
+       
+            String sql = "SELECT * FROM funcionarios WHERE nome = ? ";
+     this.PopularJTable(sql);
+       
+       PreparedStatement st = Con.prepareStatement(sql);
+       
+            st.setString(1, txt_Nome.getText());
+            
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          catch (ClassNotFoundException ex) {
+                Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
+            }
+      
+       
+    }//GEN-LAST:event_btn_PesMouseClicked
 
     /**
      * @param args the command line arguments
