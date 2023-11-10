@@ -4,6 +4,15 @@
  */
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author JulioBasso
@@ -15,6 +24,42 @@ public class RF16_LIST extends javax.swing.JFrame {
      */
     public RF16_LIST() {
         initComponents();
+    }
+    
+    public void PopularJtable(String sql){
+        
+        try {
+            String url = "jdbc:mysql://localhost:3306/db_wms_prd";
+            String usuario = "root";
+            String senha = "";
+            
+            Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
+            PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
+            
+            ResultSet resultado = banco.executeQuery(sql);
+          
+            DefaultTableModel model = (DefaultTableModel) tb_Endereco.getModel();
+            model.setNumRows(0);
+            
+            while(resultado.next())
+            {
+                
+                model.addRow(new Object[]
+                {
+                    //retorna os dados da tabela do BD, cada campo e uma coluna.
+                    resultado.getString("id"),
+                    resultado.getString("rua"),
+                    resultado.getString("corredor"),
+                    resultado.getString("pilha"),
+                    resultado.getString("nivel")
+                    
+                });
+            }
+            banco.close();
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(RF16_LIST.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -49,6 +94,11 @@ public class RF16_LIST extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CADASTRO DE ARMAZENAGEM");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         bt_Novo.setText("Novo");
         bt_Novo.addActionListener(new java.awt.event.ActionListener() {
@@ -170,6 +220,24 @@ public class RF16_LIST extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_lb_VoltarMouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        try {
+            Connection conexao = null;
+            PreparedStatement statement = null;
+            
+            String url = "jdbc:mysql://localhost:3306/db_wms_prd";
+            String usuario = "root";
+            String senha = "";
+            
+            
+            conexao = DriverManager.getConnection(url,usuario,senha);
+            
+            this.PopularJtable("SELECT * FROM enderecos ORDER BY id DESC");
+        } catch (SQLException ex) {
+            Logger.getLogger(RF16_LIST.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments

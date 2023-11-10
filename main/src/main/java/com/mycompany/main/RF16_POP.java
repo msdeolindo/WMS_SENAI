@@ -311,7 +311,7 @@ public class RF16_POP extends javax.swing.JFrame {
         }*/
         
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_wms_prd", "root", "");
             PreparedStatement statement;
             
             statement = conn.prepareStatement("UPDATE enderecos SET categoria=?, tipo_carga=?, rua=?, corredor=?, pilha=?, nivel=? WHERE id = ?");
