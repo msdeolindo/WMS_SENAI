@@ -65,6 +65,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="LabelT" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="472" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -76,7 +78,10 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="Bt_Back" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="LabelBack" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="LabelT" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="LabelT" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -106,6 +111,11 @@
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Bt_BackMouseClicked"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jLabel1"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
