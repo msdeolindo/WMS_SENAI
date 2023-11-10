@@ -77,6 +77,57 @@ public class RF11 extends javax.swing.JFrame {
         
         
     }
+    
+    public void PopularJTableParametro (String sql ){
+        
+         Connection Con = null;
+         
+         
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        
+        
+          String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+        String user = "root";
+        String senha = "";
+        
+          Con = DriverManager.getConnection(url,user,senha);
+          PreparedStatement banco = Con.prepareStatement(sql);
+          banco.execute();
+          
+          
+          ResultSet resultado = banco.executeQuery(sql);
+          
+          DefaultTableModel model = (DefaultTableModel) Table.getModel();
+            model.setNumRows(0);
+            
+            
+             while(resultado.next()) {
+                 model.addRow(new Object[]
+                 {
+                         
+                         resultado.getString("Nome"),
+                         resultado.getString("Cargo"),
+                         resultado.getString("CPF"),
+                         resultado.getString("Contato"),
+                         resultado.getString("E-mail")
+                         
+                 });       
+           
+             }
+             
+              banco.close();
+        
+      
+            Con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          
+          
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -91,9 +142,6 @@ public class RF11 extends javax.swing.JFrame {
         LabelT = new javax.swing.JLabel();
         LabelBack = new javax.swing.JLabel();
         Bt_Back = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         LabelCargo = new javax.swing.JLabel();
         LabelN = new javax.swing.JLabel();
@@ -126,12 +174,6 @@ public class RF11 extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("jLabel1");
-
-        jLabel2.setText("jLabel2");
-
-        jLabel3.setText("jLabel3");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -143,12 +185,6 @@ public class RF11 extends javax.swing.JFrame {
                     .addComponent(Bt_Back))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelT)
-                .addGap(464, 464, 464)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -158,11 +194,7 @@ public class RF11 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Bt_Back)
                     .addComponent(LabelBack)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(LabelT)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel3)))
+                    .addComponent(LabelT))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -311,7 +343,7 @@ public class RF11 extends javax.swing.JFrame {
             
             Con = DriverManager.getConnection(url,user,senha);
             
-            this.PopularJTable("SELECT * FROM funcionarios");
+            this.PopularJTable("SELECT * FROM funcionarios ORDER BY id ");
             
             
         } catch (SQLException ex) {
@@ -345,13 +377,15 @@ public class RF11 extends javax.swing.JFrame {
             
             Con = DriverManager.getConnection(url,user,senha);
             
-       
+             System.out.println(txt_Nome.getText());
             String sql = "SELECT * FROM funcionarios WHERE nome = ? ";
-     this.PopularJTable(sql);
+            this.PopularJTableParametro(sql);
        
        PreparedStatement st = Con.prepareStatement(sql);
        
             st.setString(1, txt_Nome.getText());
+            //st.setString(2, (String) cbxCargo.getSelectedItem());
+            //st.setString(3, TextCpf.getText());
             
             
             
@@ -412,9 +446,6 @@ public class RF11 extends javax.swing.JFrame {
     private javax.swing.JTextField TextCpf;
     private javax.swing.JLabel btn_Pes;
     private javax.swing.JComboBox<String> cbxCargo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
