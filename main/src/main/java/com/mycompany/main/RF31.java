@@ -236,6 +236,11 @@ public class RF31 extends javax.swing.JFrame {
         });
 
         lbl_icon_pesquisar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
+        lbl_icon_pesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_icon_pesquisarMouseClicked(evt);
+            }
+        });
 
         btn_novo.setBackground(new java.awt.Color(32, 41, 171));
         btn_novo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -360,6 +365,10 @@ public class RF31 extends javax.swing.JFrame {
             Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_formWindowOpened
+
+    private void lbl_icon_pesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_icon_pesquisarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lbl_icon_pesquisarMouseClicked
 
     /**
      * @param args the command line arguments
