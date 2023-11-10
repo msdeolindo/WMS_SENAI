@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -182,9 +183,17 @@ public class RF14 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Código", "Cliente", "Data Reserva", "Data agendamento", "Tipo de carga", "Tipo", "Situação", "Transportadora"
+                "Código", "Cliente", "Data agendamento", "Tipo de carga", "Tipo", "Situação", "Transportadora"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jTable1.setGridColor(new java.awt.Color(0, 0, 0));
         jTable1.setSelectionBackground(new java.awt.Color(204, 204, 204));
         jTable1.setShowGrid(true);
@@ -222,9 +231,6 @@ public class RF14 extends javax.swing.JFrame {
 
     
      public void PopularjTable1(String sql) {
-          
-        
-         
         try {
             //Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
@@ -244,14 +250,13 @@ public class RF14 extends javax.swing.JFrame {
             {
                 model.addRow(new Object[]
                 {
-                    resultado.getString("Código"),
-                    resultado.getString("Cliente"),
-                    resultado.getString("Data Reserva"),
-                    resultado.getString("Data agendamento"),
-                    resultado.getString("Tipo de carga"),
-                    resultado.getString("Tipo"),
-                    resultado.getString("Situação"),
-                    resultado.getString("Transportadora")
+                    resultado.getString("id"),
+                    resultado.getString("cliente_id"),
+                    resultado.getString("data_agendamento"),
+                    resultado.getString("tipo_carga"),
+                    resultado.getString("id"),
+                    resultado.getString("situacao"),
+                    resultado.getString("transportadora")
                 });
             }
             
@@ -263,6 +268,40 @@ public class RF14 extends javax.swing.JFrame {
            
       
     }
+     
+     public void Filtrar(String filtro){
+         Connection conexao = null;
+          
+          String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+          String usuario = "root";
+          String senha = "";
+          
+        try {
+            conexao = DriverManager.getConnection(url,usuario,senha);
+       
+            Class.forName("com.mysql.cj.jdbc.Driver");
+          
+            Connection conn;
+          
+            String sql = "SELECT * FROM agendamentos WHERE data_agendamento=? AND id=? AND cliente_id=? AND situacao=?";
+          
+            PreparedStatement statement = conexao.prepareStatement(sql);
+          
+            statement.setString(1,txt_Agen.getText());
+            statement.setInt(2,Integer.parseInt(txt_Cod.getText()));
+            statement.setInt(3,Integer.parseInt(txt_cliente.getText()));
+            statement.setString(4,cbx_Situacao.getSelectedItem().toString());
+            
+            statement.execute();
+            statement.close();
+        JOptionPane.showMessageDialog(rootPane,"Boa.");
+        
+         } catch (SQLException ex) {
+            Logger.getLogger(RF14.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RF14.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     }
     
     private void cbx_SituacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_SituacaoActionPerformed
         // TODO add your handling code here:
@@ -280,41 +319,11 @@ public class RF14 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void btn_PesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_PesMouseClicked
-       Connection conexao = null;
-          
-          String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
-          String usuario = "root";
-          String senha = "";
-          
-        try {
-            conexao = DriverManager.getConnection(url,usuario,senha);
-       
-       
-          Class.forName("com.mysql.cj.jdbc.Driver");
-          
-          
-          Connection conn;
-          
-          String sql = "SELECT * FROM agendamentos WHERE data_agendamento=? , id=? , cliente_id=? , situacao=?";
-          
-          PreparedStatement statement = conexao.prepareStatement(sql);
-          
-          statement.setString(1,txt_Agen.getText());
-           statement.setInt(2,Integer.parseInt(txt_Cod.getText()));
-             statement.setInt(3,Integer.parseInt(txt_cliente.getText()));
-            statement.setString(4,cbx_Situacao.getSelectedItem().toString());
-            
-            statement.execute();
-         statement.close(); 
-            
-       // this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento=?,id=?,cliente_id=?,situacao=?");
         
+        this.Filtrar("SELECT * FROM agendamentos WHERE data_agendamento=? AND id=? AND cliente_id=? AND situacao=? ORDER BY id ASC");
         
-         } catch (SQLException ex) {
-            Logger.getLogger(RF14.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(RF14.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        //this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento AND id AND cliente_id AND situacao ORDER BY id ASC");
+         
         /*int lin } catch (SQLException ex) {
             Logger.getLogger(RF14.class.getName()).log(Level.SEVERE, null, ex);
         }ha = jTable1.getSelectedRow(); 
@@ -336,7 +345,7 @@ public class RF14 extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
           conexao = DriverManager.getConnection(url,usuario,senha);
-            this.PopularjTable1("SELECT * FROM clientes ORDER BY id DESC");
+            this.PopularjTable1("SELECT * FROM agendamentos order by id ASC");
             
             } catch (SQLException ex) {
             Logger.getLogger(RF14.class.getName()).log(Level.SEVERE, null, ex);

@@ -382,36 +382,28 @@ public class RF28 extends javax.swing.JFrame {
     }//GEN-LAST:event_REGISTRARKeyPressed
 
     private void REGISTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_REGISTRARActionPerformed
-
-        Connection conn ;
-        PreparedStatement statement;
-        
-        try{
+try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
+            PreparedStatement statement;
+            statement = conn.prepareStatement("UPDATE cargas SET rua = ?,corredor = ?,pilha = ?,nivel = ?, WHERE id = ?");
             
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","");
             
-            statement = conn.prepareStatement("UPDATE cargas SET rua = ?, corredor = ?, pilha = ?, nivel = ? WHERE id = ? ");
-                    statement.setString(1, DESTINO_RUA.getText());
-                    statement.setString(2, DESTINO_CORREDOR.getText());
-                    statement.setString(3, DESTINO_PILHA.getText());
-                    statement.setString(4, DESTINO_NIVEL.getText());
-                    statement.setString(5, NUN_CARGA.getText());
-                    
-                    statement.execute();
-                    statement.close();
-                    
-        }catch(ClassNotFoundException | SQLException ex){
-            Logger.getLogger(RF28.class.getName()).log(Level.SEVERE,null,ex);
-        }
-        
-        JOptionPane.showMessageDialog(jPanel1,"Localização Atualizada!!");    
-
-        RF25 FrameEtiqueta = new RF25();
-        FrameEtiqueta.setVisible(true);
-        this.dispose();
-
-
+            statement.setString(1,DESTINO_RUA.getText());
+            statement.setString(2,DESTINO_CORREDOR.getText());
+            statement.setString(3,DESTINO_PILHA.getText());
+            statement.setString(4,DESTINO_NIVEL.getText());
+            statement.setString(5,NUN_CARGA.getText());
+            
+            
+            statement.execute();
+            statement.close();
+            JOptionPane.showMessageDialog(rootPane, " ATUALIZADO");
+            
+            
+            
+        } catch (SQLException ex) {
+                System.out.println("erro !!!!!!!!!!!!!"+ex);
+        }  
         // TODO add your handling code here:
     }//GEN-LAST:event_REGISTRARActionPerformed
 
