@@ -15,19 +15,19 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author pmerlo
+ * @author jbasso
  */
-    public class RF31 extends javax.swing.JFrame {
+public class RF31 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Prototipo_RF31
+     * Creates new form RF31_
      */
-     public RF31() {
+    public RF31() {
         initComponents();
     }
-     
-      public void PopularJTable (String sql) {
-        
+    
+    
+     public void PopularJTable (String sql) {
         try {
             String url = "jdbc:mysql://localhost:3306/db_wms_prd";
             String usuario = "root";
@@ -60,8 +60,7 @@ import javax.swing.table.DefaultTableModel;
         } catch (SQLException ex) {
             Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-}
+     }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -75,6 +74,7 @@ import javax.swing.table.DefaultTableModel;
         pnlCabecalho = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         lbl_Icone_Voltar = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         pnlTabela = new javax.swing.JPanel();
         scrTabela = new javax.swing.JScrollPane();
         tblRegistroClientes = new javax.swing.JTable();
@@ -88,7 +88,6 @@ import javax.swing.table.DefaultTableModel;
         btn_novo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setSize(new java.awt.Dimension(1920, 1080));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -101,28 +100,37 @@ import javax.swing.table.DefaultTableModel;
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setText("LISTA DE REGISTRO DE CLIENTES");
 
-        lbl_Icone_Voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/main/icon_back.png"))); // NOI18N
+        lbl_Icone_Voltar.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbasso\\Desktop\\wms2.0\\ícones WMS\\icon_back.png")); // NOI18N
         lbl_Icone_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_Icone_VoltarMouseClicked(evt);
             }
         });
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout pnlCabecalhoLayout = new javax.swing.GroupLayout(pnlCabecalho);
         pnlCabecalho.setLayout(pnlCabecalhoLayout);
         pnlCabecalhoLayout.setHorizontalGroup(
             pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCabecalhoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_Icone_Voltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTitulo)
-                .addContainerGap(1484, Short.MAX_VALUE))
+                .addGroup(pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCabecalhoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbl_Icone_Voltar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblTitulo))
+                    .addGroup(pnlCabecalhoLayout.createSequentialGroup()
+                        .addGap(361, 361, 361)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlCabecalhoLayout.setVerticalGroup(
             pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCabecalhoLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lbl_Icone_Voltar)
                     .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -305,11 +313,17 @@ import javax.swing.table.DefaultTableModel;
                 .addComponent(pnlCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pnlTabela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lbl_Icone_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Icone_VoltarMouseClicked
+        RF30 novoFrame = new RF30();
+        novoFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lbl_Icone_VoltarMouseClicked
 
     private void txtCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCNPJActionPerformed
         // TODO add your handling code here:
@@ -322,12 +336,6 @@ import javax.swing.table.DefaultTableModel;
     private void txtDataRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataRegistroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDataRegistroActionPerformed
-
-    private void lbl_Icone_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Icone_VoltarMouseClicked
-        RF30 novoFrame = new RF30();
-        novoFrame.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_lbl_Icone_VoltarMouseClicked
 
     private void btn_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_novoActionPerformed
         RF17 novoFrame = new RF17();
@@ -380,12 +388,6 @@ import javax.swing.table.DefaultTableModel;
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -397,6 +399,7 @@ import javax.swing.table.DefaultTableModel;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_novo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCNPJ;
     private javax.swing.JLabel lblCodigoCliente;
     private javax.swing.JLabel lblDataRegistro;
