@@ -3,10 +3,12 @@ package com.mycompany.main;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -26,6 +28,46 @@ public class RF18 extends javax.swing.JFrame {
         initComponents();
     }
 
+    
+     public void PopularJTable(String sql) {
+        
+
+        
+        try {
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String usuario = "root";
+            String senha = "";
+            
+            Connection con = (Connection)DriverManager.getConnection(url,usuario,senha);   
+            PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
+               
+            
+            ResultSet resultado = banco.executeQuery(sql);            
+           
+            DefaultTableModel model = (DefaultTableModel) jTable2.getModel();           
+            model.setNumRows(0);
+            
+            while(resultado.next())
+            {
+                model.addRow(new Object[]
+                {
+                    resultado.getString("CLIENTE"),
+                    resultado.getString("TIPO"),
+                    resultado.getString("TRANSPORTADORA"),
+                    resultado.getString("ESPECIFICACAO"),
+                    resultado.getString("DATA")
+                });
+                
+            }
+            
+            banco.close();      
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+      }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,6 +100,7 @@ public class RF18 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         lblEndereco = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jsp_tabela_agendamento = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
 
@@ -89,6 +132,11 @@ public class RF18 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel_principal.setPreferredSize(new java.awt.Dimension(1920, 1080));
 
@@ -189,6 +237,8 @@ public class RF18 extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza4.0.png")); // NOI18N
 
+        jLabel4.setText("jLabel4");
+
         javax.swing.GroupLayout jPanel_tela_informaçãoLayout = new javax.swing.GroupLayout(jPanel_tela_informação);
         jPanel_tela_informação.setLayout(jPanel_tela_informaçãoLayout);
         jPanel_tela_informaçãoLayout.setHorizontalGroup(
@@ -226,6 +276,10 @@ public class RF18 extends javax.swing.JFrame {
                 .addGap(153, 153, 153)
                 .addComponent(bt_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_tela_informaçãoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(254, 254, 254))
         );
         jPanel_tela_informaçãoLayout.setVerticalGroup(
             jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,7 +288,9 @@ public class RF18 extends javax.swing.JFrame {
                     .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(81, 81, 81))
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel4)
+                        .addGap(27, 27, 27))
                     .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,18 +320,18 @@ public class RF18 extends javax.swing.JFrame {
         jPanel_principalLayout.setHorizontalGroup(
             jPanel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel_topo_azul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel_principalLayout.createSequentialGroup()
-                .addGap(235, 235, 235)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_principalLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel_tela_informação, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(180, 180, 180))
         );
         jPanel_principalLayout.setVerticalGroup(
             jPanel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_principalLayout.createSequentialGroup()
                 .addComponent(jPanel_topo_azul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(186, 186, 186)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 228, Short.MAX_VALUE)
                 .addComponent(jPanel_tela_informação, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addGap(69, 69, 69))
         );
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -286,7 +342,7 @@ public class RF18 extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "CLIENTE", "TIPO", "TRANSPORTADORA", "ESPECIFICAÇÂO", "DATA"
+                "CLIENTE", "TIPO", "TRANSPORTADORA", "ESPECIFICACAO", "DATA"
             }
         ));
         jTable2.setGridColor(new java.awt.Color(255, 255, 255));
@@ -303,8 +359,8 @@ public class RF18 extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jsp_tabela_agendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 1559, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(148, 148, 148))
+                .addComponent(jsp_tabela_agendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 1522, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(185, 185, 185))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -391,6 +447,28 @@ public class RF18 extends javax.swing.JFrame {
        
     }//GEN-LAST:event_bt_devoluçãoMouseClicked
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        try {
+            // TODO add your handling code here:
+            
+            Connection conexao = null;
+            PreparedStatement statement = null;
+            
+            String url = "jdbc:mysql://localhost:3306/loja";
+            String usuario = "root";
+            String senha = "";
+            
+            
+            conexao = DriverManager.getConnection(url, usuario, senha);
+            
+            this.PopularJTable("SELECT * FROM agendamentos ORDER BY ID DESC");
+        } catch (SQLException ex) {
+            Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }//GEN-LAST:event_formWindowOpened
+
     /**
      * @param args the command line arguments
      */
@@ -434,6 +512,7 @@ public class RF18 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel_principal;
     private javax.swing.JPanel jPanel_tela_informação;
