@@ -11,7 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -23,13 +22,6 @@ public class RF31 extends javax.swing.JFrame {
     /**
      * Creates new form Prototipo_RF31
      */
-    public RF31() {
-        initComponents();
-    }
-    public void PesquisaJTable (String sql) {
-        
-        
-    }
     public void PopularJTable (String sql) {
         
         try {
@@ -61,11 +53,17 @@ public class RF31 extends javax.swing.JFrame {
             }
             banco.close();
             con.close();
-            
+            teste
         } catch (SQLException ex) {
             Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+}
+
+    public RF31() {
+        initComponents();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -104,7 +102,6 @@ public class RF31 extends javax.swing.JFrame {
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setText("LISTA DE REGISTRO DE CLIENTES");
 
-        lbl_Icone_Voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         lbl_Icone_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_Icone_VoltarMouseClicked(evt);
@@ -136,20 +133,61 @@ public class RF31 extends javax.swing.JFrame {
 
         tblRegistroClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
                 "Código Cliente", "CNPJ", "Razão Social", "Telefone", "Data Registro", "Nome Contato"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         tblRegistroClientes.setGridColor(new java.awt.Color(0, 0, 0));
         tblRegistroClientes.setSelectionBackground(new java.awt.Color(0, 0, 0));
         tblRegistroClientes.setShowHorizontalLines(true);
@@ -186,13 +224,6 @@ public class RF31 extends javax.swing.JFrame {
         txtDataRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDataRegistroActionPerformed(evt);
-            }
-        });
-
-        lbl_icon_pesquisar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
-        lbl_icon_pesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbl_icon_pesquisarMouseClicked(evt);
             }
         });
 
@@ -303,61 +334,20 @@ public class RF31 extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_novoActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        try {
-            // TODO add your handling code here:
-            
-            Connection conexao = null;
-            PreparedStatement statement = null;
+        // TODO add your handling code here:
+        Connection conexao = null;
+           
             
             String url = "jdbc:mysql://localhost:3306/db_wms_prd";
             String usuario = "root";
             String senha = "";
             
             
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            
             conexao = DriverManager.getConnection(url,usuario,senha);
             
             this.PopularJTable("SELECT * FROM clientes order by id ASC");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
-        }
-             
-             
     }//GEN-LAST:event_formWindowOpened
-
-    private void lbl_icon_pesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_icon_pesquisarMouseClicked
-        try {
-            // TODO add your handling code here:
-
-           
-        PreparedStatement statement = null;
-        
-            String url = "jdbc:mysql://localhost:3306/db_wms_prd";
-            String usuario = "root";
-            String senha = "";
-            
-             
-            Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
-            String sql = "SELECT * FROM clientes WHERE id = ?";
-            
-            statement  = con.prepareCall(sql);
-             statement.setString(1,txtCodCliente.getText());
-            
-            this.PopularJTable(sql);
-            
-            
-           
-            
-            JOptionPane.showMessageDialog(rootPane, "teste");
-            
-           
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_lbl_icon_pesquisarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -384,6 +374,10 @@ public class RF31 extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(RF31.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
