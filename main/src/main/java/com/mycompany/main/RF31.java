@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author pmerlo
  */
-public class RF31 extends javax.swing.JFrame {
+    public class RF31 extends javax.swing.JFrame {
 
     /**
      * Creates new form Prototipo_RF31
@@ -53,7 +53,6 @@ public class RF31 extends javax.swing.JFrame {
             }
             banco.close();
             con.close();
-            teste
         } catch (SQLException ex) {
             Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -102,6 +101,7 @@ public class RF31 extends javax.swing.JFrame {
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setText("LISTA DE REGISTRO DE CLIENTES");
 
+        lbl_Icone_Voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/main/icon_back.png"))); // NOI18N
         lbl_Icone_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_Icone_VoltarMouseClicked(evt);
@@ -227,6 +227,8 @@ public class RF31 extends javax.swing.JFrame {
             }
         });
 
+        lbl_icon_pesquisar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
+
         btn_novo.setBackground(new java.awt.Color(32, 41, 171));
         btn_novo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn_novo.setForeground(new java.awt.Color(255, 255, 255));
@@ -261,9 +263,9 @@ public class RF31 extends javax.swing.JFrame {
                                 .addGap(58, 1037, Short.MAX_VALUE))
                             .addGroup(pnlTabelaLayout.createSequentialGroup()
                                 .addComponent(txtDataRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(27, 27, 27)
                                 .addComponent(lbl_icon_pesquisar)
-                                .addGap(286, 286, 286)
+                                .addGap(259, 259, 259)
                                 .addComponent(btn_novo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
@@ -303,7 +305,7 @@ public class RF31 extends javax.swing.JFrame {
                 .addComponent(pnlCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pnlTabela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -334,19 +336,21 @@ public class RF31 extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_novoActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
-        Connection conexao = null;
-           
+        try {
+            // TODO add your handling code here:
+            Connection conexao = null;
+            
             
             String url = "jdbc:mysql://localhost:3306/db_wms_prd";
             String usuario = "root";
             String senha = "";
             
-            
-            
             conexao = DriverManager.getConnection(url,usuario,senha);
             
             this.PopularJTable("SELECT * FROM clientes order by id ASC");
+        } catch (SQLException ex) {
+            Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_formWindowOpened
 
     /**
