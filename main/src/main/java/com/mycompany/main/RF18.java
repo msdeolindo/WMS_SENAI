@@ -100,7 +100,6 @@ public class RF18 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         lblEndereco = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jsp_tabela_agendamento = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
 
@@ -237,8 +236,6 @@ public class RF18 extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza4.0.png")); // NOI18N
 
-        jLabel4.setText("jLabel4");
-
         javax.swing.GroupLayout jPanel_tela_informaçãoLayout = new javax.swing.GroupLayout(jPanel_tela_informação);
         jPanel_tela_informação.setLayout(jPanel_tela_informaçãoLayout);
         jPanel_tela_informaçãoLayout.setHorizontalGroup(
@@ -276,10 +273,6 @@ public class RF18 extends javax.swing.JFrame {
                 .addGap(153, 153, 153)
                 .addComponent(bt_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_tela_informaçãoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(254, 254, 254))
         );
         jPanel_tela_informaçãoLayout.setVerticalGroup(
             jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,9 +281,7 @@ public class RF18 extends javax.swing.JFrame {
                     .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel4)
-                        .addGap(27, 27, 27))
+                        .addGap(81, 81, 81))
                     .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -512,7 +503,6 @@ public class RF18 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel_principal;
     private javax.swing.JPanel jPanel_tela_informação;
