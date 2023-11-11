@@ -57,6 +57,7 @@ public class RF16_POP extends javax.swing.JFrame {
         paTitulo = new javax.swing.JPanel();
         lb_Titulo = new javax.swing.JLabel();
         lb_Voltar = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CADASTRO DE ENDEREÇO DE ARMAZENAGEM");
@@ -219,6 +220,8 @@ public class RF16_POP extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout paTituloLayout = new javax.swing.GroupLayout(paTitulo);
         paTitulo.setLayout(paTituloLayout);
         paTituloLayout.setHorizontalGroup(
@@ -228,15 +231,19 @@ public class RF16_POP extends javax.swing.JFrame {
                 .addComponent(lb_Voltar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addContainerGap())
         );
         paTituloLayout.setVerticalGroup(
             paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paTituloLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lb_Voltar)
-                    .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(lb_Voltar)
+                        .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(27, 27, 27))
         );
 
@@ -248,7 +255,7 @@ public class RF16_POP extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -406,6 +413,7 @@ public class RF16_POP extends javax.swing.JFrame {
     private javax.swing.JButton btn_Salvar;
     private javax.swing.JComboBox<String> cbx_categoria;
     private javax.swing.JComboBox<String> cbx_tipoCarga;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_Titulo;
     private javax.swing.JLabel lb_Voltar;
