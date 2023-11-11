@@ -34,7 +34,7 @@ public class RF18 extends javax.swing.JFrame {
 
         
         try {
-            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String url = "jdbc:mysql://localhost:3306/db_wms_prd";
             String usuario = "root";
             String senha = "";
             
@@ -44,18 +44,18 @@ public class RF18 extends javax.swing.JFrame {
             
             ResultSet resultado = banco.executeQuery(sql);            
            
-            DefaultTableModel model = (DefaultTableModel) jTable2.getModel();           
+            DefaultTableModel model = (DefaultTableModel) tabelainformacao.getModel();           
             model.setNumRows(0);
             
             while(resultado.next())
             {
                 model.addRow(new Object[]
                 {
-                    resultado.getString("CLIENTE"),
-                    resultado.getString("TIPO"),
-                    resultado.getString("TRANSPORTADORA"),
-                    resultado.getString("ESPECIFICACAO"),
-                    resultado.getString("DATA")
+                    resultado.getString("cliente_id"),
+                    resultado.getString("tipo_agendamento"),
+                    resultado.getString("transportadora"),
+                    resultado.getString("categoria"),
+                    resultado.getString("data_agendamento")
                 });
                 
             }
@@ -101,7 +101,7 @@ public class RF18 extends javax.swing.JFrame {
         lblEndereco = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jsp_tabela_agendamento = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tabelainformacao = new javax.swing.JTable();
 
         jScrollPane1.setViewportView(jEditorPane1);
 
@@ -325,7 +325,7 @@ public class RF18 extends javax.swing.JFrame {
                 .addGap(69, 69, 69))
         );
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tabelainformacao.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"", "", "", "", ""},
                 {null, null, null, null, null},
@@ -336,9 +336,9 @@ public class RF18 extends javax.swing.JFrame {
                 "CLIENTE", "TIPO", "TRANSPORTADORA", "ESPECIFICACAO", "DATA"
             }
         ));
-        jTable2.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable2.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jsp_tabela_agendamento.setViewportView(jTable2);
+        tabelainformacao.setGridColor(new java.awt.Color(255, 255, 255));
+        tabelainformacao.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        jsp_tabela_agendamento.setViewportView(tabelainformacao);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -445,7 +445,7 @@ public class RF18 extends javax.swing.JFrame {
             Connection conexao = null;
             PreparedStatement statement = null;
             
-            String url = "jdbc:mysql://localhost:3306/loja";
+            String url = "jdbc:mysql://localhost:3306/db_wms_prd";
             String usuario = "root";
             String senha = "";
             
@@ -510,7 +510,6 @@ public class RF18 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JScrollPane jsp_tabela_agendamento;
     private javax.swing.JLabel lblEndereco;
     private javax.swing.JLabel lbl_avarias;
@@ -518,6 +517,7 @@ public class RF18 extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_obeservação;
     private javax.swing.JLabel lbl_quantidade_avarias;
     private javax.swing.JLabel lbl_recebimento;
+    private javax.swing.JTable tabelainformacao;
     private javax.swing.JTextField tf_avarias;
     private javax.swing.JTextField tf_codigo;
     private javax.swing.JTextField tf_observacao;
