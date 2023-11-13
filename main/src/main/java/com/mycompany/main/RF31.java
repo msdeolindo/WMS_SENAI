@@ -74,7 +74,6 @@ public class RF31 extends javax.swing.JFrame {
         pnlCabecalho = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         lbl_Icone_Voltar = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         pnlTabela = new javax.swing.JPanel();
         scrTabela = new javax.swing.JScrollPane();
         tblRegistroClientes = new javax.swing.JTable();
@@ -100,37 +99,28 @@ public class RF31 extends javax.swing.JFrame {
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setText("LISTA DE REGISTRO DE CLIENTES");
 
-        lbl_Icone_Voltar.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbasso\\Desktop\\wms2.0\\ícones WMS\\icon_back.png")); // NOI18N
+        lbl_Icone_Voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_back.png"))); // NOI18N
         lbl_Icone_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_Icone_VoltarMouseClicked(evt);
             }
         });
 
-        jLabel1.setText("jLabel1");
-
         javax.swing.GroupLayout pnlCabecalhoLayout = new javax.swing.GroupLayout(pnlCabecalho);
         pnlCabecalho.setLayout(pnlCabecalhoLayout);
         pnlCabecalhoLayout.setHorizontalGroup(
             pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCabecalhoLayout.createSequentialGroup()
-                .addGroup(pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlCabecalhoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lbl_Icone_Voltar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblTitulo))
-                    .addGroup(pnlCabecalhoLayout.createSequentialGroup()
-                        .addGap(361, 361, 361)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(lbl_Icone_Voltar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblTitulo)
+                .addContainerGap(1484, Short.MAX_VALUE))
         );
         pnlCabecalhoLayout.setVerticalGroup(
             pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCabecalhoLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(40, 40, 40)
                 .addGroup(pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lbl_Icone_Voltar)
                     .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -408,7 +398,6 @@ public class RF31 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_novo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCNPJ;
     private javax.swing.JLabel lblCodigoCliente;
     private javax.swing.JLabel lblDataRegistro;
