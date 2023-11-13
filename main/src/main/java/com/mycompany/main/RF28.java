@@ -385,14 +385,14 @@ public class RF28 extends javax.swing.JFrame {
 try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
             PreparedStatement statement;
-            statement = conn.prepareStatement("UPDATE cargas SET rua = ?,corredor = ?,pilha = ?,nivel = ? WHERE id = ?");
+            statement = conn.prepareStatement("UPDATE cargas SET rua = ?,corredor = ?,pilha = ?,nivel = ?, WHERE id = ?");
             
             
             statement.setString(1,DESTINO_RUA.getText());
             statement.setString(2,DESTINO_CORREDOR.getText());
             statement.setString(3,DESTINO_PILHA.getText());
             statement.setString(4,DESTINO_NIVEL.getText());
-            statement.setInt(5,Integer.parseInt(NUN_CARGA.getText()));
+            statement.setString(5,NUN_CARGA.getText());
             
             
             statement.execute();
