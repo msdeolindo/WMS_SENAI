@@ -15,19 +15,19 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author jbasso
+ * @author pmerlo
  */
-public class RF31 extends javax.swing.JFrame {
+    public class RF31 extends javax.swing.JFrame {
 
     /**
-     * Creates new form RF31_
+     * Creates new form Prototipo_RF31
      */
-    public RF31() {
+     public RF31() {
         initComponents();
     }
-    
-    
-     public void PopularJTable (String sql) {
+     
+      public void PopularJTable (String sql) {
+        
         try {
             String url = "jdbc:mysql://localhost:3306/db_wms_prd";
             String usuario = "root";
@@ -60,7 +60,8 @@ public class RF31 extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
         }
-     }
+
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -87,6 +88,7 @@ public class RF31 extends javax.swing.JFrame {
         btn_novo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(new java.awt.Dimension(1920, 1080));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -99,7 +101,7 @@ public class RF31 extends javax.swing.JFrame {
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setText("LISTA DE REGISTRO DE CLIENTES");
 
-        lbl_Icone_Voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_back.png"))); // NOI18N
+        lbl_Icone_Voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/main/icon_back.png"))); // NOI18N
         lbl_Icone_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_Icone_VoltarMouseClicked(evt);
@@ -226,11 +228,6 @@ public class RF31 extends javax.swing.JFrame {
         });
 
         lbl_icon_pesquisar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
-        lbl_icon_pesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbl_icon_pesquisarMouseClicked(evt);
-            }
-        });
 
         btn_novo.setBackground(new java.awt.Color(32, 41, 171));
         btn_novo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -308,17 +305,11 @@ public class RF31 extends javax.swing.JFrame {
                 .addComponent(pnlCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pnlTabela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void lbl_Icone_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Icone_VoltarMouseClicked
-        RF30 novoFrame = new RF30();
-        novoFrame.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_lbl_Icone_VoltarMouseClicked
 
     private void txtCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCNPJActionPerformed
         // TODO add your handling code here:
@@ -331,6 +322,12 @@ public class RF31 extends javax.swing.JFrame {
     private void txtDataRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataRegistroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDataRegistroActionPerformed
+
+    private void lbl_Icone_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Icone_VoltarMouseClicked
+        RF30 novoFrame = new RF30();
+        novoFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lbl_Icone_VoltarMouseClicked
 
     private void btn_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_novoActionPerformed
         RF17 novoFrame = new RF17();
@@ -355,10 +352,6 @@ public class RF31 extends javax.swing.JFrame {
             Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_formWindowOpened
-
-    private void lbl_icon_pesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_icon_pesquisarMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lbl_icon_pesquisarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -385,6 +378,12 @@ public class RF31 extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(RF31.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

@@ -7,10 +7,10 @@ package com.mycompany.main;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -18,8 +18,7 @@ import javax.swing.table.DefaultTableModel;
  * @author JulioBasso
  */
 public class RF16_LIST extends javax.swing.JFrame {
-         RF16_POP enviatexto;
-        
+
     /**
      * Creates new form RF_16
      */
@@ -49,10 +48,10 @@ public class RF16_LIST extends javax.swing.JFrame {
                 {
                     //retorna os dados da tabela do BD, cada campo e uma coluna.
                     resultado.getString("id"),
-                    resultado.getString("corredor"),
                     resultado.getString("rua"),
-                    resultado.getString("nivel"),
-                    resultado.getString("pilha")
+                    resultado.getString("corredor"),
+                    resultado.getString("pilha"),
+                    resultado.getString("nivel")
                     
                 });
             }
@@ -123,14 +122,9 @@ public class RF16_LIST extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Endereco", "Corredor", "Rua", "Nivel", "Pilha"
+                "Endereco", "Rua", "Corredor", "Pilha", "Nivel"
             }
         ));
-        tb_Endereco.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tb_EnderecoMouseClicked(evt);
-            }
-        });
         jScrollPane1.setViewportView(tb_Endereco);
 
         javax.swing.GroupLayout pBodyLayout = new javax.swing.GroupLayout(pBody);
@@ -244,19 +238,6 @@ public class RF16_LIST extends javax.swing.JFrame {
             Logger.getLogger(RF16_LIST.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_formWindowOpened
-
-    private void tb_EnderecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_EnderecoMouseClicked
-       int linha = tb_Endereco.getSelectedRow();
-       
-        
-       String TEXTO_a = (tb_Endereco.getValueAt(linha,0).toString());
-       String TEXTO_b = (tb_Endereco.getValueAt(linha,1).toString());
-       String TEXTO_c = (tb_Endereco.getValueAt(linha,2).toString());
-       String TEXTO_d = (tb_Endereco.getValueAt(linha,3).toString());
-       enviatexto = new RF16_POP();
-       enviatexto.setVisible(true);
-       enviatexto.recebendo_valor_tb(TEXTO_a, TEXTO_b, TEXTO_c, TEXTO_d);
-    }//GEN-LAST:event_tb_EnderecoMouseClicked
 
     /**
      * @param args the command line arguments
