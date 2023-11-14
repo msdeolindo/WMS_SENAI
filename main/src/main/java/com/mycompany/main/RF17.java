@@ -77,7 +77,7 @@ public class RF17 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(32, 41, 171));
 
-        lbl_voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_back.png"))); // NOI18N
+        lbl_voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         lbl_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_voltarMouseClicked(evt);
