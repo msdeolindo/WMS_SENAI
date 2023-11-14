@@ -206,9 +206,7 @@ public class RF23 extends javax.swing.JFrame {
         statement.setString(3,Tfd_pilha.getText());
         statement.setString(4,Tfd_corredor.getText());
         statement.setString(5,Tfd_nivel.getText());
-        
-        
-        JOptionPane.showMessageDialog(rootPane, "Aluno Inserido");        
+             
         
      }catch(SQLException ex){  
          Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);             
