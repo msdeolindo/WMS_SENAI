@@ -51,10 +51,10 @@
                           <Component id="Lbl_quantidade" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="Tfd_quantidade" min="-2" pref="102" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                           <Component id="Lbl_contagem" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Lbl_numeroContagem" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="txt_quantidade" pref="123" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -95,7 +95,7 @@
                       <Component id="Lbl_quantidade" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Tfd_quantidade" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Lbl_contagem" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Lbl_numeroContagem" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_quantidade" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -238,16 +238,7 @@
             <Property name="text" type="java.lang.String" value="Contagem : "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="Lbl_numeroContagem">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="18" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="10" green="a" red="f0" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="100"/>
-          </Properties>
+        <Component class="javax.swing.JTextField" name="txt_quantidade">
         </Component>
       </SubComponents>
     </Container>
