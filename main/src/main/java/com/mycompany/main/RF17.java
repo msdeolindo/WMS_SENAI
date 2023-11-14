@@ -77,7 +77,7 @@ public class RF17 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(32, 41, 171));
 
-        lbl_voltar.setText("jLabel1");
+        lbl_voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_back.png"))); // NOI18N
         lbl_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_voltarMouseClicked(evt);
@@ -619,4 +619,12 @@ public class RF17 extends javax.swing.JFrame {
     private javax.swing.JTextField txt_respons;
     private javax.swing.JTextField txt_rua;
     // End of variables declaration//GEN-END:variables
+  
+    public void recebendo (String texto_a, String texto_b, String texto_c, String texto_d) {
+        
+        txt_cnpj.setText(texto_a);
+        txt_Razao_soci.setText(texto_b);
+        txt_contato_resp.setText(texto_c);
+        txt_respons.setText(texto_d);
+  }
 }

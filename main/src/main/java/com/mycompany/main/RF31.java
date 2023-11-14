@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  * @author jbasso
  */
 public class RF31 extends javax.swing.JFrame {
-
+    RF17 enviatexto;
     /**
      * Creates new form RF31_
      */
@@ -185,11 +185,24 @@ public class RF31 extends javax.swing.JFrame {
             new String [] {
                 "Código Cliente", "CNPJ", "Razão Social", "Telefone", "Data Registro", "Nome Contato"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblRegistroClientes.setGridColor(new java.awt.Color(0, 0, 0));
         tblRegistroClientes.setSelectionBackground(new java.awt.Color(0, 0, 0));
         tblRegistroClientes.setShowHorizontalLines(true);
         tblRegistroClientes.setShowVerticalLines(true);
+        tblRegistroClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblRegistroClientesMouseClicked(evt);
+            }
+        });
         scrTabela.setViewportView(tblRegistroClientes);
 
         lblCodigoCliente.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -365,8 +378,29 @@ public class RF31 extends javax.swing.JFrame {
         //this.PopularJTable("Select * from clientes where id=" + this.txtCodCliente.getText()+ " OR cnpj=" + this.txtCNPJ.getText());
         this.PopularJTable("Select * from clientes where id=" + id + " OR cnpj=" + cnpj + " OR nome_fantasia=" + nomeFantasia);
         
-        //this.PopularJTable("Select * from clientes where id= 1 OR cnpj= 1234");
+        
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void tblRegistroClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblRegistroClientesMouseClicked
+        // TODO add your handling code here:
+        
+        
+         RF17 novoFrame = new RF17();
+        novoFrame.setVisible(true);
+        this.dispose();
+        
+         int linha = tblRegistroClientes.getSelectedRow();
+         
+        String texto_a = tblRegistroClientes.getValueAt(linha,0).toString();
+        String texto_b = tblRegistroClientes.getValueAt(linha,1).toString();
+        String texto_c =  tblRegistroClientes.getValueAt(linha,2).toString();
+        String texto_d =  tblRegistroClientes.getValueAt(linha,3).toString();
+        
+       
+        enviatexto = new RF17();
+        enviatexto.setVisible(true);
+        enviatexto.recebendo(texto_a,texto_b, texto_c, texto_d);
+    }//GEN-LAST:event_tblRegistroClientesMouseClicked
 
     /**
      * @param args the command line arguments
