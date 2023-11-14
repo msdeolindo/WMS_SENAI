@@ -11,23 +11,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author pmerlo
+ * @author jbasso
  */
-    public class RF31 extends javax.swing.JFrame {
-
+public class RF31 extends javax.swing.JFrame {
+    RF17 enviatexto;
     /**
-     * Creates new form Prototipo_RF31
+     * Creates new form RF31_
      */
-     public RF31() {
+    public RF31() {
         initComponents();
     }
-     
-      public void PopularJTable (String sql) {
-        
+    
+    
+     public void PopularJTable(String sql) {
         try {
             String url = "jdbc:mysql://localhost:3306/db_wms_prd";
             String usuario = "root";
@@ -60,8 +61,7 @@ import javax.swing.table.DefaultTableModel;
         } catch (SQLException ex) {
             Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-}
+     }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -74,7 +74,7 @@ import javax.swing.table.DefaultTableModel;
 
         pnlCabecalho = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
-        lbl_Icone_Voltar = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         pnlTabela = new javax.swing.JPanel();
         scrTabela = new javax.swing.JScrollPane();
         tblRegistroClientes = new javax.swing.JTable();
@@ -83,12 +83,11 @@ import javax.swing.table.DefaultTableModel;
         lblCNPJ = new javax.swing.JLabel();
         lblDataRegistro = new javax.swing.JLabel();
         txtCodCliente = new javax.swing.JTextField();
-        txtDataRegistro = new javax.swing.JTextField();
-        lbl_icon_pesquisar = new javax.swing.JLabel();
+        txtNomeFantasia = new javax.swing.JTextField();
         btn_novo = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setSize(new java.awt.Dimension(1920, 1080));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -101,10 +100,10 @@ import javax.swing.table.DefaultTableModel;
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setText("LISTA DE REGISTRO DE CLIENTES");
 
-        lbl_Icone_Voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/main/icon_back.png"))); // NOI18N
-        lbl_Icone_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbl_Icone_VoltarMouseClicked(evt);
+                jLabel1MouseClicked(evt);
             }
         });
 
@@ -113,20 +112,20 @@ import javax.swing.table.DefaultTableModel;
         pnlCabecalhoLayout.setHorizontalGroup(
             pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCabecalhoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_Icone_Voltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTitulo)
-                .addContainerGap(1484, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlCabecalhoLayout.setVerticalGroup(
             pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCabecalhoLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(pnlCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbl_Icone_Voltar)
+                    .addComponent(jLabel1)
                     .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pnlTabela.setBackground(new java.awt.Color(203, 200, 200));
@@ -187,11 +186,24 @@ import javax.swing.table.DefaultTableModel;
             new String [] {
                 "Código Cliente", "CNPJ", "Razão Social", "Telefone", "Data Registro", "Nome Contato"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblRegistroClientes.setGridColor(new java.awt.Color(0, 0, 0));
         tblRegistroClientes.setSelectionBackground(new java.awt.Color(0, 0, 0));
         tblRegistroClientes.setShowHorizontalLines(true);
         tblRegistroClientes.setShowVerticalLines(true);
+        tblRegistroClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblRegistroClientesMouseClicked(evt);
+            }
+        });
         scrTabela.setViewportView(tblRegistroClientes);
 
         lblCodigoCliente.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -209,7 +221,7 @@ import javax.swing.table.DefaultTableModel;
         lblCNPJ.setText("CNPJ:");
 
         lblDataRegistro.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        lblDataRegistro.setText("Data Registro:");
+        lblDataRegistro.setText("Nome Fanstasia:");
 
         txtCodCliente.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         txtCodCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -219,15 +231,13 @@ import javax.swing.table.DefaultTableModel;
             }
         });
 
-        txtDataRegistro.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        txtDataRegistro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txtDataRegistro.addActionListener(new java.awt.event.ActionListener() {
+        txtNomeFantasia.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtNomeFantasia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNomeFantasia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDataRegistroActionPerformed(evt);
+                txtNomeFantasiaActionPerformed(evt);
             }
         });
-
-        lbl_icon_pesquisar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
 
         btn_novo.setBackground(new java.awt.Color(32, 41, 171));
         btn_novo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -237,6 +247,13 @@ import javax.swing.table.DefaultTableModel;
         btn_novo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_novoActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
             }
         });
 
@@ -262,10 +279,10 @@ import javax.swing.table.DefaultTableModel;
                                 .addComponent(lblDataRegistro)
                                 .addGap(58, 1037, Short.MAX_VALUE))
                             .addGroup(pnlTabelaLayout.createSequentialGroup()
-                                .addComponent(txtDataRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(lbl_icon_pesquisar)
-                                .addGap(259, 259, 259)
+                                .addComponent(txtNomeFantasia, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel3)
+                                .addGap(256, 256, 256)
                                 .addComponent(btn_novo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
@@ -279,14 +296,16 @@ import javax.swing.table.DefaultTableModel;
                     .addComponent(lblCNPJ)
                     .addComponent(lblCodigoCliente))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlTabelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lbl_icon_pesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtDataRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtCNPJ, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtCodCliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn_novo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(29, 29, 29)
-                .addComponent(scrTabela, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlTabelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlTabelaLayout.createSequentialGroup()
+                        .addGroup(pnlTabelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNomeFantasia, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtCNPJ, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtCodCliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btn_novo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
+                        .addGap(29, 29, 29)
+                        .addComponent(scrTabela, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -305,7 +324,7 @@ import javax.swing.table.DefaultTableModel;
                 .addComponent(pnlCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pnlTabela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -319,15 +338,9 @@ import javax.swing.table.DefaultTableModel;
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodClienteActionPerformed
 
-    private void txtDataRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataRegistroActionPerformed
+    private void txtNomeFantasiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeFantasiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataRegistroActionPerformed
-
-    private void lbl_Icone_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Icone_VoltarMouseClicked
-        RF30 novoFrame = new RF30();
-        novoFrame.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_lbl_Icone_VoltarMouseClicked
+    }//GEN-LAST:event_txtNomeFantasiaActionPerformed
 
     private void btn_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_novoActionPerformed
         RF17 novoFrame = new RF17();
@@ -338,20 +351,66 @@ import javax.swing.table.DefaultTableModel;
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         try {
             // TODO add your handling code here:
-            Connection conexao = null;
-            
-            
             String url = "jdbc:mysql://localhost:3306/db_wms_prd";
             String usuario = "root";
             String senha = "";
             
-            conexao = DriverManager.getConnection(url,usuario,senha);
-            
+            Connection con = DriverManager.getConnection(url,usuario,senha);
+
             this.PopularJTable("SELECT * FROM clientes order by id ASC");
         } catch (SQLException ex) {
             Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_formWindowOpened
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+        RF30 novoFrame = new RF30();
+        novoFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+        String id = this.txtCodCliente.getText();
+        String cnpj = this.txtCNPJ.getText();
+        String nomeFantasia = this.txtNomeFantasia.getText();
+        if (id != null){
+             this.PopularJTable("Select * from clientes where id=" + id);
+        }else if(cnpj != null){
+             this.PopularJTable("Select * from clientes where cnpj=" + cnpj);        
+        }else if (nomeFantasia != null){
+            this.PopularJTable("Select * from clientes where nome_fantasia=" + nomeFantasia);
+        }else 
+        {
+            JOptionPane.showMessageDialog(rootPane, "erro");
+        }
+        //this.PopularJTable("Select * from clientes where id=" + this.txtCodCliente.getText()+ " OR cnpj=" + this.txtCNPJ.getText());
+        
+        
+        
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void tblRegistroClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblRegistroClientesMouseClicked
+        // TODO add your handling code here:
+        
+        
+         RF17 novoFrame = new RF17();
+        novoFrame.setVisible(true);
+        this.dispose();
+        
+         int linha = tblRegistroClientes.getSelectedRow();
+         
+        String texto_a = tblRegistroClientes.getValueAt(linha,0).toString();
+        String texto_b = tblRegistroClientes.getValueAt(linha,1).toString();
+        String texto_c =  tblRegistroClientes.getValueAt(linha,2).toString();
+        String texto_d =  tblRegistroClientes.getValueAt(linha,3).toString();
+        
+       
+        enviatexto = new RF17();
+        enviatexto.setVisible(true);
+        enviatexto.recebendo(texto_a,texto_b, texto_c, texto_d);
+    }//GEN-LAST:event_tblRegistroClientesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -382,10 +441,6 @@ import javax.swing.table.DefaultTableModel;
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -397,18 +452,18 @@ import javax.swing.table.DefaultTableModel;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_novo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblCNPJ;
     private javax.swing.JLabel lblCodigoCliente;
     private javax.swing.JLabel lblDataRegistro;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel lbl_Icone_Voltar;
-    private javax.swing.JLabel lbl_icon_pesquisar;
     private javax.swing.JPanel pnlCabecalho;
     private javax.swing.JPanel pnlTabela;
     private javax.swing.JScrollPane scrTabela;
     private javax.swing.JTable tblRegistroClientes;
     private javax.swing.JTextField txtCNPJ;
     private javax.swing.JTextField txtCodCliente;
-    private javax.swing.JTextField txtDataRegistro;
+    private javax.swing.JTextField txtNomeFantasia;
     // End of variables declaration//GEN-END:variables
 }
