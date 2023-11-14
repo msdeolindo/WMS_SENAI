@@ -48,7 +48,7 @@ public class RF16_LIST extends javax.swing.JFrame {
                 model.addRow(new Object[]
                 {
                     //retorna os dados da tabela do BD, cada campo e uma coluna.
-                    resultado.getString("id"),
+                    
                     resultado.getString("corredor"),
                     resultado.getString("rua"),
                     resultado.getString("nivel"),
@@ -110,20 +110,20 @@ public class RF16_LIST extends javax.swing.JFrame {
 
         tb_Endereco.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Endereco", "Corredor", "Rua", "Nivel", "Pilha"
+                "Corredor", "Rua", "Nivel", "Pilha"
             }
         ));
         tb_Endereco.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -142,14 +142,14 @@ public class RF16_LIST extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1032, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(pBodyLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(14, 14, 14)
                 .addComponent(bt_Novo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pBodyLayout.setVerticalGroup(
             pBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pBodyLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addGap(43, 43, 43)
                 .addComponent(bt_Novo)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -239,7 +239,7 @@ public class RF16_LIST extends javax.swing.JFrame {
             
             conexao = DriverManager.getConnection(url,usuario,senha);
             
-            this.PopularJtable("SELECT * FROM enderecos ORDER BY id DESC");
+            this.PopularJtable("SELECT * FROM enderecos");
         } catch (SQLException ex) {
             Logger.getLogger(RF16_LIST.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -248,14 +248,14 @@ public class RF16_LIST extends javax.swing.JFrame {
     private void tb_EnderecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_EnderecoMouseClicked
        int linha = tb_Endereco.getSelectedRow();
        
-        
-       String TEXTO_a = (tb_Endereco.getValueAt(linha,0).toString());
-       String TEXTO_b = (tb_Endereco.getValueAt(linha,1).toString());
-       String TEXTO_c = (tb_Endereco.getValueAt(linha,2).toString());
-       String TEXTO_d = (tb_Endereco.getValueAt(linha,3).toString());
+       
+       String TEXTO_b = (tb_Endereco.getValueAt(linha,0).toString());
+       String TEXTO_c = (tb_Endereco.getValueAt(linha,1).toString());
+       String TEXTO_d = (tb_Endereco.getValueAt(linha,2).toString());
+       String TEXTO_e = (tb_Endereco.getValueAt(linha,3).toString());
        enviatexto = new RF16_POP();
        enviatexto.setVisible(true);
-       enviatexto.recebendo_valor_tb(TEXTO_a, TEXTO_b, TEXTO_c, TEXTO_d);
+       enviatexto.recebendo_valor_tb(TEXTO_b, TEXTO_c, TEXTO_d, TEXTO_e);
     }//GEN-LAST:event_tb_EnderecoMouseClicked
 
     /**
