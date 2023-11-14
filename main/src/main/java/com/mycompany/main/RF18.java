@@ -59,6 +59,7 @@ public class RF18 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         lblEndereco = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         jScrollPane1.setViewportView(jEditorPane1);
 
@@ -99,7 +100,6 @@ public class RF18 extends javax.swing.JFrame {
         lbl_recebimento.setText("RECEBIMENTO");
 
         lbl_icone_voltar.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_icone_voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         lbl_icone_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_icone_voltarMouseClicked(evt);
@@ -199,8 +199,6 @@ public class RF18 extends javax.swing.JFrame {
         jTable2.setSelectionBackground(new java.awt.Color(255, 255, 255));
         jsp_tabela_agendamento.setViewportView(jTable2);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza4.0.png")); // NOI18N
-
         lblEndereco.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblEndereco.setText("CODIGO DA CARGA:");
 
@@ -275,6 +273,8 @@ public class RF18 extends javax.swing.JFrame {
                 .addGap(348, 348, 348))
         );
 
+        jLabel3.setText("jLabel3");
+
         javax.swing.GroupLayout jPanel_principalLayout = new javax.swing.GroupLayout(jPanel_principal);
         jPanel_principal.setLayout(jPanel_principalLayout);
         jPanel_principalLayout.setHorizontalGroup(
@@ -284,14 +284,20 @@ public class RF18 extends javax.swing.JFrame {
                 .addContainerGap(151, Short.MAX_VALUE)
                 .addComponent(jPanel_tela_informação, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(113, 113, 113))
+            .addGroup(jPanel_principalLayout.createSequentialGroup()
+                .addGap(299, 299, 299)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel_principalLayout.setVerticalGroup(
             jPanel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_principalLayout.createSequentialGroup()
                 .addComponent(jPanel_topo_azul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(172, 172, 172)
+                .addGap(66, 66, 66)
+                .addComponent(jLabel3)
+                .addGap(90, 90, 90)
                 .addComponent(jPanel_tela_informação, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(241, Short.MAX_VALUE))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -428,6 +434,7 @@ public class RF18 extends javax.swing.JFrame {
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel_principal;
     private javax.swing.JPanel jPanel_tela_informação;
