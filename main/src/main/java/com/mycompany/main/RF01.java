@@ -397,7 +397,7 @@ public void PopularJTable (String sql) {
     }//GEN-LAST:event_formWindowOpened
 
     private void lbl_LupaParaPesquisaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_LupaParaPesquisaMouseClicked
-      this.PopularJTable ("SELECT carga_id, categoria, tipo_carga, situacao FROM agendamentos WHERE carga_id DESC");   
+      this.PopularJTable ("SELECT carga_id, categoria, tipo_carga, situacao FROM agendamentos WHERE carga_id; ");   
     }//GEN-LAST:event_lbl_LupaParaPesquisaMouseClicked
 
     /**
