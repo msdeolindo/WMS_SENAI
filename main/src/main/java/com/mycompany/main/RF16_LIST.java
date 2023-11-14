@@ -7,10 +7,10 @@ package com.mycompany.main;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -18,8 +18,7 @@ import javax.swing.table.DefaultTableModel;
  * @author JulioBasso
  */
 public class RF16_LIST extends javax.swing.JFrame {
-         RF16_POP enviatexto;
-        
+
     /**
      * Creates new form RF_16
      */
@@ -48,11 +47,16 @@ public class RF16_LIST extends javax.swing.JFrame {
                 model.addRow(new Object[]
                 {
                     //retorna os dados da tabela do BD, cada campo e uma coluna.
+<<<<<<< HEAD
                     
                     resultado.getString("corredor"),
+=======
+                    resultado.getString("id"),
+>>>>>>> e732fa0f8b67296b8eea2a236d98ec70ca2a90e9
                     resultado.getString("rua"),
-                    resultado.getString("nivel"),
-                    resultado.getString("pilha")
+                    resultado.getString("corredor"),
+                    resultado.getString("pilha"),
+                    resultado.getString("nivel")
                     
                 });
             }
@@ -123,14 +127,13 @@ public class RF16_LIST extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
+<<<<<<< HEAD
                 "Corredor", "Rua", "Nivel", "Pilha"
+=======
+                "Endereco", "Rua", "Corredor", "Pilha", "Nivel"
+>>>>>>> e732fa0f8b67296b8eea2a236d98ec70ca2a90e9
             }
         ));
-        tb_Endereco.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tb_EnderecoMouseClicked(evt);
-            }
-        });
         jScrollPane1.setViewportView(tb_Endereco);
 
         javax.swing.GroupLayout pBodyLayout = new javax.swing.GroupLayout(pBody);
@@ -245,6 +248,7 @@ public class RF16_LIST extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formWindowOpened
 
+<<<<<<< HEAD
     private void tb_EnderecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_EnderecoMouseClicked
        int linha = tb_Endereco.getSelectedRow();
        
@@ -258,6 +262,8 @@ public class RF16_LIST extends javax.swing.JFrame {
        enviatexto.recebendo_valor_tb(TEXTO_b, TEXTO_c, TEXTO_d, TEXTO_e);
     }//GEN-LAST:event_tb_EnderecoMouseClicked
 
+=======
+>>>>>>> e732fa0f8b67296b8eea2a236d98ec70ca2a90e9
     /**
      * @param args the command line arguments
      */

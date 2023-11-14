@@ -6,62 +6,19 @@ package com.mycompany.main;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author pmerlo
+ * @author jbasso
  */
-    public class RF31 extends javax.swing.JFrame {
+public class RF31_ extends javax.swing.JFrame {
 
     /**
-     * Creates new form Prototipo_RF31
+     * Creates new form RF31_
      */
-     public RF31() {
+    public RF31_() {
         initComponents();
     }
-     
-      public void PopularJTable (String sql) {
-        
-        try {
-            String url = "jdbc:mysql://localhost:3306/db_wms_prd";
-            String usuario = "root";
-            String senha = "";
-            
-            Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
-            PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
-            
-            ResultSet resultado = banco.executeQuery(sql);
-          
-            DefaultTableModel model = (DefaultTableModel) tblRegistroClientes.getModel();
-            model.setNumRows(0);
-            
-            while(resultado.next())
-            {
-                
-                model.addRow(new Object[]
-                {
-                    //retorna os dados da tabela do BD, cada campo e uma coluna.
-                    resultado.getString("id"),
-                    resultado.getString("cnpj"),
-                    resultado.getString("razao_social"),
-                    resultado.getString("contato"),
-                    resultado.getString("id"),
-                    resultado.getString("nome_responsavel")
-                });
-            }
-            banco.close();
-            con.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -88,7 +45,6 @@ import javax.swing.table.DefaultTableModel;
         btn_novo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setSize(new java.awt.Dimension(1920, 1080));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -101,7 +57,7 @@ import javax.swing.table.DefaultTableModel;
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setText("LISTA DE REGISTRO DE CLIENTES");
 
-        lbl_Icone_Voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/main/icon_back.png"))); // NOI18N
+        lbl_Icone_Voltar.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbasso\\Desktop\\wms2.0\\ícones WMS\\icon_back.png")); // NOI18N
         lbl_Icone_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_Icone_VoltarMouseClicked(evt);
@@ -305,11 +261,17 @@ import javax.swing.table.DefaultTableModel;
                 .addComponent(pnlCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pnlTabela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lbl_Icone_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Icone_VoltarMouseClicked
+        RF30 novoFrame = new RF30();
+        novoFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lbl_Icone_VoltarMouseClicked
 
     private void txtCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCNPJActionPerformed
         // TODO add your handling code here:
@@ -323,12 +285,6 @@ import javax.swing.table.DefaultTableModel;
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDataRegistroActionPerformed
 
-    private void lbl_Icone_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Icone_VoltarMouseClicked
-        RF30 novoFrame = new RF30();
-        novoFrame.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_lbl_Icone_VoltarMouseClicked
-
     private void btn_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_novoActionPerformed
         RF17 novoFrame = new RF17();
         novoFrame.setVisible(true);
@@ -336,9 +292,8 @@ import javax.swing.table.DefaultTableModel;
     }//GEN-LAST:event_btn_novoActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        try {
-            // TODO add your handling code here:
-            Connection conexao = null;
+        // TODO add your handling code here:
+          Connection conexao = null;
             
             
             String url = "jdbc:mysql://localhost:3306/db_wms_prd";
@@ -348,9 +303,6 @@ import javax.swing.table.DefaultTableModel;
             conexao = DriverManager.getConnection(url,usuario,senha);
             
             this.PopularJTable("SELECT * FROM clientes order by id ASC");
-        } catch (SQLException ex) {
-            Logger.getLogger(RF31.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -370,27 +322,20 @@ import javax.swing.table.DefaultTableModel;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RF31.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RF31_.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RF31.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RF31_.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RF31.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RF31_.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RF31.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RF31_.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RF31().setVisible(true);
+                new RF31_().setVisible(true);
             }
         });
     }

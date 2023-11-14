@@ -23,9 +23,7 @@ public class RF16_POP extends javax.swing.JFrame {
      */
     public RF16_POP() {
         initComponents();
-        txt_id.setVisible(true);
-        btn_Excluir.setVisible(false);
-        btn_Editar.setVisible(false);
+        lbl_id.setVisible(true);
     }
 
     /**
@@ -41,6 +39,7 @@ public class RF16_POP extends javax.swing.JFrame {
         lbl_Rua = new javax.swing.JLabel();
         lbl_Corredor = new javax.swing.JLabel();
         lbl_Nivel = new javax.swing.JLabel();
+        lbl_Endereco = new javax.swing.JLabel();
         txt_Rua = new javax.swing.JTextField();
         txt_Corredor = new javax.swing.JTextField();
         txt_Pilha = new javax.swing.JTextField();
@@ -53,6 +52,11 @@ public class RF16_POP extends javax.swing.JFrame {
         cbx_categoria = new javax.swing.JComboBox<>();
         btn_Excluir = new javax.swing.JButton();
         lbl_Pilha = new javax.swing.JLabel();
+<<<<<<< HEAD
+=======
+        txt_endereco = new javax.swing.JTextField();
+        lbl_id = new javax.swing.JTextField();
+>>>>>>> e732fa0f8b67296b8eea2a236d98ec70ca2a90e9
         paTitulo = new javax.swing.JPanel();
         lb_Titulo = new javax.swing.JLabel();
         lb_Voltar = new javax.swing.JLabel();
@@ -65,6 +69,8 @@ public class RF16_POP extends javax.swing.JFrame {
         lbl_Corredor.setText("CORREDOR");
 
         lbl_Nivel.setText("NIVEL");
+
+        lbl_Endereco.setText("ENDERECO");
 
         txt_Rua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +114,15 @@ public class RF16_POP extends javax.swing.JFrame {
 
         lbl_Pilha.setText("PILHA");
 
+<<<<<<< HEAD
+=======
+        lbl_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lbl_idActionPerformed(evt);
+            }
+        });
+
+>>>>>>> e732fa0f8b67296b8eea2a236d98ec70ca2a90e9
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -115,11 +130,24 @@ public class RF16_POP extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lbl_Pilha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_Pilha, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addComponent(lbl_categoria))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(cbx_categoria, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(lbl_Rua)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txt_Rua, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(91, 91, 91))
                             .addGroup(jPanel1Layout.createSequentialGroup()
+<<<<<<< HEAD
                                 .addContainerGap()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(lbl_Rua)
@@ -155,20 +183,65 @@ public class RF16_POP extends javax.swing.JFrame {
                             .addComponent(txt_Corredor, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_Pilha, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(70, 70, 70))))
+=======
+                                .addComponent(lbl_categoria)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbl_Nivel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txt_Nivel))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_tipoCarga)
+                            .addComponent(cbx_tipoCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(lbl_Corredor)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txt_Corredor, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(12, 12, 12))))
+                .addGap(86, 86, 86))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbl_Endereco)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(195, 195, 195))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btn_Salvar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_Editar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_Excluir)
+                        .addGap(90, 90, 90)
+                        .addComponent(lbl_id, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47))))
+>>>>>>> e732fa0f8b67296b8eea2a236d98ec70ca2a90e9
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_categoria)
+                    .addComponent(lbl_tipoCarga))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbx_tipoCarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                     .addComponent(cbx_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_tipoCarga)
                     .addComponent(lbl_categoria))
+=======
+                    .addComponent(cbx_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+>>>>>>> e732fa0f8b67296b8eea2a236d98ec70ca2a90e9
                 .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_Rua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_Rua)
+<<<<<<< HEAD
                     .addComponent(lbl_Corredor, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_Corredor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -185,6 +258,27 @@ public class RF16_POP extends javax.swing.JFrame {
                     .addComponent(btn_Editar)
                     .addComponent(btn_Excluir))
                 .addContainerGap())
+=======
+                    .addComponent(txt_Corredor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_Corredor, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_Pilha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_Nivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_Nivel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_Pilha, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_Endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_Salvar)
+                    .addComponent(btn_Editar)
+                    .addComponent(btn_Excluir)
+                    .addComponent(lbl_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
+>>>>>>> e732fa0f8b67296b8eea2a236d98ec70ca2a90e9
         );
 
         paTitulo.setBackground(new java.awt.Color(0, 51, 153));
@@ -210,7 +304,13 @@ public class RF16_POP extends javax.swing.JFrame {
                 .addComponent(lb_Voltar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addContainerGap(172, Short.MAX_VALUE))
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(47, 47, 47))
+>>>>>>> e732fa0f8b67296b8eea2a236d98ec70ca2a90e9
         );
         paTituloLayout.setVerticalGroup(
             paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,17 +326,29 @@ public class RF16_POP extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addComponent(paTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
+            .addComponent(paTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)
+>>>>>>> e732fa0f8b67296b8eea2a236d98ec70ca2a90e9
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(paTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addGap(18, 18, 18)
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+>>>>>>> e732fa0f8b67296b8eea2a236d98ec70ca2a90e9
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(32, Short.MAX_VALUE))
         );
@@ -249,7 +361,7 @@ public class RF16_POP extends javax.swing.JFrame {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
             PreparedStatement statement;
             statement = conn.prepareStatement("DELETE FROM enderecos WHERE id = ?");
-            statement.setInt(1,Integer.parseInt(txt_id.getText()));
+            statement.setInt(1,Integer.parseInt(lbl_id.getText()));
             statement.execute();
             statement.close();
             
@@ -290,7 +402,7 @@ public class RF16_POP extends javax.swing.JFrame {
             statement.setInt(4, Integer.parseInt(txt_Corredor.getText()));
             statement.setInt(5, Integer.parseInt(txt_Pilha.getText()));
             statement.setInt(6, Integer.parseInt(txt_Nivel.getText()));
-            statement.setInt(7, Integer.parseInt(txt_id.getText()));
+            statement.setInt(7, Integer.parseInt(lbl_id.getText()));
             
             statement.execute();
             statement.close();
@@ -317,31 +429,31 @@ public class RF16_POP extends javax.swing.JFrame {
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
             PreparedStatement statement;
-            statement = conn.prepareStatement("INSERT INTO enderecos(id,categoria, tipo_carga, rua, corredor, pilha, nivel) VALUES (?,?, ?, ?, ?, ?, ?)");
+            statement = conn.prepareStatement("INSERT INTO enderecos(categoria, tipo_carga, rua, corredor, pilha, nivel) VALUES (?, ?, ?, ?, ?, ?)");
             
-            statement.setInt(1, Integer.parseInt(txt_id.getText()));
-            statement.setString(2, cbx_categoria.getSelectedItem().toString());
-            statement.setString(3, cbx_tipoCarga.getSelectedItem().toString());
-            statement.setInt(4, Integer.parseInt(txt_Rua.getText()));
-            statement.setInt(5, Integer.parseInt(txt_Corredor.getText()));
-            statement.setInt(6, Integer.parseInt(txt_Pilha.getText()));
-            statement.setInt(7, Integer.parseInt(txt_Nivel.getText()));
+            statement.setString(1, cbx_categoria.getSelectedItem().toString());
+            statement.setString(2, cbx_tipoCarga.getSelectedItem().toString());
+            statement.setInt(3, Integer.parseInt(txt_Rua.getText()));
+            statement.setInt(4, Integer.parseInt(txt_Corredor.getText()));
+            statement.setInt(5, Integer.parseInt(txt_Pilha.getText()));
+            statement.setInt(6, Integer.parseInt(txt_Nivel.getText()));
             
             statement.execute();
             statement.close();
             JOptionPane.showMessageDialog(rootPane, "Endereço inserido");
-            
-            
         } catch (SQLException ex) {
             Logger.getLogger(RF16_POP.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        RF16_LIST jFrame16_LIST = new RF16_LIST();
-        jFrame16_LIST.setVisible(true);
-        this.dispose();
-        
     }//GEN-LAST:event_btn_SalvarActionPerformed
 
+<<<<<<< HEAD
+=======
+    private void lbl_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbl_idActionPerformed
+        
+    }//GEN-LAST:event_lbl_idActionPerformed
+
+>>>>>>> e732fa0f8b67296b8eea2a236d98ec70ca2a90e9
     /**
      * @param args the command line arguments
      */
@@ -388,16 +500,19 @@ public class RF16_POP extends javax.swing.JFrame {
     private javax.swing.JLabel lb_Titulo;
     private javax.swing.JLabel lb_Voltar;
     private javax.swing.JLabel lbl_Corredor;
+    private javax.swing.JLabel lbl_Endereco;
     private javax.swing.JLabel lbl_Nivel;
     private javax.swing.JLabel lbl_Pilha;
     private javax.swing.JLabel lbl_Rua;
     private javax.swing.JLabel lbl_categoria;
+    private javax.swing.JTextField lbl_id;
     private javax.swing.JLabel lbl_tipoCarga;
     private javax.swing.JPanel paTitulo;
     private javax.swing.JTextField txt_Corredor;
     private javax.swing.JTextField txt_Nivel;
     private javax.swing.JTextField txt_Pilha;
     private javax.swing.JTextField txt_Rua;
+<<<<<<< HEAD
     // End of variables declaration//GEN-END:variables
     void recebendo_valor(String text) {
         txt_id.setText(text);
@@ -416,4 +531,8 @@ public class RF16_POP extends javax.swing.JFrame {
         
     }
 
+=======
+    private javax.swing.JTextField txt_endereco;
+    // End of variables declaration//GEN-END:variables
+>>>>>>> e732fa0f8b67296b8eea2a236d98ec70ca2a90e9
 }
