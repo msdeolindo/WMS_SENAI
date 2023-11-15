@@ -21,6 +21,9 @@ public class RF23 extends javax.swing.JFrame {
     /**
      * Creates new form RF23
      */
+    RF25 enviaquantidade;
+    int valor = 0;
+
     public RF23() {
         initComponents();
     }
@@ -210,9 +213,18 @@ public class RF23 extends javax.swing.JFrame {
          Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);             
      }
         
-        RF25 FrameEtiqueta = new RF25();
-        FrameEtiqueta.setVisible(true);
-        this.dispose();
+        int quantidade = Integer.parseInt(Tfd_quantidade.getText());
+
+	if(quantidade > valor || quantidade < 0){
+            JOptionPane.showMessageDialog(rootPane, "Valor inserido incorreto");
+        }
+        else{
+            valor = valor - quantidade;
+            enviaquantidade = new RF25();
+            enviaquantidade.setVisible(true);
+            enviaquantidade.etiqueta(valor);
+            this.dispose();
+        }
 
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_salvarActionPerformed
@@ -250,6 +262,11 @@ public class RF23 extends javax.swing.JFrame {
                 new RF23().setVisible(true);
             }
         });
+    }
+    
+    public void recebendo(String a){
+        txt_quantidade.setText(a);
+        valor = Integer.parseInt(a);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

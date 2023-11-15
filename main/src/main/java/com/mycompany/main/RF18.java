@@ -22,6 +22,8 @@ public class RF18 extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
+    RF23 enviatexto;
+    
     public RF18() {
         initComponents();
     }
@@ -312,10 +314,14 @@ public class RF18 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bt_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salvarActionPerformed
-        RF23 FrameLocalizacao = new RF23();
-        FrameLocalizacao.setVisible(true);
-        this.dispose();
+        //RF23 FrameLocalizacao = new RF23();
+        //FrameLocalizacao.setVisible(true);
+        //this.dispose();
         // TODO add your handling code here:
+        
+        enviatexto = new RF23();
+        enviatexto.setVisible(true);
+        enviatexto.recebendo(tf_quantidade.getText());
         
         Connection conexao = null;
          
