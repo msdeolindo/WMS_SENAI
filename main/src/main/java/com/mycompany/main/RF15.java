@@ -22,9 +22,7 @@ public class RF15 extends javax.swing.JFrame {
      * Creates new form Protipagem15_RegistroDeCarga
      */
     public RF15() {
-        initComponents();
-        btn_Editar.setVisible(false);
-        btn_Retirar.setVisible(false);
+        initComponents();     
     }
 
     /**
@@ -65,7 +63,6 @@ public class RF15 extends javax.swing.JFrame {
         txt_Nivel = new javax.swing.JTextField();
         txt_DataDeEntrada = new javax.swing.JTextField();
         btn_Editar = new javax.swing.JButton();
-        brn_Salvar = new javax.swing.JButton();
         btn_Retirar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -310,16 +307,6 @@ public class RF15 extends javax.swing.JFrame {
             }
         });
 
-        brn_Salvar.setBackground(new java.awt.Color(32, 40, 171));
-        brn_Salvar.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
-        brn_Salvar.setForeground(new java.awt.Color(255, 255, 255));
-        brn_Salvar.setText("Salvar");
-        brn_Salvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                brn_SalvarActionPerformed(evt);
-            }
-        });
-
         btn_Retirar.setBackground(new java.awt.Color(32, 40, 171));
         btn_Retirar.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
         btn_Retirar.setForeground(new java.awt.Color(255, 255, 255));
@@ -336,15 +323,13 @@ public class RF15 extends javax.swing.JFrame {
             pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
                 .addComponent(pnl_TituloPGN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 14, Short.MAX_VALUE))
             .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(pnl_Inf_RegistroDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 1848, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_PlanoDeFundoLayout.createSequentialGroup()
-                .addContainerGap(1147, Short.MAX_VALUE)
-                .addComponent(brn_Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61)
                 .addComponent(btn_Retirar, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -359,8 +344,7 @@ public class RF15 extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Retirar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(brn_Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_Retirar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 82, Short.MAX_VALUE))
         );
 
@@ -402,37 +386,6 @@ public class RF15 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_RetirarActionPerformed
 
-    private void brn_SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brn_SalvarActionPerformed
-        // TODO add your handling code here:       
-        try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");        
-            PreparedStatement statement;
-            statement = conn.prepareStatement("INSERT INTO registrar_carga(txt_Produto, txt_CodigoDaCarga, txt_Categoria ,txt_Quantidade, cbx_TipoDaCarga, txt_DataDeEntrada, txt_Situacao, txt_Rua, txt_Corredor, txt_Pilha, txt_Nivel) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-            statement.setString(1, txt_Produto.getText());
-            statement.setString(2, txt_CodigoDaCarga.getText());
-            statement.setString(3, txt_Categoria.getText());
-            statement.setString(4, txt_Quantidade.getText());
-            statement.setString(5, cbx_TipoDaCarga.getSelectedItem().toString());
-            statement.setString(6, txt_DataDeEntrada.getText());
-            statement.setString(7, txt_Situacao.getText());
-            statement.setString(8, txt_Rua.getText());
-            statement.setString(9, txt_Corredor.getText());
-            statement.setString(10, txt_Pilha.getText());
-            statement.setString(11, txt_Nivel.getText());
-            
-            statement.execute();
-            statement.close();
-            
-            btn_Editar.setVisible(true);
-            btn_Retirar.setVisible(true);
-            
-            JOptionPane.showMessageDialog(rootPane, "Carga registrada");
-        } catch (SQLException ex) {
-            Logger.getLogger(RF15.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_brn_SalvarActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -470,7 +423,6 @@ public class RF15 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton brn_Salvar;
     private javax.swing.JButton btn_Editar;
     private javax.swing.JButton btn_Retirar;
     private javax.swing.JComboBox<String> cbx_TipoDaCarga;

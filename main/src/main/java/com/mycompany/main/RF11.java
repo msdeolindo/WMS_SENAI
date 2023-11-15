@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  * @author miril
  */
 public class RF11 extends javax.swing.JFrame {
-
+    RF08 enviatexto;
     /**
      * Creates new form lista_funcionarios
      */
@@ -304,6 +304,11 @@ public class RF11 extends javax.swing.JFrame {
         Table.setGridColor(new java.awt.Color(0, 0, 0));
         Table.setSelectionBackground(new java.awt.Color(204, 204, 204));
         Table.setShowGrid(true);
+        Table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(Table);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -411,6 +416,28 @@ public class RF11 extends javax.swing.JFrame {
       
        
     }//GEN-LAST:event_btn_PesMouseClicked
+
+    private void TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableMouseClicked
+        // TODO add your handling code here:
+        RF08 novoFrame = new RF08();
+        novoFrame.setVisible(true);
+        this.dispose();
+        
+        int linha = Table.getSelectedRow();
+        
+        String texto_a = Table.getValueAt(linha,0).toString();
+        String texto_b = Table.getValueAt(linha,1).toString();
+        String texto_c =  Table.getValueAt(linha,2).toString();
+        String texto_d =  Table.getValueAt(linha,3).toString();
+        String texto_e =  Table.getValueAt(linha,3).toString();
+        
+        enviatexto = new RF08();
+        enviatexto.setVisible(true);
+        enviatexto.recebendo(texto_a,texto_b, texto_c, texto_d, texto_e);
+        
+        
+        
+    }//GEN-LAST:event_TableMouseClicked
 
     /**
      * @param args the command line arguments

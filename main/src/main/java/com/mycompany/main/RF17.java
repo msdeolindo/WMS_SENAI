@@ -5,6 +5,7 @@
 package com.mycompany.main;
 
 import java.sql.Connection;
+import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -76,7 +77,7 @@ public class RF17 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(32, 41, 171));
 
-        lbl_voltar.setText("jLabel1");
+        lbl_voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         lbl_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_voltarMouseClicked(evt);
@@ -374,49 +375,60 @@ public class RF17 extends javax.swing.JFrame {
 
     private void btn_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvarActionPerformed
 
+       
+         
+         
+        Connection Conn = null;
         try {
-            String url = "jdbc:mysql://localhost:3306/db_wms_prd";
-            String user = "root";
-            String senha = "";
-            
-            
-            Connection Conn = DriverManager.getConnection(url,user,senha);
-            
-            String sql = "INSERT INTO clientes (nome_fantasia,cnpj,razao_social,rua,bairro,cidade,numero_residencia,uf,cep,atividade_comercial,nome_responsavel,contato,email,observacao) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
-            
-            PreparedStatement st = Conn.prepareStatement(sql);
-            
-            st.setString(2, txt_cnpj.getText());
-            st.setString(3,txt_Razao_soci.getText());
-            st.setString(1,txt_NomeFanta.getText());
-            st.setString(4,txt_rua.getText());
-            st.setInt(7, Integer.parseInt(txt_num_rua.getText()));
-            st.setString(5,txt_bairro.getText());
-            st.setString(6, txt_cidade.getText());
-            st.setString(8, (String) cbx_Uf.getSelectedItem());
-            st.setString(9,txt_cep.getText());
-            st.setString(10, txt_ativ_come.getText());
-            st.setString(11, txt_respons.getText());
-            st.setString(12, txt_contato_resp.getText());
-            st.setString(13, txt_email.getText());
-            st.setString(14,txt_observacoes.getText());
-            
-            st.execute();
-            st.close();
-            
-            JOptionPane.showMessageDialog(rootPane, "Cliente Inserido");
-            
-            
-            
-            
-            
-            btn_salvar.setVisible(false);
-            btn_agendamento.setVisible(true);
-            btn_alterar.setVisible(true);
-            btn_excluir.setVisible(true);
-        } catch (SQLException ex) {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+      
+        
+        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+        String user = "root";
+        String senha = "";
+        
+        try {
+            Conn = DriverManager.getConnection(url,user,senha);
+        
+        
+        
+        String sql = "INSERT INTO clientes (cnpj,razao_social,nome_fantasia,rua,numero_residencia,bairro,cidade,uf,cep,atividade_comercial,nome_responsavel,contato,email,observacao) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+        
+         PreparedStatement st = Conn.prepareStatement(sql);
+         
+         st.setString(1, txt_cnpj.getText());
+         st.setString(2,txt_Razao_soci.getText());
+         st.setString(3,txt_NomeFanta.getText());
+         st.setString(4,txt_rua.getText());
+         st.setInt(5, Integer.parseInt(txt_num_rua.getText()));
+         st.setString(6,txt_bairro.getText());
+         st.setString(7, txt_cidade.getText());
+         st.setString(8, (String) cbx_Uf.getSelectedItem());
+         st.setString(9,txt_cep.getText());
+         st.setString(10, txt_ativ_come.getText());
+         st.setString(11, txt_respons.getText());
+         st.setString(12, txt_contato_resp.getText());
+         st.setString(13, txt_email.getText());
+         st.setString(14,txt_observacoes.getText());
+         
+         st.execute();
+         st.close();
+        
+         JOptionPane.showMessageDialog(rootPane, "Cliente Inserido");
+         
+       
+         
+       } catch (SQLException ex) {
             Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
         }
+          } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+          btn_salvar.setVisible(false);
+         btn_agendamento.setVisible(true);
+         btn_alterar.setVisible(true);
+         btn_excluir.setVisible(true);
        
        
     }//GEN-LAST:event_btn_salvarActionPerformed
@@ -607,4 +619,12 @@ public class RF17 extends javax.swing.JFrame {
     private javax.swing.JTextField txt_respons;
     private javax.swing.JTextField txt_rua;
     // End of variables declaration//GEN-END:variables
+  
+    public void recebendo (String texto_a, String texto_b, String texto_c, String texto_d) {
+        
+        txt_cnpj.setText(texto_a);
+        txt_Razao_soci.setText(texto_b);
+        txt_contato_resp.setText(texto_c);
+        txt_respons.setText(texto_d);
+  }
 }
