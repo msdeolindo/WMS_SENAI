@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -374,9 +375,18 @@ public class RF31 extends javax.swing.JFrame {
         String id = this.txtCodCliente.getText();
         String cnpj = this.txtCNPJ.getText();
         String nomeFantasia = this.txtNomeFantasia.getText();
-        
+        if (id != null){
+             this.PopularJTable(" SELECT * FROM clientes WHERE id=" + this.txtCodCliente.getText());
+        }
+        if(cnpj != null){
+             this.PopularJTable(" SELECT * FROM clientes WHERE cnpj=" + this.txtCNPJ.getText());        
+        }
+        if (nomeFantasia != null){
+            this.PopularJTable(" SELECT * FROM clientes WHERE nome_fantasia=" + this.txtNomeFantasia.getText());
+        }
+       
         //this.PopularJTable("Select * from clientes where id=" + this.txtCodCliente.getText()+ " OR cnpj=" + this.txtCNPJ.getText());
-        this.PopularJTable("Select * from clientes where id=" + id + " OR cnpj=" + cnpj + " OR nome_fantasia=" + nomeFantasia);
+        
         
         
     }//GEN-LAST:event_jLabel3MouseClicked

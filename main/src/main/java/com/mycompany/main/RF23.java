@@ -49,7 +49,7 @@ public class RF23 extends javax.swing.JFrame {
         Tfd_nivel = new javax.swing.JTextField();
         Btn_salvar = new javax.swing.JButton();
         Lbl_contagem = new javax.swing.JLabel();
-        Lbl_numeroContagem = new javax.swing.JLabel();
+        txt_quantidade = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,10 +107,6 @@ public class RF23 extends javax.swing.JFrame {
         Lbl_contagem.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Lbl_contagem.setText("Contagem : ");
 
-        Lbl_numeroContagem.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        Lbl_numeroContagem.setForeground(new java.awt.Color(240, 10, 16));
-        Lbl_numeroContagem.setText("100");
-
         javax.swing.GroupLayout Pnl_principalLayout = new javax.swing.GroupLayout(Pnl_principal);
         Pnl_principal.setLayout(Pnl_principalLayout);
         Pnl_principalLayout.setHorizontalGroup(
@@ -123,10 +119,10 @@ public class RF23 extends javax.swing.JFrame {
                         .addComponent(Lbl_quantidade)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Tfd_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(86, 86, 86)
                         .addComponent(Lbl_contagem)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Lbl_numeroContagem))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txt_quantidade, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
                     .addGroup(Pnl_principalLayout.createSequentialGroup()
                         .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(Pnl_principalLayout.createSequentialGroup()
@@ -157,7 +153,7 @@ public class RF23 extends javax.swing.JFrame {
                     .addComponent(Lbl_quantidade)
                     .addComponent(Tfd_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Lbl_contagem)
-                    .addComponent(Lbl_numeroContagem))
+                    .addComponent(txt_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63)
                 .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Lbl_rua)
@@ -262,7 +258,6 @@ public class RF23 extends javax.swing.JFrame {
     private javax.swing.JLabel Lbl_corredor;
     private javax.swing.JLabel Lbl_localização;
     private javax.swing.JLabel Lbl_nivel;
-    private javax.swing.JLabel Lbl_numeroContagem;
     private javax.swing.JLabel Lbl_pilha;
     private javax.swing.JLabel Lbl_quantidade;
     private javax.swing.JLabel Lbl_rua;
@@ -273,5 +268,6 @@ public class RF23 extends javax.swing.JFrame {
     private javax.swing.JTextField Tfd_pilha;
     private javax.swing.JTextField Tfd_quantidade;
     private javax.swing.JTextField Tfd_rua;
+    private javax.swing.JTextField txt_quantidade;
     // End of variables declaration//GEN-END:variables
 }

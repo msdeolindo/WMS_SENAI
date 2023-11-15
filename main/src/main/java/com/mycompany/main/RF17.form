@@ -75,7 +75,7 @@
         <Component class="javax.swing.JLabel" name="lbl_voltar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/mycompany/img/icon_back.png"/>
+              <Image iconType="2" name="P:\TURMAS\HTC-DDS-16\&#xed;cones WMS\icon_back.png"/>
             </Property>
           </Properties>
           <Events>
