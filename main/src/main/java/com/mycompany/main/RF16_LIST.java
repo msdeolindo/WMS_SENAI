@@ -32,7 +32,7 @@ public class RF16_LIST extends javax.swing.JFrame {
         try {
             String url = "jdbc:mysql://localhost:3306/db_wms_prd";
             String usuario = "root";
-            String senha = "";
+            String senha = "murilo123";
             
             Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
@@ -234,7 +234,7 @@ public class RF16_LIST extends javax.swing.JFrame {
             
             String url = "jdbc:mysql://localhost:3306/db_wms_prd";
             String usuario = "root";
-            String senha = "";
+            String senha = "murilo123";
             
             
             conexao = DriverManager.getConnection(url,usuario,senha);
