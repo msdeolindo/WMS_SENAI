@@ -42,17 +42,17 @@ public void PopularJTable (String sql) {
             {
                 model.addRow(new Object[]
                 {
-                    resultado.getString("c.etiqueta"),
-                    resultado.getString("a.carga"),//produto
-                    resultado.getString("a.categoria"),
-                    resultado.getString("a.quantidade"),
+                    resultado.getString("etiqueta"),
+                    resultado.getString("agendamento_id"),
+                    resultado.getString("carga"),//produto
+                    resultado.getString("categoria"),
                     resultado.getString("tipo_carga"),
-                    resultado.getString("c.situacao"),
-                    resultado.getString(""),//localização
-                    resultado.getString("c.rua"),
-                    resultado.getString("c.corredor"),
-                    resultado.getString("c.pilha"),
-                    resultado.getString("c.nivel")
+                    resultado.getString("situacao"),
+                    resultado.getString("rua"),
+                    resultado.getString("corredor"),
+                    resultado.getString("pilha"),
+                    resultado.getString("nivel"),
+                    resultado.getString("quantidade")
                 });
             }
             banco.close();
@@ -278,7 +278,7 @@ public void PopularJTable (String sql) {
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Código da carga", "Produto", "Categoria", "Quantidade / Uni", "Tipo da carga", "Situação", "Localização", "Rua", "Corredor", "Pilha", "Nivel"
+                "Código da etiqueta", "Código da carga", "Produto", "Categoria", "Tipo da carga", "Situação", "Rua", "Corredor", "Pilha", "Nivel", "Quantidade / Uni"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -385,7 +385,7 @@ public void PopularJTable (String sql) {
     try{
         Class.forName ("com.mysql.jdbc.Driver");
         conexao = DriverManager.getConnection (url,usuario,senha); 
-        this.PopularJTable ("SELECT * FROM armazem ORDER BY carga_id DESC"); 
+        this.PopularJTable ("SELECT * FROM armazem ORDER BY etiqueta DESC;"); 
     
     }catch (SQLException ex){
         JOptionPane.showMessageDialog(rootPane, ex.getMessage());
