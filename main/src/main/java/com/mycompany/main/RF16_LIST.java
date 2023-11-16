@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  * @author JulioBasso
  */
 public class RF16_LIST extends javax.swing.JFrame {
-
+        RF16_POP enviatexto;
     /**
      * Creates new form RF_16
      */
@@ -31,7 +31,7 @@ public class RF16_LIST extends javax.swing.JFrame {
         try {
             String url = "jdbc:mysql://localhost:3306/db_wms_prd";
             String usuario = "root";
-            String senha = "";
+            String senha = "murilo123";
             
             Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
@@ -47,11 +47,11 @@ public class RF16_LIST extends javax.swing.JFrame {
                 model.addRow(new Object[]
                 {
                     //retorna os dados da tabela do BD, cada campo e uma coluna.
-                    resultado.getString("id"),
                     resultado.getString("rua"),
                     resultado.getString("corredor"),
                     resultado.getString("pilha"),
-                    resultado.getString("nivel")
+                    resultado.getString("nivel"),
+                    resultado.getString("endereco")
                     
                 });
             }
@@ -122,9 +122,14 @@ public class RF16_LIST extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Endereco", "Rua", "Corredor", "Pilha", "Nivel"
+                "Rua", "Corredor", "Pilha", "Nivel", "Endereco"
             }
         ));
+        tb_Endereco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tb_EnderecoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tb_Endereco);
 
         javax.swing.GroupLayout pBodyLayout = new javax.swing.GroupLayout(pBody);
@@ -158,7 +163,6 @@ public class RF16_LIST extends javax.swing.JFrame {
         lb_Titulo.setForeground(new java.awt.Color(255, 255, 255));
         lb_Titulo.setText("ENDEREÇO DE ARMAZENAGEM");
 
-        lb_Voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         lb_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lb_VoltarMouseClicked(evt);
@@ -228,7 +232,7 @@ public class RF16_LIST extends javax.swing.JFrame {
             
             String url = "jdbc:mysql://localhost:3306/db_wms_prd";
             String usuario = "root";
-            String senha = "";
+            String senha = "murilo123";
             
             
             conexao = DriverManager.getConnection(url,usuario,senha);
@@ -238,6 +242,19 @@ public class RF16_LIST extends javax.swing.JFrame {
             Logger.getLogger(RF16_LIST.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_formWindowOpened
+
+    private void tb_EnderecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_EnderecoMouseClicked
+        int linha = tb_Endereco.getSelectedRow();
+       
+       
+       String TEXTO_b = (tb_Endereco.getValueAt(linha,0).toString());
+       String TEXTO_c = (tb_Endereco.getValueAt(linha,1).toString());
+       String TEXTO_d = (tb_Endereco.getValueAt(linha,2).toString());
+       String TEXTO_e = (tb_Endereco.getValueAt(linha,3).toString());
+       enviatexto = new RF16_POP();
+       enviatexto.setVisible(true);
+       enviatexto.recebendo_valor_tb(TEXTO_b, TEXTO_c, TEXTO_d, TEXTO_e);
+    }//GEN-LAST:event_tb_EnderecoMouseClicked
 
     /**
      * @param args the command line arguments
