@@ -556,12 +556,17 @@ public class RF08 extends javax.swing.JFrame {
     private javax.swing.JTextField txtRG;
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
-    public void recebendo (String texto_a, String texto_b, String texto_c, String texto_d, String texto_e) {
+    public void recebendo (String texto_a, String texto_b, String texto_c, String texto_d, String texto_e,String texto_f,String texto_g,String texto_h,String texto_i) {
         
         txtNomeCompleto.setText(texto_a);
         cbxCargo.setSelectedItem(texto_b);
         txtCPF.setText(texto_c);
         txtTelefone.setText(texto_d);
         txtEmail.setText(texto_e);
+        txtRG.setText(texto_f);
+        txtEndereco.setText(texto_g);
+        pwdSenhaParaLogin.setText(texto_h);
+        txtDataDeNascimento.setText(texto_i);
+        
     }
 }

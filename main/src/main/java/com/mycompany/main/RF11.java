@@ -54,11 +54,17 @@ public class RF11 extends javax.swing.JFrame {
                  model.addRow(new Object[]
                  {
                          
-                         resultado.getString("Nome"),
-                         resultado.getString("Cargo"),
-                         resultado.getString("CPF"),
-                         resultado.getString("Contato"),
-                         resultado.getString("E-mail")
+                         resultado.getString("nome"),
+                         resultado.getString("cargo"),
+                         resultado.getString("cpf"),
+                         resultado.getString("contato"),
+                         resultado.getString("email"),
+                         resultado.getString("rg"),
+                         resultado.getString("endereco"),
+                         //resultado.getString("escolaridade"),
+                         //resultado.getString("estado_civil"),
+                         resultado.getString("senha"),
+                         resultado.getString("data_nascimento")
                          
                  });       
            
@@ -106,11 +112,17 @@ public class RF11 extends javax.swing.JFrame {
                  model.addRow(new Object[]
                  {
                          
-                         resultado.getString("Nome"),
-                         resultado.getString("Cargo"),
-                         resultado.getString("CPF"),
-                         resultado.getString("Contato"),
-                         resultado.getString("E-mail")
+                         resultado.getString("nome"),
+                         resultado.getString("cargo"),
+                         resultado.getString("cpf"),
+                         resultado.getString("contato"),
+                         resultado.getString("email"),
+                         resultado.getString("rg"),
+                         resultado.getString("endereco"),
+                         //resultado.getString("escolaridade"),
+                         //resultado.getString("estado_civil"),
+                         resultado.getString("senha"),
+                         resultado.getString("data_nascimento")
                          
                  });       
            
@@ -142,8 +154,6 @@ public class RF11 extends javax.swing.JFrame {
         LabelT = new javax.swing.JLabel();
         LabelBack = new javax.swing.JLabel();
         Bt_Back = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         LabelCargo = new javax.swing.JLabel();
         LabelN = new javax.swing.JLabel();
@@ -169,16 +179,11 @@ public class RF11 extends javax.swing.JFrame {
         LabelT.setForeground(new java.awt.Color(255, 255, 255));
         LabelT.setText("LISTA DE FUNCIONÁRIOS");
 
-        Bt_Back.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         Bt_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Bt_BackMouseClicked(evt);
             }
         });
-
-        jLabel1.setText("jLabel1");
-
-        jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -191,10 +196,6 @@ public class RF11 extends javax.swing.JFrame {
                     .addComponent(Bt_Back))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelT)
-                .addGap(472, 472, 472)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -204,10 +205,7 @@ public class RF11 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Bt_Back)
                     .addComponent(LabelBack)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(LabelT)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel2)))
+                    .addComponent(LabelT))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -227,7 +225,6 @@ public class RF11 extends javax.swing.JFrame {
 
         txt_Nome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        btn_Pes.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
         btn_Pes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_PesMouseClicked(evt);
@@ -298,7 +295,7 @@ public class RF11 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Cargo", "CPF", "Contato", "E-mail"
+                "Nome", "Cargo", "CPF", "Contato", "E-mail", "RG", "Endereço", "Senha", "dat.nascimento"
             }
         ));
         Table.setGridColor(new java.awt.Color(0, 0, 0));
@@ -361,7 +358,7 @@ public class RF11 extends javax.swing.JFrame {
             
             Con = DriverManager.getConnection(url,user,senha);
             
-            this.PopularJTable("SELECT * FROM funcionarios ORDER BY id ");
+            this.PopularJTable("SELECT * FROM funcionarios ORDER BY Nome ");
             
             
         } catch (SQLException ex) {
@@ -429,11 +426,18 @@ public class RF11 extends javax.swing.JFrame {
         String texto_b = Table.getValueAt(linha,1).toString();
         String texto_c =  Table.getValueAt(linha,2).toString();
         String texto_d =  Table.getValueAt(linha,3).toString();
-        String texto_e =  Table.getValueAt(linha,3).toString();
+        String texto_e =  Table.getValueAt(linha,4).toString();
+        String texto_f =  Table.getValueAt(linha,5).toString();
+        String texto_g =  Table.getValueAt(linha,6).toString();
+        String texto_h =  Table.getValueAt(linha,7).toString();
+        String texto_i =  Table.getValueAt(linha,8).toString();
+        
+        
+        
         
         enviatexto = new RF08();
         enviatexto.setVisible(true);
-        enviatexto.recebendo(texto_a,texto_b, texto_c, texto_d, texto_e);
+        enviatexto.recebendo(texto_a,texto_b, texto_c, texto_d, texto_e,texto_f,texto_g,texto_h,texto_i);
         
         
         
@@ -486,8 +490,6 @@ public class RF11 extends javax.swing.JFrame {
     private javax.swing.JTextField TextCpf;
     private javax.swing.JLabel btn_Pes;
     private javax.swing.JComboBox<String> cbxCargo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
