@@ -249,9 +249,10 @@ public class RF14 extends javax.swing.JFrame {
             //Class.forName("com.mysql.jdbc.Driver");
             String url ="jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
             String usuario = "dds16_wms";
-            String senha = "123";
+            String senha = "";
             
-            Connection con = (Connection)DriverManager.getConnection(url,usuario,senha);
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PR","dds16_wms","");
+            //Connection con = (Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement banco = con.prepareStatement(sql);
             banco.execute();
             
