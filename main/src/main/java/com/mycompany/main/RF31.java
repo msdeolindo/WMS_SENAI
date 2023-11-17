@@ -353,7 +353,7 @@ public class RF31 extends javax.swing.JFrame {
             // TODO add your handling code here:
             String url = "jdbc:mysql://10.145.41.252:3306/db_wms_prd";
             String usuario = "dds16_wms";
-            String senha = "123";
+            String senha = "1234";
             
             Connection con = DriverManager.getConnection(url,usuario,senha);
 
