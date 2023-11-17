@@ -86,7 +86,7 @@ public class RF21 extends javax.swing.JFrame {
 
         jPanel3.setInheritsPopupMenu(true);
 
-        chaveAcesso.setText("Insira a chave de acesso ");
+        chaveAcesso.setText("Insirao o cpf ");
 
         Field_acesso.setBackground(new java.awt.Color(204, 204, 204));
         Field_acesso.setForeground(new java.awt.Color(153, 153, 153));
@@ -119,9 +119,6 @@ public class RF21 extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(chaveAcesso))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(140, 140, 140)
                         .addComponent(confSenha))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -133,7 +130,10 @@ public class RF21 extends javax.swing.JFrame {
                             .addComponent(field_confSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(Field_acesso, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
-                                .addComponent(field_senha)))))
+                                .addComponent(field_senha))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(174, 174, 174)
+                        .addComponent(chaveAcesso)))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -211,10 +211,10 @@ public class RF21 extends javax.swing.JFrame {
 
     private void bt_confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_confirmActionPerformed
     try{ 
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", ""); 
+        Connection conn = DriverManager.getConnection("jdbc:mysql://10.145.252:3306/DB_WMS_PRD", "dds16_wms", "123"); 
  java.sql.Statement st = conn.createStatement(); 
  st.executeUpdate ("UPDATE funcionarios SET senha = '"
-         +this.field_senha.getText() + "' WHERE data_nascimento = '" 
+         +this.field_senha.getText() + "' WHERE cpf = '" 
          +this.Field_acesso.getText()+"'"); 
  JOptionPane.showMessageDialog(rootPane, "Senha Alterada!"); 
     }catch (SQLException ex){ 

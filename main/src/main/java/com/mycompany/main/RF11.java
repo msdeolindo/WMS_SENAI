@@ -35,9 +35,9 @@ public class RF11 extends javax.swing.JFrame {
          Class.forName("com.mysql.cj.jdbc.Driver");
          
          
-         String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
-        String user = "root";
-        String senha = "";
+        String url = "jdbc:mysql://10.145.252:3306/DB_WMS_PRD";
+        String user = "dds16_wms";
+        String senha = "123";
         
          
           Con = DriverManager.getConnection(url,user,senha);
@@ -64,7 +64,10 @@ public class RF11 extends javax.swing.JFrame {
                          //resultado.getString("escolaridade"),
                          //resultado.getString("estado_civil"),
                          resultado.getString("senha"),
-                         resultado.getString("data_nascimento")
+                         resultado.getString("data_nascimento"),
+                         resultado.getString("data_admissao"),
+                         resultado.getString("escolaridade"),
+                         resultado.getString("estado_civil")
                          
                  });       
            
@@ -93,9 +96,9 @@ public class RF11 extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
         
         
-          String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
-        String user = "root";
-        String senha = "";
+        String url = "jdbc:mysql://10.145.252:3306/DB_WMS_PRD";
+        String user = "dds16_wms";
+        String senha = "123";
         
           Con = DriverManager.getConnection(url,user,senha);
           PreparedStatement banco = Con.prepareStatement(sql);
@@ -119,11 +122,12 @@ public class RF11 extends javax.swing.JFrame {
                          resultado.getString("email"),
                          resultado.getString("rg"),
                          resultado.getString("endereco"),
-                         //resultado.getString("escolaridade"),
-                         //resultado.getString("estado_civil"),
                          resultado.getString("senha"),
-                         resultado.getString("data_nascimento")
-                         
+                         resultado.getString("data_nascimento"),
+                         resultado.getString("data_admissao"),
+                         resultado.getString("escolaridade"),
+                         resultado.getString("estado_civil")
+                        
                  });       
            
              }
@@ -295,7 +299,7 @@ public class RF11 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Cargo", "CPF", "Contato", "E-mail", "RG", "Endereço", "Senha", "dat.nascimento"
+                "Nome", "Cargo", "CPF", "Contato", "E-mail", "RG", "Endereço", "Senha", "dat.nascimento", "dat.Admissão", "Escolaridade:", "Estado Civil"
             }
         ));
         Table.setGridColor(new java.awt.Color(0, 0, 0));
@@ -352,9 +356,9 @@ public class RF11 extends javax.swing.JFrame {
                 Class.forName("com.mysql.cj.jdbc.Driver");
            
             
-            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
-            String user = "root";
-            String senha = "";
+        String url = "jdbc:mysql://10.145.252:3306/DB_WMS_PRD";
+        String user = "dds16_wms";
+        String senha = "123";
             
             Con = DriverManager.getConnection(url,user,senha);
             
@@ -386,9 +390,9 @@ public class RF11 extends javax.swing.JFrame {
             
            
             
-            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
-            String user = "root";
-            String senha = "";
+            String url = "jdbc:mysql://10.145.252:3306/DB_WMS_PRD";
+            String user = "dds16_wms";
+            String senha = "123";
             
             Con = DriverManager.getConnection(url,user,senha);
             
@@ -431,13 +435,16 @@ public class RF11 extends javax.swing.JFrame {
         String texto_g =  Table.getValueAt(linha,6).toString();
         String texto_h =  Table.getValueAt(linha,7).toString();
         String texto_i =  Table.getValueAt(linha,8).toString();
+        String texto_j =  Table.getValueAt(linha,9).toString();
+        String texto_k =  Table.getValueAt(linha,10).toString();
+        String texto_l =  Table.getValueAt(linha,11).toString();
         
         
         
         
         enviatexto = new RF08();
         enviatexto.setVisible(true);
-        enviatexto.recebendo(texto_a,texto_b, texto_c, texto_d, texto_e,texto_f,texto_g,texto_h,texto_i);
+        enviatexto.recebendo(texto_a,texto_b, texto_c, texto_d, texto_e,texto_f,texto_g,texto_h,texto_i,texto_j,texto_k,texto_l);
         
         
         

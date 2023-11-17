@@ -374,7 +374,7 @@ public class RF08 extends javax.swing.JFrame {
         // TODO add your handling code here:
          Connection conn;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/DB_WMS_PRD","root","");
+        conn = DriverManager.getConnection("jdbc:mysql://10.145.252:3306/DB_WMS_PRD","dds16_wms","123");
         java.sql.Statement st;
         st = conn.createStatement();
         st.executeUpdate("DELETE FROM funcionarios WHERE cpf='"+this.txtCPF.getText()+"'");
@@ -391,13 +391,13 @@ public class RF08 extends javax.swing.JFrame {
 
              Connection conexao=null;
              
-             String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
-             String usuario = "root";
-             String senha = "";
+            String url = "jdbc:mysql://10.145.252:3306/DB_WMS_PRD";
+            String user = "dds16_wms";
+            String senha = "123";
 
              Connection conn;
         try {
-                conexao = DriverManager.getConnection(url,usuario,senha);
+                conexao = DriverManager.getConnection(url,user,senha);
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 
                String sql = "INSERT INTO funcionarios (nome,data_nascimento,cpf,rg,endereco,contato,email, cargo ,escolaridade,estado_civil,data_admissao,senha  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -442,12 +442,12 @@ public class RF08 extends javax.swing.JFrame {
         
         Connection conn;
         
-        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
-        String usuario = "root";
-        String senha = "";
+        String url = "jdbc:mysql://10.145.252:3306/DB_WMS_PRD";
+        String user = "dds16_wms";
+        String senha = "123";
         try {
             
-            Connection conexao = DriverManager.getConnection(url,usuario,senha);
+            Connection conexao = DriverManager.getConnection(url,user,senha);
             
             String sql = "UPDATE funcionarios SET nome= ?,data_nascimento=?,rg=?,endereco=?,contato=?,email=?, cargo=?, escolaridade=?, estado_civil=?,data_admissao=?,senha=? WHERE cpf=?; ";
                 
@@ -556,7 +556,7 @@ public class RF08 extends javax.swing.JFrame {
     private javax.swing.JTextField txtRG;
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
-    public void recebendo (String texto_a, String texto_b, String texto_c, String texto_d, String texto_e,String texto_f,String texto_g,String texto_h,String texto_i) {
+    public void recebendo (String texto_a, String texto_b, String texto_c, String texto_d, String texto_e,String texto_f,String texto_g,String texto_h,String texto_i,String texto_j,String texto_k,String texto_l) {
         
         txtNomeCompleto.setText(texto_a);
         cbxCargo.setSelectedItem(texto_b);
@@ -567,6 +567,9 @@ public class RF08 extends javax.swing.JFrame {
         txtEndereco.setText(texto_g);
         pwdSenhaParaLogin.setText(texto_h);
         txtDataDeNascimento.setText(texto_i);
+        txtDataDeAdmissao.setText(texto_j);
+        cbxEscolaridade.setSelectedItem(texto_k);
+        cbxEstadoCivil.setSelectedItem(texto_l);
         
     }
 }
