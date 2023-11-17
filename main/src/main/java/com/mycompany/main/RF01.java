@@ -29,7 +29,7 @@ public class RF01 extends javax.swing.JFrame {
 public void PopularJTable (String sql) {
     
        try {
-            Connection con = (Connection)DriverManager.getConnection ("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","");
+            Connection con = (Connection)DriverManager.getConnection ("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","123");
             PreparedStatement banco = (PreparedStatement) con.prepareStatement(sql);
             banco.execute();
             
@@ -42,17 +42,17 @@ public void PopularJTable (String sql) {
             {
                 model.addRow(new Object[]
                 {
-                    resultado.getString("c.etiqueta"),
-                    resultado.getString("a.carga"),//produto
-                    resultado.getString("a.categoria"),
-                    resultado.getString("a.quantidade"),
+                    resultado.getString("etiqueta"),
+                    resultado.getString("agendamento_id"),
+                    resultado.getString("carga"),//produto
+                    resultado.getString("categoria"),
                     resultado.getString("tipo_carga"),
-                    resultado.getString("c.situacao"),
-                    resultado.getString(""),//localização
-                    resultado.getString("c.rua"),
-                    resultado.getString("c.corredor"),
-                    resultado.getString("c.pilha"),
-                    resultado.getString("c.nivel")
+                    resultado.getString("situacao"),
+                    resultado.getString("rua"),
+                    resultado.getString("corredor"),
+                    resultado.getString("pilha"),
+                    resultado.getString("nivel"),
+                    resultado.getString("quantidade")
                 });
             }
             banco.close();
@@ -84,9 +84,13 @@ public void PopularJTable (String sql) {
         lbl_LupaParaPesquisa = new javax.swing.JLabel();
         sln_Inf_CargasArmazenadas = new javax.swing.JScrollPane();
         tbl_TabelaDasCargasArmazenadas = new javax.swing.JTable();
-        btn_Abrir_RegistroDeCarga = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -98,6 +102,11 @@ public void PopularJTable (String sql) {
 
         pnl_PlanoDeFundo.setBackground(new java.awt.Color(217, 217, 217));
         pnl_PlanoDeFundo.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        pnl_PlanoDeFundo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnl_PlanoDeFundoMouseClicked(evt);
+            }
+        });
 
         pnl_Titulo_ListaDoArmazem.setBackground(new java.awt.Color(36, 32, 171));
         pnl_Titulo_ListaDoArmazem.setPreferredSize(new java.awt.Dimension(1920, 100));
@@ -278,7 +287,7 @@ public void PopularJTable (String sql) {
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Código da carga", "Produto", "Categoria", "Quantidade / Uni", "Tipo da carga", "Situação", "Localização", "Rua", "Corredor", "Pilha", "Nivel"
+                "Código da etiqueta", "Código da carga", "Produto", "Categoria", "Tipo da carga", "Situação", "Rua", "Corredor", "Pilha", "Nivel", "Quantidade / Uni"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -296,16 +305,6 @@ public void PopularJTable (String sql) {
         tbl_TabelaDasCargasArmazenadas.setShowGrid(true);
         sln_Inf_CargasArmazenadas.setViewportView(tbl_TabelaDasCargasArmazenadas);
 
-        btn_Abrir_RegistroDeCarga.setBackground(new java.awt.Color(32, 41, 173));
-        btn_Abrir_RegistroDeCarga.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
-        btn_Abrir_RegistroDeCarga.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Abrir_RegistroDeCarga.setText("Abrir");
-        btn_Abrir_RegistroDeCarga.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_Abrir_RegistroDeCargaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout pnl_PlanoDeFundoLayout = new javax.swing.GroupLayout(pnl_PlanoDeFundo);
         pnl_PlanoDeFundo.setLayout(pnl_PlanoDeFundoLayout);
         pnl_PlanoDeFundoLayout.setHorizontalGroup(
@@ -319,10 +318,6 @@ public void PopularJTable (String sql) {
                     .addComponent(sln_Inf_CargasArmazenadas)
                     .addComponent(pnl_Inf_ListaDoArmazen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_PlanoDeFundoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_Abrir_RegistroDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66))
         );
         pnl_PlanoDeFundoLayout.setVerticalGroup(
             pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -332,9 +327,7 @@ public void PopularJTable (String sql) {
                 .addComponent(pnl_Inf_ListaDoArmazen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(sln_Inf_CargasArmazenadas, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btn_Abrir_RegistroDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -364,13 +357,6 @@ public void PopularJTable (String sql) {
         this.dispose();
     }//GEN-LAST:event_lbl_VoltarAoMenuMouseClicked
 
-    private void btn_Abrir_RegistroDeCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Abrir_RegistroDeCargaActionPerformed
-        // TODO add your handling code here:
-        RF15 RegistroDeCarga = new RF15();
-        RegistroDeCarga.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btn_Abrir_RegistroDeCargaActionPerformed
-
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowActivated
@@ -379,13 +365,13 @@ public void PopularJTable (String sql) {
       Connection conexao = null;
         PreparedStatement statement = null;
         
-          String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
-          String usuario = "root";
-          String senha= "";
+          String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+          String usuario = "dds16_wms";
+          String senha= "123";
     try{
         Class.forName ("com.mysql.jdbc.Driver");
         conexao = DriverManager.getConnection (url,usuario,senha); 
-        this.PopularJTable ("SELECT * FROM armazem ORDER BY carga_id DESC"); 
+        this.PopularJTable ("SELECT * FROM armazem ORDER BY etiqueta DESC;"); 
     
     }catch (SQLException ex){
         JOptionPane.showMessageDialog(rootPane, ex.getMessage());
@@ -399,6 +385,16 @@ public void PopularJTable (String sql) {
     private void lbl_LupaParaPesquisaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_LupaParaPesquisaMouseClicked
       this.PopularJTable ("SELECT carga_id, categoria, tipo_carga, situacao FROM agendamentos WHERE carga_id; ");   
     }//GEN-LAST:event_lbl_LupaParaPesquisaMouseClicked
+
+    private void pnl_PlanoDeFundoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_PlanoDeFundoMouseClicked
+      
+    }//GEN-LAST:event_pnl_PlanoDeFundoMouseClicked
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+      RF15 Registro_carga = new RF15();
+        Registro_carga.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_formMouseClicked
 
     /**
      * @param args the command line arguments
@@ -439,7 +435,6 @@ public void PopularJTable (String sql) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Abrir_RegistroDeCarga;
     private javax.swing.JLabel lbl_Categoria;
     private javax.swing.JLabel lbl_CodigoDaCarga;
     private javax.swing.JLabel lbl_LupaParaPesquisa;

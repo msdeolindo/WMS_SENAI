@@ -375,6 +375,7 @@ public class RF31 extends javax.swing.JFrame {
         String id = this.txtCodCliente.getText();
         String cnpj = this.txtCNPJ.getText();
         String nomeFantasia = this.txtNomeFantasia.getText();
+        
         if (id != null){
              this.PopularJTable(" SELECT * FROM clientes WHERE id=" + this.txtCodCliente.getText());
         }
@@ -395,9 +396,7 @@ public class RF31 extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-         RF17 novoFrame = new RF17();
-        novoFrame.setVisible(true);
-        this.dispose();
+         
         
          int linha = tblRegistroClientes.getSelectedRow();
          

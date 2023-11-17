@@ -147,10 +147,6 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                              <Component id="chaveAcesso" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
                               <Component id="confSenha" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -167,6 +163,10 @@
                                       <Component id="field_senha" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
+                              <Component id="chaveAcesso" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="49" max="32767" attributes="0"/>
@@ -196,7 +196,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="chaveAcesso">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Insira a chave de acesso "/>
+                <Property name="text" type="java.lang.String" value="Insirao o cpf "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Field_acesso">

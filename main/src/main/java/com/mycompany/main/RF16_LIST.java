@@ -29,9 +29,10 @@ public class RF16_LIST extends javax.swing.JFrame {
     public void PopularJtable(String sql){
         
         try {
-            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
-            String usuario = "dds16_wms";
-            String senha = "123";
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String usuario = "root";
+            String senha = "usbw";
+            
             
             Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
@@ -232,9 +233,9 @@ public class RF16_LIST extends javax.swing.JFrame {
             Connection conexao = null;
             PreparedStatement statement = null;
             
-            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
-            String usuario = "dds16_wms";
-            String senha = "123";
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String usuario = "root";
+            String senha = "usbw";
             
             Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             

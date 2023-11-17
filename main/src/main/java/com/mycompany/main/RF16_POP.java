@@ -280,9 +280,9 @@ public class RF16_POP extends javax.swing.JFrame {
 
     private void btn_ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExcluirActionPerformed
         try {
-            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
-            String usuario = "dds16_wms";
-            String senha = "123";
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String usuario = "root";
+            String senha = "usbw";
             
             Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement statement;
@@ -310,9 +310,9 @@ public class RF16_POP extends javax.swing.JFrame {
 
     private void btn_EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EditarActionPerformed
         try {
-            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
-            String usuario = "dds16_wms";
-            String senha = "123";
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String usuario = "root";
+            String senha = "usbw";
             
             Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement statement;
@@ -351,11 +351,15 @@ public class RF16_POP extends javax.swing.JFrame {
 
     private void btn_SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalvarActionPerformed
         try {
-            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
-            String usuario = "dds16_wms";
-            String senha = "123";
+
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String usuario = "root";
+            String senha = "usbw";
             
             Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
+
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
+
             PreparedStatement statement;
             statement = con.prepareStatement("INSERT INTO enderecos(categoria, tipo_carga, rua, corredor, pilha, nivel, endereco) VALUES (?, ?, ?, ?, ?, ?, ?)");
             
