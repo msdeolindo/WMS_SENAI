@@ -23,6 +23,7 @@ public class RF23 extends javax.swing.JFrame {
      */
     RF25 enviaquantidade;
     int valor = 0;
+    int codigo;
 
     public RF23() {
         initComponents();
@@ -189,42 +190,44 @@ public class RF23 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_salvarActionPerformed
-        
-        
+          
+        int quantidade = Integer.parseInt(Tfd_quantidade.getText());
         try{   
     
-            
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
-        
-        PreparedStatement statement;  
-        
-        statement = conn.prepareStatement("INSERT INTO cargas (quantidade, rua, pilha, corredor, nivel) VALUES (?,?,?,?,?)");
-                
-        statement.setString(1,Tfd_quantidade.getText());
-        statement.setString(2,Tfd_rua.getText());        
-        statement.setString(3,Tfd_pilha.getText());
-        statement.setString(4,Tfd_corredor.getText());
-        statement.setString(5,Tfd_nivel.getText());
-        
-        
-        JOptionPane.showMessageDialog(rootPane, "Aluno Inserido");        
-        
-     }catch(SQLException ex){  
-         Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);             
-     }
-        
-        int quantidade = Integer.parseInt(Tfd_quantidade.getText());
-
-	if(quantidade > valor || quantidade < 0){
+        if(quantidade > valor || quantidade < 0){
             JOptionPane.showMessageDialog(rootPane, "Valor inserido incorreto");
-        }
-        else{
+        }    
+        else{        
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
+
+            PreparedStatement statement;  
+
+            statement = conn.prepareStatement("INSERT INTO cargas (quantidade, rua, pilha, corredor, nivel) VALUES (?,?,?,?,?)");
+
+            statement.setString(1,Tfd_quantidade.getText());
+            statement.setString(2,Tfd_rua.getText());        
+            statement.setString(3,Tfd_pilha.getText());
+            statement.setString(4,Tfd_corredor.getText());
+            statement.setString(5,Tfd_nivel.getText());
+            //WHERE id = ? statement.setInt(6, codigo);
+
+            JOptionPane.showMessageDialog(rootPane, "Local selecionado");        
+            
             valor = valor - quantidade;
             enviaquantidade = new RF25();
             enviaquantidade.setVisible(true);
             enviaquantidade.etiqueta(valor);
             this.dispose();
         }
+        
+     }catch(SQLException ex){  
+         Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);             
+     }
+        
+        
+
+	
+        
 
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_salvarActionPerformed
@@ -267,6 +270,7 @@ public class RF23 extends javax.swing.JFrame {
     public void recebendo(String a){
         txt_quantidade.setText(a);
         valor = Integer.parseInt(a);
+        //codigo = Integer.parseInt(b);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

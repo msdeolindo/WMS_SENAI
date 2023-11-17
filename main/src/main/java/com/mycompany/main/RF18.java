@@ -3,10 +3,12 @@ package com.mycompany.main;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -27,7 +29,51 @@ public class RF18 extends javax.swing.JFrame {
     public RF18() {
         initComponents();
     }
+    
+    
+        public void PopularJTable(String sql) {
+        
 
+        
+        try {
+            String url = "jdbc:mysql://10.154.41.252:3306/DB_WMS_PRD";
+            String usuario = "dds16_wms";
+            String senha = "123";
+            
+            Connection con = (Connection)DriverManager.getConnection(url,usuario,senha);
+            
+            PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
+            
+            banco.execute();
+            
+            
+            ResultSet resultado = banco.executeQuery(sql);
+            
+            DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+            
+            model.setNumRows(0);
+            
+            while(resultado.next())
+            {
+                model.addRow(new Object[]
+                {
+                    resultado.getString("cliente_id"),
+                    resultado.getString("tipo_agendamento"),
+                    resultado.getString("transportadora"),
+                    resultado.getString("categoria"),
+                    resultado.getString("data_agendamento")    
+                });
+                
+            }
+            
+            banco.close();      
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+      }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,10 +88,12 @@ public class RF18 extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jPanel_principal = new javax.swing.JPanel();
+        jsp_tabela_agendamento = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jPanel_topo_azul = new javax.swing.JPanel();
         lbl_recebimento = new javax.swing.JLabel();
         lbl_icone_voltar = new javax.swing.JLabel();
+        lbl_BotaoVolta1 = new javax.swing.JLabel();
         jPanel_tela_informação = new javax.swing.JPanel();
         lbl_obeservação = new javax.swing.JLabel();
         lbl_avarias = new javax.swing.JLabel();
@@ -56,8 +104,6 @@ public class RF18 extends javax.swing.JFrame {
         tf_observacao = new javax.swing.JTextField();
         bt_devolução = new javax.swing.JButton();
         tf_codigo = new javax.swing.JTextField();
-        jsp_tabela_agendamento = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         lblEndereco = new javax.swing.JLabel();
@@ -90,9 +136,27 @@ public class RF18 extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(240, 240, 240));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
-        jPanel_principal.setBackground(new java.awt.Color(217, 217, 217));
-        jPanel_principal.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"", "", "", "", ""},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "CLIENTE", "TIPO", "TRANSPORTADORA", "ESPECIFICAÇÂO", "DATA"
+            }
+        ));
+        jTable2.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable2.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        jsp_tabela_agendamento.setViewportView(jTable2);
 
         jPanel_topo_azul.setBackground(new java.awt.Color(32, 41, 171));
 
@@ -108,6 +172,13 @@ public class RF18 extends javax.swing.JFrame {
             }
         });
 
+        lbl_BotaoVolta1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        lbl_BotaoVolta1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_BotaoVolta1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel_topo_azulLayout = new javax.swing.GroupLayout(jPanel_topo_azul);
         jPanel_topo_azul.setLayout(jPanel_topo_azulLayout);
         jPanel_topo_azulLayout.setHorizontalGroup(
@@ -115,6 +186,8 @@ public class RF18 extends javax.swing.JFrame {
             .addGroup(jPanel_topo_azulLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbl_icone_voltar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbl_BotaoVolta1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbl_recebimento)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -124,8 +197,9 @@ public class RF18 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_topo_azulLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel_topo_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lbl_recebimento)
-                    .addComponent(lbl_icone_voltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lbl_BotaoVolta1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbl_icone_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_recebimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -184,87 +258,68 @@ public class RF18 extends javax.swing.JFrame {
             }
         });
 
-        tf_codigo.setText("12357985");
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"", "", "", "", ""},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "CLIENTE", "TIPO", "TRANSPORTADORA", "ESPECIFICAÇÂO", "DATA"
-            }
-        ));
-        jTable2.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable2.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jsp_tabela_agendamento.setViewportView(jTable2);
-
         lblEndereco.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblEndereco.setText("CODIGO DA CARGA:");
 
-        jLabel3.setText("jLabel3");
+        jLabel3.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza4.0.png")); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel_tela_informaçãoLayout = new javax.swing.GroupLayout(jPanel_tela_informação);
         jPanel_tela_informação.setLayout(jPanel_tela_informaçãoLayout);
         jPanel_tela_informaçãoLayout.setHorizontalGroup(
             jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
-                .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(24, 24, 24)
+                .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
+                        .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_avarias, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_avarias))
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_obeservação)
+                            .addComponent(tf_observacao, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(48, 48, 48)
+                        .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_quantidade_avarias)))
+                    .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
+                        .addGap(557, 557, 557)
+                        .addComponent(bt_devolução, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(153, 153, 153)
+                        .addComponent(bt_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
                         .addComponent(lblEndereco)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tf_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel2)
                         .addGap(12, 12, 12)
-                        .addComponent(jLabel1)
-                        .addGap(159, 159, 159)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jsp_tabela_agendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 1515, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
-                                .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tf_avarias, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lbl_avarias))
-                                .addGap(47, 47, 47)
-                                .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbl_obeservação)
-                                    .addComponent(tf_observacao, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(48, 48, 48)
-                                .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tf_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lbl_quantidade_avarias)))
-                            .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
-                                .addGap(557, 557, 557)
-                                .addComponent(bt_devolução, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(153, 153, 153)
-                                .addComponent(bt_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(94, Short.MAX_VALUE))
+                        .addComponent(jLabel1)))
+                .addContainerGap(661, Short.MAX_VALUE))
         );
         jPanel_tela_informaçãoLayout.setVerticalGroup(
             jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
                 .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(110, 110, 110))
+                    .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblEndereco)
                             .addComponent(tf_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_tela_informaçãoLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(167, 167, 167)))
-                .addComponent(jsp_tabela_agendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_avarias)
                     .addComponent(lbl_obeservação)
@@ -273,48 +328,35 @@ public class RF18 extends javax.swing.JFrame {
                 .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(tf_observacao, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_avarias)
-                    .addComponent(tf_quantidade))
+                    .addComponent(tf_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(94, 94, 94)
                 .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt_devolução, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bt_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(348, 348, 348))
-        );
-
-        javax.swing.GroupLayout jPanel_principalLayout = new javax.swing.GroupLayout(jPanel_principal);
-        jPanel_principal.setLayout(jPanel_principalLayout);
-        jPanel_principalLayout.setHorizontalGroup(
-            jPanel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel_topo_azul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_principalLayout.createSequentialGroup()
-                .addContainerGap(151, Short.MAX_VALUE)
-                .addComponent(jPanel_tela_informação, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(113, 113, 113))
-        );
-        jPanel_principalLayout.setVerticalGroup(
-            jPanel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel_principalLayout.createSequentialGroup()
-                .addComponent(jPanel_topo_azul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(172, 172, 172)
-                .addComponent(jPanel_tela_informação, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addGap(557, 557, 557))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel_topo_azul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel_principal, javax.swing.GroupLayout.DEFAULT_SIZE, 1927, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(125, 125, 125)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jsp_tabela_agendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 1664, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel_tela_informação, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel_topo_azul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(145, 145, 145)
+                .addComponent(jPanel_tela_informação, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(131, 131, 131)
+                .addComponent(jsp_tabela_agendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(286, Short.MAX_VALUE))
         );
 
         pack();
@@ -333,9 +375,9 @@ public class RF18 extends javax.swing.JFrame {
         Connection conexao = null;
          
         
-        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
-        String usuario = "root";
-        String senha = "";
+        String url = "jdbc:mysql://10.154.41.252:3306/DB_WMS_PRD";
+        String usuario = "dds16_wms";
+        String senha = "123";
         
         try {        
             conexao = DriverManager.getConnection(url,usuario,senha);
@@ -385,16 +427,54 @@ public class RF18 extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_devoluçãoActionPerformed
 
     private void lbl_icone_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_icone_voltarMouseClicked
-        RF30 FrameMenu = new RF30();
-        FrameMenu.setVisible(true);
-        
-        this.dispose();
+
+        //vazio!
         
     }//GEN-LAST:event_lbl_icone_voltarMouseClicked
 
     private void bt_devoluçãoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_devoluçãoMouseClicked
        
     }//GEN-LAST:event_bt_devoluçãoMouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+      
+   try {
+            Connection conexao = null;
+            PreparedStatement statement = null;
+            
+            String url = "jdbc:mysql://10.154.41.252:3306/DB_WMS_PRD";
+            String usuario = "dds16_wms";
+            String senha = "123";
+            
+            
+            conexao = DriverManager.getConnection(url, usuario, senha);
+            
+            this.PopularJTable("SELECT * FROM agendamentos ORDER BY ID DESC");
+            
+          
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);
+        }     
+        
+        
+    }//GEN-LAST:event_formWindowOpened
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+      
+        this.PopularJTable("SELECT * FROM agendamentos WHERE id = "+this.tf_codigo.getText());
+        
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void lbl_BotaoVolta1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_BotaoVolta1MouseClicked
+       
+        RF30 FrameMenu = new RF30();
+        FrameMenu.setVisible(true);
+        
+        this.dispose();
+        
+        
+    }//GEN-LAST:event_lbl_BotaoVolta1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -440,7 +520,6 @@ public class RF18 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel_principal;
     private javax.swing.JPanel jPanel_tela_informação;
     private javax.swing.JPanel jPanel_topo_azul;
     private javax.swing.JScrollPane jScrollPane1;
@@ -449,6 +528,7 @@ public class RF18 extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JScrollPane jsp_tabela_agendamento;
     private javax.swing.JLabel lblEndereco;
+    private javax.swing.JLabel lbl_BotaoVolta1;
     private javax.swing.JLabel lbl_avarias;
     private javax.swing.JLabel lbl_icone_voltar;
     private javax.swing.JLabel lbl_obeservação;
