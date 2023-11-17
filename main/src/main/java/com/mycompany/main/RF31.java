@@ -386,28 +386,14 @@ public class RF31 extends javax.swing.JFrame {
         if (nomeFantasia != null){
             this.PopularJTable(" SELECT * FROM clientes WHERE nome_fantasia=" + this.txtNomeFantasia.getText());
         }
-       
-        
-        
-        //this.PopularJTable("Select * from clientes where id=" + this.txtCodCliente.getText()+ " OR cnpj=" + this.txtCNPJ.getText());
-        
-
-        
-        
-        
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void tblRegistroClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblRegistroClientesMouseClicked
         // TODO add your handling code here:
-        
-        
-         
-        
+
          int linha = tblRegistroClientes.getSelectedRow();
          
         String texto_a = tblRegistroClientes.getValueAt(linha,0).toString();
-       
-        
        
         enviatexto = new RF17();
         enviatexto.setVisible(true);

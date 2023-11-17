@@ -31,9 +31,9 @@ public class RF17 extends javax.swing.JFrame {
        
      
         try {
-            String url = "jdbc:mysql://10.145.41.252:3306/db_wms_prd";
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
             String usuario = "dds16_wms";
-            String senha = "123";
+            String senha = "";
             
             Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement st = (PreparedStatement)con.prepareStatement(sql);
@@ -56,14 +56,6 @@ public class RF17 extends javax.swing.JFrame {
                 txt_observacoes.setText(resultado.getString("observacao"));
             }
            
-                    
-            
-           
-          
-           
-           
-           
-            
             st.close();
             con.close();
         } catch (SQLException ex) {
