@@ -39,6 +39,7 @@ public class RF02 extends javax.swing.JFrame {
         Pnl_barraAzul = new javax.swing.JPanel();
         Lbl_nomeAgendamento = new javax.swing.JLabel();
         Lbl_iconeBotaoVoltar = new javax.swing.JLabel();
+        btn_back = new javax.swing.JLabel();
         Pnl_conteudoCentral = new javax.swing.JPanel();
         Lbl_cliente = new javax.swing.JLabel();
         Tfd_cliente = new javax.swing.JTextField();
@@ -65,7 +66,6 @@ public class RF02 extends javax.swing.JFrame {
         Btn_editar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         Pnl_principal.setBackground(new java.awt.Color(217, 217, 217));
 
@@ -82,25 +82,37 @@ public class RF02 extends javax.swing.JFrame {
             }
         });
 
+        btn_back.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        btn_back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_backMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout Pnl_barraAzulLayout = new javax.swing.GroupLayout(Pnl_barraAzul);
         Pnl_barraAzul.setLayout(Pnl_barraAzulLayout);
         Pnl_barraAzulLayout.setHorizontalGroup(
             Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(Lbl_iconeBotaoVoltar)
-                .addGap(18, 18, 18)
+                .addGap(8, 8, 8)
+                .addComponent(btn_back)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Lbl_nomeAgendamento)
+                .addGap(18, 18, 18)
+                .addComponent(Lbl_iconeBotaoVoltar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Pnl_barraAzulLayout.setVerticalGroup(
             Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_barraAzulLayout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
-                .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Lbl_iconeBotaoVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btn_back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
+                        .addComponent(Lbl_iconeBotaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12))
                     .addComponent(Lbl_nomeAgendamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(28, 28, 28))
+                .addGap(16, 16, 16))
         );
 
         Pnl_conteudoCentral.setBackground(new java.awt.Color(203, 200, 200));
@@ -296,8 +308,8 @@ public class RF02 extends javax.swing.JFrame {
         Pnl_principalLayout.setVerticalGroup(
             Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pnl_principalLayout.createSequentialGroup()
-                .addComponent(Pnl_barraAzul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addComponent(Pnl_barraAzul, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                 .addComponent(Pnl_conteudoCentral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
                 .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -326,10 +338,6 @@ public class RF02 extends javax.swing.JFrame {
 
     private void Lbl_iconeBotaoVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lbl_iconeBotaoVoltarMouseClicked
 
-        RF30 FrameMenu = new RF30();
-        FrameMenu.setVisible(true);
-        this.dispose();
-        
 
         
     }//GEN-LAST:event_Lbl_iconeBotaoVoltarMouseClicked
@@ -346,7 +354,7 @@ public class RF02 extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","");
+            conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","123");
            
             statement = conn.prepareStatement ("INSERT INTO agendamentos (cliente_id,data_agendamento,categoria,carga,quantidade,transportadora,tipo_agendamento,tipo_carga) VALUES (?,?,?,?,?,?,?,?)");
                     statement.setInt(1, Integer.parseInt(Tfd_cliente.getText()));
@@ -367,12 +375,6 @@ public class RF02 extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(Pnl_principal,"Agendamento salvo!!");
         
         // TODO add your handling code here:
-        
-            
-        
-       
-        
-
 
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_SalvarActionPerformed
@@ -385,7 +387,7 @@ public class RF02 extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","");
+            conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","123");
 
             statement = conn.prepareStatement ("UPDATE agendamentos SET cliente_id = ?, data_agendamento = ?, categoria = ?, carga = ?, quantidade = ?, transportadora = ?,tipo_agendamento = ?,tipo_carga = ? WHERE id = ?");
             
@@ -420,7 +422,7 @@ public class RF02 extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","");
+            conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","123");
             statement = conn.prepareStatement("DELETE FROM agendamentos WHERE id = ?" );
             statement.setInt(1, Integer.parseInt(Tfd_nomeResponsavel.getText()));
        
@@ -434,6 +436,14 @@ public class RF02 extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_cancelarActionPerformed
+
+    private void btn_backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_backMouseClicked
+         RF30 FrameMenu = new RF30();
+        FrameMenu.setVisible(true);
+        this.dispose();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_backMouseClicked
 
     /**
      * @param args the command line arguments
@@ -500,5 +510,24 @@ public class RF02 extends javax.swing.JFrame {
     private javax.swing.JTextField Tfd_nomeResponsavel;
     private javax.swing.JTextField Tfd_quantidade;
     private javax.swing.JTextField Tfd_transportadora;
+    private javax.swing.JLabel btn_back;
     // End of variables declaration//GEN-END:variables
+
+    public void recebendo(String a,String b,String c,String d,String e,String f,String g,String h,String i){
+        Tfd_codCarga.setText(a);
+        Tfd_cliente.setText(b);
+        Tfd_nomeResponsavel.setText(b);
+        Tfd_categoria.setText(c);
+        Tfd_carga.setText(d);
+        Tfd_quantidade.setText(e);
+        Tfd_transportadora.setText(f);
+        Tfd_dataAgendamento.setText(g);
+        Cbx_tipoAgendamento.setSelectedItem(h);
+        Cbx_tipo.setSelectedItem(i);
+        
+        
+        
+    }
+
+
 }
