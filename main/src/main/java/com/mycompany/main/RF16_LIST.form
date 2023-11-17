@@ -110,7 +110,8 @@
             <Component class="javax.swing.JTable" name="tb_Endereco">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="5" rowCount="11">
+                  <Table columnCount="6" rowCount="11">
+                    <Column editable="true" title="id" type="java.lang.Object"/>
                     <Column editable="true" title="Rua" type="java.lang.Object"/>
                     <Column editable="true" title="Corredor" type="java.lang.Object"/>
                     <Column editable="true" title="Pilha" type="java.lang.Object"/>
@@ -140,9 +141,9 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                  <Component id="lb_Voltar" min="-2" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lbl_Voltar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="lb_Titulo" min="-2" pref="373" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
@@ -154,8 +155,8 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="33" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="lb_Voltar" min="-2" max="-2" attributes="0"/>
                       <Component id="lb_Titulo" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="lbl_Voltar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
@@ -177,9 +178,14 @@
             <Property name="text" type="java.lang.String" value="ENDERE&#xc7;O DE ARMAZENAGEM"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lb_Voltar">
+        <Component class="javax.swing.JLabel" name="lbl_Voltar">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="P:\TURMAS\HTC-DDS-16\&#xed;cones WMS\icon_back.png"/>
+            </Property>
+          </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_VoltarMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_VoltarMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>

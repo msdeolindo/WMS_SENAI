@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -58,7 +59,7 @@ public class RF16_POP extends javax.swing.JFrame {
         lbl_id = new javax.swing.JTextField();
         paTitulo = new javax.swing.JPanel();
         lb_Titulo = new javax.swing.JLabel();
-        lb_Voltar = new javax.swing.JLabel();
+        lbl_voltar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CADASTRO DE ENDEREÇO DE ARMAZENAGEM");
@@ -227,9 +228,10 @@ public class RF16_POP extends javax.swing.JFrame {
         lb_Titulo.setForeground(new java.awt.Color(255, 255, 255));
         lb_Titulo.setText("Cadastro de Armazenagem");
 
-        lb_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbl_voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        lbl_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lb_VoltarMouseClicked(evt);
+                lbl_voltarMouseClicked(evt);
             }
         });
 
@@ -238,20 +240,20 @@ public class RF16_POP extends javax.swing.JFrame {
         paTituloLayout.setHorizontalGroup(
             paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paTituloLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(lb_Voltar)
+                .addGap(12, 12, 12)
+                .addComponent(lbl_voltar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         paTituloLayout.setVerticalGroup(
             paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paTituloLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lb_Voltar)
-                    .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27))
+            .addGroup(paTituloLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_voltar))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -278,16 +280,27 @@ public class RF16_POP extends javax.swing.JFrame {
 
     private void btn_ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExcluirActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "murilo123");
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+            String usuario = "dds16_wms";
+            String senha = "123";
+            
+            Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement statement;
-            statement = conn.prepareStatement("DELETE FROM enderecos WHERE id = ?");
+            statement = con.prepareStatement("DELETE FROM enderecos WHERE id = ?");
             statement.setInt(1,Integer.parseInt(lbl_id.getText()));
             statement.execute();
             statement.close();
             
-            JOptionPane.showMessageDialog(rootPane, "local excluido");
+            JOptionPane.showMessageDialog(rootPane, "Endereço excluido");
+            RF16_POP jFrame16_POP = new RF16_POP();
+            jFrame16_POP.setVisible(false);
+            this.dispose();
+            RF16_LIST jFrame16_List = new RF16_LIST();
+            jFrame16_List.setVisible(true);
+            this.dispose();
         } catch (SQLException ex) {
             Logger.getLogger(RF16_POP.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, "Endereço ja excluido");
         }
     }//GEN-LAST:event_btn_ExcluirActionPerformed
 
@@ -296,39 +309,39 @@ public class RF16_POP extends javax.swing.JFrame {
     }//GEN-LAST:event_cbx_tipoCargaActionPerformed
 
     private void btn_EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EditarActionPerformed
-        /*try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/DB_WMS_PRD", "root", "");
-            java.sql.Statement st = conn.createStatement();
-            st.executeUpdate("UPDATE cadastro_de_endereco SET rua='"
-                    +this.txt_Rua.getText() + "',corredor='"
-                    +this.txt_Corredor.getText() + "',pilha='"
-                    +this.txt_Pilha.getText() + "',nivel='"
-                    +this.txt_Nivel.getText()
-                    +"'WHERE id_endereco='" + this.lbl_id.getText()+"'");
-            JOptionPane.showMessageDialog(rootPane, "Endereço Atualizado");
-        } catch (SQLException ex) {
-            Logger.getLogger(RF16_POP.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-        
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_wms_prd", "root", "murilo123");
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+            String usuario = "dds16_wms";
+            String senha = "123";
+            
+            Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement statement;
             
-            statement = conn.prepareStatement("UPDATE enderecos SET categoria=?, tipo_carga=?, rua=?, corredor=?, pilha=?, nivel=? WHERE id = ?");
+            statement = con.prepareStatement("UPDATE enderecos SET categoria=?, tipo_carga=?, rua=?, corredor=?, pilha=?, nivel=?, endereco=? WHERE id = ?");
+            
+            String endereco = ((txt_Rua.getText()) + "."+ (txt_Corredor.getText()) +"."+(txt_Pilha.getText())+"."+(txt_Nivel.getText()));
             
             statement.setString(1, cbx_categoria.getSelectedItem().toString());
             statement.setString(2, cbx_tipoCarga.getSelectedItem().toString());
-            statement.setInt(3, Integer.parseInt(txt_Rua.getText()));
-            statement.setInt(4, Integer.parseInt(txt_Corredor.getText()));
-            statement.setInt(5, Integer.parseInt(txt_Pilha.getText()));
-            statement.setInt(6, Integer.parseInt(txt_Nivel.getText()));
-            statement.setInt(7, Integer.parseInt(lbl_id.getText()));
+            statement.setString(3, txt_Rua.getText().toUpperCase());
+            statement.setString(4, txt_Corredor.getText().toUpperCase());
+            statement.setString(5, txt_Pilha.getText().toUpperCase());
+            statement.setString(6, txt_Nivel.getText().toUpperCase());
+            statement.setString(7, endereco.toUpperCase());
+            statement.setString(8, lbl_id.getText());
             
             statement.execute();
             statement.close();
             JOptionPane.showMessageDialog(rootPane, "Endereço atualizado");
+            RF16_POP jFrame16_POP = new RF16_POP();
+            jFrame16_POP.setVisible(false);
+            this.dispose();
+            RF16_LIST jFrame16_List = new RF16_LIST();
+            jFrame16_List.setVisible(true);
+            this.dispose();
         } catch (SQLException ex) {
             Logger.getLogger(RF16_POP.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, "Endereço ja atualizado");
         }
     }//GEN-LAST:event_btn_EditarActionPerformed
 
@@ -336,37 +349,39 @@ public class RF16_POP extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_RuaActionPerformed
 
-    private void lb_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_VoltarMouseClicked
-        // TODO add your handling code here:
-
-        RF16_LIST jFrame16_List = new RF16_LIST();
-        jFrame16_List.setVisible(true);
-        this.dispose();
-
-    }//GEN-LAST:event_lb_VoltarMouseClicked
-
     private void btn_SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalvarActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "murilo123");
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+            String usuario = "dds16_wms";
+            String senha = "123";
+            
+            Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement statement;
-            statement = conn.prepareStatement("INSERT INTO enderecos(categoria, tipo_carga, rua, corredor, pilha, nivel, endereco) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            statement = con.prepareStatement("INSERT INTO enderecos(categoria, tipo_carga, rua, corredor, pilha, nivel, endereco) VALUES (?, ?, ?, ?, ?, ?, ?)");
             
             
             String endereco = ((txt_Rua.getText()) + "."+ (txt_Corredor.getText()) +"."+(txt_Pilha.getText())+"."+(txt_Nivel.getText()));
             
-            statement.setString(1, cbx_categoria.getSelectedItem().toString());
-            statement.setString(2, cbx_tipoCarga.getSelectedItem().toString());
-            statement.setString(3, txt_Rua.getText());
-            statement.setInt(4, Integer.parseInt(txt_Corredor.getText()));
-            statement.setInt(5, Integer.parseInt(txt_Pilha.getText()));
-            statement.setInt(6, Integer.parseInt(txt_Nivel.getText()));
-            statement.setString(7, endereco);
+            statement.setString(1, cbx_categoria.getSelectedItem().toString().toUpperCase());
+            statement.setString(2, cbx_tipoCarga.getSelectedItem().toString().toUpperCase());
+            statement.setString(3, txt_Rua.getText().toUpperCase());
+            statement.setString(4, txt_Corredor.getText().toUpperCase());
+            statement.setString(5, txt_Pilha.getText().toUpperCase());
+            statement.setString(6, txt_Nivel.getText().toUpperCase());
+            statement.setString(7, endereco.toUpperCase());
             
             statement.execute();
             statement.close();
             JOptionPane.showMessageDialog(rootPane, "Endereço inserido");
+            RF16_POP jFrame16_POP = new RF16_POP();
+            jFrame16_POP.setVisible(false);
+            this.dispose();
+            RF16_LIST jFrame16_List = new RF16_LIST();
+            jFrame16_List.setVisible(true);
+            this.dispose();
         } catch (SQLException ex) {
             Logger.getLogger(RF16_POP.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, "Endereço ja inserido");
         }
         
     }//GEN-LAST:event_btn_SalvarActionPerformed
@@ -374,6 +389,12 @@ public class RF16_POP extends javax.swing.JFrame {
     private void lbl_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbl_idActionPerformed
         
     }//GEN-LAST:event_lbl_idActionPerformed
+
+    private void lbl_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_voltarMouseClicked
+        RF16_LIST jFrame16 = new RF16_LIST();
+        jFrame16.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lbl_voltarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -419,7 +440,6 @@ public class RF16_POP extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbx_tipoCarga;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_Titulo;
-    private javax.swing.JLabel lb_Voltar;
     private javax.swing.JLabel lbl_Corredor;
     private javax.swing.JLabel lbl_Endereco;
     private javax.swing.JLabel lbl_Nivel;
@@ -428,6 +448,7 @@ public class RF16_POP extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_categoria;
     private javax.swing.JTextField lbl_id;
     private javax.swing.JLabel lbl_tipoCarga;
+    private javax.swing.JLabel lbl_voltar;
     private javax.swing.JPanel paTitulo;
     private javax.swing.JTextField txt_Corredor;
     private javax.swing.JTextField txt_Nivel;
@@ -435,15 +456,20 @@ public class RF16_POP extends javax.swing.JFrame {
     private javax.swing.JTextField txt_Rua;
     private javax.swing.JTextField txt_endereco;
     // End of variables declaration//GEN-END:variables
-void recebendo_valor_tb(String text_b, String text_c, String text_d, String text_e) {
+void recebendo_valor_tb(String text_a, String text_b, String text_c, String text_d, String text_e, String text_f) {
         
-        txt_Corredor.setText(text_b);
-        txt_Rua.setText(text_c);
+        lbl_id.setText(text_a);
+        txt_Corredor.setText(text_c);
+        txt_Rua.setText(text_b);
         txt_Nivel.setText(text_d);
         txt_Pilha.setText(text_e);
         btn_Salvar.setVisible(false);
         btn_Excluir.setVisible(true);
         btn_Editar.setVisible(true);
+        txt_endereco.setText(text_f);
+        
+        txt_endereco.setVisible(true);
+        lbl_Endereco.setVisible(true);
         
     }
 }

@@ -29,9 +29,9 @@ public class RF16_LIST extends javax.swing.JFrame {
     public void PopularJtable(String sql){
         
         try {
-            String url = "jdbc:mysql://localhost:3306/db_wms_prd";
-            String usuario = "root";
-            String senha = "murilo123";
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+            String usuario = "dds16_wms";
+            String senha = "123";
             
             Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
@@ -47,6 +47,7 @@ public class RF16_LIST extends javax.swing.JFrame {
                 model.addRow(new Object[]
                 {
                     //retorna os dados da tabela do BD, cada campo e uma coluna.
+                    resultado.getString("id"),
                     resultado.getString("rua"),
                     resultado.getString("corredor"),
                     resultado.getString("pilha"),
@@ -79,7 +80,7 @@ public class RF16_LIST extends javax.swing.JFrame {
         tb_Endereco = new javax.swing.JTable();
         paTitulo = new javax.swing.JPanel();
         lb_Titulo = new javax.swing.JLabel();
-        lb_Voltar = new javax.swing.JLabel();
+        lbl_Voltar = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -109,20 +110,20 @@ public class RF16_LIST extends javax.swing.JFrame {
 
         tb_Endereco.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Rua", "Corredor", "Pilha", "Nivel", "Endereco"
+                "id", "Rua", "Corredor", "Pilha", "Nivel", "Endereco"
             }
         ));
         tb_Endereco.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -163,9 +164,10 @@ public class RF16_LIST extends javax.swing.JFrame {
         lb_Titulo.setForeground(new java.awt.Color(255, 255, 255));
         lb_Titulo.setText("ENDEREÇO DE ARMAZENAGEM");
 
-        lb_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbl_Voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        lbl_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lb_VoltarMouseClicked(evt);
+                lbl_VoltarMouseClicked(evt);
             }
         });
 
@@ -174,8 +176,8 @@ public class RF16_LIST extends javax.swing.JFrame {
         paTituloLayout.setHorizontalGroup(
             paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paTituloLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(lb_Voltar)
+                .addContainerGap()
+                .addComponent(lbl_Voltar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -185,8 +187,8 @@ public class RF16_LIST extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paTituloLayout.createSequentialGroup()
                 .addContainerGap(33, Short.MAX_VALUE)
                 .addGroup(paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lb_Voltar)
-                    .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_Voltar))
                 .addGap(27, 27, 27))
         );
 
@@ -216,26 +218,16 @@ public class RF16_LIST extends javax.swing.JFrame {
         
     }//GEN-LAST:event_bt_NovoActionPerformed
 
-    private void lb_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_VoltarMouseClicked
-        // TODO add your handling code here:
-       
-        RF30 jFrame30 = new RF30();
-        jFrame30.setVisible(true);
-        this.dispose();
-        
-    }//GEN-LAST:event_lb_VoltarMouseClicked
-
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         try {
             Connection conexao = null;
             PreparedStatement statement = null;
             
-            String url = "jdbc:mysql://localhost:3306/db_wms_prd";
-            String usuario = "root";
-            String senha = "murilo123";
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+            String usuario = "dds16_wms";
+            String senha = "123";
             
-            
-            conexao = DriverManager.getConnection(url,usuario,senha);
+            Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             
             this.PopularJtable("SELECT * FROM enderecos ORDER BY id DESC");
         } catch (SQLException ex) {
@@ -246,15 +238,25 @@ public class RF16_LIST extends javax.swing.JFrame {
     private void tb_EnderecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_EnderecoMouseClicked
         int linha = tb_Endereco.getSelectedRow();
        
-       
-       String TEXTO_b = (tb_Endereco.getValueAt(linha,0).toString());
-       String TEXTO_c = (tb_Endereco.getValueAt(linha,1).toString());
-       String TEXTO_d = (tb_Endereco.getValueAt(linha,2).toString());
-       String TEXTO_e = (tb_Endereco.getValueAt(linha,3).toString());
+       String TEXTO_a = (tb_Endereco.getValueAt(linha,0).toString());
+       String TEXTO_b = (tb_Endereco.getValueAt(linha,1).toString());
+       String TEXTO_c = (tb_Endereco.getValueAt(linha,2).toString());
+       String TEXTO_d = (tb_Endereco.getValueAt(linha,3).toString());
+       String TEXTO_e = (tb_Endereco.getValueAt(linha,4).toString());
+       String TEXTO_f = (tb_Endereco.getValueAt(linha,5).toString());
        enviatexto = new RF16_POP();
        enviatexto.setVisible(true);
-       enviatexto.recebendo_valor_tb(TEXTO_b, TEXTO_c, TEXTO_d, TEXTO_e);
+       enviatexto.recebendo_valor_tb(TEXTO_a, TEXTO_b, TEXTO_c, TEXTO_d, TEXTO_e, TEXTO_f);
+       RF16_LIST jFrame16_List = new RF16_LIST();
+       jFrame16_List.setVisible(false);
+       this.dispose();
     }//GEN-LAST:event_tb_EnderecoMouseClicked
+
+    private void lbl_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_VoltarMouseClicked
+        RF30 jFrame30 = new RF30();
+        jFrame30.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lbl_VoltarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -300,7 +302,7 @@ public class RF16_LIST extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lb_Titulo;
-    private javax.swing.JLabel lb_Voltar;
+    private javax.swing.JLabel lbl_Voltar;
     private javax.swing.JPanel pBody;
     private javax.swing.JPanel paTitulo;
     private javax.swing.JTable tb_Endereco;
