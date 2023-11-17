@@ -4,6 +4,8 @@
  */
 package com.mycompany.main;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jsantos
@@ -15,6 +17,7 @@ public class RF25 extends javax.swing.JFrame {
      */
     RF23 enviatexto;
     int valor;
+    int codigo;
     
     public RF25() {
         initComponents();
@@ -224,12 +227,13 @@ public class RF25 extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(valor != 0){
             String atualizando = Integer.toString(valor);
+            String idatual = Integer.toString(codigo);
             enviatexto = new RF23();
             enviatexto.setVisible(true);
             enviatexto.recebendo(atualizando);
             this.dispose();
         }
-        else{
+        else{       
             this.dispose();
         }
     }//GEN-LAST:event_lbl_voltarMouseClicked
