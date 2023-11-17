@@ -30,9 +30,9 @@ public class RF31 extends javax.swing.JFrame {
     
      public void PopularJTable(String sql) {
         try {
-            String url = "jdbc:mysql://10.145.41.252:3306/db_wms_prd";
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
             String usuario = "dds16_wms";
-            String senha = "123";
+            String senha = "";
             
             Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
@@ -351,9 +351,9 @@ public class RF31 extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         try {
             // TODO add your handling code here:
-            String url = "jdbc:mysql://10.145.41.252:3306/db_wms_prd";
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
             String usuario = "dds16_wms";
-            String senha = "123";
+            String senha = "";
             
             Connection con = DriverManager.getConnection(url,usuario,senha);
 
@@ -387,20 +387,7 @@ public class RF31 extends javax.swing.JFrame {
             this.PopularJTable(" SELECT * FROM clientes WHERE nome_fantasia=" + this.txtNomeFantasia.getText());
         }
        
-        //this.PopularJTable("Select * from clientes where id=" + this.txtCodCliente.getText()+ " OR cnpj=" + this.txtCNPJ.getText());
-
-        if(id != null){
-            this.PopularJTable("Select * from clientes where id=" + id);
-            JOptionPane.showMessageDialog(rootPane, "id");
-        }else if (cnpj != null){
-            this.PopularJTable("Select * from clientes wherecnpj=" + cnpj);
-                JOptionPane.showMessageDialog(rootPane, "cnpj");
-        }else if (nomeFantasia != null){
-            this.PopularJTable("Select * from clientes where nome_fantasia=" + nomeFantasia);
-                JOptionPane.showMessageDialog(rootPane, "Fantasia");
-        }else
-        {JOptionPane.showMessageDialog(rootPane, "erro");
-        }
+        
         
         //this.PopularJTable("Select * from clientes where id=" + this.txtCodCliente.getText()+ " OR cnpj=" + this.txtCNPJ.getText());
         
