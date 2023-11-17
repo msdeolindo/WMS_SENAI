@@ -30,9 +30,9 @@ public class RF31 extends javax.swing.JFrame {
     
      public void PopularJTable(String sql) {
         try {
-            String url = "jdbc:mysql://localhost:3306/db_wms_prd";
-            String usuario = "root";
-            String senha = "";
+            String url = "jdbc:mysql://10.145.41.252:3306/db_wms_prd";
+            String usuario = "dds16_wms";
+            String senha = "123";
             
             Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
@@ -351,9 +351,9 @@ public class RF31 extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         try {
             // TODO add your handling code here:
-            String url = "jdbc:mysql://localhost:3306/db_wms_prd";
-            String usuario = "root";
-            String senha = "";
+            String url = "jdbc:mysql://10.145.41.252:3306/db_wms_prd";
+            String usuario = "dds16_wms";
+            String senha = "1234";
             
             Connection con = DriverManager.getConnection(url,usuario,senha);
 
@@ -376,6 +376,7 @@ public class RF31 extends javax.swing.JFrame {
         String cnpj = this.txtCNPJ.getText();
         String nomeFantasia = this.txtNomeFantasia.getText();
         
+<<<<<<< Updated upstream
         if (id != null){
              this.PopularJTable(" SELECT * FROM clientes WHERE id=" + this.txtCodCliente.getText());
         }
@@ -387,6 +388,23 @@ public class RF31 extends javax.swing.JFrame {
         }
        
         //this.PopularJTable("Select * from clientes where id=" + this.txtCodCliente.getText()+ " OR cnpj=" + this.txtCNPJ.getText());
+=======
+        if(id != null){
+            this.PopularJTable("Select * from clientes where id=" + id);
+            JOptionPane.showMessageDialog(rootPane, "id");
+        }else if (cnpj != null){
+            this.PopularJTable("Select * from clientes wherecnpj=" + cnpj);
+                JOptionPane.showMessageDialog(rootPane, "cnpj");
+        }else if (nomeFantasia != null){
+            this.PopularJTable("Select * from clientes where nome_fantasia=" + nomeFantasia);
+                JOptionPane.showMessageDialog(rootPane, "Fantasia");
+        }else
+        {JOptionPane.showMessageDialog(rootPane, "erro");
+        }
+        
+        //this.PopularJTable("Select * from clientes where id=" + this.txtCodCliente.getText()+ " OR cnpj=" + this.txtCNPJ.getText());
+        
+>>>>>>> Stashed changes
         
         
         
@@ -401,14 +419,12 @@ public class RF31 extends javax.swing.JFrame {
          int linha = tblRegistroClientes.getSelectedRow();
          
         String texto_a = tblRegistroClientes.getValueAt(linha,0).toString();
-        String texto_b = tblRegistroClientes.getValueAt(linha,1).toString();
-        String texto_c =  tblRegistroClientes.getValueAt(linha,2).toString();
-        String texto_d =  tblRegistroClientes.getValueAt(linha,3).toString();
+       
         
        
         enviatexto = new RF17();
         enviatexto.setVisible(true);
-        enviatexto.recebendo(texto_a,texto_b, texto_c, texto_d);
+        enviatexto.recebendo(texto_a);
     }//GEN-LAST:event_tblRegistroClientesMouseClicked
 
     /**
