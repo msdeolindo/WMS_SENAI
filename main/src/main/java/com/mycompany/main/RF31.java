@@ -376,6 +376,7 @@ public class RF31 extends javax.swing.JFrame {
         String cnpj = this.txtCNPJ.getText();
         String nomeFantasia = this.txtNomeFantasia.getText();
         
+<<<<<<< Updated upstream
         if (id != null){
              this.PopularJTable(" SELECT * FROM clientes WHERE id=" + this.txtCodCliente.getText());
         }
@@ -387,6 +388,23 @@ public class RF31 extends javax.swing.JFrame {
         }
        
         //this.PopularJTable("Select * from clientes where id=" + this.txtCodCliente.getText()+ " OR cnpj=" + this.txtCNPJ.getText());
+=======
+        if(id != null){
+            this.PopularJTable("Select * from clientes where id=" + id);
+            JOptionPane.showMessageDialog(rootPane, "id");
+        }else if (cnpj != null){
+            this.PopularJTable("Select * from clientes wherecnpj=" + cnpj);
+                JOptionPane.showMessageDialog(rootPane, "cnpj");
+        }else if (nomeFantasia != null){
+            this.PopularJTable("Select * from clientes where nome_fantasia=" + nomeFantasia);
+                JOptionPane.showMessageDialog(rootPane, "Fantasia");
+        }else
+        {JOptionPane.showMessageDialog(rootPane, "erro");
+        }
+        
+        //this.PopularJTable("Select * from clientes where id=" + this.txtCodCliente.getText()+ " OR cnpj=" + this.txtCNPJ.getText());
+        
+>>>>>>> Stashed changes
         
         
         
