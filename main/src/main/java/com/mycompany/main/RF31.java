@@ -372,6 +372,7 @@ public class RF31 extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
+        
         String id = this.txtCodCliente.getText();
         String cnpj = this.txtCNPJ.getText();
         String nomeFantasia = this.txtNomeFantasia.getText();

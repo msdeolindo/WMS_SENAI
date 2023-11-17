@@ -664,5 +664,9 @@ public class RF17 extends javax.swing.JFrame {
         
         
         this.PopularCAdastro(" SELECT * FROM clientes WHERE id="+texto_a);
+         btn_salvar.setVisible(false);
+         btn_agendamento.setVisible(true);
+         btn_alterar.setVisible(true);
+         btn_excluir.setVisible(true);
   }
 }
