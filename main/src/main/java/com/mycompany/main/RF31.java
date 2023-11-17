@@ -353,7 +353,7 @@ public class RF31 extends javax.swing.JFrame {
             // TODO add your handling code here:
             String url = "jdbc:mysql://10.145.41.252:3306/db_wms_prd";
             String usuario = "dds16_wms";
-            String senha = "1234";
+            String senha = "123";
             
             Connection con = DriverManager.getConnection(url,usuario,senha);
 
@@ -376,7 +376,7 @@ public class RF31 extends javax.swing.JFrame {
         String cnpj = this.txtCNPJ.getText();
         String nomeFantasia = this.txtNomeFantasia.getText();
         
-<<<<<<< Updated upstream
+
         if (id != null){
              this.PopularJTable(" SELECT * FROM clientes WHERE id=" + this.txtCodCliente.getText());
         }
@@ -388,7 +388,7 @@ public class RF31 extends javax.swing.JFrame {
         }
        
         //this.PopularJTable("Select * from clientes where id=" + this.txtCodCliente.getText()+ " OR cnpj=" + this.txtCNPJ.getText());
-=======
+
         if(id != null){
             this.PopularJTable("Select * from clientes where id=" + id);
             JOptionPane.showMessageDialog(rootPane, "id");
@@ -404,7 +404,7 @@ public class RF31 extends javax.swing.JFrame {
         
         //this.PopularJTable("Select * from clientes where id=" + this.txtCodCliente.getText()+ " OR cnpj=" + this.txtCNPJ.getText());
         
->>>>>>> Stashed changes
+
         
         
         
