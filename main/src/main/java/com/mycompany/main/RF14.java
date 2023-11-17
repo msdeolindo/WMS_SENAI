@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  * @author m.sousa
  */
 public class RF14 extends javax.swing.JFrame {
-
+    RF02 enviartexto;
     /**
      * Creates new form agendamento_tela
      */
@@ -39,6 +39,7 @@ public class RF14 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         LabelT = new javax.swing.JLabel();
         Bt_Back = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         LabelCargo = new javax.swing.JLabel();
         LabelN = new javax.swing.JLabel();
@@ -49,6 +50,7 @@ public class RF14 extends javax.swing.JFrame {
         cbx_Situacao = new javax.swing.JComboBox<>();
         LabelCpf1 = new javax.swing.JLabel();
         btn_Pes = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -72,25 +74,36 @@ public class RF14 extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Bt_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelT)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Bt_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Bt_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelT))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(LabelT)
+                        .addComponent(Bt_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
@@ -127,6 +140,13 @@ public class RF14 extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -149,9 +169,11 @@ public class RF14 extends javax.swing.JFrame {
                     .addComponent(LabelCpf)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(cbx_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(196, 196, 196)
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel2)
+                        .addGap(124, 124, 124)
                         .addComponent(btn_Pes)))
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,10 +189,11 @@ public class RF14 extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txt_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txt_Cod, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txt_Agen, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txt_Agen, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbx_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btn_Pes)
-                    .addComponent(cbx_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                    .addComponent(jLabel2))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -178,11 +201,11 @@ public class RF14 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Código", "Cliente", "Data agendamento", "Tipo de carga", "Tipo", "Situação", "Transportadora"
+                "Código da carga", "Cliente", "Categoria", "Carga", "Quantidade", "Transportadora", "Data agendamento", "Tipo agendamento", "Tipo"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false, false
+                false, false, false, false, true, false, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -204,18 +227,17 @@ public class RF14 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1299, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE))
         );
 
         pack();
@@ -225,9 +247,9 @@ public class RF14 extends javax.swing.JFrame {
      public void PopularjTable1(String sql) {
         try {
             //Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
-            String usuario = "root";
-            String senha = "";
+            String url ="jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+            String usuario = "dds16_wms";
+            String senha = "123";
             
             Connection con = (Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement banco = con.prepareStatement(sql);
@@ -243,12 +265,14 @@ public class RF14 extends javax.swing.JFrame {
                 model.addRow(new Object[]
                 {
                     resultado.getString("id"),
-                    resultado.getString("nome_fantasia"),
+                    resultado.getString("cliente_id"),
+                    resultado.getString("categoria"),
+                    resultado.getString("carga"),
+                    resultado.getString("quantidade"),
+                    resultado.getString("transportadora"),
                     resultado.getString("data_agendamento"),
-                    resultado.getString("tipo_carga"),
                     resultado.getString("tipo_agendamento"),
-                    resultado.getString("situacao"),
-                    resultado.getString("transportadora")
+                    resultado.getString("tipo_carga")
                 });
             }
             
@@ -266,52 +290,48 @@ public class RF14 extends javax.swing.JFrame {
     }//GEN-LAST:event_cbx_SituacaoActionPerformed
 
     private void Bt_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bt_BackMouseClicked
-       String tipo_agendamento = "SELECT * FROM lista_agendamentos WHERE tipo_agendamento = 'descarga'";
-        
-        RF30 novoFrame = new RF30();
-        novoFrame.setVisible(true);
-        this.dispose();
+
     }//GEN-LAST:event_Bt_BackMouseClicked
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        int linha = jTable1.getSelectedRow();
         
-        RF02 novoFrame = new RF02();
-        novoFrame.setVisible(true);
-        this.dispose();
+        String texto_a = jTable1.getValueAt(linha,0).toString();
+        String texto_b= jTable1.getValueAt(linha,1).toString();
+        String texto_c = jTable1.getValueAt(linha,2).toString();
+        String texto_d= jTable1.getValueAt(linha,3).toString();
+        String texto_e = jTable1.getValueAt(linha,4).toString();
+        String texto_f = jTable1.getValueAt(linha,5).toString();
+        String texto_g = jTable1.getValueAt(linha,6).toString();
+        String texto_h = jTable1.getValueAt(linha,7).toString();
+        String texto_i = jTable1.getValueAt(linha,8).toString(); 
+        
+        enviartexto = new RF02();
+        enviartexto.setVisible(true);
+        enviartexto.recebendo(texto_a,texto_b,texto_c,texto_d,texto_e,texto_f,texto_g,texto_h,texto_i);                   
+           
+        //RF02 novoFrame = new RF02();
+        //novoFrame.setVisible(true);
+        //this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void btn_PesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_PesMouseClicked
         
-      String id = txt_Cod.getText();
-      String data = txt_Agen.getText();
-      String cliente = txt_cliente.getText();
-      
-      //this.PopularjTable1("SELECT * FROM lista_agendamentos WHERE data_agendamento='" + data + "' AND id=" + id + " AND nome_fantasia=" + cliente);
-       if (!data.isEmpty()) {
-        this.PopularjTable1("SELECT * FROM lista_agendamentos WHERE data_agendamento='" + data + "'");
-    } else if (!id.isEmpty()) {
-        this.PopularjTable1("SELECT * FROM lista_agendamentos WHERE id=" + id);
-    } else if (!cliente.isEmpty()) {
-        this.PopularjTable1("SELECT * FROM lista_agendamentos WHERE nome_fantasia='" + cliente+"'");
-    } else {
-        this.PopularjTable1("SELECT * FROM lista_agendamentos WHERE data_agendamento='" + data + "' AND id=" + id + " AND nome_fantasia='" + cliente+"'");
-    }
-        
-        // TODO add your handling code here:
+       // TODO add your handling code here:
     }//GEN-LAST:event_btn_PesMouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         Connection conexao = null;
         
-        String url ="jdbc:mysql://localhost:3306/DB_WMS_PRD";
-        String usuario = "root";
-        String senha = "";
+        String url ="jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+        String usuario = "dds16_wms";
+        String senha = "123";
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
           conexao = DriverManager.getConnection(url,usuario,senha);
-            this.PopularjTable1("SELECT * FROM lista_agendamentos order by id ASC");
+            this.PopularjTable1("SELECT * FROM agendamentos order by id ASC");
             
             } catch (SQLException ex) {
             Logger.getLogger(RF14.class.getName()).log(Level.SEVERE, null, ex);
@@ -321,6 +341,34 @@ public class RF14 extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        RF30 novoFrame = new RF30();
+        novoFrame.setVisible(true);
+        this.dispose();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+
+      String id = txt_Cod.getText();
+      String data = txt_Agen.getText();
+      String cliente = txt_cliente.getText();
+      
+      //this.PopularjTable1("SELECT * FROM lista_agendamentos WHERE data_agendamento='" + data + "' AND id=" + id + " AND nome_fantasia=" + cliente);
+       if (!data.isEmpty()) {
+        this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento='" + data + "'");
+    } else if (!id.isEmpty()) {
+        this.PopularjTable1("SELECT * FROM agendamentos WHERE id=" + id);
+    } else if (!cliente.isEmpty()) {
+        this.PopularjTable1("SELECT * FROM agendamentos WHERE id=" + id);
+    } else {
+        this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento='" + data + "' AND id=" + id + " AND id="+id);
+    }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -369,6 +417,8 @@ public class RF14 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelT;
     private javax.swing.JLabel btn_Pes;
     private javax.swing.JComboBox<String> cbx_Situacao;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
