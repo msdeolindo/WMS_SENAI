@@ -29,7 +29,7 @@ public class RF01 extends javax.swing.JFrame {
 public void PopularJTable (String sql) {
     
        try {
-            Connection con = (Connection)DriverManager.getConnection ("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","123");
+            Connection con = (Connection)DriverManager.getConnection ("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","");
             PreparedStatement banco = (PreparedStatement) con.prepareStatement(sql);
             banco.execute();
             
@@ -303,6 +303,11 @@ public void PopularJTable (String sql) {
         tbl_TabelaDasCargasArmazenadas.setPreferredSize(new java.awt.Dimension(1900, 1000));
         tbl_TabelaDasCargasArmazenadas.setSelectionBackground(new java.awt.Color(0, 0, 0));
         tbl_TabelaDasCargasArmazenadas.setShowGrid(true);
+        tbl_TabelaDasCargasArmazenadas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbl_TabelaDasCargasArmazenadasMouseClicked(evt);
+            }
+        });
         sln_Inf_CargasArmazenadas.setViewportView(tbl_TabelaDasCargasArmazenadas);
 
         javax.swing.GroupLayout pnl_PlanoDeFundoLayout = new javax.swing.GroupLayout(pnl_PlanoDeFundo);
@@ -365,9 +370,9 @@ public void PopularJTable (String sql) {
       Connection conexao = null;
         PreparedStatement statement = null;
         
-          String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
-          String usuario = "dds16_wms";
-          String senha= "123";
+          String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+          String usuario = "root";
+          String senha= "";
     try{
         Class.forName ("com.mysql.jdbc.Driver");
         conexao = DriverManager.getConnection (url,usuario,senha); 
@@ -391,10 +396,14 @@ public void PopularJTable (String sql) {
     }//GEN-LAST:event_pnl_PlanoDeFundoMouseClicked
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-      RF15 Registro_carga = new RF15();
+    
+    }//GEN-LAST:event_formMouseClicked
+
+    private void tbl_TabelaDasCargasArmazenadasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_TabelaDasCargasArmazenadasMouseClicked
+          RF15 Registro_carga = new RF15();
         Registro_carga.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_formMouseClicked
+    }//GEN-LAST:event_tbl_TabelaDasCargasArmazenadasMouseClicked
 
     /**
      * @param args the command line arguments

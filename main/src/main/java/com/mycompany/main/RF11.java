@@ -35,7 +35,7 @@ public class RF11 extends javax.swing.JFrame {
          Class.forName("com.mysql.cj.jdbc.Driver");
          
          
-        String url = "jdbc:mysql://10.145.252:3306/DB_WMS_PRD";
+        String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
         String user = "dds16_wms";
         String senha = "123";
         
@@ -96,7 +96,7 @@ public class RF11 extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
         
         
-        String url = "jdbc:mysql://10.145.252:3306/DB_WMS_PRD";
+        String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
         String user = "dds16_wms";
         String senha = "123";
         
@@ -356,7 +356,7 @@ public class RF11 extends javax.swing.JFrame {
                 Class.forName("com.mysql.cj.jdbc.Driver");
            
             
-        String url = "jdbc:mysql://10.145.252:3306/DB_WMS_PRD";
+        String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
         String user = "dds16_wms";
         String senha = "123";
             
@@ -390,7 +390,7 @@ public class RF11 extends javax.swing.JFrame {
             
            
             
-            String url = "jdbc:mysql://10.145.252:3306/DB_WMS_PRD";
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
             String user = "dds16_wms";
             String senha = "123";
             
