@@ -247,9 +247,9 @@ public class RF14 extends javax.swing.JFrame {
      public void PopularjTable1(String sql) {
         try {
             //Class.forName("com.mysql.jdbc.Driver");
-            String url ="jdbc:mysql://localhost:3306/DB_WMS_PRD";
-            String usuario = "root";
-            String senha = "murilo123";
+           String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+            String usuario = "dds16_wms";
+            String senha = "";
             
               Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             //Connection con = (Connection)DriverManager.getConnection(url,usuario,senha);
@@ -328,9 +328,9 @@ public class RF14 extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         Connection conexao = null;
         
-        String url ="jdbc:mysql://localhost:3306/DB_WMS_PRD";
-        String usuario = "root";
-        String senha = "murilo123";
+       String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+       String usuario = "dds16_wms";
+       String senha = "";
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -364,13 +364,12 @@ public class RF14 extends javax.swing.JFrame {
         if (!data.isEmpty()) {
         this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento='" + data + "'");
     } else if (!id.isEmpty()) {
-        this.PopularjTable1("SELECT * FROM agendamentos WHERE codigo_id=" + id);
+        this.PopularjTable1("SELECT * FROM agendamentos WHERE carga_id=" + id);
     } else if (!cliente.isEmpty()) {
         this.PopularjTable1("SELECT * FROM agendamentos WHERE cliente_id=" + cliente);
     } else {
-        this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento='" + data + "' AND codigo_id=" + cliente + " cliente_id="+id);
+        this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento='" + data + "' AND carga_id=" + id + " cliente_id="+cliente);
     }
-
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel2MouseClicked
 

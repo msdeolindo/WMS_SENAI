@@ -354,7 +354,7 @@ public class RF02 extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","murilo123");
+            conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","");
            
             statement = conn.prepareStatement ("INSERT INTO agendamentos (cliente_id,data_agendamento,categoria,carga,quantidade,transportadora,tipo_agendamento,tipo_carga) VALUES (?,?,?,?,?,?,?,?)");
                     statement.setInt(1, Integer.parseInt(Tfd_cliente.getText()));
@@ -387,7 +387,7 @@ public class RF02 extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","murilo123");
+            conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","");
 
             statement = conn.prepareStatement ("UPDATE agendamentos SET cliente_id = ?, data_agendamento = ?, categoria = ?, carga = ?, quantidade = ?, transportadora = ?,tipo_agendamento = ?,tipo_carga = ? WHERE id = ?");
             
@@ -422,7 +422,7 @@ public class RF02 extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","murilo123");
+            conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","");
            statement = conn.prepareStatement("DELETE FROM cargas WHERE id = ?" );
             statement.setInt(1, Integer.parseInt(Tfd_codCarga.getText()));
             
@@ -515,7 +515,7 @@ public class RF02 extends javax.swing.JFrame {
     private javax.swing.JLabel btn_back;
     // End of variables declaration//GEN-END:variables
 
-    public void recebendo(String a,String b,String c,String d,String e,String f,String g,String h,String i){
+    public void recebendo(String a,String b,String c,String d,String e,String f,String g,String h,String i,String j){
         Tfd_codCarga.setText(a);
         Tfd_cliente.setText(b);
         Tfd_nomeResponsavel.setText(b);
@@ -527,7 +527,7 @@ public class RF02 extends javax.swing.JFrame {
         Cbx_tipoAgendamento.setSelectedItem(h);
         Cbx_tipo.setSelectedItem(i);
         
-        
+        id = Integer.parseInt(j);
         
     }
 
