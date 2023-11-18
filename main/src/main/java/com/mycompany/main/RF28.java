@@ -37,7 +37,7 @@ public class RF28 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        NUN_CARGA = new javax.swing.JTextField();
+        NUN_ETIQUETA = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         ORIGEM_RUA = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -70,16 +70,16 @@ public class RF28 extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         jLabel2.setText("RUA:");
 
-        NUN_CARGA.setBackground(new java.awt.Color(228, 217, 217));
-        NUN_CARGA.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        NUN_CARGA.addActionListener(new java.awt.event.ActionListener() {
+        NUN_ETIQUETA.setBackground(new java.awt.Color(228, 217, 217));
+        NUN_ETIQUETA.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        NUN_ETIQUETA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NUN_CARGAActionPerformed(evt);
+                NUN_ETIQUETAActionPerformed(evt);
             }
         });
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        jLabel4.setText("CARGA:");
+        jLabel4.setText("ETIQUETA:");
 
         ORIGEM_RUA.setBackground(new java.awt.Color(228, 217, 217));
         ORIGEM_RUA.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
@@ -231,11 +231,11 @@ public class RF28 extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(17, 17, 17)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NUN_CARGA))
+                                        .addComponent(NUN_ETIQUETA, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel1)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel2)
@@ -285,7 +285,7 @@ public class RF28 extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
-                    .addComponent(NUN_CARGA)
+                    .addComponent(NUN_ETIQUETA)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -330,9 +330,9 @@ public class RF28 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NUN_CARGAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NUN_CARGAActionPerformed
+    private void NUN_ETIQUETAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NUN_ETIQUETAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NUN_CARGAActionPerformed
+    }//GEN-LAST:event_NUN_ETIQUETAActionPerformed
 
     private void ORIGEM_RUAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ORIGEM_RUAActionPerformed
         // TODO add your handling code here:
@@ -383,16 +383,16 @@ public class RF28 extends javax.swing.JFrame {
 
     private void REGISTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_REGISTRARActionPerformed
 try {
-            Connection con = (Connection)DriverManager.getConnection ("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","123");
+            Connection con = (Connection)DriverManager.getConnection ("jdbc:mysql://localhost/DB_WMS_PRD","root","");
             PreparedStatement statement;
-            statement = con.prepareStatement("UPDATE cargas SET rua = ?,corredor = ?,pilha = ?,nivel = ?, WHERE id = ?");
+            statement = con.prepareStatement("UPDATE cargas SET rua = ?,corredor = ?,pilha = ?,nivel = ?, WHERE etiqueta = ?");
             
             
             statement.setString(1,DESTINO_RUA.getText());
             statement.setString(2,DESTINO_CORREDOR.getText());
             statement.setString(3,DESTINO_PILHA.getText());
             statement.setString(4,DESTINO_NIVEL.getText());
-            statement.setString(5,NUN_CARGA.getText());
+            statement.setString(5,NUN_ETIQUETA.getText());
             
             
             statement.execute();
@@ -448,7 +448,7 @@ try {
     private javax.swing.JTextField DESTINO_NIVEL;
     private javax.swing.JTextField DESTINO_PILHA;
     private javax.swing.JTextField DESTINO_RUA;
-    private javax.swing.JTextField NUN_CARGA;
+    private javax.swing.JTextField NUN_ETIQUETA;
     private javax.swing.JTextField ORIGEM_CORREDOR;
     private javax.swing.JTextField ORIGEM_NIVEL;
     private javax.swing.JTextField ORIGEM_RUA;
