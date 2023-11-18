@@ -30,9 +30,9 @@ public class RF31 extends javax.swing.JFrame {
     
      public void PopularJTable(String sql) {
         try {
-            String url = "jdbc:mysql://10.145.41.252:3306/db_wms_prd";
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
             String usuario = "dds16_wms";
-            String senha = "123";
+            String senha = "";
             
             Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
@@ -351,9 +351,9 @@ public class RF31 extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         try {
             // TODO add your handling code here:
-            String url = "jdbc:mysql://10.145.41.252:3306/db_wms_prd";
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
             String usuario = "dds16_wms";
-            String senha = "1234";
+            String senha = "";
             
             Connection con = DriverManager.getConnection(url,usuario,senha);
 
@@ -372,11 +372,12 @@ public class RF31 extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
+        
         String id = this.txtCodCliente.getText();
         String cnpj = this.txtCNPJ.getText();
         String nomeFantasia = this.txtNomeFantasia.getText();
         
-<<<<<<< Updated upstream
+
         if (id != null){
              this.PopularJTable(" SELECT * FROM clientes WHERE id=" + this.txtCodCliente.getText());
         }
@@ -386,41 +387,14 @@ public class RF31 extends javax.swing.JFrame {
         if (nomeFantasia != null){
             this.PopularJTable(" SELECT * FROM clientes WHERE nome_fantasia=" + this.txtNomeFantasia.getText());
         }
-       
-        //this.PopularJTable("Select * from clientes where id=" + this.txtCodCliente.getText()+ " OR cnpj=" + this.txtCNPJ.getText());
-=======
-        if(id != null){
-            this.PopularJTable("Select * from clientes where id=" + id);
-            JOptionPane.showMessageDialog(rootPane, "id");
-        }else if (cnpj != null){
-            this.PopularJTable("Select * from clientes wherecnpj=" + cnpj);
-                JOptionPane.showMessageDialog(rootPane, "cnpj");
-        }else if (nomeFantasia != null){
-            this.PopularJTable("Select * from clientes where nome_fantasia=" + nomeFantasia);
-                JOptionPane.showMessageDialog(rootPane, "Fantasia");
-        }else
-        {JOptionPane.showMessageDialog(rootPane, "erro");
-        }
-        
-        //this.PopularJTable("Select * from clientes where id=" + this.txtCodCliente.getText()+ " OR cnpj=" + this.txtCNPJ.getText());
-        
->>>>>>> Stashed changes
-        
-        
-        
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void tblRegistroClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblRegistroClientesMouseClicked
         // TODO add your handling code here:
-        
-        
-         
-        
+
          int linha = tblRegistroClientes.getSelectedRow();
          
         String texto_a = tblRegistroClientes.getValueAt(linha,0).toString();
-       
-        
        
         enviatexto = new RF17();
         enviatexto.setVisible(true);
