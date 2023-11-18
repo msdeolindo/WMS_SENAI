@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  * @author bpatrocinio
  */
 public class RF01 extends javax.swing.JFrame {
-
+        RF15 enviatexto;
     /**
      * Creates new form PROTOTIPAGEM_14
      */
@@ -29,7 +29,7 @@ public class RF01 extends javax.swing.JFrame {
 public void PopularJTable (String sql) {
     
        try {
-            Connection con = (Connection)DriverManager.getConnection ("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","");
+            Connection con = (Connection)DriverManager.getConnection ("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","usbw");
             PreparedStatement banco = (PreparedStatement) con.prepareStatement(sql);
             banco.execute();
             
@@ -372,7 +372,7 @@ public void PopularJTable (String sql) {
         
           String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
           String usuario = "root";
-          String senha= "";
+          String senha= "usbw";
     try{
         Class.forName ("com.mysql.jdbc.Driver");
         conexao = DriverManager.getConnection (url,usuario,senha); 
@@ -400,9 +400,26 @@ public void PopularJTable (String sql) {
     }//GEN-LAST:event_formMouseClicked
 
     private void tbl_TabelaDasCargasArmazenadasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_TabelaDasCargasArmazenadasMouseClicked
-          RF15 Registro_carga = new RF15();
-        Registro_carga.setVisible(true);
-        this.dispose();
+        int linha = tbl_TabelaDasCargasArmazenadas.getSelectedRow();
+        
+       String TEXTO_a = (tbl_TabelaDasCargasArmazenadas.getValueAt(linha,0).toString());
+       String TEXTO_b = (tbl_TabelaDasCargasArmazenadas.getValueAt(linha,1).toString());
+       String TEXTO_c = (tbl_TabelaDasCargasArmazenadas.getValueAt(linha,2).toString());
+       String TEXTO_d = (tbl_TabelaDasCargasArmazenadas.getValueAt(linha,3).toString());
+       String TEXTO_e = (tbl_TabelaDasCargasArmazenadas.getValueAt(linha,4).toString());
+       String TEXTO_f = (tbl_TabelaDasCargasArmazenadas.getValueAt(linha,5).toString());
+       String TEXTO_g = (tbl_TabelaDasCargasArmazenadas.getValueAt(linha,6).toString());
+       String TEXTO_h = (tbl_TabelaDasCargasArmazenadas.getValueAt(linha,7).toString());
+       String TEXTO_i = (tbl_TabelaDasCargasArmazenadas.getValueAt(linha,8).toString());
+       String TEXTO_j = (tbl_TabelaDasCargasArmazenadas.getValueAt(linha,9).toString());
+       String TEXTO_k = (tbl_TabelaDasCargasArmazenadas.getValueAt(linha,10).toString());
+       enviatexto = new RF15();
+       enviatexto.setVisible(true);
+       enviatexto.recebendo_valor_tb(TEXTO_a, TEXTO_b, TEXTO_c, TEXTO_d, TEXTO_e, TEXTO_f, TEXTO_g, TEXTO_h, TEXTO_i, TEXTO_j, TEXTO_k);
+       RF01 jFrame01 = new RF01();
+       jFrame01.setVisible(false);
+       this.dispose();
+       
     }//GEN-LAST:event_tbl_TabelaDasCargasArmazenadasMouseClicked
 
     /**

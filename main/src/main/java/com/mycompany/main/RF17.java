@@ -547,10 +547,7 @@ public class RF17 extends javax.swing.JFrame {
        
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-        
-        
-        
-            
+
             String url = "jdbc:mysql://10.145.41.252:3306/db_wms_prd";
             String usuario = "dds16_wms";
             String senha = "123";
@@ -570,18 +567,13 @@ public class RF17 extends javax.swing.JFrame {
                 
                 JOptionPane.showMessageDialog(rootPane, "Cliente Excluido"); 
                 
-           
-            
+
      } catch (ClassNotFoundException ex) {
             Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
         }  
        catch (SQLException ex) {
                 Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-       
-        
-        
     }//GEN-LAST:event_btn_excluirActionPerformed
 
     /**
