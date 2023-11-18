@@ -29,7 +29,7 @@ public class RF01 extends javax.swing.JFrame {
 public void PopularJTable (String sql) {
     
        try {
-            Connection con = (Connection)DriverManager.getConnection ("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","usbw");
+            Connection con = (Connection)DriverManager.getConnection ("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","");
             PreparedStatement banco = (PreparedStatement) con.prepareStatement(sql);
             banco.execute();
             
@@ -370,9 +370,9 @@ public void PopularJTable (String sql) {
       Connection conexao = null;
         PreparedStatement statement = null;
         
-          String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
-          String usuario = "root";
-          String senha= "usbw";
+          String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+          String usuario = "dds16_wms";
+          String senha= "";
     try{
         Class.forName ("com.mysql.jdbc.Driver");
         conexao = DriverManager.getConnection (url,usuario,senha); 
