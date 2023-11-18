@@ -42,14 +42,12 @@ public class RF15 extends javax.swing.JFrame {
         lbl_Produto = new javax.swing.JLabel();
         txt_Produto = new javax.swing.JTextField();
         lbl_CodigoDaCarga = new javax.swing.JLabel();
-        txt_CodigoDaCarga = new javax.swing.JTextField();
+        txt_CodigoDaEtiqueta = new javax.swing.JTextField();
         lbl_Categoria = new javax.swing.JLabel();
         txt_Categoria = new javax.swing.JTextField();
         lbl_Quantidade = new javax.swing.JLabel();
         txt_Quantidade = new javax.swing.JTextField();
         lbl_TipoDaCarga = new javax.swing.JLabel();
-        cbx_TipoDaCarga = new javax.swing.JComboBox<>();
-        lbl_DataDeEntrada = new javax.swing.JLabel();
         lbl_Situacao = new javax.swing.JLabel();
         txt_Situacao = new javax.swing.JTextField();
         lbl_Localizacao = new javax.swing.JLabel();
@@ -61,7 +59,7 @@ public class RF15 extends javax.swing.JFrame {
         txt_Rua = new javax.swing.JTextField();
         txt_Pilha = new javax.swing.JTextField();
         txt_Nivel = new javax.swing.JTextField();
-        txt_DataDeEntrada = new javax.swing.JTextField();
+        txt_tipoCarga = new javax.swing.JTextField();
         btn_Editar = new javax.swing.JButton();
         btn_Retirar = new javax.swing.JButton();
 
@@ -117,9 +115,9 @@ public class RF15 extends javax.swing.JFrame {
 
         lbl_CodigoDaCarga.setBackground(new java.awt.Color(255, 255, 255));
         lbl_CodigoDaCarga.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
-        lbl_CodigoDaCarga.setText("Código da carga");
+        lbl_CodigoDaCarga.setText("Código da Etiqueta");
 
-        txt_CodigoDaCarga.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txt_CodigoDaEtiqueta.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
         lbl_Categoria.setBackground(new java.awt.Color(255, 255, 255));
         lbl_Categoria.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
@@ -136,13 +134,6 @@ public class RF15 extends javax.swing.JFrame {
         lbl_TipoDaCarga.setBackground(new java.awt.Color(255, 255, 255));
         lbl_TipoDaCarga.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
         lbl_TipoDaCarga.setText("Tipo da carga");
-
-        cbx_TipoDaCarga.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        cbx_TipoDaCarga.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Normal", "Paletizada" }));
-
-        lbl_DataDeEntrada.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_DataDeEntrada.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
-        lbl_DataDeEntrada.setText("Data da entrada");
 
         lbl_Situacao.setBackground(new java.awt.Color(255, 255, 255));
         lbl_Situacao.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
@@ -178,6 +169,8 @@ public class RF15 extends javax.swing.JFrame {
 
         txt_Nivel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
+        txt_tipoCarga.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+
         javax.swing.GroupLayout pnl_Inf_RegistroDeCargaLayout = new javax.swing.GroupLayout(pnl_Inf_RegistroDeCarga);
         pnl_Inf_RegistroDeCarga.setLayout(pnl_Inf_RegistroDeCargaLayout);
         pnl_Inf_RegistroDeCargaLayout.setHorizontalGroup(
@@ -186,10 +179,7 @@ public class RF15 extends javax.swing.JFrame {
                 .addGap(152, 152, 152)
                 .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
-                        .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Situacao)
-                            .addComponent(txt_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(327, 327, 327)
+                        .addGap(571, 571, 571)
                         .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_Localizacao)
                             .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
@@ -221,15 +211,15 @@ public class RF15 extends javax.swing.JFrame {
                         .addGap(240, 240, 240)
                         .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_CodigoDaCarga)
-                            .addComponent(txt_CodigoDaCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbx_TipoDaCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_TipoDaCarga))
+                            .addComponent(txt_CodigoDaEtiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_TipoDaCarga)
+                            .addComponent(txt_tipoCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
-                        .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lbl_Categoria)
-                            .addComponent(txt_Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_DataDeEntrada)
-                            .addComponent(txt_DataDeEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt_Categoria, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
+                            .addComponent(lbl_Situacao)
+                            .addComponent(txt_Situacao))
                         .addGap(201, 201, 201))))
         );
         pnl_Inf_RegistroDeCargaLayout.setVerticalGroup(
@@ -244,40 +234,31 @@ public class RF15 extends javax.swing.JFrame {
                     .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
                         .addComponent(lbl_CodigoDaCarga)
                         .addGap(18, 18, 18)
-                        .addComponent(txt_CodigoDaCarga))
+                        .addComponent(txt_CodigoDaEtiqueta))
                     .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
                         .addComponent(lbl_Produto)
                         .addGap(18, 18, 18)
                         .addComponent(txt_Produto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(79, 79, 79)
-                .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
-                        .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Quantidade)
-                            .addComponent(lbl_TipoDaCarga, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_Quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbx_TipoDaCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
-                        .addComponent(lbl_DataDeEntrada)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_DataDeEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_Quantidade)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbl_TipoDaCarga)
+                        .addComponent(lbl_Situacao)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_Quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txt_tipoCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(78, 78, 78)
-                .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_Situacao)
-                    .addComponent(lbl_Localizacao))
+                .addComponent(lbl_Localizacao)
                 .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
                         .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnl_Inf_RegistroDeCargaLayout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbl_Corredor, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lbl_Rua))))
+                            .addComponent(lbl_Corredor, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lbl_Rua))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnl_Inf_RegistroDeCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txt_Corredor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -425,12 +406,10 @@ public class RF15 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Editar;
     private javax.swing.JButton btn_Retirar;
-    private javax.swing.JComboBox<String> cbx_TipoDaCarga;
     private javax.swing.JLabel lbl_BotaoVolta;
     private javax.swing.JLabel lbl_Categoria;
     private javax.swing.JLabel lbl_CodigoDaCarga;
     private javax.swing.JLabel lbl_Corredor;
-    private javax.swing.JLabel lbl_DataDeEntrada;
     private javax.swing.JLabel lbl_Localizacao;
     private javax.swing.JLabel lbl_Nivel;
     private javax.swing.JLabel lbl_Pilha;
@@ -444,14 +423,27 @@ public class RF15 extends javax.swing.JFrame {
     private javax.swing.JPanel pnl_PlanoDeFundo;
     private javax.swing.JPanel pnl_TituloPGN;
     private javax.swing.JTextField txt_Categoria;
-    private javax.swing.JTextField txt_CodigoDaCarga;
+    private javax.swing.JTextField txt_CodigoDaEtiqueta;
     private javax.swing.JTextField txt_Corredor;
-    private javax.swing.JTextField txt_DataDeEntrada;
     private javax.swing.JTextField txt_Nivel;
     private javax.swing.JTextField txt_Pilha;
     private javax.swing.JTextField txt_Produto;
     private javax.swing.JTextField txt_Quantidade;
     private javax.swing.JTextField txt_Rua;
     private javax.swing.JTextField txt_Situacao;
+    private javax.swing.JTextField txt_tipoCarga;
     // End of variables declaration//GEN-END:variables
+void recebendo_valor_tb(String text_a, String text_b, String text_c, String text_d, String text_e, String text_f, String text_g, String text_h, String text_i, String text_j, String text_k) {
+        txt_CodigoDaEtiqueta.setText(text_a);
+        txt_Produto.setText(text_c);
+        txt_Categoria.setText(text_d);
+        txt_Quantidade.setText(text_i);
+        txt_tipoCarga.setText(text_e);
+        txt_Situacao.setText(text_f);
+        txt_Rua.setText(text_g);
+        txt_Corredor.setText(text_h);
+        txt_Pilha.setText(text_i);
+        txt_Nivel.setText(text_k);
+        
+    }
 }

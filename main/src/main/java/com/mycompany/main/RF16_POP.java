@@ -358,8 +358,7 @@ public class RF16_POP extends javax.swing.JFrame {
             
             Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
 
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
-
+            
             PreparedStatement statement;
             statement = con.prepareStatement("INSERT INTO enderecos(categoria, tipo_carga, rua, corredor, pilha, nivel, endereco) VALUES (?, ?, ?, ?, ?, ?, ?)");
             
