@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  * @author tripl
  */
 public class RF02 extends javax.swing.JFrame {
-
+     int id;
     /**
      * Creates new form Tela_de_agendamento
      */
@@ -354,7 +354,7 @@ public class RF02 extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","123");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","murilo123");
            
             statement = conn.prepareStatement ("INSERT INTO agendamentos (cliente_id,data_agendamento,categoria,carga,quantidade,transportadora,tipo_agendamento,tipo_carga) VALUES (?,?,?,?,?,?,?,?)");
                     statement.setInt(1, Integer.parseInt(Tfd_cliente.getText()));
@@ -387,7 +387,7 @@ public class RF02 extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","123");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","murilo123");
 
             statement = conn.prepareStatement ("UPDATE agendamentos SET cliente_id = ?, data_agendamento = ?, categoria = ?, carga = ?, quantidade = ?, transportadora = ?,tipo_agendamento = ?,tipo_carga = ? WHERE id = ?");
             
@@ -422,10 +422,11 @@ public class RF02 extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","123");
-            statement = conn.prepareStatement("DELETE FROM agendamentos WHERE id = ?" );
-            statement.setInt(1, Integer.parseInt(Tfd_nomeResponsavel.getText()));
-       
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","murilo123");
+           statement = conn.prepareStatement("DELETE FROM cargas WHERE id = ?" );
+            statement.setInt(1, Integer.parseInt(Tfd_codCarga.getText()));
+            
+            statement = conn.prepareStatement("UPDATE agendamentos SET situacao = 'finalizado' where id ="+id);
              statement.execute();
              statement.close();
         }catch(ClassNotFoundException | SQLException ex){
@@ -433,6 +434,7 @@ public class RF02 extends javax.swing.JFrame {
         }
         
         JOptionPane.showMessageDialog(Pnl_principal,"Agendamento cancelado!!");
+            
 
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_cancelarActionPerformed

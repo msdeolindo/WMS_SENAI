@@ -247,11 +247,11 @@ public class RF14 extends javax.swing.JFrame {
      public void PopularjTable1(String sql) {
         try {
             //Class.forName("com.mysql.jdbc.Driver");
-            String url ="jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
-            String usuario = "dds16_wms";
-            String senha = "";
+            String url ="jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String usuario = "root";
+            String senha = "murilo123";
             
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PR","dds16_wms","");
+              Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
             //Connection con = (Connection)DriverManager.getConnection(url,usuario,senha);
             PreparedStatement banco = con.prepareStatement(sql);
             banco.execute();
@@ -265,7 +265,7 @@ public class RF14 extends javax.swing.JFrame {
             {
                 model.addRow(new Object[]
                 {
-                    resultado.getString("id"),
+                    resultado.getInt("carga_id"),
                     resultado.getString("cliente_id"),
                     resultado.getString("categoria"),
                     resultado.getString("carga"),
@@ -273,7 +273,9 @@ public class RF14 extends javax.swing.JFrame {
                     resultado.getString("transportadora"),
                     resultado.getString("data_agendamento"),
                     resultado.getString("tipo_agendamento"),
-                    resultado.getString("tipo_carga")
+                    resultado.getString("tipo_carga"),
+                    resultado.getString("situacao"),
+                    resultado.getString("id")
                 });
             }
             
@@ -306,10 +308,11 @@ public class RF14 extends javax.swing.JFrame {
         String texto_g = jTable1.getValueAt(linha,6).toString();
         String texto_h = jTable1.getValueAt(linha,7).toString();
         String texto_i = jTable1.getValueAt(linha,8).toString(); 
+        String texto_j = jTable1.getValueAt(linha,10).toString();
         
         enviartexto = new RF02();
         enviartexto.setVisible(true);
-        enviartexto.recebendo(texto_a,texto_b,texto_c,texto_d,texto_e,texto_f,texto_g,texto_h,texto_i);                   
+        enviartexto.recebendo(texto_a,texto_b,texto_c,texto_d,texto_e,texto_f,texto_g,texto_h,texto_i,texto_j);              
            
         //RF02 novoFrame = new RF02();
         //novoFrame.setVisible(true);
@@ -325,9 +328,9 @@ public class RF14 extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         Connection conexao = null;
         
-        String url ="jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
-        String usuario = "dds16_wms";
-        String senha = "123";
+        String url ="jdbc:mysql://localhost:3306/DB_WMS_PRD";
+        String usuario = "root";
+        String senha = "murilo123";
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -358,14 +361,14 @@ public class RF14 extends javax.swing.JFrame {
       String cliente = txt_cliente.getText();
       
       //this.PopularjTable1("SELECT * FROM lista_agendamentos WHERE data_agendamento='" + data + "' AND id=" + id + " AND nome_fantasia=" + cliente);
-       if (!data.isEmpty()) {
+        if (!data.isEmpty()) {
         this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento='" + data + "'");
     } else if (!id.isEmpty()) {
-        this.PopularjTable1("SELECT * FROM agendamentos WHERE id=" + id);
+        this.PopularjTable1("SELECT * FROM agendamentos WHERE codigo_id=" + id);
     } else if (!cliente.isEmpty()) {
-        this.PopularjTable1("SELECT * FROM agendamentos WHERE id=" + id);
+        this.PopularjTable1("SELECT * FROM agendamentos WHERE cliente_id=" + cliente);
     } else {
-        this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento='" + data + "' AND id=" + id + " AND id="+id);
+        this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento='" + data + "' AND codigo_id=" + cliente + " cliente_id="+id);
     }
 
         // TODO add your handling code here:
