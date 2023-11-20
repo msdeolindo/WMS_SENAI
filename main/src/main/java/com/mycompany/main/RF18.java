@@ -172,7 +172,6 @@ public class RF18 extends javax.swing.JFrame {
             }
         });
 
-        lbl_BotaoVolta1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         lbl_BotaoVolta1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_BotaoVolta1MouseClicked(evt);
@@ -226,18 +225,21 @@ public class RF18 extends javax.swing.JFrame {
             }
         });
 
+        tf_quantidade.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tf_quantidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_quantidadeActionPerformed(evt);
             }
         });
 
+        tf_avarias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tf_avarias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_avariasActionPerformed(evt);
             }
         });
 
+        tf_observacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tf_observacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_observacaoActionPerformed(evt);
@@ -258,10 +260,11 @@ public class RF18 extends javax.swing.JFrame {
             }
         });
 
+        tf_codigo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         lblEndereco.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblEndereco.setText("CODIGO DA CARGA:");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza4.0.png")); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);

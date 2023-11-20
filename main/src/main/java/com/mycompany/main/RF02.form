@@ -293,6 +293,13 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Tfd_cliente">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder/>
+                  </Border>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="Lbl_nomeResponsalvel">
               <Properties>
@@ -303,6 +310,13 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Tfd_nomeResponsavel">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder/>
+                  </Border>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="Lbl_dataAgendamento">
               <Properties>
@@ -313,6 +327,13 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Tfd_dataAgendamento">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder/>
+                  </Border>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="Lbl_categoria">
               <Properties>
@@ -323,6 +344,13 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Tfd_categoria">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder/>
+                  </Border>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="Lbl_carga">
               <Properties>
@@ -333,6 +361,13 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Tfd_carga">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder/>
+                  </Border>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="Lbl_quantidade">
               <Properties>
@@ -343,6 +378,13 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Tfd_quantidade">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder/>
+                  </Border>
+                </Property>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tfd_quantidadeActionPerformed"/>
               </Events>
@@ -356,6 +398,13 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Tfd_transportadora">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder/>
+                  </Border>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="Lbl_tipoAgendamento">
               <Properties>
@@ -409,6 +458,13 @@
               </AuxValues>
             </Component>
             <Component class="javax.swing.JTextField" name="Tfd_codCarga">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder/>
+                  </Border>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="Lbl_codCarga">
               <Properties>

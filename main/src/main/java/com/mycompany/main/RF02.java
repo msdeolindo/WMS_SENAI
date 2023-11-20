@@ -82,7 +82,6 @@ public class RF02 extends javax.swing.JFrame {
             }
         });
 
-        btn_back.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         btn_back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_backMouseClicked(evt);
@@ -120,21 +119,32 @@ public class RF02 extends javax.swing.JFrame {
         Lbl_cliente.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Lbl_cliente.setText("Cliente");
 
+        Tfd_cliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         Lbl_nomeResponsalvel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Lbl_nomeResponsalvel.setText("Nome do Responsável");
+
+        Tfd_nomeResponsavel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         Lbl_dataAgendamento.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Lbl_dataAgendamento.setText("Data agendamento");
 
+        Tfd_dataAgendamento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         Lbl_categoria.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Lbl_categoria.setText("Categoria");
+
+        Tfd_categoria.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         Lbl_carga.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Lbl_carga.setText("Carga");
 
+        Tfd_carga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         Lbl_quantidade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Lbl_quantidade.setText("Quantidade");
 
+        Tfd_quantidade.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Tfd_quantidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Tfd_quantidadeActionPerformed(evt);
@@ -143,6 +153,8 @@ public class RF02 extends javax.swing.JFrame {
 
         Lbl_transportadora.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Lbl_transportadora.setText("Transportadora");
+
+        Tfd_transportadora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         Lbl_tipoAgendamento.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Lbl_tipoAgendamento.setText("Tipo de agendamento");
@@ -155,6 +167,8 @@ public class RF02 extends javax.swing.JFrame {
 
         Cbx_tipo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Cbx_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paletizada", "Manual", " " }));
+
+        Tfd_codCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         Lbl_codCarga.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Lbl_codCarga.setText("Cod.Carga");
