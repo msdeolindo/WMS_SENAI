@@ -375,7 +375,6 @@ public void PopularJTable (String sql) {
 
           String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
           String usuario = "dds16_wms";
-
           String senha= "";
     try{
         Class.forName ("com.mysql.jdbc.Driver");

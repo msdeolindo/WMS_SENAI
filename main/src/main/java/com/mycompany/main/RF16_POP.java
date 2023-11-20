@@ -394,9 +394,9 @@ public class RF16_POP extends javax.swing.JFrame {
     }//GEN-LAST:event_lbl_idActionPerformed
 
     private void lbl_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_voltarMouseClicked
-        RF16_LIST jFrame16 = new RF16_LIST();
-        jFrame16.setVisible(true);
-        this.dispose();
+            RF16_POP jFrame16_POP = new RF16_POP();
+            jFrame16_POP.setVisible(false);
+            this.dispose();
     }//GEN-LAST:event_lbl_voltarMouseClicked
 
     /**

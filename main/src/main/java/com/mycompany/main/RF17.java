@@ -78,6 +78,7 @@ public class RF17 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lbl_voltar = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         lbl_cnpj = new javax.swing.JLabel();
@@ -128,13 +129,22 @@ public class RF17 extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(242, 242, 242));
         jLabel2.setText("Cadastro de Clientes");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbl_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -145,7 +155,8 @@ public class RF17 extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_voltar)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -419,7 +430,7 @@ public class RF17 extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_excluir)
                     .addComponent(btn_alterar)
@@ -456,9 +467,9 @@ public class RF17 extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
       
         
-            String url = "jdbc:mysql://10.145.41.252:3306/db_wms_prd";
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
             String usuario = "dds16_wms";
-            String senha = "123";
+            String senha = "";
         
         try {
             Conn = DriverManager.getConnection(url,usuario,senha);
@@ -507,9 +518,7 @@ public class RF17 extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_salvarActionPerformed
 
     private void lbl_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_voltarMouseClicked
-        RF30 novoFrame = new RF30();
-        novoFrame.setVisible(true);
-        this.dispose();
+       
     }//GEN-LAST:event_lbl_voltarMouseClicked
 
     private void btn_agendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agendamentoActionPerformed
@@ -525,9 +534,9 @@ public class RF17 extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
         
             
-            String url = "jdbc:mysql://10.145.41.252:3306/db_wms_prd";
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
             String usuario = "dds16_wms";
-            String senha = "123";
+            String senha = "";
             
         
            
@@ -581,9 +590,9 @@ public class RF17 extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            String url = "jdbc:mysql://10.145.41.252:3306/db_wms_prd";
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
             String usuario = "dds16_wms";
-            String senha = "123";
+            String senha = "";
             
         
                 conn = DriverManager.getConnection(url,usuario,senha);
@@ -620,6 +629,12 @@ public class RF17 extends javax.swing.JFrame {
     private void txt_contato_respActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_contato_respActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_contato_respActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        RF30 novoFrame = new RF30();
+        novoFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -663,6 +678,7 @@ public class RF17 extends javax.swing.JFrame {
     private javax.swing.JButton btn_excluir;
     private javax.swing.JButton btn_salvar;
     private javax.swing.JComboBox<String> cbx_Uf;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;

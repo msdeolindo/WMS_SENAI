@@ -36,10 +36,6 @@ public class RF02 extends javax.swing.JFrame {
     private void initComponents() {
 
         Pnl_principal = new javax.swing.JPanel();
-        Pnl_barraAzul = new javax.swing.JPanel();
-        Lbl_nomeAgendamento = new javax.swing.JLabel();
-        Lbl_iconeBotaoVoltar = new javax.swing.JLabel();
-        btn_back = new javax.swing.JLabel();
         Pnl_conteudoCentral = new javax.swing.JPanel();
         Lbl_cliente = new javax.swing.JLabel();
         Tfd_cliente = new javax.swing.JTextField();
@@ -64,55 +60,15 @@ public class RF02 extends javax.swing.JFrame {
         Btn_Salvar = new javax.swing.JButton();
         Btn_cancelar = new javax.swing.JButton();
         Btn_editar = new javax.swing.JButton();
+        Pnl_barraAzul = new javax.swing.JPanel();
+        Lbl_nomeAgendamento = new javax.swing.JLabel();
+        Lbl_iconeBotaoVoltar = new javax.swing.JLabel();
+        btn_back = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Pnl_principal.setBackground(new java.awt.Color(217, 217, 217));
-
-        Pnl_barraAzul.setBackground(new java.awt.Color(32, 41, 173));
-        Pnl_barraAzul.setPreferredSize(new java.awt.Dimension(1920, 100));
-
-        Lbl_nomeAgendamento.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        Lbl_nomeAgendamento.setForeground(new java.awt.Color(255, 255, 255));
-        Lbl_nomeAgendamento.setText("AGENDAMENTO");
-
-        Lbl_iconeBotaoVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Lbl_iconeBotaoVoltarMouseClicked(evt);
-            }
-        });
-
-        btn_back.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_backMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Pnl_barraAzulLayout = new javax.swing.GroupLayout(Pnl_barraAzul);
-        Pnl_barraAzul.setLayout(Pnl_barraAzulLayout);
-        Pnl_barraAzulLayout.setHorizontalGroup(
-            Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addComponent(btn_back)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Lbl_nomeAgendamento)
-                .addGap(18, 18, 18)
-                .addComponent(Lbl_iconeBotaoVoltar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        Pnl_barraAzulLayout.setVerticalGroup(
-            Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_barraAzulLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btn_back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                        .addComponent(Lbl_iconeBotaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12))
-                    .addComponent(Lbl_nomeAgendamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(16, 16, 16))
-        );
 
         Pnl_conteudoCentral.setBackground(new java.awt.Color(203, 200, 200));
 
@@ -306,9 +262,8 @@ public class RF02 extends javax.swing.JFrame {
         Pnl_principal.setLayout(Pnl_principalLayout);
         Pnl_principalLayout.setHorizontalGroup(
             Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Pnl_barraAzul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(Pnl_principalLayout.createSequentialGroup()
-                .addGap(224, 224, 224)
+                .addGap(158, 158, 158)
                 .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Pnl_conteudoCentral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(Pnl_principalLayout.createSequentialGroup()
@@ -317,13 +272,12 @@ public class RF02 extends javax.swing.JFrame {
                         .addComponent(Btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Btn_Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(251, Short.MAX_VALUE))
+                .addContainerGap(317, Short.MAX_VALUE))
         );
         Pnl_principalLayout.setVerticalGroup(
             Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pnl_principalLayout.createSequentialGroup()
-                .addComponent(Pnl_barraAzul, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                .addContainerGap(49, Short.MAX_VALUE)
                 .addComponent(Pnl_conteudoCentral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
                 .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -333,16 +287,73 @@ public class RF02 extends javax.swing.JFrame {
                 .addGap(93, 93, 93))
         );
 
+        Pnl_barraAzul.setBackground(new java.awt.Color(32, 41, 173));
+        Pnl_barraAzul.setPreferredSize(new java.awt.Dimension(1920, 100));
+
+        Lbl_nomeAgendamento.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        Lbl_nomeAgendamento.setForeground(new java.awt.Color(255, 255, 255));
+        Lbl_nomeAgendamento.setText("AGENDAMENTO");
+
+        Lbl_iconeBotaoVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Lbl_iconeBotaoVoltarMouseClicked(evt);
+            }
+        });
+
+        btn_back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_backMouseClicked(evt);
+            }
+        });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        jLabel1.setToolTipText("");
+
+        javax.swing.GroupLayout Pnl_barraAzulLayout = new javax.swing.GroupLayout(Pnl_barraAzul);
+        Pnl_barraAzul.setLayout(Pnl_barraAzulLayout);
+        Pnl_barraAzulLayout.setHorizontalGroup(
+            Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(btn_back)
+                .addGap(3, 3, 3)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Lbl_nomeAgendamento)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Lbl_iconeBotaoVoltar)
+                .addContainerGap(1661, Short.MAX_VALUE))
+        );
+        Pnl_barraAzulLayout.setVerticalGroup(
+            Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_barraAzulLayout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btn_back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
+                            .addComponent(Lbl_iconeBotaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(12, 12, 12)))
+                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
+                        .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(Lbl_nomeAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)))
+                .addGap(16, 16, 16))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Pnl_principal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Pnl_principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Pnl_barraAzul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(Pnl_barraAzul, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Pnl_principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -527,6 +538,7 @@ public class RF02 extends javax.swing.JFrame {
     private javax.swing.JTextField Tfd_quantidade;
     private javax.swing.JTextField Tfd_transportadora;
     private javax.swing.JLabel btn_back;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 
     public void recebendo(String a,String b,String c,String d,String e,String f,String g,String h,String i,String j){
