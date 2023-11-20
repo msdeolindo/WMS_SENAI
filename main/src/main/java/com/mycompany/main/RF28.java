@@ -382,8 +382,12 @@ public class RF28 extends javax.swing.JFrame {
     }//GEN-LAST:event_REGISTRARKeyPressed
 
     private void REGISTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_REGISTRARActionPerformed
-try {
-            Connection con = (Connection)DriverManager.getConnection ("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","");
+try {       
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+            String usuario = "dds16_wms";
+            String senha = "";
+            
+            Connection con = (Connection)DriverManager.getConnection (url,usuario,senha);
             PreparedStatement statement;
             statement = con.prepareStatement("UPDATE cargas SET rua = ?,corredor = ?,pilha = ?,nivel = ? WHERE etiqueta = ?");
             

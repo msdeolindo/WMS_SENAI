@@ -61,8 +61,6 @@ public class RF11 extends javax.swing.JFrame {
                          resultado.getString("email"),
                          resultado.getString("rg"),
                          resultado.getString("endereco"),
-                         //resultado.getString("escolaridade"),
-                         //resultado.getString("estado_civil"),
                          resultado.getString("senha"),
                          resultado.getString("data_nascimento"),
                          resultado.getString("data_admissao"),
