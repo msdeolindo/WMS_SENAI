@@ -235,6 +235,16 @@ public class RF30 extends javax.swing.JFrame {
         Menu.add(mni_senha);
 
         mni_sair.setText("Sair");
+        mni_sair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mni_sairMouseClicked(evt);
+            }
+        });
+        mni_sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mni_sairActionPerformed(evt);
+            }
+        });
         Menu.add(mni_sair);
 
         jMenuBar1.add(Menu);
@@ -316,6 +326,16 @@ public class RF30 extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_clientes
+
+    private void mni_sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mni_sairMouseClicked
+        
+    }//GEN-LAST:event_mni_sairMouseClicked
+
+    private void mni_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mni_sairActionPerformed
+        RF27 login = new RF27();
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mni_sairActionPerformed
 
     /**
      * @param args the command line arguments
