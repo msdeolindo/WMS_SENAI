@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -432,12 +432,7 @@ public class RF11 extends javax.swing.JFrame {
 
     private void TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableMouseClicked
         // TODO add your handling code here:
-        RF08 novoFrame = new RF08();
-        novoFrame.setVisible(true);
-        this.dispose();
-        
         int linha = Table.getSelectedRow();
-        
         String texto_a = Table.getValueAt(linha,0).toString();
         String texto_b = Table.getValueAt(linha,1).toString();
         String texto_c =  Table.getValueAt(linha,2).toString();
@@ -456,17 +451,17 @@ public class RF11 extends javax.swing.JFrame {
         
         enviatexto = new RF08();
         enviatexto.setVisible(true);
-        enviatexto.recebendo(texto_a,texto_b, texto_c, texto_d, texto_e,texto_f,texto_g,texto_h,texto_i,texto_j,texto_k,texto_l);
+        enviatexto.recebendo(texto_a,texto_b, texto_c, texto_d, texto_e,texto_f,texto_g,texto_h,texto_i,texto_j,texto_k,texto_l); 
+        this.dispose();
         
         
         
     }//GEN-LAST:event_TableMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        
+
         RF30 FrameMenu = new RF30();
         FrameMenu.setVisible(true);
-        
         this.dispose();  
         
     }//GEN-LAST:event_jLabel1MouseClicked
