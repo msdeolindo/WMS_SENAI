@@ -399,6 +399,7 @@ public class RF31 extends javax.swing.JFrame {
         enviatexto = new RF17();
         enviatexto.setVisible(true);
         enviatexto.recebendo(texto_a);
+        this.dispose();
     }//GEN-LAST:event_tblRegistroClientesMouseClicked
 
     /**
