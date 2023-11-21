@@ -43,7 +43,6 @@ public class RF27 extends javax.swing.JFrame {
         panel_branc = new javax.swing.JPanel();
         bot_entrar = new javax.swing.JButton();
         senha_txt = new javax.swing.JPasswordField();
-        logo = new javax.swing.JLabel();
         senha = new javax.swing.JLabel();
         login_txt = new javax.swing.JTextField();
 
@@ -65,8 +64,6 @@ public class RF27 extends javax.swing.JFrame {
         });
 
         senha_txt.setText("senha_txt");
-
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/main/logo.JPG"))); // NOI18N
 
         senha.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         senha.setText("ESQUECI MINHA SENHA");
@@ -92,18 +89,13 @@ public class RF27 extends javax.swing.JFrame {
                         .addComponent(senha))
                     .addGroup(panel_brancLayout.createSequentialGroup()
                         .addGap(790, 790, 790)
-                        .addComponent(bot_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panel_brancLayout.createSequentialGroup()
-                        .addGap(706, 706, 706)
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(802, Short.MAX_VALUE))
+                        .addComponent(bot_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(850, Short.MAX_VALUE))
         );
         panel_brancLayout.setVerticalGroup(
             panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_brancLayout.createSequentialGroup()
-                .addContainerGap(159, Short.MAX_VALUE)
-                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addContainerGap(666, Short.MAX_VALUE)
                 .addComponent(login_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(senha_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -158,7 +150,7 @@ public class RF27 extends javax.swing.JFrame {
     }//GEN-LAST:event_senhaMouseClicked
 
     private void bot_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bot_entrarActionPerformed
-    Connection conexao = null;
+        Connection conexao = null;
         PreparedStatement statement = null;
         
           String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
@@ -167,7 +159,7 @@ public class RF27 extends javax.swing.JFrame {
     try{
         Class.forName ("com.mysql.jdbc.Driver");
         conexao = DriverManager.getConnection (url,usuario,senha); 
-        String confi = "SELECT * FROM funcionarios WHERE cpf=? AND senha cpf=?"; 
+        String confi = "SELECT * FROM funcionarios WHERE cpf=? AND senha=?"; 
         statement = conexao.prepareStatement(confi);
         statement.setString(1,login_txt.getText());
         statement.setString(2,new String (senha_txt.getPassword()));
@@ -237,7 +229,6 @@ public class RF27 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bot_entrar;
     private javax.swing.JTextField login_txt;
-    private javax.swing.JLabel logo;
     private javax.swing.JPanel panel_azul;
     private javax.swing.JPanel panel_branc;
     private javax.swing.JLabel senha;
