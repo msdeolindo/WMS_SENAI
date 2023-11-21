@@ -201,11 +201,11 @@ public class RF14 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Código da carga", "Cliente", "Categoria", "Carga", "Quantidade", "Transportadora", "Data agendamento", "Tipo agendamento", "Tipo"
+                "Código da carga", "Cliente", "Categoria", "Carga", "Quantidade", "Transportadora", "Data agendamento", "Tipo agendamento", "Tipo", "id"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false, false, true, true
+                false, false, false, false, true, false, false, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -247,7 +247,7 @@ public class RF14 extends javax.swing.JFrame {
      public void PopularjTable1(String sql) {
         try {
             //Class.forName("com.mysql.jdbc.Driver");
-           String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
             String usuario = "dds16_wms";
             String senha = "";
             
@@ -308,15 +308,15 @@ public class RF14 extends javax.swing.JFrame {
         String texto_g = jTable1.getValueAt(linha,6).toString();
         String texto_h = jTable1.getValueAt(linha,7).toString();
         String texto_i = jTable1.getValueAt(linha,8).toString(); 
-        String texto_j = jTable1.getValueAt(linha,10).toString();
+        String texto_j = jTable1.getValueAt(linha,9).toString();
         
         enviartexto = new RF02();
         enviartexto.setVisible(true);
         enviartexto.recebendo(texto_a,texto_b,texto_c,texto_d,texto_e,texto_f,texto_g,texto_h,texto_i,texto_j);              
            
-        //RF02 novoFrame = new RF02();
-        //novoFrame.setVisible(true);
-        //this.dispose();
+       RF02 novoFrame = new RF02();
+        novoFrame.setVisible(true);
+        this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable1MouseClicked
 

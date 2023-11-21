@@ -94,6 +94,7 @@ public class RF18 extends javax.swing.JFrame {
         lbl_recebimento = new javax.swing.JLabel();
         lbl_icone_voltar = new javax.swing.JLabel();
         lbl_BotaoVolta1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel_tela_informação = new javax.swing.JPanel();
         lbl_obeservação = new javax.swing.JLabel();
         lbl_avarias = new javax.swing.JLabel();
@@ -178,6 +179,23 @@ public class RF18 extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("file:/P:/TURMAS/HTC-DDS-16/ícones%20WMS/icon_back.png")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel_topo_azulLayout = new javax.swing.GroupLayout(jPanel_topo_azul);
         jPanel_topo_azul.setLayout(jPanel_topo_azulLayout);
         jPanel_topo_azulLayout.setHorizontalGroup(
@@ -187,7 +205,9 @@ public class RF18 extends javax.swing.JFrame {
                 .addComponent(lbl_icone_voltar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_BotaoVolta1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_recebimento)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -198,7 +218,8 @@ public class RF18 extends javax.swing.JFrame {
                 .addGroup(jPanel_topo_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lbl_BotaoVolta1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lbl_icone_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_recebimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel4)
+                    .addComponent(lbl_recebimento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -265,6 +286,7 @@ public class RF18 extends javax.swing.JFrame {
         lblEndereco.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblEndereco.setText("CODIGO DA CARGA:");
 
+        jLabel3.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza4.0.png")); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
@@ -359,7 +381,7 @@ public class RF18 extends javax.swing.JFrame {
                 .addComponent(jPanel_tela_informação, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(131, 131, 131)
                 .addComponent(jsp_tabela_agendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addContainerGap(287, Short.MAX_VALUE))
         );
 
         pack();
@@ -471,13 +493,16 @@ public class RF18 extends javax.swing.JFrame {
 
     private void lbl_BotaoVolta1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_BotaoVolta1MouseClicked
        
+    }//GEN-LAST:event_lbl_BotaoVolta1MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        
         RF30 FrameMenu = new RF30();
         FrameMenu.setVisible(true);
         
         this.dispose();
         
-        
-    }//GEN-LAST:event_lbl_BotaoVolta1MouseClicked
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -522,6 +547,7 @@ public class RF18 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel_tela_informação;
     private javax.swing.JPanel jPanel_topo_azul;

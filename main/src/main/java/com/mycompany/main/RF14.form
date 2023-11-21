@@ -289,7 +289,7 @@
         <Component class="javax.swing.JTable" name="jTable1">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="9" rowCount="0">
+              <Table columnCount="10" rowCount="0">
                 <Column editable="false" title="C&#xf3;digo da carga" type="java.lang.Object"/>
                 <Column editable="false" title="Cliente" type="java.lang.Object"/>
                 <Column editable="false" title="Categoria" type="java.lang.Object"/>
@@ -299,6 +299,7 @@
                 <Column editable="false" title="Data agendamento" type="java.lang.Object"/>
                 <Column editable="true" title="Tipo agendamento" type="java.lang.Object"/>
                 <Column editable="true" title="Tipo" type="java.lang.Object"/>
+                <Column editable="true" title="id" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

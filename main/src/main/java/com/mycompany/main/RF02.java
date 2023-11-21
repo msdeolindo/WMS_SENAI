@@ -308,6 +308,11 @@ public class RF02 extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         jLabel1.setToolTipText("");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout Pnl_barraAzulLayout = new javax.swing.GroupLayout(Pnl_barraAzul);
         Pnl_barraAzul.setLayout(Pnl_barraAzulLayout);
@@ -465,12 +470,18 @@ public class RF02 extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_cancelarActionPerformed
 
     private void btn_backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_backMouseClicked
-         RF30 FrameMenu = new RF30();
-        FrameMenu.setVisible(true);
-        this.dispose();
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_backMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+       
+        RF30 FrameMenu = new RF30();
+        FrameMenu.setVisible(true);
+        this.dispose();
+
+        
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
