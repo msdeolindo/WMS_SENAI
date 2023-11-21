@@ -45,6 +45,7 @@ public class RF27 extends javax.swing.JFrame {
         senha_txt = new javax.swing.JPasswordField();
         senha = new javax.swing.JLabel();
         login_txt = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,6 +74,8 @@ public class RF27 extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\logo.JPG")); // NOI18N
+
         javax.swing.GroupLayout panel_brancLayout = new javax.swing.GroupLayout(panel_branc);
         panel_branc.setLayout(panel_brancLayout);
         panel_brancLayout.setHorizontalGroup(
@@ -80,22 +83,27 @@ public class RF27 extends javax.swing.JFrame {
             .addGroup(panel_brancLayout.createSequentialGroup()
                 .addGroup(panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel_brancLayout.createSequentialGroup()
+                        .addGap(815, 815, 815)
+                        .addComponent(senha))
+                    .addGroup(panel_brancLayout.createSequentialGroup()
+                        .addGap(790, 790, 790)
+                        .addComponent(bot_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel_brancLayout.createSequentialGroup()
                         .addGap(754, 754, 754)
                         .addGroup(panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(login_txt, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(senha_txt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)))
                     .addGroup(panel_brancLayout.createSequentialGroup()
-                        .addGap(815, 815, 815)
-                        .addComponent(senha))
-                    .addGroup(panel_brancLayout.createSequentialGroup()
-                        .addGap(790, 790, 790)
-                        .addComponent(bot_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(850, Short.MAX_VALUE))
+                        .addGap(707, 707, 707)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(946, Short.MAX_VALUE))
         );
         panel_brancLayout.setVerticalGroup(
             panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_brancLayout.createSequentialGroup()
-                .addContainerGap(666, Short.MAX_VALUE)
+                .addContainerGap(454, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(170, 170, 170)
                 .addComponent(login_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(senha_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -130,14 +138,14 @@ public class RF27 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(panel_azul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(panel_azul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -228,6 +236,7 @@ public class RF27 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bot_entrar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField login_txt;
     private javax.swing.JPanel panel_azul;
     private javax.swing.JPanel panel_branc;
