@@ -159,29 +159,10 @@ public class RF22 extends javax.swing.JFrame {
     private void btn_confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_confirmarActionPerformed
         
         try {
-            /*   try {
-            // Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRO", "root", "")
-            java.sql.Statement st = conn.createStatement();
-            
-            st.executeUpdate("INSERT INTO devolucao(motivo) VALUES ("
-            +this.txt_motiv_dev.getText()+")"
-            
-            );
-            
-            JOptionPane.showMessageDialog(rootPane, "Salvo!");
-            
-            st.close();
-            
-
-            } catch (SQLException ex) {
-            Logger.getLogger(RF22.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            */
             Connection conexao=null;
             
-            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
-            String usuario = "root";
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+            String usuario = "dds16_wms";
             String senha = "";
             
             conexao = DriverManager.getConnection(url,usuario,senha);

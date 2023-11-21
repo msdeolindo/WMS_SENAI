@@ -374,7 +374,7 @@ public class RF08 extends javax.swing.JFrame {
         // TODO add your handling code here:
          Connection conn;
         try {
-        conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","123");
+        conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","");
         java.sql.Statement st;
         st = conn.createStatement();
         st.executeUpdate("DELETE FROM funcionarios WHERE cpf='"+this.txtCPF.getText()+"'");
@@ -393,7 +393,7 @@ public class RF08 extends javax.swing.JFrame {
              
             String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
             String user = "dds16_wms";
-            String senha = "123";
+            String senha = "";
 
              Connection conn;
         try {
@@ -444,7 +444,7 @@ public class RF08 extends javax.swing.JFrame {
         
         String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
         String user = "dds16_wms";
-        String senha = "123";
+        String senha = "";
         try {
             
             Connection conexao = DriverManager.getConnection(url,user,senha);

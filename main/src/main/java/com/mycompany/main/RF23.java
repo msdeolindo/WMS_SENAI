@@ -197,8 +197,12 @@ public class RF23 extends javax.swing.JFrame {
         if(quantidade > valor || quantidade < 0){
             JOptionPane.showMessageDialog(rootPane, "Valor inserido incorreto");
         }    
-        else{        
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD", "root", "");
+        else{
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+            String usuario = "dds16_wms";
+            String senha = "";
+            
+            Connection conn = DriverManager.getConnection(url, usuario, senha);
 
             PreparedStatement statement;  
 
