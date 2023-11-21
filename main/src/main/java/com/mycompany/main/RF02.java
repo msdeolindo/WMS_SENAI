@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
  */
 public class RF02 extends javax.swing.JFrame {
      int id;
+     String situacao;
     /**
      * Creates new form Tela_de_agendamento
      */
@@ -60,6 +61,7 @@ public class RF02 extends javax.swing.JFrame {
         Btn_Salvar = new javax.swing.JButton();
         Btn_cancelar = new javax.swing.JButton();
         Btn_editar = new javax.swing.JButton();
+        Btn_situacao = new javax.swing.JButton();
         Pnl_barraAzul = new javax.swing.JPanel();
         Lbl_nomeAgendamento = new javax.swing.JLabel();
         Lbl_iconeBotaoVoltar = new javax.swing.JLabel();
@@ -258,6 +260,16 @@ public class RF02 extends javax.swing.JFrame {
             }
         });
 
+        Btn_situacao.setBackground(new java.awt.Color(32, 41, 173));
+        Btn_situacao.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Btn_situacao.setForeground(new java.awt.Color(255, 255, 255));
+        Btn_situacao.setText("Finalizar");
+        Btn_situacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_situacaoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Pnl_principalLayout = new javax.swing.GroupLayout(Pnl_principal);
         Pnl_principal.setLayout(Pnl_principalLayout);
         Pnl_principalLayout.setHorizontalGroup(
@@ -267,6 +279,8 @@ public class RF02 extends javax.swing.JFrame {
                 .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Pnl_conteudoCentral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(Pnl_principalLayout.createSequentialGroup()
+                        .addComponent(Btn_situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(Btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -283,7 +297,8 @@ public class RF02 extends javax.swing.JFrame {
                 .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Btn_Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btn_situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(93, 93, 93))
         );
 
@@ -453,10 +468,8 @@ public class RF02 extends javax.swing.JFrame {
             
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","");
-           statement = conn.prepareStatement("DELETE FROM cargas WHERE id = ?" );
-            statement.setInt(1, Integer.parseInt(Tfd_codCarga.getText()));
-            
-            statement = conn.prepareStatement("UPDATE agendamentos SET situacao = 'finalizado' where id ="+id);
+           statement = conn.prepareStatement("DELETE FROM agendamentos WHERE id ="+id );
+        
              statement.execute();
              statement.close();
         }catch(ClassNotFoundException | SQLException ex){
@@ -482,6 +495,26 @@ public class RF02 extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void Btn_situacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_situacaoActionPerformed
+        Connection conn ;
+        PreparedStatement statement;
+        String situaca = "finalizado";
+        try{
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","");      
+            statement = conn.prepareStatement("UPDATE agendamentos SET situacao = '"+situaca+"' WHERE id ="+id);
+             statement.execute();
+             statement.close();
+        }catch(ClassNotFoundException | SQLException ex){
+            Logger.getLogger(RF02.class.getName()).log(Level.SEVERE,null,ex);
+        }
+        
+        JOptionPane.showMessageDialog(Pnl_principal,"Situação mudada para 'finalizado'!!");
+     
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_situacaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -523,6 +556,7 @@ public class RF02 extends javax.swing.JFrame {
     private javax.swing.JButton Btn_Salvar;
     private javax.swing.JButton Btn_cancelar;
     private javax.swing.JButton Btn_editar;
+    private javax.swing.JButton Btn_situacao;
     private javax.swing.JComboBox<String> Cbx_tipo;
     private javax.swing.JComboBox<String> Cbx_tipoAgendamento;
     private javax.swing.JLabel Lbl_carga;
@@ -567,6 +601,5 @@ public class RF02 extends javax.swing.JFrame {
         id = Integer.parseInt(j);
         
     }
-
 
 }

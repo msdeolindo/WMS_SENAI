@@ -20,6 +20,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class RF14 extends javax.swing.JFrame {
     RF02 enviartexto;
+    RF02 Btn_Salvar;
+    RF02 Btn_editar;
     /**
      * Creates new form agendamento_tela
      */
@@ -201,11 +203,11 @@ public class RF14 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Código da carga", "Cliente", "Categoria", "Carga", "Quantidade", "Transportadora", "Data agendamento", "Tipo agendamento", "Tipo", "id"
+                "Código da carga", "Cliente", "Categoria", "Carga", "Quantidade", "Transportadora", "Data agendamento", "Tipo agendamento", "Tipo", "ID", "Situação"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false, false, true, true, true
+                false, false, false, false, true, false, false, true, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -274,8 +276,8 @@ public class RF14 extends javax.swing.JFrame {
                     resultado.getString("data_agendamento"),
                     resultado.getString("tipo_agendamento"),
                     resultado.getString("tipo_carga"),
-                    resultado.getString("situacao"),
-                    resultado.getString("id")
+                    resultado.getString("id"),
+                    resultado.getString("situacao")
                 });
             }
             
@@ -308,15 +310,14 @@ public class RF14 extends javax.swing.JFrame {
         String texto_g = jTable1.getValueAt(linha,6).toString();
         String texto_h = jTable1.getValueAt(linha,7).toString();
         String texto_i = jTable1.getValueAt(linha,8).toString(); 
-        String texto_j = jTable1.getValueAt(linha,9).toString();
+        String texto_j = jTable1.getValueAt(linha,9).toString(); 
         
         enviartexto = new RF02();
         enviartexto.setVisible(true);
+         Btn_Salvar.setVisible(false);
+         Btn_editar.setVisible(false);
         enviartexto.recebendo(texto_a,texto_b,texto_c,texto_d,texto_e,texto_f,texto_g,texto_h,texto_i,texto_j);              
            
-       RF02 novoFrame = new RF02();
-        novoFrame.setVisible(true);
-        this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable1MouseClicked
 
@@ -359,6 +360,7 @@ public class RF14 extends javax.swing.JFrame {
       String id = txt_Cod.getText();
       String data = txt_Agen.getText();
       String cliente = txt_cliente.getText();
+      String situacao = cbx_Situacao.getSelectedItem().toString();
       
       //this.PopularjTable1("SELECT * FROM lista_agendamentos WHERE data_agendamento='" + data + "' AND id=" + id + " AND nome_fantasia=" + cliente);
         if (!data.isEmpty()) {
@@ -367,8 +369,10 @@ public class RF14 extends javax.swing.JFrame {
         this.PopularjTable1("SELECT * FROM agendamentos WHERE carga_id=" + id);
     } else if (!cliente.isEmpty()) {
         this.PopularjTable1("SELECT * FROM agendamentos WHERE cliente_id=" + cliente);
+    } else if (!situacao.isEmpty()) {
+       this.PopularjTable1("SELECT * FROM agendamentos WHERE situacao ='" + situacao+"'");   
     } else {
-        this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento='" + data + "' AND carga_id=" + id + " cliente_id="+cliente);
+        this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento='" + data + "' AND carga_id=" + id + " AND cliente_id="+cliente+" situacao='"+situacao+"'");
     }
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel2MouseClicked
