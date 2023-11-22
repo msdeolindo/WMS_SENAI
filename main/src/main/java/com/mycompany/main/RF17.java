@@ -31,8 +31,8 @@ public class RF17 extends javax.swing.JFrame {
        
      
         try {
-        String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
-        String usuario = "root";
+        String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+        String usuario = "dds16_wms";
         String senha = "";
             
             Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
