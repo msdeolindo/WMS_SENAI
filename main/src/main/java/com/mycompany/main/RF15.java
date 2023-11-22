@@ -39,6 +39,7 @@ public class RF15 extends javax.swing.JFrame {
         lbl_Titulo_RegistroDeCarga = new javax.swing.JLabel();
         lbl_BotaoVolta = new javax.swing.JLabel();
         botao_novo1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         pnl_Inf_RegistroDeCarga = new javax.swing.JPanel();
         lbl_Produto = new javax.swing.JLabel();
         txt_Produto = new javax.swing.JTextField();
@@ -89,21 +90,30 @@ public class RF15 extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnl_TituloPGNLayout = new javax.swing.GroupLayout(pnl_TituloPGN);
         pnl_TituloPGN.setLayout(pnl_TituloPGNLayout);
         pnl_TituloPGNLayout.setHorizontalGroup(
             pnl_TituloPGNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_TituloPGNLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addGroup(pnl_TituloPGNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnl_TituloPGNLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(lbl_BotaoVolta))
-                    .addGroup(pnl_TituloPGNLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(botao_novo1)
-                        .addGap(32, 32, 32)
-                        .addComponent(lbl_Titulo_RegistroDeCarga)))
-                .addContainerGap(1400, Short.MAX_VALUE))
+                        .addGroup(pnl_TituloPGNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnl_TituloPGNLayout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(botao_novo1))
+                            .addComponent(jLabel1))
+                        .addGap(33, 33, 33)
+                        .addComponent(lbl_Titulo_RegistroDeCarga))
+                    .addComponent(lbl_BotaoVolta))
+                .addContainerGap(1353, Short.MAX_VALUE))
         );
         pnl_TituloPGNLayout.setVerticalGroup(
             pnl_TituloPGNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,7 +122,9 @@ public class RF15 extends javax.swing.JFrame {
                 .addGroup(pnl_TituloPGNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnl_TituloPGNLayout.createSequentialGroup()
                         .addComponent(botao_novo1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)
+                        .addGap(12, 12, 12)
                         .addComponent(lbl_BotaoVolta))
                     .addComponent(lbl_Titulo_RegistroDeCarga))
                 .addContainerGap(49, Short.MAX_VALUE))
@@ -319,7 +331,7 @@ public class RF15 extends javax.swing.JFrame {
             pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
                 .addComponent(pnl_TituloPGN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 51, Short.MAX_VALUE))
+                .addGap(0, 88, Short.MAX_VALUE))
             .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(pnl_Inf_RegistroDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 1848, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -341,7 +353,7 @@ public class RF15 extends javax.swing.JFrame {
                 .addGroup(pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_Retirar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 72, Short.MAX_VALUE))
+                .addGap(0, 66, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -388,6 +400,12 @@ public class RF15 extends javax.swing.JFrame {
          this.dispose();
     }//GEN-LAST:event_botao_novo1MouseClicked
 
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    RF30 menu = new RF30();
+         menu.setVisible(true);
+         this.dispose();
+    }//GEN-LAST:event_jLabel1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -428,6 +446,7 @@ public class RF15 extends javax.swing.JFrame {
     private javax.swing.JLabel botao_novo1;
     private javax.swing.JButton btn_Editar;
     private javax.swing.JButton btn_Retirar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_BotaoVolta;
     private javax.swing.JLabel lbl_Categoria;
     private javax.swing.JLabel lbl_CodigoDaCarga;

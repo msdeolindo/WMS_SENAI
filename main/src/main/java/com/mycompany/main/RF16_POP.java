@@ -62,6 +62,7 @@ public class RF16_POP extends javax.swing.JFrame {
         lb_Titulo = new javax.swing.JLabel();
         lbl_voltar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CADASTRO DE ENDEREÇO DE ARMAZENAGEM");
@@ -243,6 +244,13 @@ public class RF16_POP extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout paTituloLayout = new javax.swing.GroupLayout(paTitulo);
         paTitulo.setLayout(paTituloLayout);
         paTituloLayout.setHorizontalGroup(
@@ -252,17 +260,20 @@ public class RF16_POP extends javax.swing.JFrame {
                 .addComponent(lbl_voltar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(25, 25, 25)
                 .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         paTituloLayout.setVerticalGroup(
             paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paTituloLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
                     .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
                     .addComponent(lbl_voltar))
                 .addContainerGap(8, Short.MAX_VALUE))
         );
@@ -416,6 +427,10 @@ public class RF16_POP extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
 
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        
+    }//GEN-LAST:event_jLabel2MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -459,6 +474,7 @@ public class RF16_POP extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbx_categoria;
     private javax.swing.JComboBox<String> cbx_tipoCarga;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_Titulo;
     private javax.swing.JLabel lbl_Corredor;

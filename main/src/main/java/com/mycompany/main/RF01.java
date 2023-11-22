@@ -126,7 +126,7 @@ public void PopularJTable (String sql) {
         lbl_Titulo_ListaDoArmazem.setForeground(new java.awt.Color(255, 255, 255));
         lbl_Titulo_ListaDoArmazem.setText("LISTA DO ARMAZEM");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_back.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);

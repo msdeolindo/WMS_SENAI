@@ -96,6 +96,7 @@ public class RF18 extends javax.swing.JFrame {
         lbl_BotaoVolta1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jPanel_tela_informação = new javax.swing.JPanel();
         lbl_obeservação = new javax.swing.JLabel();
         lbl_avarias = new javax.swing.JLabel();
@@ -193,6 +194,13 @@ public class RF18 extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel_topo_azulLayout = new javax.swing.GroupLayout(jPanel_topo_azul);
         jPanel_topo_azul.setLayout(jPanel_topo_azulLayout);
         jPanel_topo_azulLayout.setHorizontalGroup(
@@ -205,8 +213,9 @@ public class RF18 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel_topo_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addGap(42, 42, 42)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addGap(11, 11, 11)
                 .addComponent(lbl_recebimento)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -219,6 +228,8 @@ public class RF18 extends javax.swing.JFrame {
                     .addComponent(lbl_icone_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel_topo_azulLayout.createSequentialGroup()
                         .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5))
                     .addComponent(lbl_recebimento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -512,6 +523,12 @@ public class RF18 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+       RF30 menu = new RF30();
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel6MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -557,6 +574,7 @@ public class RF18 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel_tela_informação;
     private javax.swing.JPanel jPanel_topo_azul;

@@ -68,6 +68,7 @@ public class RF02 extends javax.swing.JFrame {
         btn_back = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -336,6 +337,13 @@ public class RF02 extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout Pnl_barraAzulLayout = new javax.swing.GroupLayout(Pnl_barraAzul);
         Pnl_barraAzul.setLayout(Pnl_barraAzulLayout);
         Pnl_barraAzulLayout.setHorizontalGroup(
@@ -349,31 +357,36 @@ public class RF02 extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
                         .addGap(7, 7, 7)
-                        .addComponent(jLabel2)
+                        .addComponent(jLabel2))
+                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(Lbl_nomeAgendamento)))
+                        .addComponent(jLabel3)))
+                .addGap(8, 8, 8)
+                .addComponent(Lbl_nomeAgendamento)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Lbl_iconeBotaoVoltar)
-                .addContainerGap(1651, Short.MAX_VALUE))
+                .addContainerGap(1650, Short.MAX_VALUE))
         );
         Pnl_barraAzulLayout.setVerticalGroup(
             Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_barraAzulLayout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btn_back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                            .addComponent(Lbl_iconeBotaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(12, 12, 12)))
+                    .addComponent(jLabel1)
+                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(12, 12, 12)
+                        .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btn_back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
+                                .addComponent(Lbl_iconeBotaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12))))
                     .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
                         .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Lbl_nomeAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel2)))
+                            .addComponent(jLabel3)
+                            .addComponent(Lbl_nomeAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(12, 12, 12)))
-                .addGap(16, 16, 16))
+                .addGap(28, 28, 28))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -531,10 +544,14 @@ public class RF02 extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_situacaoActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-         RF14 agendamentos = new RF14();
+       
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        RF14 agendamentos = new RF14();
         agendamentos.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -605,6 +622,7 @@ public class RF02 extends javax.swing.JFrame {
     private javax.swing.JLabel btn_back;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 
     public void recebendo(String a,String b,String c,String d,String e,String f,String g,String h,String i,String j){
