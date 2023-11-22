@@ -126,7 +126,7 @@ public void PopularJTable (String sql) {
         lbl_Titulo_ListaDoArmazem.setForeground(new java.awt.Color(255, 255, 255));
         lbl_Titulo_ListaDoArmazem.setText("LISTA DO ARMAZEM");
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_back.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -147,7 +147,7 @@ public void PopularJTable (String sql) {
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(lbl_Titulo_ListaDoArmazem)))
-                .addContainerGap(1486, Short.MAX_VALUE))
+                .addContainerGap(1483, Short.MAX_VALUE))
         );
         pnl_Titulo_ListaDoArmazemLayout.setVerticalGroup(
             pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +159,7 @@ public void PopularJTable (String sql) {
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(lbl_VoltarAoMenu)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pnl_Inf_ListaDoArmazen.setBackground(new java.awt.Color(203, 200, 200));

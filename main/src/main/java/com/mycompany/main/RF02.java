@@ -329,7 +329,7 @@ public class RF02 extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/main/ícones WMS/icon_back.png"))); // NOI18N
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -354,7 +354,7 @@ public class RF02 extends javax.swing.JFrame {
                         .addComponent(Lbl_nomeAgendamento)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Lbl_iconeBotaoVoltar)
-                .addContainerGap(1654, Short.MAX_VALUE))
+                .addContainerGap(1651, Short.MAX_VALUE))
         );
         Pnl_barraAzulLayout.setVerticalGroup(
             Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

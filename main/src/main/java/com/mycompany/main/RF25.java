@@ -62,7 +62,6 @@ public class RF25 extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\jv\\Desktop\\WMS_SENAI_NOVO\\WMS_SENAI\\ícones WMS\\icon_back.png")); // NOI18N
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
@@ -147,7 +146,7 @@ public class RF25 extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\jv\\Desktop\\WMS_SENAI_NOVO\\WMS_SENAI\\ícones WMS\\BARRAS.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/BARRAS.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
