@@ -36,8 +36,8 @@ public class RF18 extends javax.swing.JFrame {
 
         
         try {
-            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
-            String usuario = "dds16_wms";
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String usuario = "root";
             String senha = "";
             
             Connection con = (Connection)DriverManager.getConnection(url,usuario,senha);
@@ -397,22 +397,19 @@ public class RF18 extends javax.swing.JFrame {
         enviatexto = new RF23();
         enviatexto.setVisible(true);
         enviatexto.recebendo(tf_quantidade.getText());
-        
-        enviatexto = new RF23();
-        enviatexto.setVisible(true);
         enviatexto.etiqueta(tf_codigo.getText());
         
         Connection conexao = null;
          
         
-        String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
-        String usuario = "dds16_wms";
-        String senha = "";
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String usuario = "root";
+            String senha = "";
         
         try {        
             conexao = DriverManager.getConnection(url,usuario,senha);
             
-            String sql = "UPDATE cargas SET quantidade_avarias = ?,observacao = ?,quantidade_recebida = ? WHERE id = ?";
+            String sql = "UPDATE agendamentos SET quantidade_avarias = ?,observacao = ?,quantidade_recebida = ? WHERE id = ?";
            
             PreparedStatement statement = conexao.prepareStatement(sql);
              
@@ -472,8 +469,8 @@ public class RF18 extends javax.swing.JFrame {
             Connection conexao = null;
             PreparedStatement statement = null;
             
-            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
-            String usuario = "dds16_wms";
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String usuario = "root";
             String senha = "";
             
             

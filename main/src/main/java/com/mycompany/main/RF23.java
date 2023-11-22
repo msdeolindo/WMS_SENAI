@@ -24,6 +24,7 @@ public class RF23 extends javax.swing.JFrame {
     RF25 enviaquantidade;
     int valor = 0;
     int codigo;
+    int etiqueta = 0;
 
     public RF23() {
         initComponents();
@@ -212,34 +213,38 @@ public class RF23 extends javax.swing.JFrame {
         int quantidade = Integer.parseInt(Tfd_quantidade.getText());
         try{   
             
-        valor = 10;
+        
         if(quantidade > valor || quantidade < 0){
             JOptionPane.showMessageDialog(rootPane, "Valor inserido incorreto");
         }    
         else{
             
             
-            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
-            String usuario = "dds16_wms";
+            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
+            String usuario = "root";
             String senha = "";
             
             Connection conn = DriverManager.getConnection(url, usuario, senha);
 
             PreparedStatement statement;
-            
-            
-
-            statement = conn.prepareStatement("INSERT INTO cargas (etiqueta, quantidade, rua, pilha, corredor, nivel) VALUES (?,?,?,?,?)");
+      
+            statement = conn.prepareStatement("INSERT INTO cargas (quantidade, rua, pilha, corredor, nivel, etiqueta) VALUES (?,?,?,?,?,?)");         
             
             //String etiqueta = ("ET-N-"+);
+            
+            
             
             statement.setString(1,Tfd_quantidade.getText());
             statement.setString(2,Tfd_rua.getText());        
             statement.setString(3,Tfd_pilha.getText());
             statement.setString(4,Tfd_corredor.getText());
             statement.setString(5,Tfd_nivel.getText());
+            statement.setString(6, "ET-N-"+etiqueta);
             //WHERE id = ? statement.setInt(6, codigo);
 
+            statement.execute();
+            statement.close();
+            
             JOptionPane.showMessageDialog(rootPane, "Local selecionado");        
             
             valor = valor - quantidade;
@@ -330,5 +335,8 @@ public class RF23 extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 void etiqueta(String text_a) {
       txt_cod.setText(text_a);
+      
+      etiqueta = Integer.parseInt(text_a);
+
 }
 }

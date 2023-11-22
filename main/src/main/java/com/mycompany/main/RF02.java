@@ -413,7 +413,7 @@ public class RF02 extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","");
            
             statement = conn.prepareStatement ("INSERT INTO agendamentos (cliente_id,data_agendamento,categoria,carga,quantidade,transportadora,tipo_agendamento,tipo_carga) VALUES (?,?,?,?,?,?,?,?)");
                     statement.setInt(1, Integer.parseInt(Tfd_cliente.getText()));
@@ -446,7 +446,7 @@ public class RF02 extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","");
 
             statement = conn.prepareStatement ("UPDATE agendamentos SET cliente_id = ?, data_agendamento = ?, categoria = ?, carga = ?, quantidade = ?, transportadora = ?,tipo_agendamento = ?,tipo_carga = ? WHERE id = ?");
             
@@ -481,7 +481,7 @@ public class RF02 extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","");
+           conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","");
            statement = conn.prepareStatement("DELETE FROM agendamentos WHERE id ="+id );
         
              statement.execute();
@@ -517,7 +517,7 @@ public class RF02 extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD","dds16_wms","");      
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_WMS_PRD","root","");      
             statement = conn.prepareStatement("UPDATE agendamentos SET situacao = '"+situaca+"' WHERE id ="+id);
              statement.execute();
              statement.close();
