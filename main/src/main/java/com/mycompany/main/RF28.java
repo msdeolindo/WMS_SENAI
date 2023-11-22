@@ -202,6 +202,11 @@ public class RF28 extends javax.swing.JFrame {
         });
 
         jLabel3.setText("jLabel3");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -419,6 +424,12 @@ try {
         }  
         // TODO add your handling code here:
     }//GEN-LAST:event_REGISTRARActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        RF15 FrameRegistroDeCarga = new RF15();
+        FrameRegistroDeCarga.setVisible (true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
