@@ -433,7 +433,7 @@ public class RF15 extends javax.swing.JFrame {
     private javax.swing.JTextField txt_Situacao;
     private javax.swing.JTextField txt_tipoCarga;
     // End of variables declaration//GEN-END:variables
-void recebendo_valor_tb(String text_a, String text_b, String text_c, String text_d, String text_e, String text_f, String text_g, String text_h, String text_i, String text_j, String text_k) {
+void recebendo_valor_tb(String text_a, String text_b, String text_c, String text_d, String text_e, String text_f, String text_g, String text_h, String text_i, String text_j, String text_k, String text_l) {
         txt_CodigoDaEtiqueta.setText(text_a);
         txt_Produto.setText(text_c);
         txt_Categoria.setText(text_d);
@@ -443,7 +443,6 @@ void recebendo_valor_tb(String text_a, String text_b, String text_c, String text
         txt_Rua.setText(text_g);
         txt_Corredor.setText(text_h);
         txt_Pilha.setText(text_i);
-        txt_Nivel.setText(text_k);
-        
+        txt_Nivel.setText(text_k); 
     }
 }

@@ -397,6 +397,10 @@ public class RF18 extends javax.swing.JFrame {
         enviatexto.setVisible(true);
         enviatexto.recebendo(tf_quantidade.getText());
         
+        enviatexto = new RF23();
+        enviatexto.setVisible(true);
+        enviatexto.etiqueta(tf_codigo.getText());
+        
         Connection conexao = null;
          
         
@@ -407,7 +411,7 @@ public class RF18 extends javax.swing.JFrame {
         try {        
             conexao = DriverManager.getConnection(url,usuario,senha);
             
-            String sql = "UPDATE agendamentos SET quantidade_avarias = ?,observacao = ?,quantidade_recebida = ? WHERE id = ?";
+            String sql = "UPDATE cargas SET quantidade_avarias = ?,observacao = ?,quantidade_recebida = ? WHERE id = ?";
            
             PreparedStatement statement = conexao.prepareStatement(sql);
              

@@ -54,6 +54,7 @@ public class RF23 extends javax.swing.JFrame {
         Btn_salvar = new javax.swing.JButton();
         Lbl_contagem = new javax.swing.JLabel();
         txt_quantidade = new javax.swing.JTextField();
+        txt_cod = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,7 +146,10 @@ public class RF23 extends javax.swing.JFrame {
                         .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Tfd_corredor)
                             .addComponent(Tfd_nivel, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))
-                    .addComponent(Btn_salvar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_principalLayout.createSequentialGroup()
+                        .addComponent(txt_cod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Btn_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         Pnl_principalLayout.setVerticalGroup(
@@ -171,7 +175,9 @@ public class RF23 extends javax.swing.JFrame {
                     .addComponent(Tfd_pilha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Tfd_nivel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(Btn_salvar)
+                .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Btn_salvar)
+                    .addComponent(txt_cod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14))
         );
 
@@ -193,21 +199,28 @@ public class RF23 extends javax.swing.JFrame {
           
         int quantidade = Integer.parseInt(Tfd_quantidade.getText());
         try{   
-    
+            
+        valor = 10;
         if(quantidade > valor || quantidade < 0){
             JOptionPane.showMessageDialog(rootPane, "Valor inserido incorreto");
         }    
         else{
+            
+            
             String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
             String usuario = "dds16_wms";
             String senha = "";
             
             Connection conn = DriverManager.getConnection(url, usuario, senha);
 
-            PreparedStatement statement;  
+            PreparedStatement statement;
+            
+            
 
-            statement = conn.prepareStatement("INSERT INTO cargas (quantidade, rua, pilha, corredor, nivel) VALUES (?,?,?,?,?)");
-
+            statement = conn.prepareStatement("INSERT INTO cargas (etiqueta, quantidade, rua, pilha, corredor, nivel) VALUES (?,?,?,?,?)");
+            
+            //String etiqueta = ("ET-N-"+);
+            
             statement.setString(1,Tfd_quantidade.getText());
             statement.setString(2,Tfd_rua.getText());        
             statement.setString(3,Tfd_pilha.getText());
@@ -293,6 +306,10 @@ public class RF23 extends javax.swing.JFrame {
     private javax.swing.JTextField Tfd_pilha;
     private javax.swing.JTextField Tfd_quantidade;
     private javax.swing.JTextField Tfd_rua;
+    private javax.swing.JTextField txt_cod;
     private javax.swing.JTextField txt_quantidade;
     // End of variables declaration//GEN-END:variables
+void etiqueta(String text_a) {
+      txt_cod.setText(text_a);
+}
 }

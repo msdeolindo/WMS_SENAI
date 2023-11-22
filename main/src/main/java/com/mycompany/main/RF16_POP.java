@@ -18,11 +18,12 @@ import javax.swing.JOptionPane;
  * @author jbasso
  */
 public class RF16_POP extends javax.swing.JFrame {
-
+        RF23 enviatexto;
     /**
      * Creates new form RF_16_novo
      */
     public RF16_POP() {
+        
         initComponents();
         lbl_id.setVisible(false);
         txt_endereco.setVisible(false);
@@ -376,6 +377,8 @@ public class RF16_POP extends javax.swing.JFrame {
             statement.execute();
             statement.close();
             JOptionPane.showMessageDialog(rootPane, "Endereço inserido");
+            String TEXTO_a = txt_endereco.getText();
+            enviatexto.etiqueta(TEXTO_a);
             RF16_POP jFrame16_POP = new RF16_POP();
             jFrame16_POP.setVisible(false);
             this.dispose();
@@ -470,7 +473,6 @@ void recebendo_valor_tb(String text_a, String text_b, String text_c, String text
         btn_Excluir.setVisible(true);
         btn_Editar.setVisible(true);
         txt_endereco.setText(text_f);
-        
         txt_endereco.setVisible(true);
         lbl_Endereco.setVisible(true);
         

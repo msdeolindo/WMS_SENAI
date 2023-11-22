@@ -4,6 +4,9 @@
  */
 package com.mycompany.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
 /**
@@ -232,6 +235,7 @@ public class RF25 extends javax.swing.JFrame {
             enviatexto.setVisible(true);
             enviatexto.recebendo(atualizando);
             this.dispose();
+            
         }
         else{       
             this.dispose();
