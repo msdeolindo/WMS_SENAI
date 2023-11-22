@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package com.mycompany.main;
 
 import java.sql.Connection;
@@ -9,22 +13,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
-
-
-
 /**
  *
- * @author mrocha
+ * @author CASA
  */
 public class RF27 extends javax.swing.JFrame {
 
     /**
-     * Creates new form login
+     * Creates new form RF27
      */
     public RF27() {
         initComponents();
@@ -39,127 +35,133 @@ public class RF27 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_azul = new javax.swing.JPanel();
-        panel_branc = new javax.swing.JPanel();
-        bot_entrar = new javax.swing.JButton();
-        senha_txt = new javax.swing.JPasswordField();
-        senha = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         login_txt = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        senha_txt = new javax.swing.JPasswordField();
+        lb_esqueci = new javax.swing.JLabel();
+        bt_entrar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        panel_azul.setBackground(new java.awt.Color(32, 41, 173));
+        jPanel2.setBackground(new java.awt.Color(32, 41, 173));
 
-        panel_branc.setBackground(java.awt.Color.white);
-        panel_branc.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        login_txt.setText("jTextField1");
 
-        bot_entrar.setBackground(new java.awt.Color(32, 41, 173));
-        bot_entrar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        bot_entrar.setForeground(new java.awt.Color(255, 255, 255));
-        bot_entrar.setText("ENTRAR");
-        bot_entrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bot_entrarActionPerformed(evt);
-            }
-        });
+        senha_txt.setText("jPasswordField1");
 
-        senha_txt.setText("senha_txt");
-
-        senha.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        senha.setText("ESQUECI MINHA SENHA");
-        senha.addMouseListener(new java.awt.event.MouseAdapter() {
+        lb_esqueci.setText("Esqueci minha senha");
+        lb_esqueci.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                senhaMouseClicked(evt);
+                lb_esqueciMouseClicked(evt);
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\logo.JPG")); // NOI18N
+        bt_entrar.setText("ENTRAR");
+        bt_entrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_entrarActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout panel_brancLayout = new javax.swing.GroupLayout(panel_branc);
-        panel_branc.setLayout(panel_brancLayout);
-        panel_brancLayout.setHorizontalGroup(
-            panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_brancLayout.createSequentialGroup()
-                .addGroup(panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_brancLayout.createSequentialGroup()
-                        .addGap(339, 339, 339)
-                        .addGroup(panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panel_brancLayout.createSequentialGroup()
-                                .addGap(61, 61, 61)
-                                .addComponent(senha))
-                            .addGroup(panel_brancLayout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(bot_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(login_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(senha_txt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(panel_brancLayout.createSequentialGroup()
-                        .addGap(325, 325, 325)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(239, Short.MAX_VALUE))
-        );
-        panel_brancLayout.setVerticalGroup(
-            panel_brancLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_brancLayout.createSequentialGroup()
+        jLabel2.setText("jLabel2");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 355, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(lb_esqueci)
+                        .addGap(362, 362, 362))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(bt_entrar)
+                        .addGap(380, 380, 380))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(login_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(senha_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(336, 336, 336))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(login_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(senha_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(senha)
-                .addGap(74, 74, 74)
-                .addComponent(bot_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(215, 215, 215))
+                .addComponent(jLabel2)
+                .addGap(397, 397, 397))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(138, 138, 138)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                .addComponent(login_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(senha_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(lb_esqueci)
+                .addGap(42, 42, 42)
+                .addComponent(bt_entrar)
+                .addGap(43, 43, 43))
         );
 
-        javax.swing.GroupLayout panel_azulLayout = new javax.swing.GroupLayout(panel_azul);
-        panel_azul.setLayout(panel_azulLayout);
-        panel_azulLayout.setHorizontalGroup(
-            panel_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_azulLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(panel_branc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
-        panel_azulLayout.setVerticalGroup(
-            panel_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_azulLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panel_branc, javax.swing.GroupLayout.PREFERRED_SIZE, 719, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(641, 641, 641))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(panel_azul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(panel_azul, javax.swing.GroupLayout.PREFERRED_SIZE, 748, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void senhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_senhaMouseClicked
-  RF21 tela_alterar_senha = new RF21();
-  tela_alterar_senha.setVisible (true);
-  this.dispose();
-    }//GEN-LAST:event_senhaMouseClicked
+    private void lb_esqueciMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_esqueciMouseClicked
+        RF21 tela_alterar_senha = new RF21();
+        tela_alterar_senha.setVisible (true);
+        this.dispose();
+    }//GEN-LAST:event_lb_esqueciMouseClicked
 
-    private void bot_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bot_entrarActionPerformed
-        Connection conexao = null;
+    private void bt_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_entrarActionPerformed
+      Connection conexao = null;
         PreparedStatement statement = null;
         
           String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
@@ -182,22 +184,17 @@ public class RF27 extends javax.swing.JFrame {
       this.dispose();
    }else{
       JOptionPane.showMessageDialog(rootPane, "Dados invalidos"); 
+   
    }
     
-    
     }catch (SQLException ex){
-        System.out.print("erro:" + ex.getMessage());
-
-    }   catch (ClassNotFoundException ex) {
+        System.out.print("erro:" + ex.getMessage() );
+   }   catch (ClassNotFoundException ex) {
+      
             Logger.getLogger(RF27.class.getName()).log(Level.SEVERE, null, ex);
-        }
+   }  
             
-        
-        
-        
-        
-           
-    }//GEN-LAST:event_bot_entrarActionPerformed
+    }//GEN-LAST:event_bt_entrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,7 +222,6 @@ public class RF27 extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(RF27.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -236,12 +232,13 @@ public class RF27 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bot_entrar;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton bt_entrar;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lb_esqueci;
     private javax.swing.JTextField login_txt;
-    private javax.swing.JPanel panel_azul;
-    private javax.swing.JPanel panel_branc;
-    private javax.swing.JLabel senha;
     private javax.swing.JPasswordField senha_txt;
     // End of variables declaration//GEN-END:variables
 }
