@@ -108,6 +108,11 @@ public class RF31 extends javax.swing.JFrame {
         });
 
         jLabel2.setText("jLabel2");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlCabecalhoLayout = new javax.swing.GroupLayout(pnlCabecalho);
         pnlCabecalho.setLayout(pnlCabecalhoLayout);
@@ -408,6 +413,12 @@ public class RF31 extends javax.swing.JFrame {
         enviatexto.recebendo(texto_a);
         this.dispose();
     }//GEN-LAST:event_tblRegistroClientesMouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+       RF30 menu = new RF30();
+       menu.setVisible (true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
