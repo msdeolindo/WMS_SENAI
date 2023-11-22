@@ -75,6 +75,7 @@ public void PopularJTable (String sql) {
         pnl_Titulo_ListaDoArmazem = new javax.swing.JPanel();
         lbl_VoltarAoMenu = new javax.swing.JLabel();
         lbl_Titulo_ListaDoArmazem = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         pnl_Inf_ListaDoArmazen = new javax.swing.JPanel();
         lbl_CodigoDaCarga = new javax.swing.JLabel();
         txt_Categoria = new javax.swing.JTextField();
@@ -114,7 +115,6 @@ public void PopularJTable (String sql) {
         pnl_Titulo_ListaDoArmazem.setBackground(new java.awt.Color(36, 32, 171));
         pnl_Titulo_ListaDoArmazem.setPreferredSize(new java.awt.Dimension(1920, 100));
 
-        lbl_VoltarAoMenu.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         lbl_VoltarAoMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_VoltarAoMenuMouseClicked(evt);
@@ -126,16 +126,23 @@ public void PopularJTable (String sql) {
         lbl_Titulo_ListaDoArmazem.setForeground(new java.awt.Color(255, 255, 255));
         lbl_Titulo_ListaDoArmazem.setText("LISTA DO ARMAZEM");
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout pnl_Titulo_ListaDoArmazemLayout = new javax.swing.GroupLayout(pnl_Titulo_ListaDoArmazem);
         pnl_Titulo_ListaDoArmazem.setLayout(pnl_Titulo_ListaDoArmazemLayout);
         pnl_Titulo_ListaDoArmazemLayout.setHorizontalGroup(
             pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_Titulo_ListaDoArmazemLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(lbl_VoltarAoMenu)
-                .addGap(18, 18, 18)
-                .addComponent(lbl_Titulo_ListaDoArmazem)
-                .addContainerGap(1479, Short.MAX_VALUE))
+                .addGroup(pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_Titulo_ListaDoArmazemLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(lbl_VoltarAoMenu))
+                    .addGroup(pnl_Titulo_ListaDoArmazemLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(lbl_Titulo_ListaDoArmazem)))
+                .addContainerGap(1486, Short.MAX_VALUE))
         );
         pnl_Titulo_ListaDoArmazemLayout.setVerticalGroup(
             pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,7 +150,10 @@ public void PopularJTable (String sql) {
                 .addGap(30, 30, 30)
                 .addGroup(pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lbl_Titulo_ListaDoArmazem)
-                    .addComponent(lbl_VoltarAoMenu))
+                    .addGroup(pnl_Titulo_ListaDoArmazemLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(lbl_VoltarAoMenu)))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
@@ -179,7 +189,6 @@ public void PopularJTable (String sql) {
         lbl_Situacao.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         lbl_Situacao.setText("Situação");
 
-        lbl_LupaParaPesquisa.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
         lbl_LupaParaPesquisa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_LupaParaPesquisaMouseClicked(evt);
@@ -335,7 +344,7 @@ public void PopularJTable (String sql) {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 14, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(pnl_PlanoDeFundo, javax.swing.GroupLayout.PREFERRED_SIZE, 1906, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
@@ -458,6 +467,7 @@ public void PopularJTable (String sql) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_Categoria;
     private javax.swing.JLabel lbl_CodigoDaCarga;
     private javax.swing.JLabel lbl_LupaParaPesquisa;

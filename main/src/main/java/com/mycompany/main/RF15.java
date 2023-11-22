@@ -38,6 +38,7 @@ public class RF15 extends javax.swing.JFrame {
         pnl_TituloPGN = new javax.swing.JPanel();
         lbl_Titulo_RegistroDeCarga = new javax.swing.JLabel();
         lbl_BotaoVolta = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         pnl_Inf_RegistroDeCarga = new javax.swing.JPanel();
         lbl_Produto = new javax.swing.JLabel();
         txt_Produto = new javax.swing.JTextField();
@@ -75,30 +76,39 @@ public class RF15 extends javax.swing.JFrame {
         lbl_Titulo_RegistroDeCarga.setForeground(new java.awt.Color(255, 255, 255));
         lbl_Titulo_RegistroDeCarga.setText("REGISTRO DE CARGA");
 
-        lbl_BotaoVolta.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         lbl_BotaoVolta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_BotaoVoltaMouseClicked(evt);
             }
         });
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout pnl_TituloPGNLayout = new javax.swing.GroupLayout(pnl_TituloPGN);
         pnl_TituloPGN.setLayout(pnl_TituloPGNLayout);
         pnl_TituloPGNLayout.setHorizontalGroup(
             pnl_TituloPGNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_TituloPGNLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(lbl_BotaoVolta)
-                .addGap(18, 18, 18)
-                .addComponent(lbl_Titulo_RegistroDeCarga)
-                .addContainerGap(1442, Short.MAX_VALUE))
+                .addGroup(pnl_TituloPGNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_TituloPGNLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(lbl_BotaoVolta))
+                    .addGroup(pnl_TituloPGNLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel1)
+                        .addGap(32, 32, 32)
+                        .addComponent(lbl_Titulo_RegistroDeCarga)))
+                .addContainerGap(1400, Short.MAX_VALUE))
         );
         pnl_TituloPGNLayout.setVerticalGroup(
             pnl_TituloPGNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_TituloPGNLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(pnl_TituloPGNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbl_BotaoVolta)
+                    .addGroup(pnl_TituloPGNLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbl_BotaoVolta))
                     .addComponent(lbl_Titulo_RegistroDeCarga))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
@@ -308,7 +318,7 @@ public class RF15 extends javax.swing.JFrame {
             .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(pnl_Inf_RegistroDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 1848, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_PlanoDeFundoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -406,6 +416,7 @@ public class RF15 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Editar;
     private javax.swing.JButton btn_Retirar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_BotaoVolta;
     private javax.swing.JLabel lbl_Categoria;
     private javax.swing.JLabel lbl_CodigoDaCarga;

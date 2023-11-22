@@ -67,6 +67,7 @@ public class RF02 extends javax.swing.JFrame {
         Lbl_iconeBotaoVoltar = new javax.swing.JLabel();
         btn_back = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -321,13 +322,14 @@ public class RF02 extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         jLabel1.setToolTipText("");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
             }
         });
+
+        jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout Pnl_barraAzulLayout = new javax.swing.GroupLayout(Pnl_barraAzul);
         Pnl_barraAzul.setLayout(Pnl_barraAzulLayout);
@@ -336,13 +338,18 @@ public class RF02 extends javax.swing.JFrame {
             .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addComponent(btn_back)
-                .addGap(3, 3, 3)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Lbl_nomeAgendamento)
+                .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel1))
+                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(Lbl_nomeAgendamento)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Lbl_iconeBotaoVoltar)
-                .addContainerGap(1661, Short.MAX_VALUE))
+                .addContainerGap(1654, Short.MAX_VALUE))
         );
         Pnl_barraAzulLayout.setVerticalGroup(
             Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -357,7 +364,9 @@ public class RF02 extends javax.swing.JFrame {
                     .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
                         .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
-                            .addComponent(Lbl_nomeAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(Lbl_nomeAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2)))
                         .addGap(12, 12, 12)))
                 .addGap(16, 16, 16))
         );
@@ -584,6 +593,7 @@ public class RF02 extends javax.swing.JFrame {
     private javax.swing.JTextField Tfd_transportadora;
     private javax.swing.JLabel btn_back;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 
     public void recebendo(String a,String b,String c,String d,String e,String f,String g,String h,String i,String j){

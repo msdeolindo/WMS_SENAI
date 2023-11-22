@@ -41,6 +41,7 @@ public class RF23 extends javax.swing.JFrame {
         Pnl_principal = new javax.swing.JPanel();
         Pnl_barraAzul = new javax.swing.JPanel();
         Lbl_localização = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         Lbl_quantidade = new javax.swing.JLabel();
         Lbl_rua = new javax.swing.JLabel();
         Lbl_pilha = new javax.swing.JLabel();
@@ -67,21 +68,27 @@ public class RF23 extends javax.swing.JFrame {
         Lbl_localização.setForeground(new java.awt.Color(255, 255, 255));
         Lbl_localização.setText("LOCALIZAÇÃO");
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout Pnl_barraAzulLayout = new javax.swing.GroupLayout(Pnl_barraAzul);
         Pnl_barraAzul.setLayout(Pnl_barraAzulLayout);
         Pnl_barraAzulLayout.setHorizontalGroup(
             Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addComponent(Lbl_localização)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Pnl_barraAzulLayout.setVerticalGroup(
             Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(Lbl_localização)
-                .addContainerGap(18, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_barraAzulLayout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lbl_localização)
+                    .addComponent(jLabel1))
+                .addGap(19, 19, 19))
         );
 
         Lbl_quantidade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -306,6 +313,7 @@ public class RF23 extends javax.swing.JFrame {
     private javax.swing.JTextField Tfd_pilha;
     private javax.swing.JTextField Tfd_quantidade;
     private javax.swing.JTextField Tfd_rua;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txt_cod;
     private javax.swing.JTextField txt_quantidade;
     // End of variables declaration//GEN-END:variables
