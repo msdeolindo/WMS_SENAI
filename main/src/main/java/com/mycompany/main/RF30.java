@@ -82,7 +82,7 @@ public class RF30 extends javax.swing.JFrame {
                 .addGap(14, 14, 14))
         );
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_cliente.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_cliente.png")); // NOI18N
         jButton4.setPreferredSize(new java.awt.Dimension(195, 195));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,7 +108,7 @@ public class RF30 extends javax.swing.JFrame {
         lbl_armazem.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         lbl_armazem.setText("Cadastro de armazém");
 
-        button_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_estoque.png"))); // NOI18N
+        button_estoque.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_estoque.png")); // NOI18N
         button_estoque.setPreferredSize(new java.awt.Dimension(195, 195));
         button_estoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,28 +116,28 @@ public class RF30 extends javax.swing.JFrame {
             }
         });
 
-        button_agendamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_agendamento.png"))); // NOI18N
+        button_agendamento.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_agendamento.png")); // NOI18N
         button_agendamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_agendamentoActionPerformed(evt);
             }
         });
 
-        button_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_funcionario.png"))); // NOI18N
+        button_funcionario.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_funcionario.png")); // NOI18N
         button_funcionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_funcionarioActionPerformed(evt);
             }
         });
 
-        button_recebimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_recebimento.png"))); // NOI18N
+        button_recebimento.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_recebimento.png")); // NOI18N
         button_recebimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_recebimentoActionPerformed(evt);
             }
         });
 
-        button_cadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_armazem.png"))); // NOI18N
+        button_cadastro.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_armazem.png")); // NOI18N
         button_cadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_cadastro(evt);
