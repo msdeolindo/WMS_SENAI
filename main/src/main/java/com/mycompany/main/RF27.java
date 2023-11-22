@@ -48,9 +48,12 @@ public class RF27 extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(32, 41, 173));
 
-        login_txt.setText("jTextField1");
-
         senha_txt.setText("jPasswordField1");
+        senha_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                senha_txtActionPerformed(evt);
+            }
+        });
 
         lb_esqueci.setText("Esqueci minha senha");
         lb_esqueci.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -65,8 +68,6 @@ public class RF27 extends javax.swing.JFrame {
                 bt_entrarActionPerformed(evt);
             }
         });
-
-        jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -195,6 +196,10 @@ public class RF27 extends javax.swing.JFrame {
    }  
             
     }//GEN-LAST:event_bt_entrarActionPerformed
+
+    private void senha_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senha_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_senha_txtActionPerformed
 
     /**
      * @param args the command line arguments
