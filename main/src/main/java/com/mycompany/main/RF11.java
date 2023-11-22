@@ -127,12 +127,9 @@ public class RF11 extends javax.swing.JFrame {
                          resultado.getString("estado_civil")
                         
                  });       
-           
              }
              
-              banco.close();
-        
-      
+            banco.close();
             Con.close();
         } catch (SQLException ex) {
             Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
@@ -162,7 +159,7 @@ public class RF11 extends javax.swing.JFrame {
         LabelN = new javax.swing.JLabel();
         lbl_cpf = new javax.swing.JLabel();
         TextCpf = new javax.swing.JTextField();
-        txt_Nome = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
         btn_Pes = new javax.swing.JLabel();
         Bt_Novo = new javax.swing.JButton();
         cbxCargo = new javax.swing.JComboBox<>();
@@ -239,8 +236,9 @@ public class RF11 extends javax.swing.JFrame {
 
         TextCpf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txt_Nome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        btn_Pes.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
         btn_Pes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_PesMouseClicked(evt);
@@ -266,7 +264,7 @@ public class RF11 extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LabelN)
-                    .addComponent(txt_Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LabelCargo)
@@ -297,7 +295,7 @@ public class RF11 extends javax.swing.JFrame {
                             .addComponent(Bt_Novo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(TextCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txt_Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(cbxCargo)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(btn_Pes)
@@ -391,42 +389,25 @@ public class RF11 extends javax.swing.JFrame {
     private void btn_PesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_PesMouseClicked
        // NOME FILTROS
        //CARGO FILTROS
-       //CPF FILTROS/
+       //CPF FILTROS/ 
        
-        Connection Con = null;
             
-         try {   
-         
-         
-                Class.forName("com.mysql.cj.jdbc.Driver");
-            
-           
-            
-            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
-            String user = "dds16_wms";
-            String senha = "";
-            
-            Con = DriverManager.getConnection(url,user,senha);
-            
-             System.out.println(txt_Nome.getText());
-            String sql = "SELECT * FROM funcionarios WHERE nome = ? ";
-            this.PopularJTableParametro(sql);
-       
-       PreparedStatement st = Con.prepareStatement(sql);
-       
-            st.setString(1, txt_Nome.getText());
-            //st.setString(2, (String) cbxCargo.getSelectedItem());
-            //st.setString(3, TextCpf.getText());
-            
-            
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
+        String nome = this.txtNome.getText();
+        String cargo = this.cbxCargo.getSelectedItem().toString();
+        String cpf = this.TextCpf.getText();
+        
+        
+        if (nome != null){
+             this.PopularJTableParametro(" SELECT * FROM funcionarios WHERE nome='" + nome +"'");
         }
-          catch (ClassNotFoundException ex) {
-                Logger.getLogger(RF11.class.getName()).log(Level.SEVERE, null, ex);
-            }
-      
+        if(cargo != null){
+             this.PopularJTableParametro(" SELECT * FROM funcionarios WHERE cargo='" + cargo+"'");        
+        }
+        if (cpf != null){
+            this.PopularJTableParametro(" SELECT * FROM funcionarios WHERE ='" + cpf+"'");
+        }
+        
+     
        
     }//GEN-LAST:event_btn_PesMouseClicked
 
@@ -518,6 +499,6 @@ public class RF11 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_cpf;
-    private javax.swing.JTextField txt_Nome;
+    private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }

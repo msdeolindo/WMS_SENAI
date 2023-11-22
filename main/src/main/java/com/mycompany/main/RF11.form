@@ -141,7 +141,7 @@
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="LabelN" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_Nome" min="-2" pref="300" max="-2" attributes="0"/>
+                      <Component id="txtNome" min="-2" pref="300" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -179,7 +179,7 @@
                               <Component id="Bt_Novo" min="-2" pref="37" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="TextCpf" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="txt_Nome" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="txtNome" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               </Group>
                               <Component id="cbxCargo" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -228,7 +228,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txt_Nome">
+        <Component class="javax.swing.JTextField" name="txtNome">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -238,6 +238,11 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="btn_Pes">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="P:\TURMAS\HTC-DDS-16\&#xed;cones WMS\lupa_cinza.png"/>
+            </Property>
+          </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_PesMouseClicked"/>
           </Events>
