@@ -20,8 +20,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class RF14 extends javax.swing.JFrame {
     RF02 enviartexto;
-    RF02 Btn_Salvar;
-    RF02 Btn_editar;
+   
     /**
      * Creates new form agendamento_tela
      */
@@ -327,8 +326,6 @@ public class RF14 extends javax.swing.JFrame {
         
         enviartexto = new RF02();
         enviartexto.setVisible(true);
-         Btn_Salvar.setVisible(false);
-         Btn_editar.setVisible(false);
         enviartexto.recebendo(texto_a,texto_b,texto_c,texto_d,texto_e,texto_f,texto_g,texto_h,texto_i,texto_j);              
            
         // TODO add your handling code here:
