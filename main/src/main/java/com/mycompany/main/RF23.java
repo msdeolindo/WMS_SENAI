@@ -220,8 +220,8 @@ public class RF23 extends javax.swing.JFrame {
         else{
             
             
-            String url = "jdbc:mysql://localhost:3306/DB_WMS_PRD";
-            String usuario = "root";
+            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+            String usuario = "dds16_wms";
             String senha = "";
             
             Connection conn = DriverManager.getConnection(url, usuario, senha);
