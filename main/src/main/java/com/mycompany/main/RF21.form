@@ -199,7 +199,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="chaveAcesso">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Insirao o cpf "/>
+                <Property name="text" type="java.lang.String" value="Insira o CPF "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Field_acesso">

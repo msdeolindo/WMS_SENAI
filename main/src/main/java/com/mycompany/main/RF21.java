@@ -91,7 +91,7 @@ public class RF21 extends javax.swing.JFrame {
 
         jPanel3.setInheritsPopupMenu(true);
 
-        chaveAcesso.setText("Insirao o cpf ");
+        chaveAcesso.setText("Insira o CPF ");
 
         Field_acesso.setBackground(new java.awt.Color(204, 204, 204));
         Field_acesso.setForeground(new java.awt.Color(153, 153, 153));

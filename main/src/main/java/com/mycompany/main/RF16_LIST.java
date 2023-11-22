@@ -274,7 +274,9 @@ public class RF16_LIST extends javax.swing.JFrame {
     }//GEN-LAST:event_lbl_VoltarMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        // TODO add your handling code here:
+        RF30 menu = new RF30();
+        menu.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
 
     /**

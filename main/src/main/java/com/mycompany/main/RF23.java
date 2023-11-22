@@ -69,6 +69,11 @@ public class RF23 extends javax.swing.JFrame {
         Lbl_localização.setText("LOCALIZAÇÃO");
 
         jLabel1.setText("jLabel1");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout Pnl_barraAzulLayout = new javax.swing.GroupLayout(Pnl_barraAzul);
         Pnl_barraAzul.setLayout(Pnl_barraAzulLayout);
@@ -255,6 +260,12 @@ public class RF23 extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_salvarActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        RF18 recebimento  = new RF18();
+        recebimento.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
