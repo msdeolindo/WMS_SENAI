@@ -38,7 +38,7 @@ public class RF15 extends javax.swing.JFrame {
         pnl_TituloPGN = new javax.swing.JPanel();
         lbl_Titulo_RegistroDeCarga = new javax.swing.JLabel();
         lbl_BotaoVolta = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        botao_novo1 = new javax.swing.JLabel();
         pnl_Inf_RegistroDeCarga = new javax.swing.JPanel();
         lbl_Produto = new javax.swing.JLabel();
         txt_Produto = new javax.swing.JTextField();
@@ -82,7 +82,12 @@ public class RF15 extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("jLabel1");
+        botao_novo1.setText("jLabel1");
+        botao_novo1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botao_novo1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_TituloPGNLayout = new javax.swing.GroupLayout(pnl_TituloPGN);
         pnl_TituloPGN.setLayout(pnl_TituloPGNLayout);
@@ -95,7 +100,7 @@ public class RF15 extends javax.swing.JFrame {
                         .addComponent(lbl_BotaoVolta))
                     .addGroup(pnl_TituloPGNLayout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(jLabel1)
+                        .addComponent(botao_novo1)
                         .addGap(32, 32, 32)
                         .addComponent(lbl_Titulo_RegistroDeCarga)))
                 .addContainerGap(1400, Short.MAX_VALUE))
@@ -106,7 +111,7 @@ public class RF15 extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(pnl_TituloPGNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnl_TituloPGNLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(botao_novo1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lbl_BotaoVolta))
                     .addComponent(lbl_Titulo_RegistroDeCarga))
@@ -377,6 +382,12 @@ public class RF15 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_RetirarActionPerformed
 
+    private void botao_novo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_novo1MouseClicked
+         RF30 menu = new RF30();
+         menu.setVisible(true);
+         this.dispose();
+    }//GEN-LAST:event_botao_novo1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -414,9 +425,9 @@ public class RF15 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel botao_novo1;
     private javax.swing.JButton btn_Editar;
     private javax.swing.JButton btn_Retirar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_BotaoVolta;
     private javax.swing.JLabel lbl_Categoria;
     private javax.swing.JLabel lbl_CodigoDaCarga;

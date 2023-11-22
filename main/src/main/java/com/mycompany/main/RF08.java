@@ -96,6 +96,11 @@ public class RF08 extends javax.swing.JFrame {
         });
 
         jLabel2.setText("jLabel2");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMenuSuperiorLayout = new javax.swing.GroupLayout(pnlMenuSuperior);
         pnlMenuSuperior.setLayout(pnlMenuSuperiorLayout);
@@ -490,6 +495,12 @@ public class RF08 extends javax.swing.JFrame {
         
 // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+         RF11 lista_funcionarios = new RF11();
+        lista_funcionarios.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments

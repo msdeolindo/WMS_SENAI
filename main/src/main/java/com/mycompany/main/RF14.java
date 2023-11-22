@@ -42,7 +42,7 @@ public class RF14 extends javax.swing.JFrame {
         LabelT = new javax.swing.JLabel();
         Bt_Back = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        botao_novo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         LabelCargo = new javax.swing.JLabel();
         LabelN = new javax.swing.JLabel();
@@ -82,7 +82,12 @@ public class RF14 extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("jLabel3");
+        botao_novo.setText("jLabel3");
+        botao_novo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botao_novoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -95,7 +100,7 @@ public class RF14 extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(jLabel3)))
+                        .addComponent(botao_novo)))
                 .addGap(18, 18, 18)
                 .addComponent(LabelT)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -109,7 +114,7 @@ public class RF14 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
+                            .addComponent(botao_novo)
                             .addComponent(LabelT))
                         .addGap(6, 6, 6)
                         .addComponent(jLabel1))
@@ -385,6 +390,12 @@ public class RF14 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel2MouseClicked
 
+    private void botao_novoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_novoMouseClicked
+         RF30 menu = new RF30();
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_botao_novoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -430,11 +441,11 @@ public class RF14 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelCpf1;
     private javax.swing.JLabel LabelN;
     private javax.swing.JLabel LabelT;
+    private javax.swing.JLabel botao_novo;
     private javax.swing.JLabel btn_Pes;
     private javax.swing.JComboBox<String> cbx_Situacao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

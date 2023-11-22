@@ -127,6 +127,11 @@ public void PopularJTable (String sql) {
         lbl_Titulo_ListaDoArmazem.setText("LISTA DO ARMAZEM");
 
         jLabel1.setText("jLabel1");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_Titulo_ListaDoArmazemLayout = new javax.swing.GroupLayout(pnl_Titulo_ListaDoArmazem);
         pnl_Titulo_ListaDoArmazem.setLayout(pnl_Titulo_ListaDoArmazemLayout);
@@ -427,6 +432,12 @@ public void PopularJTable (String sql) {
        this.dispose();
        
     }//GEN-LAST:event_tbl_TabelaDasCargasArmazenadasMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+         RF30 menu = new RF30();
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments

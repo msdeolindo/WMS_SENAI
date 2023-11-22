@@ -173,6 +173,11 @@ public class RF16_LIST extends javax.swing.JFrame {
         });
 
         jLabel1.setText("jLabel1");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout paTituloLayout = new javax.swing.GroupLayout(paTitulo);
         paTitulo.setLayout(paTituloLayout);
@@ -267,6 +272,10 @@ public class RF16_LIST extends javax.swing.JFrame {
         jFrame30.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lbl_VoltarMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
