@@ -60,9 +60,7 @@ public class RF16_POP extends javax.swing.JFrame {
         lbl_id = new javax.swing.JTextField();
         paTitulo = new javax.swing.JPanel();
         lb_Titulo = new javax.swing.JLabel();
-        lbl_voltar = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lbl_Voltar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CADASTRO DE ENDEREÇO DE ARMAZENAGEM");
@@ -231,23 +229,10 @@ public class RF16_POP extends javax.swing.JFrame {
         lb_Titulo.setForeground(new java.awt.Color(255, 255, 255));
         lb_Titulo.setText("Cadastro de Armazenagem");
 
-        lbl_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbl_Voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        lbl_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbl_voltarMouseClicked(evt);
-            }
-        });
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_back.png"))); // NOI18N
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                lbl_VoltarMouseClicked(evt);
             }
         });
 
@@ -256,25 +241,19 @@ public class RF16_POP extends javax.swing.JFrame {
         paTituloLayout.setHorizontalGroup(
             paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paTituloLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(lbl_voltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addGap(24, 24, 24)
+                .addComponent(lbl_Voltar)
                 .addGap(25, 25, 25)
                 .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(206, Short.MAX_VALUE))
         );
         paTituloLayout.setVerticalGroup(
             paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paTituloLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(paTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(lbl_voltar))
+                    .addComponent(lbl_Voltar)
+                    .addComponent(lb_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
@@ -417,19 +396,11 @@ public class RF16_POP extends javax.swing.JFrame {
         
     }//GEN-LAST:event_lbl_idActionPerformed
 
-    private void lbl_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_voltarMouseClicked
-            RF16_POP jFrame16_POP = new RF16_POP();
-            jFrame16_POP.setVisible(false);
+    private void lbl_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_VoltarMouseClicked
+            RF16_LIST jFrame16_List = new RF16_LIST();
+            jFrame16_List.setVisible(true);
             this.dispose();
-    }//GEN-LAST:event_lbl_voltarMouseClicked
-
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel1MouseClicked
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_lbl_VoltarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -473,8 +444,6 @@ public class RF16_POP extends javax.swing.JFrame {
     private javax.swing.JButton btn_Salvar;
     private javax.swing.JComboBox<String> cbx_categoria;
     private javax.swing.JComboBox<String> cbx_tipoCarga;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_Titulo;
     private javax.swing.JLabel lbl_Corredor;
@@ -482,10 +451,10 @@ public class RF16_POP extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_Nivel;
     private javax.swing.JLabel lbl_Pilha;
     private javax.swing.JLabel lbl_Rua;
+    private javax.swing.JLabel lbl_Voltar;
     private javax.swing.JLabel lbl_categoria;
     private javax.swing.JTextField lbl_id;
     private javax.swing.JLabel lbl_tipoCarga;
-    private javax.swing.JLabel lbl_voltar;
     private javax.swing.JPanel paTitulo;
     private javax.swing.JTextField txt_Corredor;
     private javax.swing.JTextField txt_Nivel;
