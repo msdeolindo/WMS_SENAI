@@ -64,10 +64,6 @@ public class RF02 extends javax.swing.JFrame {
         Btn_situacao = new javax.swing.JButton();
         Pnl_barraAzul = new javax.swing.JPanel();
         Lbl_nomeAgendamento = new javax.swing.JLabel();
-        Lbl_iconeBotaoVoltar = new javax.swing.JLabel();
-        btn_back = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -311,32 +307,6 @@ public class RF02 extends javax.swing.JFrame {
         Lbl_nomeAgendamento.setForeground(new java.awt.Color(255, 255, 255));
         Lbl_nomeAgendamento.setText("AGENDAMENTO");
 
-        Lbl_iconeBotaoVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Lbl_iconeBotaoVoltarMouseClicked(evt);
-            }
-        });
-
-        btn_back.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_backMouseClicked(evt);
-            }
-        });
-
-        jLabel1.setToolTipText("");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/main/ícones WMS/icon_back.png"))); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-
         jLabel3.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -349,44 +319,20 @@ public class RF02 extends javax.swing.JFrame {
         Pnl_barraAzulLayout.setHorizontalGroup(
             Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addComponent(btn_back)
-                .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel1))
-                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel2))
-                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3)))
+                .addGap(26, 26, 26)
+                .addComponent(jLabel3)
                 .addGap(8, 8, 8)
                 .addComponent(Lbl_nomeAgendamento)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Lbl_iconeBotaoVoltar)
-                .addContainerGap(1650, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Pnl_barraAzulLayout.setVerticalGroup(
             Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_barraAzulLayout.createSequentialGroup()
                 .addContainerGap(13, Short.MAX_VALUE)
                 .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(12, 12, 12)
-                        .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btn_back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                                .addComponent(Lbl_iconeBotaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12))))
-                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                        .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(Lbl_nomeAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)))
-                .addGap(28, 28, 28))
+                    .addComponent(jLabel3)
+                    .addComponent(Lbl_nomeAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -407,12 +353,6 @@ public class RF02 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void Lbl_iconeBotaoVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lbl_iconeBotaoVoltarMouseClicked
-
-
-        
-    }//GEN-LAST:event_Lbl_iconeBotaoVoltarMouseClicked
 
     private void Tfd_quantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tfd_quantidadeActionPerformed
         // TODO add your handling code here:
@@ -509,20 +449,6 @@ public class RF02 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_cancelarActionPerformed
 
-    private void btn_backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_backMouseClicked
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_backMouseClicked
-
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-       
-        RF30 FrameMenu = new RF30();
-        FrameMenu.setVisible(true);
-        this.dispose();
-
-        
-    }//GEN-LAST:event_jLabel1MouseClicked
-
     private void Btn_situacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_situacaoActionPerformed
         Connection conn ;
         PreparedStatement statement;
@@ -542,10 +468,6 @@ public class RF02 extends javax.swing.JFrame {
      
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_situacaoActionPerformed
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-       
-    }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         RF14 agendamentos = new RF14();
@@ -601,7 +523,6 @@ public class RF02 extends javax.swing.JFrame {
     private javax.swing.JLabel Lbl_cliente;
     private javax.swing.JLabel Lbl_codCarga;
     private javax.swing.JLabel Lbl_dataAgendamento;
-    private javax.swing.JLabel Lbl_iconeBotaoVoltar;
     private javax.swing.JLabel Lbl_nomeAgendamento;
     private javax.swing.JLabel Lbl_nomeResponsalvel;
     private javax.swing.JLabel Lbl_quantidade;
@@ -619,9 +540,6 @@ public class RF02 extends javax.swing.JFrame {
     private javax.swing.JTextField Tfd_nomeResponsavel;
     private javax.swing.JTextField Tfd_quantidade;
     private javax.swing.JTextField Tfd_transportadora;
-    private javax.swing.JLabel btn_back;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 

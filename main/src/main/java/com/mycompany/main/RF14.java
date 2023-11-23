@@ -39,8 +39,6 @@ public class RF14 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         LabelT = new javax.swing.JLabel();
-        Bt_Back = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         botao_novo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         LabelCargo = new javax.swing.JLabel();
@@ -57,6 +55,8 @@ public class RF14 extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
+        setSize(new java.awt.Dimension(1920, 1080));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -68,18 +68,6 @@ public class RF14 extends javax.swing.JFrame {
         LabelT.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         LabelT.setForeground(new java.awt.Color(255, 255, 255));
         LabelT.setText("AGENDAMENTOS");
-
-        Bt_Back.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Bt_BackMouseClicked(evt);
-            }
-        });
-
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
 
         botao_novo.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         botao_novo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -93,39 +81,27 @@ public class RF14 extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(botao_novo)))
+                .addGap(14, 14, 14)
+                .addComponent(botao_novo)
                 .addGap(18, 18, 18)
                 .addComponent(LabelT)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Bt_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(botao_novo)
-                            .addComponent(LabelT))
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel1))
-                    .addComponent(Bt_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botao_novo)
+                    .addComponent(LabelT))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         LabelCargo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        LabelCargo.setText("Código");
+        LabelCargo.setText("Código da carga");
 
         LabelN.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         LabelN.setText("Período agendamento");
@@ -149,6 +125,7 @@ public class RF14 extends javax.swing.JFrame {
         LabelCpf1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         LabelCpf1.setText("Cliente");
 
+        btn_Pes.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
         btn_Pes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_PesMouseClicked(evt);
@@ -178,16 +155,16 @@ public class RF14 extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LabelCpf1)
                     .addComponent(txt_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addGap(66, 66, 66)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelCpf)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(cbx_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
+                        .addGap(28, 28, 28)
                         .addComponent(jLabel2)
-                        .addGap(124, 124, 124)
-                        .addComponent(btn_Pes)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(89, 89, 89)
+                        .addComponent(btn_Pes))
+                    .addComponent(LabelCpf))
+                .addContainerGap(500, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,7 +196,7 @@ public class RF14 extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false, false, true, true, true, true
+                false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -241,7 +218,7 @@ public class RF14 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1299, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1662, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -251,7 +228,7 @@ public class RF14 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 628, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1116, Short.MAX_VALUE))
         );
 
         pack();
@@ -306,10 +283,6 @@ public class RF14 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbx_SituacaoActionPerformed
 
-    private void Bt_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bt_BackMouseClicked
-
-    }//GEN-LAST:event_Bt_BackMouseClicked
-
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         int linha = jTable1.getSelectedRow();
         
@@ -332,6 +305,25 @@ public class RF14 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void btn_PesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_PesMouseClicked
+        
+      String id = txt_Cod.getText();
+      String data = txt_Agen.getText();
+      String cliente = txt_cliente.getText();
+      String situacao = cbx_Situacao.getSelectedItem().toString();
+      
+      //this.PopularjTable1("SELECT * FROM lista_agendamentos WHERE data_agendamento='" + data + "' AND id=" + id + " AND nome_fantasia=" + cliente);
+        if (!data.isEmpty()) {
+        this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento='" + data + "'");
+    } else if (!id.isEmpty()) {
+        this.PopularjTable1("SELECT * FROM agendamentos WHERE carga_id=" + id);
+    } else if (!cliente.isEmpty()) {
+        this.PopularjTable1("SELECT * FROM agendamentos WHERE cliente_id=" + cliente);
+    } else if (!situacao.isEmpty()) {
+       this.PopularjTable1("SELECT * FROM agendamentos WHERE situacao ='" + situacao+"'");   
+    } else {
+        this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento='" + data + "' AND carga_id=" + id + " AND cliente_id="+cliente+" situacao='"+situacao+"'");
+    }
+
         
        // TODO add your handling code here:
     }//GEN-LAST:event_btn_PesMouseClicked
@@ -357,33 +349,8 @@ public class RF14 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        RF30 novoFrame = new RF30();
-        novoFrame.setVisible(true);
-        this.dispose();
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel1MouseClicked
-
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
 
-      String id = txt_Cod.getText();
-      String data = txt_Agen.getText();
-      String cliente = txt_cliente.getText();
-      String situacao = cbx_Situacao.getSelectedItem().toString();
-      
-      //this.PopularjTable1("SELECT * FROM lista_agendamentos WHERE data_agendamento='" + data + "' AND id=" + id + " AND nome_fantasia=" + cliente);
-        if (!data.isEmpty()) {
-        this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento='" + data + "'");
-    } else if (!id.isEmpty()) {
-        this.PopularjTable1("SELECT * FROM agendamentos WHERE carga_id=" + id);
-    } else if (!cliente.isEmpty()) {
-        this.PopularjTable1("SELECT * FROM agendamentos WHERE cliente_id=" + cliente);
-    } else if (!situacao.isEmpty()) {
-       this.PopularjTable1("SELECT * FROM agendamentos WHERE situacao ='" + situacao+"'");   
-    } else {
-        this.PopularjTable1("SELECT * FROM agendamentos WHERE data_agendamento='" + data + "' AND carga_id=" + id + " AND cliente_id="+cliente+" situacao='"+situacao+"'");
-    }
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel2MouseClicked
 
@@ -432,7 +399,6 @@ public class RF14 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Bt_Back;
     private javax.swing.JLabel LabelCargo;
     private javax.swing.JLabel LabelCpf;
     private javax.swing.JLabel LabelCpf1;
@@ -441,7 +407,6 @@ public class RF14 extends javax.swing.JFrame {
     private javax.swing.JLabel botao_novo;
     private javax.swing.JLabel btn_Pes;
     private javax.swing.JComboBox<String> cbx_Situacao;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
