@@ -37,10 +37,7 @@ public class RF08 extends javax.swing.JFrame {
 
         pnlMenuSuperior = new javax.swing.JPanel();
         lblCadastramentoDeFuncionarios = new javax.swing.JLabel();
-        lbl_VoltarMenuPrincipal = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lbl_Voltar = new javax.swing.JLabel();
         pnlInformacoes = new javax.swing.JPanel();
         lblDataDeNascimento = new javax.swing.JLabel();
         txtNomeCompleto = new javax.swing.JTextField();
@@ -68,7 +65,7 @@ public class RF08 extends javax.swing.JFrame {
         pwdSenhaParaLogin = new javax.swing.JPasswordField();
         btn_editar_CadastroDeFuncionarios = new javax.swing.JButton();
         btn_excluir_CadastroDeFuncionarios = new javax.swing.JButton();
-        tbn_salvar_CadastroDeFuncionarios = new javax.swing.JButton();
+        btn_salvar_CadastroDeFuncionarios = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastramento de funcionários");
@@ -83,30 +80,10 @@ public class RF08 extends javax.swing.JFrame {
         lblCadastramentoDeFuncionarios.setForeground(new java.awt.Color(255, 255, 255));
         lblCadastramentoDeFuncionarios.setText("CADASTRAMENTO DE FUNCIONÁRIOS");
 
-        lbl_VoltarMenuPrincipal.setToolTipText("");
-        lbl_VoltarMenuPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbl_Voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        lbl_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbl_VoltarMenuPrincipalMouseClicked(evt);
-            }
-        });
-
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_back.png"))); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                lbl_VoltarMouseClicked(evt);
             }
         });
 
@@ -116,27 +93,18 @@ public class RF08 extends javax.swing.JFrame {
             pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMenuSuperiorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                .addComponent(lbl_Voltar)
                 .addGap(18, 18, 18)
                 .addComponent(lblCadastramentoDeFuncionarios)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbl_VoltarMenuPrincipal)
-                .addContainerGap(1389, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlMenuSuperiorLayout.setVerticalGroup(
             pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMenuSuperiorLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(lbl_VoltarMenuPrincipal)
-                    .addGroup(pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblCadastramentoDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel3)))
+                .addGroup(pnlMenuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCadastramentoDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_Voltar))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
@@ -342,14 +310,14 @@ public class RF08 extends javax.swing.JFrame {
             }
         });
 
-        tbn_salvar_CadastroDeFuncionarios.setBackground(new java.awt.Color(32, 41, 173));
-        tbn_salvar_CadastroDeFuncionarios.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        tbn_salvar_CadastroDeFuncionarios.setForeground(new java.awt.Color(255, 255, 255));
-        tbn_salvar_CadastroDeFuncionarios.setText("Salvar");
-        tbn_salvar_CadastroDeFuncionarios.setPreferredSize(new java.awt.Dimension(170, 35));
-        tbn_salvar_CadastroDeFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+        btn_salvar_CadastroDeFuncionarios.setBackground(new java.awt.Color(32, 41, 173));
+        btn_salvar_CadastroDeFuncionarios.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btn_salvar_CadastroDeFuncionarios.setForeground(new java.awt.Color(255, 255, 255));
+        btn_salvar_CadastroDeFuncionarios.setText("Salvar");
+        btn_salvar_CadastroDeFuncionarios.setPreferredSize(new java.awt.Dimension(170, 35));
+        btn_salvar_CadastroDeFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbn_salvar_CadastroDeFuncionariosActionPerformed(evt);
+                btn_salvar_CadastroDeFuncionariosActionPerformed(evt);
             }
         });
 
@@ -366,7 +334,7 @@ public class RF08 extends javax.swing.JFrame {
                         .addGap(100, 100, 100)
                         .addComponent(btn_excluir_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tbn_salvar_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_salvar_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(pnlInformacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 1589, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(155, 155, 155))
         );
@@ -378,7 +346,7 @@ public class RF08 extends javax.swing.JFrame {
                 .addComponent(pnlInformacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 788, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tbn_salvar_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_salvar_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_excluir_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_editar_CadastroDeFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(105, Short.MAX_VALUE))
@@ -407,7 +375,7 @@ public class RF08 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btn_excluir_CadastroDeFuncionariosActionPerformed
 
-    private void tbn_salvar_CadastroDeFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbn_salvar_CadastroDeFuncionariosActionPerformed
+    private void btn_salvar_CadastroDeFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvar_CadastroDeFuncionariosActionPerformed
 
              Connection conexao=null;
              
@@ -448,14 +416,7 @@ public class RF08 extends javax.swing.JFrame {
         }
                 
         // TODO add your handling code here:
-    }//GEN-LAST:event_tbn_salvar_CadastroDeFuncionariosActionPerformed
-
-    private void lbl_VoltarMenuPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_VoltarMenuPrincipalMouseClicked
-        // TODO add your handling code here:
-        RF30 Frame_RF30 = new RF30();
-        Frame_RF30.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_lbl_VoltarMenuPrincipalMouseClicked
+    }//GEN-LAST:event_btn_salvar_CadastroDeFuncionariosActionPerformed
 
     private void btn_editar_CadastroDeFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editar_CadastroDeFuncionariosActionPerformed
         // TODO add your handling code here:
@@ -497,26 +458,11 @@ public class RF08 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_editar_CadastroDeFuncionariosActionPerformed
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        RF30 Frame_RF30 = new RF30();
-        Frame_RF30.setVisible(true);
-        this.dispose();
-        //botao voltar
-        
-// TODO add your handling code here:
-    }//GEN-LAST:event_jLabel1MouseClicked
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-         RF11 lista_funcionarios = new RF11();
-        lista_funcionarios.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
-
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void lbl_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_VoltarMouseClicked
      RF11 lista_funcionarios = new RF11();
         lista_funcionarios.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_lbl_VoltarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -557,12 +503,10 @@ public class RF08 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_editar_CadastroDeFuncionarios;
     private javax.swing.JButton btn_excluir_CadastroDeFuncionarios;
+    private javax.swing.JButton btn_salvar_CadastroDeFuncionarios;
     private javax.swing.JComboBox<String> cbxCargo;
     private javax.swing.JComboBox<String> cbxEscolaridade;
     private javax.swing.JComboBox<String> cbxEstadoCivil;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblCPF;
     private javax.swing.JLabel lblCadastramentoDeFuncionarios;
     private javax.swing.JLabel lblCargo;
@@ -576,11 +520,10 @@ public class RF08 extends javax.swing.JFrame {
     private javax.swing.JLabel lblRG;
     private javax.swing.JLabel lblSenhaParaLogin;
     private javax.swing.JLabel lblTelefone;
-    private javax.swing.JLabel lbl_VoltarMenuPrincipal;
+    private javax.swing.JLabel lbl_Voltar;
     private javax.swing.JPanel pnlInformacoes;
     private javax.swing.JPanel pnlMenuSuperior;
     private javax.swing.JPasswordField pwdSenhaParaLogin;
-    private javax.swing.JButton tbn_salvar_CadastroDeFuncionarios;
     private javax.swing.JTextField txtCPF;
     private javax.swing.JTextField txtDataDeAdmissao;
     private javax.swing.JTextField txtDataDeNascimento;
