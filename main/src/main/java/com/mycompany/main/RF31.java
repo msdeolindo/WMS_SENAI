@@ -385,7 +385,7 @@ public class RF31 extends javax.swing.JFrame {
     private void tblRegistroClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblRegistroClientesMouseClicked
         // TODO add your handling code here:
 
-         int linha = tblRegistroClientes.getSelectedRow();
+        int linha = tblRegistroClientes.getSelectedRow();
          
         String texto_a = tblRegistroClientes.getValueAt(linha,0).toString();
        

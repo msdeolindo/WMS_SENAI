@@ -19,7 +19,8 @@ import javax.swing.JOptionPane;
  * @author mbalonecker
  */
 public class RF17 extends javax.swing.JFrame {
-
+RF02 enviatexto;
+int id = 0;
     /**
      * Creates new form RF17_Cadastro_Cliente
      */
@@ -498,7 +499,7 @@ public class RF17 extends javax.swing.JFrame {
             Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-          btn_salvar.setVisible(false);
+         btn_salvar.setVisible(false);
          btn_agendamento.setVisible(true);
          btn_alterar.setVisible(true);
          btn_excluir.setVisible(true);
@@ -507,9 +508,12 @@ public class RF17 extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_salvarActionPerformed
 
     private void btn_agendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agendamentoActionPerformed
-       RF02 novoFrame = new RF02();
-       novoFrame.setVisible(true);
-       this.dispose();
+      
+        enviatexto = new RF02();
+        enviatexto.setVisible(true);
+        enviatexto.recebendo17(id);
+        this.dispose();
+        
     }//GEN-LAST:event_btn_agendamentoActionPerformed
 
     private void btn_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_alterarActionPerformed
@@ -699,11 +703,13 @@ public class RF17 extends javax.swing.JFrame {
   
     public void recebendo (String texto_a) {
         
+         id = Integer.parseInt(texto_a);
         
         this.PopularCAdastro(" SELECT * FROM clientes WHERE id="+texto_a);
          btn_salvar.setVisible(false);
          btn_agendamento.setVisible(true);
          btn_alterar.setVisible(true);
          btn_excluir.setVisible(true);
+         
   }
 }
