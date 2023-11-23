@@ -328,7 +328,9 @@ public class RF30 extends javax.swing.JFrame {
     }//GEN-LAST:event_Button_clientes
 
     private void mni_sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mni_sairMouseClicked
-        
+         RF27 login = new RF27();
+        login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_mni_sairMouseClicked
 
     private void mni_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mni_sairActionPerformed
