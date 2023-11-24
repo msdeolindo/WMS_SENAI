@@ -580,4 +580,20 @@ public class RF02 extends javax.swing.JFrame {
          return 0;
         
     }
+    
+     public void recebendo(String texto_a,String texto_b,String texto_c,String texto_d,String texto_e,String texto_f,String texto_g,String texto_h,String texto_i,String texto_j){
+                   Tfd_cliente.setText(texto_b);
+                   Tfd_dataAgendamento.setText(texto_g);
+                   Tfd_categoria.setText(texto_c);
+                   Tfd_carga.setText(texto_d);
+                   Tfd_quantidade.setText(texto_e);
+                   Tfd_transportadora.setText(texto_f);
+                   Cbx_tipoAgendamento.setSelectedItem(texto_h);
+                   Cbx_tipo.setSelectedItem(texto_i);
+                   id = Integer.parseInt(texto_j);
+                    
+                    
+         
+        
+    }
 }

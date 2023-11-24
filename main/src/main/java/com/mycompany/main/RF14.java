@@ -287,9 +287,9 @@ public class RF14 extends javax.swing.JFrame {
         int linha = jTable1.getSelectedRow();
         
         String texto_a = jTable1.getValueAt(linha,0).toString();
-        String texto_b= jTable1.getValueAt(linha,1).toString();
+        String texto_b = jTable1.getValueAt(linha,1).toString();
         String texto_c = jTable1.getValueAt(linha,2).toString();
-        String texto_d= jTable1.getValueAt(linha,3).toString();
+        String texto_d = jTable1.getValueAt(linha,3).toString();
         String texto_e = jTable1.getValueAt(linha,4).toString();
         String texto_f = jTable1.getValueAt(linha,5).toString();
         String texto_g = jTable1.getValueAt(linha,6).toString();
