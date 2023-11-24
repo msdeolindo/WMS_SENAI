@@ -42,7 +42,6 @@ public class RF23 extends javax.swing.JFrame {
         Pnl_principal = new javax.swing.JPanel();
         Pnl_barraAzul = new javax.swing.JPanel();
         Lbl_localização = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Lbl_quantidade = new javax.swing.JLabel();
         Lbl_rua = new javax.swing.JLabel();
@@ -70,13 +69,6 @@ public class RF23 extends javax.swing.JFrame {
         Lbl_localização.setForeground(new java.awt.Color(255, 255, 255));
         Lbl_localização.setText("LOCALIZAÇÃO");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_back.png"))); // NOI18N
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-
         jLabel2.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -89,16 +81,11 @@ public class RF23 extends javax.swing.JFrame {
         Pnl_barraAzulLayout.setHorizontalGroup(
             Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel1))
-                    .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel2)
-                        .addGap(26, 26, 26)
-                        .addComponent(Lbl_localização)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(9, 9, 9)
+                .addComponent(jLabel2)
+                .addGap(26, 26, 26)
+                .addComponent(Lbl_localização)
+                .addContainerGap(423, Short.MAX_VALUE))
         );
         Pnl_barraAzulLayout.setVerticalGroup(
             Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,8 +94,7 @@ public class RF23 extends javax.swing.JFrame {
                 .addGroup(Pnl_barraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(Pnl_barraAzulLayout.createSequentialGroup()
                         .addComponent(Lbl_localização)
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel1))
+                        .addGap(9, 9, 9))
                     .addComponent(jLabel2))
                 .addGap(19, 19, 19))
         );
@@ -282,12 +268,6 @@ public class RF23 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_salvarActionPerformed
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        RF18 recebimento  = new RF18();
-        recebimento.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel1MouseClicked
-
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
    RF18 recebimento  = new RF18();
         recebimento.setVisible(true);
@@ -351,7 +331,6 @@ public class RF23 extends javax.swing.JFrame {
     private javax.swing.JTextField Tfd_pilha;
     private javax.swing.JTextField Tfd_quantidade;
     private javax.swing.JTextField Tfd_rua;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txt_cod;
     private javax.swing.JTextField txt_quantidade;

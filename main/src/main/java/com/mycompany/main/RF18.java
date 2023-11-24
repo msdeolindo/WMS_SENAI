@@ -57,6 +57,7 @@ public class RF18 extends javax.swing.JFrame {
             {
                 model.addRow(new Object[]
                 {
+                    resultado.getString("id"),
                     resultado.getString("cliente_id"),
                     resultado.getString("tipo_agendamento"),
                     resultado.getString("transportadora"),
@@ -92,10 +93,6 @@ public class RF18 extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         jPanel_topo_azul = new javax.swing.JPanel();
         lbl_recebimento = new javax.swing.JLabel();
-        lbl_icone_voltar = new javax.swing.JLabel();
-        lbl_BotaoVolta1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPanel_tela_informação = new javax.swing.JPanel();
         lbl_obeservação = new javax.swing.JLabel();
@@ -107,8 +104,6 @@ public class RF18 extends javax.swing.JFrame {
         tf_observacao = new javax.swing.JTextField();
         bt_devolução = new javax.swing.JButton();
         tf_codigo = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         lblEndereco = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -148,13 +143,13 @@ public class RF18 extends javax.swing.JFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"", "", "", "", ""},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {"", "", "", "", "", null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "CLIENTE", "TIPO", "TRANSPORTADORA", "ESPECIFICAÇÂO", "DATA"
+                "Codigo Agendamento", "CLIENTE", "TIPO", "TRANSPORTADORA", "ESPECIFICAÇÂO", "DATA"
             }
         ));
         jTable2.setGridColor(new java.awt.Color(255, 255, 255));
@@ -168,32 +163,6 @@ public class RF18 extends javax.swing.JFrame {
         lbl_recebimento.setForeground(new java.awt.Color(255, 255, 255));
         lbl_recebimento.setText("RECEBIMENTO");
 
-        lbl_icone_voltar.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_icone_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbl_icone_voltarMouseClicked(evt);
-            }
-        });
-
-        lbl_BotaoVolta1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbl_BotaoVolta1MouseClicked(evt);
-            }
-        });
-
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-        });
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_back.png"))); // NOI18N
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-
         jLabel6.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -206,33 +175,21 @@ public class RF18 extends javax.swing.JFrame {
         jPanel_topo_azulLayout.setHorizontalGroup(
             jPanel_topo_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_topo_azulLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_icone_voltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbl_BotaoVolta1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel_topo_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6)
                 .addGap(11, 11, 11)
                 .addComponent(lbl_recebimento)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(1703, Short.MAX_VALUE))
         );
         jPanel_topo_azulLayout.setVerticalGroup(
             jPanel_topo_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_topo_azulLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel_topo_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lbl_BotaoVolta1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbl_icone_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel_topo_azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel_topo_azulLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5))
-                    .addComponent(lbl_recebimento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel6))
+                    .addComponent(lbl_recebimento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -299,6 +256,7 @@ public class RF18 extends javax.swing.JFrame {
         lblEndereco.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblEndereco.setText("CODIGO DA CARGA:");
 
+        jLabel3.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza4.0.png")); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
@@ -334,29 +292,18 @@ public class RF18 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tf_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(661, Short.MAX_VALUE))
         );
         jPanel_tela_informaçãoLayout.setVerticalGroup(
             jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
                 .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(110, 110, 110))
-                    .addGroup(jPanel_tela_informaçãoLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblEndereco)
-                            .addComponent(tf_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(lblEndereco)
+                    .addComponent(tf_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel_tela_informaçãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_avarias)
                     .addComponent(lbl_obeservação)
@@ -464,12 +411,6 @@ public class RF18 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bt_devoluçãoActionPerformed
 
-    private void lbl_icone_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_icone_voltarMouseClicked
-
-        //vazio!
-        
-    }//GEN-LAST:event_lbl_icone_voltarMouseClicked
-
     private void bt_devoluçãoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_devoluçãoMouseClicked
        
     }//GEN-LAST:event_bt_devoluçãoMouseClicked
@@ -503,25 +444,6 @@ public class RF18 extends javax.swing.JFrame {
         this.PopularJTable("SELECT * FROM agendamentos WHERE id = "+this.tf_codigo.getText());
         
     }//GEN-LAST:event_jLabel3MouseClicked
-
-    private void lbl_BotaoVolta1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_BotaoVolta1MouseClicked
-       
-    }//GEN-LAST:event_lbl_BotaoVolta1MouseClicked
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        
-        RF30 FrameMenu = new RF30();
-        FrameMenu.setVisible(true);
-        
-        this.dispose();
-        
-    }//GEN-LAST:event_jLabel4MouseClicked
-
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-     RF30 menu = new RF30();
-        menu.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
        RF30 menu = new RF30();
@@ -569,11 +491,7 @@ public class RF18 extends javax.swing.JFrame {
     private javax.swing.JButton bt_devolução;
     private javax.swing.JButton bt_salvar;
     private javax.swing.JEditorPane jEditorPane1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel_tela_informação;
@@ -584,9 +502,7 @@ public class RF18 extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JScrollPane jsp_tabela_agendamento;
     private javax.swing.JLabel lblEndereco;
-    private javax.swing.JLabel lbl_BotaoVolta1;
     private javax.swing.JLabel lbl_avarias;
-    private javax.swing.JLabel lbl_icone_voltar;
     private javax.swing.JLabel lbl_obeservação;
     private javax.swing.JLabel lbl_quantidade_avarias;
     private javax.swing.JLabel lbl_recebimento;
