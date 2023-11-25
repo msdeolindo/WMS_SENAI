@@ -352,6 +352,8 @@ public class RF18 extends javax.swing.JFrame {
         //this.dispose();
         // TODO add your handling code here:
         
+        
+        
         enviatexto = new RF23();
         enviatexto.setVisible(true);
         enviatexto.recebendo(tf_quantidade.getText());
