@@ -299,7 +299,8 @@ public class RF14 extends javax.swing.JFrame {
         
         enviartexto = new RF02();
         enviartexto.setVisible(true);
-        enviartexto.recebendo(texto_a,texto_b,texto_c,texto_d,texto_e,texto_f,texto_g,texto_h,texto_i,texto_j);              
+        enviartexto.recebendo(texto_a,texto_b,texto_c,texto_d,texto_e,texto_f,texto_g,texto_h,texto_i,texto_j);     
+        this.dispose();
            
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable1MouseClicked
