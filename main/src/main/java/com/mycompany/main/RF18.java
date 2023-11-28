@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  * @author aoliveira
  */
 public class RF18 extends javax.swing.JFrame {
-
+    RF22 enviatexto2;
     /**
      * Creates new form NewJFrame
      */
@@ -32,8 +32,6 @@ public class RF18 extends javax.swing.JFrame {
     
     
         public void PopularJTable(String sql) {
-        
-
         
         try {
             String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
@@ -405,8 +403,10 @@ public class RF18 extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_observacaoActionPerformed
 
     private void bt_devoluçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_devoluçãoActionPerformed
-        RF22 FrameDevolucao = new RF22();
-        FrameDevolucao.setVisible(true);
+        
+        enviatexto2 = new RF22();
+        enviatexto2.setVisible(true);
+        enviatexto2.recebendo(tf_codigo.getText());
         this.dispose();
 
 
@@ -430,7 +430,7 @@ public class RF18 extends javax.swing.JFrame {
             
             conexao = DriverManager.getConnection(url, usuario, senha);
             
-            this.PopularJTable("SELECT * FROM agendamentos ORDER BY ID DESC");
+            this.PopularJTable("SELECT * FROM agendamentos where situacao = 'agendado' ORDER BY ID DESC");
             
           
             
@@ -443,7 +443,10 @@ public class RF18 extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
       
-        this.PopularJTable("SELECT * FROM agendamentos WHERE id = "+this.tf_codigo.getText());
+       this.PopularJTable("SELECT * FROM agendamentos WHERE id = "+this.tf_codigo.getText());
+        
+        
+        
         
     }//GEN-LAST:event_jLabel3MouseClicked
 

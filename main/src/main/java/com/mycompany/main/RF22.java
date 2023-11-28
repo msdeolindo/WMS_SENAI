@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author meggi
  */
 public class RF22 extends javax.swing.JFrame {
-
+String id = "";
     /**
      * Creates new form RF22_devolucao_cargas
      */
@@ -167,7 +167,7 @@ public class RF22 extends javax.swing.JFrame {
             
             conexao = DriverManager.getConnection(url,usuario,senha);
             
-            String sql = "UPDATE agendamentos SET devolucao_carga = ? WHERE id = 1";
+            String sql = "UPDATE agendamentos SET devolucao_carga = ?, situacao = 'Finalizado' WHERE id ="+id;
             PreparedStatement statement = conexao.prepareStatement(sql);
             statement.setString (1,txt_motiv_dev.getText());
             statement.execute();
@@ -221,6 +221,11 @@ public class RF22 extends javax.swing.JFrame {
                 new RF22().setVisible(true);
             }
         });
+    }
+    
+    public void recebendo(String a){
+        id = a;
+        //codigo = Integer.parseInt(b);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
