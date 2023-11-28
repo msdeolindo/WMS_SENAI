@@ -40,7 +40,7 @@
                       <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                       <Component id="btn_excluir_CadastroDeFuncionarios" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="tbn_salvar_CadastroDeFuncionarios" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_salvar_CadastroDeFuncionarios" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="pnlInformacoes" min="-2" pref="1589" max="-2" attributes="0"/>
               </Group>
@@ -56,7 +56,7 @@
               <Component id="pnlInformacoes" min="-2" pref="788" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="tbn_salvar_CadastroDeFuncionarios" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_salvar_CadastroDeFuncionarios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btn_excluir_CadastroDeFuncionarios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btn_editar_CadastroDeFuncionarios" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -83,16 +83,10 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jLabel1" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="lbl_Voltar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="lblCadastramentoDeFuncionarios" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="lbl_VoltarMenuPrincipal" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="1389" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -100,14 +94,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbl_VoltarMenuPrincipal" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblCadastramentoDeFuncionarios" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblCadastramentoDeFuncionarios" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="lbl_Voltar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="42" max="32767" attributes="0"/>
               </Group>
@@ -126,37 +115,14 @@
             <Property name="text" type="java.lang.String" value="CADASTRAMENTO DE FUNCION&#xc1;RIOS"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lbl_VoltarMenuPrincipal">
-          <Properties>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_VoltarMenuPrincipalMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/mycompany/img/icon_back.png"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel2MouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="lbl_Voltar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="2" name="P:\TURMAS\HTC-DDS-16\&#xed;cones WMS\icon_back.png"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel3MouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_VoltarMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>
@@ -631,7 +597,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_excluir_CadastroDeFuncionariosActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="tbn_salvar_CadastroDeFuncionarios">
+    <Component class="javax.swing.JButton" name="btn_salvar_CadastroDeFuncionarios">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ad" green="29" red="20" type="rgb"/>
@@ -648,7 +614,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tbn_salvar_CadastroDeFuncionariosActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_salvar_CadastroDeFuncionariosActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

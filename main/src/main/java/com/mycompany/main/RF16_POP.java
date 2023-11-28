@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  * @author jbasso
  */
 public class RF16_POP extends javax.swing.JFrame {
-        RF23 enviatexto;
+        
     /**
      * Creates new form RF_16_novo
      */
@@ -377,14 +377,17 @@ public class RF16_POP extends javax.swing.JFrame {
             statement.execute();
             statement.close();
             JOptionPane.showMessageDialog(rootPane, "Endereço inserido");
-            String TEXTO_a = txt_endereco.getText();
-            enviatexto.etiqueta(TEXTO_a);
+            
+
+            
             RF16_POP jFrame16_POP = new RF16_POP();
             jFrame16_POP.setVisible(false);
             this.dispose();
+            
             RF16_LIST jFrame16_List = new RF16_LIST();
             jFrame16_List.setVisible(true);
             this.dispose();
+            
         } catch (SQLException ex) {
             Logger.getLogger(RF16_POP.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(rootPane, "Endereço ja inserido");
