@@ -151,10 +151,6 @@ public class RF11 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         LabelT = new javax.swing.JLabel();
-        LabelBack = new javax.swing.JLabel();
-        Bt_Back = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        botao_novo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         LabelCargo = new javax.swing.JLabel();
@@ -181,25 +177,6 @@ public class RF11 extends javax.swing.JFrame {
         LabelT.setForeground(new java.awt.Color(255, 255, 255));
         LabelT.setText("LISTA DE FUNCIONÁRIOS");
 
-        Bt_Back.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Bt_BackMouseClicked(evt);
-            }
-        });
-
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-
-        botao_novo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/img/icon_back.png"))); // NOI18N
-        botao_novo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botao_novoMouseClicked(evt);
-            }
-        });
-
         jLabel2.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -212,36 +189,19 @@ public class RF11 extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelBack)
-                    .addComponent(Bt_Back)
-                    .addComponent(botao_novo)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel2)
-                                .addGap(47, 47, 47)
-                                .addComponent(LabelT))
-                            .addComponent(jLabel1))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(47, 47, 47)
+                .addComponent(LabelT)
+                .addContainerGap(1526, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Bt_Back)
-                    .addComponent(LabelBack))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LabelT)
-                    .addComponent(jLabel2)
-                    .addComponent(botao_novo))
+                    .addComponent(jLabel2))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -261,6 +221,7 @@ public class RF11 extends javax.swing.JFrame {
 
         txtNome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        btn_Pes.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
         btn_Pes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_PesMouseClicked(evt);
@@ -367,12 +328,6 @@ public class RF11 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Bt_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bt_BackMouseClicked
-        RF30 novoFrame = new RF30();
-        novoFrame.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_Bt_BackMouseClicked
-
     private void Bt_NovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_NovoActionPerformed
         RF08 novoFrame = new RF08();
         novoFrame.setVisible(true);
@@ -461,20 +416,6 @@ public class RF11 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_TableMouseClicked
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-
-        RF30 FrameMenu = new RF30();
-        FrameMenu.setVisible(true);
-        this.dispose();  
-        
-    }//GEN-LAST:event_jLabel1MouseClicked
-
-    private void botao_novoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_novoMouseClicked
-         RF30 menu = new RF30();
-        menu.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_botao_novoMouseClicked
-
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
        RF30 menu = new RF30();
         menu.setVisible(true);
@@ -518,18 +459,14 @@ public class RF11 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Bt_Back;
     private javax.swing.JButton Bt_Novo;
-    private javax.swing.JLabel LabelBack;
     private javax.swing.JLabel LabelCargo;
     private javax.swing.JLabel LabelN;
     private javax.swing.JLabel LabelT;
     private javax.swing.JTable Table;
     private javax.swing.JTextField TextCpf;
-    private javax.swing.JLabel botao_novo;
     private javax.swing.JLabel btn_Pes;
     private javax.swing.JComboBox<String> cbxCargo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
