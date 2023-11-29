@@ -73,9 +73,8 @@ public void PopularJTable (String sql) {
 
         pnl_PlanoDeFundo = new javax.swing.JPanel();
         pnl_Titulo_ListaDoArmazem = new javax.swing.JPanel();
-        lbl_VoltarAoMenu = new javax.swing.JLabel();
         lbl_Titulo_ListaDoArmazem = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lbl_Voltar = new javax.swing.JLabel();
         pnl_Inf_ListaDoArmazen = new javax.swing.JPanel();
         lbl_CodigoDaCarga = new javax.swing.JLabel();
         txt_Categoria = new javax.swing.JTextField();
@@ -85,11 +84,12 @@ public void PopularJTable (String sql) {
         txt_TipoDeCarga = new javax.swing.JTextField();
         txt_Situacao = new javax.swing.JTextField();
         lbl_Situacao = new javax.swing.JLabel();
-        lbl_LupaParaPesquisa = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         sln_Inf_CargasArmazenadas = new javax.swing.JScrollPane();
         tbl_TabelaDasCargasArmazenadas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
@@ -115,21 +115,15 @@ public void PopularJTable (String sql) {
         pnl_Titulo_ListaDoArmazem.setBackground(new java.awt.Color(36, 32, 171));
         pnl_Titulo_ListaDoArmazem.setPreferredSize(new java.awt.Dimension(1920, 100));
 
-        lbl_VoltarAoMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbl_VoltarAoMenuMouseClicked(evt);
-            }
-        });
-
         lbl_Titulo_ListaDoArmazem.setBackground(new java.awt.Color(255, 255, 255));
         lbl_Titulo_ListaDoArmazem.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         lbl_Titulo_ListaDoArmazem.setForeground(new java.awt.Color(255, 255, 255));
         lbl_Titulo_ListaDoArmazem.setText("LISTA DO ARMAZEM");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbl_Voltar.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\icon_back.png")); // NOI18N
+        lbl_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                lbl_VoltarMouseClicked(evt);
             }
         });
 
@@ -138,28 +132,20 @@ public void PopularJTable (String sql) {
         pnl_Titulo_ListaDoArmazemLayout.setHorizontalGroup(
             pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_Titulo_ListaDoArmazemLayout.createSequentialGroup()
-                .addGroup(pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnl_Titulo_ListaDoArmazemLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(lbl_VoltarAoMenu))
-                    .addGroup(pnl_Titulo_ListaDoArmazemLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(lbl_Titulo_ListaDoArmazem)))
-                .addContainerGap(1483, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
+                .addComponent(lbl_Voltar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lbl_Titulo_ListaDoArmazem)
+                .addContainerGap(1489, Short.MAX_VALUE))
         );
         pnl_Titulo_ListaDoArmazemLayout.setVerticalGroup(
             pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_Titulo_ListaDoArmazemLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(pnl_Titulo_ListaDoArmazemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl_Titulo_ListaDoArmazem)
-                    .addGroup(pnl_Titulo_ListaDoArmazemLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(lbl_VoltarAoMenu)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addComponent(lbl_Voltar))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pnl_Inf_ListaDoArmazen.setBackground(new java.awt.Color(203, 200, 200));
@@ -194,11 +180,7 @@ public void PopularJTable (String sql) {
         lbl_Situacao.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         lbl_Situacao.setText("Situação");
 
-        lbl_LupaParaPesquisa.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbl_LupaParaPesquisaMouseClicked(evt);
-            }
-        });
+        jLabel1.setIcon(new javax.swing.ImageIcon("P:\\TURMAS\\HTC-DDS-16\\ícones WMS\\lupa_cinza.png")); // NOI18N
 
         javax.swing.GroupLayout pnl_Inf_ListaDoArmazenLayout = new javax.swing.GroupLayout(pnl_Inf_ListaDoArmazen);
         pnl_Inf_ListaDoArmazen.setLayout(pnl_Inf_ListaDoArmazenLayout);
@@ -222,30 +204,51 @@ public void PopularJTable (String sql) {
                     .addComponent(lbl_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnl_Inf_ListaDoArmazenLayout.createSequentialGroup()
                         .addComponent(txt_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(lbl_LupaParaPesquisa)))
-                .addContainerGap(662, Short.MAX_VALUE))
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel1)))
+                .addContainerGap(643, Short.MAX_VALUE))
         );
         pnl_Inf_ListaDoArmazenLayout.setVerticalGroup(
             pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_Inf_ListaDoArmazenLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbl_LupaParaPesquisa)
+                .addGroup(pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_TipoDeCarga, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbl_CodigoDaCarga)
+                        .addComponent(lbl_Categoria)
+                        .addComponent(lbl_Situacao)))
+                .addGap(17, 17, 17)
+                .addGroup(pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_CodigoDaCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_TipoDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnl_Inf_ListaDoArmazenLayout.createSequentialGroup()
-                        .addGroup(pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_TipoDeCarga, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(lbl_CodigoDaCarga)
-                                .addComponent(lbl_Categoria)
-                                .addComponent(lbl_Situacao)))
-                        .addGap(17, 17, 17)
-                        .addGroup(pnl_Inf_ListaDoArmazenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_CodigoDaCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_TipoDeCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_Situacao, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLabel1)
+                        .addGap(10, 10, 10)))
                 .addContainerGap(33, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout pnl_PlanoDeFundoLayout = new javax.swing.GroupLayout(pnl_PlanoDeFundo);
+        pnl_PlanoDeFundo.setLayout(pnl_PlanoDeFundoLayout);
+        pnl_PlanoDeFundoLayout.setHorizontalGroup(
+            pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
+                .addComponent(pnl_Titulo_ListaDoArmazem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnl_Inf_ListaDoArmazen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnl_PlanoDeFundoLayout.setVerticalGroup(
+            pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
+                .addComponent(pnl_Titulo_ListaDoArmazem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(pnl_Inf_ListaDoArmazen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         tbl_TabelaDasCargasArmazenadas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -319,57 +322,29 @@ public void PopularJTable (String sql) {
         });
         sln_Inf_CargasArmazenadas.setViewportView(tbl_TabelaDasCargasArmazenadas);
 
-        javax.swing.GroupLayout pnl_PlanoDeFundoLayout = new javax.swing.GroupLayout(pnl_PlanoDeFundo);
-        pnl_PlanoDeFundo.setLayout(pnl_PlanoDeFundoLayout);
-        pnl_PlanoDeFundoLayout.setHorizontalGroup(
-            pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
-                .addComponent(pnl_Titulo_ListaDoArmazem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(sln_Inf_CargasArmazenadas)
-                    .addComponent(pnl_Inf_ListaDoArmazen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pnl_PlanoDeFundoLayout.setVerticalGroup(
-            pnl_PlanoDeFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_PlanoDeFundoLayout.createSequentialGroup()
-                .addComponent(pnl_Titulo_ListaDoArmazem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(pnl_Inf_ListaDoArmazen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(sln_Inf_CargasArmazenadas, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(161, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(pnl_PlanoDeFundo, javax.swing.GroupLayout.PREFERRED_SIZE, 1906, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(sln_Inf_CargasArmazenadas))
+                    .addComponent(pnl_PlanoDeFundo, javax.swing.GroupLayout.PREFERRED_SIZE, 1906, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 9, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnl_PlanoDeFundo, javax.swing.GroupLayout.DEFAULT_SIZE, 1074, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnl_PlanoDeFundo, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sln_Inf_CargasArmazenadas, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txt_SituacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_SituacaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_SituacaoActionPerformed
-
-    private void lbl_VoltarAoMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_VoltarAoMenuMouseClicked
-        // TODO add your handling code here:
-        RF30 MenuPrincipal = new RF30();
-        MenuPrincipal.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_lbl_VoltarAoMenuMouseClicked
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
@@ -396,14 +371,6 @@ public void PopularJTable (String sql) {
             Logger.getLogger(RF01.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_formWindowOpened
-
-    private void lbl_LupaParaPesquisaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_LupaParaPesquisaMouseClicked
-      this.PopularJTable ("SELECT carga_id, categoria, tipo_carga, situacao FROM agendamentos WHERE carga_id; ");   
-    }//GEN-LAST:event_lbl_LupaParaPesquisaMouseClicked
-
-    private void pnl_PlanoDeFundoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_PlanoDeFundoMouseClicked
-      
-    }//GEN-LAST:event_pnl_PlanoDeFundoMouseClicked
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
     
@@ -433,11 +400,19 @@ public void PopularJTable (String sql) {
        
     }//GEN-LAST:event_tbl_TabelaDasCargasArmazenadasMouseClicked
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-         RF30 menu = new RF30();
+    private void pnl_PlanoDeFundoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_PlanoDeFundoMouseClicked
+
+    }//GEN-LAST:event_pnl_PlanoDeFundoMouseClicked
+
+    private void txt_SituacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_SituacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_SituacaoActionPerformed
+
+    private void lbl_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_VoltarMouseClicked
+        RF30 menu = new RF30();
         menu.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_lbl_VoltarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -481,11 +456,10 @@ public void PopularJTable (String sql) {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_Categoria;
     private javax.swing.JLabel lbl_CodigoDaCarga;
-    private javax.swing.JLabel lbl_LupaParaPesquisa;
     private javax.swing.JLabel lbl_Situacao;
     private javax.swing.JLabel lbl_TipoDeCarga;
     private javax.swing.JLabel lbl_Titulo_ListaDoArmazem;
-    private javax.swing.JLabel lbl_VoltarAoMenu;
+    private javax.swing.JLabel lbl_Voltar;
     private javax.swing.JPanel pnl_Inf_ListaDoArmazen;
     private javax.swing.JPanel pnl_PlanoDeFundo;
     private javax.swing.JPanel pnl_Titulo_ListaDoArmazem;
