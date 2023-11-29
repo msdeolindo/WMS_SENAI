@@ -55,12 +55,11 @@ public class RF23 extends javax.swing.JFrame {
         Tfd_rua = new javax.swing.JTextField();
         Tfd_corredor = new javax.swing.JTextField();
         Tfd_nivel = new javax.swing.JTextField();
-        Btn_salvar = new javax.swing.JButton();
         Lbl_contagem = new javax.swing.JLabel();
         txt_quantidade = new javax.swing.JTextField();
         txt_cod = new javax.swing.JTextField();
-        txt_recebeEndereco = new javax.swing.JTextField();
         Btn_salvar1 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,24 +117,8 @@ public class RF23 extends javax.swing.JFrame {
         Lbl_nivel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Lbl_nivel.setText("Nivel");
 
-        Btn_salvar.setBackground(new java.awt.Color(32, 41, 173));
-        Btn_salvar.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        Btn_salvar.setForeground(new java.awt.Color(255, 255, 255));
-        Btn_salvar.setText("Salvar");
-        Btn_salvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_salvarActionPerformed(evt);
-            }
-        });
-
         Lbl_contagem.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Lbl_contagem.setText("Contagem : ");
-
-        txt_recebeEndereco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_recebeEnderecoActionPerformed(evt);
-            }
-        });
 
         Btn_salvar1.setBackground(new java.awt.Color(32, 41, 173));
         Btn_salvar1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -153,42 +136,43 @@ public class RF23 extends javax.swing.JFrame {
             Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Pnl_barraAzul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(Pnl_principalLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(Pnl_principalLayout.createSequentialGroup()
-                        .addComponent(Lbl_quantidade)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Tfd_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(86, 86, 86)
-                        .addComponent(Lbl_contagem)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_quantidade))
-                    .addGroup(Pnl_principalLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
                         .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(Pnl_principalLayout.createSequentialGroup()
-                                .addComponent(Lbl_rua)
-                                .addGap(18, 18, 18)
-                                .addComponent(Tfd_rua))
-                            .addGroup(Pnl_principalLayout.createSequentialGroup()
-                                .addComponent(Lbl_pilha)
+                                .addComponent(Lbl_quantidade)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Tfd_pilha, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(68, 68, 68)
-                        .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lbl_corredor)
-                            .addComponent(Lbl_nivel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Tfd_corredor)
+                                .addComponent(Tfd_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(86, 86, 86)
+                                .addComponent(Lbl_contagem)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txt_quantidade))
                             .addGroup(Pnl_principalLayout.createSequentialGroup()
-                                .addComponent(Tfd_nivel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_principalLayout.createSequentialGroup()
-                        .addComponent(txt_recebeEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(txt_cod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(140, 140, 140)
-                        .addComponent(Btn_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(Pnl_principalLayout.createSequentialGroup()
+                                        .addComponent(Lbl_rua)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(Tfd_rua))
+                                    .addGroup(Pnl_principalLayout.createSequentialGroup()
+                                        .addComponent(Lbl_pilha)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(Tfd_pilha, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(68, 68, 68)
+                                .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Lbl_corredor)
+                                    .addComponent(Lbl_nivel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Tfd_corredor)
+                                    .addGroup(Pnl_principalLayout.createSequentialGroup()
+                                        .addComponent(Tfd_nivel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Pnl_principalLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txt_cod, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                            .addComponent(jTextField1))
                         .addGap(123, 123, 123)))
                 .addContainerGap(69, Short.MAX_VALUE))
             .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,17 +203,11 @@ public class RF23 extends javax.swing.JFrame {
                     .addComponent(Lbl_nivel)
                     .addComponent(Tfd_pilha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Tfd_nivel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Pnl_principalLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_cod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_recebeEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(16, 16, 16))
-                    .addGroup(Pnl_principalLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(Btn_salvar)
-                        .addContainerGap(34, Short.MAX_VALUE))))
+                .addGap(18, 18, 18)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(txt_cod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(Pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_principalLayout.createSequentialGroup()
                     .addContainerGap(341, Short.MAX_VALUE)
@@ -253,58 +231,77 @@ public class RF23 extends javax.swing.JFrame {
 
     public void PopularEnreco(String sql){
         
-        try {
-            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
-            String usuario = "dds16_wms";
-            String senha = "";
-            String chave = sql;
+        //try {
+           // String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+           // String usuario = "dds16_wms";
+            //String senha = "";
+            //String chave = sql;
             
-            Connection con = DriverManager.getConnection(url,usuario,senha);
+            //Connection con = DriverManager.getConnection(url,usuario,senha);
             
-            PreparedStatement ps = con.prepareStatement(chave);
+           // PreparedStatement ps = con.prepareStatement(chave);
             
-            Statement st =  con.createStatement();
-            ResultSet resultado = st.executeQuery(chave);
+           // Statement st =  con.createStatement();
+            //ResultSet resultado = st.executeQuery(chave);
             
             //ResultSet resultado = st.executeQuery();
             
-            while (resultado.next()){
-                txt_recebeEndereco.setText(resultado.getString("id"));
-            }
+          //  while (resultado.next()){
+               // txt_recebeEndereco.setText(resultado.getString("id"));
+           // }
             
-            st.close();
-            con.close();
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage()); 
-            //Logger.getLogger(RF23.class.getName()).log(Level.SEVERE, null, ex);
-        }
+           // st.close();
+           // con.close();
+       // } catch (SQLException ex) {
+            //System.out.println(ex.getMessage()); 
+           // //Logger.getLogger(RF23.class.getName()).log(Level.SEVERE, null, ex);
+       // }
         
         
     }
     
-    private void Btn_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_salvarActionPerformed
-          
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+   RF18 recebimento  = new RF18();
+        recebimento.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void Btn_salvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_salvar1ActionPerformed
+
         int quantidade = Integer.parseInt(Tfd_quantidade.getText());
-        try{   
-            
         
-        if(quantidade > valor || quantidade < 0){
-            JOptionPane.showMessageDialog(rootPane, "Valor inserido incorreto");
-        }    
-        else{
-            
-            
+        try {
+            String Endereco;
+            Endereco = (Tfd_rua.getText() + Tfd_corredor.getText() + Tfd_pilha.getText() + Tfd_nivel.getText()) ;
+
+            System.out.println(Endereco);
+
+            String chave = ("SELECT * FROM enderecos WHERE endereco = " + "'" + Endereco + "'");
+
             String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
             String usuario = "dds16_wms";
             String senha = "";
-            
+
+            Connection con = DriverManager.getConnection(url,usuario,senha);
+
+            PreparedStatement ps = con.prepareStatement(chave);
+
+            Statement st =  con.createStatement();
+            ResultSet resultado = st.executeQuery(chave);
+            System.out.println(Endereco);
+            //ResultSet resultado = st.executeQuery();
+
+            while (resultado.next()){
+                
+                Endereco = resultado.getString("id");
+                System.out.println(Endereco);
+                jTextField1.setText(Endereco);
+            }
+                          
             Connection conn = DriverManager.getConnection(url, usuario, senha);
 
             PreparedStatement statement;
-            
-            String Endereco; 
-            Endereco = ((Tfd_rua.getText()) + "." + (Tfd_corredor.getText()) + "." + (Tfd_pilha.getText()) + "." + (Tfd_nivel.getText())) ;
-            
+                      
             this.PopularEnreco(" SELECT * FROM enderecos WHERE endereco = "+Endereco);
             
             statement = conn.prepareStatement("INSERT INTO cargas (quantidade, rua, pilha, corredor, nivel, etiqueta,endereco_id,agendamento_id) VALUES (?,?,?,?,?,?,?,?)");         
@@ -319,11 +316,10 @@ public class RF23 extends javax.swing.JFrame {
             statement.setString(4,Tfd_corredor.getText());
             statement.setString(5,Tfd_nivel.getText());
             statement.setString(6, "ET-N-"+etiqueta);
-            statement.setString(7,txt_recebeEndereco.getText());
+            statement.setString(7, jTextField1.getText());
             statement.setString(8,txt_cod.getText());
             
-            //WHERE id = ? statement.setInt(6, codigo);
-
+            
             statement.execute();
             statement.close();
             
@@ -335,62 +331,14 @@ public class RF23 extends javax.swing.JFrame {
             enviaquantidade.setVisible(true);
             enviaquantidade.etiqueta(valor);
             this.dispose();
-        }
-        
-     }catch(SQLException ex){  
-         Logger.getLogger(RF18.class.getName()).log(Level.SEVERE, null, ex);             
-     }
-        
-        
-
-	
-        
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_salvarActionPerformed
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-   RF18 recebimento  = new RF18();
-        recebimento.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
-
-    private void txt_recebeEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_recebeEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_recebeEnderecoActionPerformed
-
-    private void Btn_salvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_salvar1ActionPerformed
-
-        try {
-            String Endereco;
-            Endereco = (Tfd_rua.getText() + "." + Tfd_corredor.getText() + "." + Tfd_pilha.getText() + "." + Tfd_nivel.getText()) ;
-            
-            System.out.println(Endereco);
-            String chave = ("SELECT * FROM enderecos WHERE rua ="+"P");//Endereco);
-            
-            String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
-            String usuario = "dds16_wms";
-            String senha = "";
- 
-            Connection con = DriverManager.getConnection(url,usuario,senha);
-            
-            PreparedStatement ps = con.prepareStatement(chave);
-            
-            Statement st =  con.createStatement();
-            ResultSet resultado = st.executeQuery(chave);
-            
-            //ResultSet resultado = st.executeQuery();
-            
-            while (resultado.next()){
-                txt_recebeEndereco.setText(resultado.getString("id"));
-            }
             
             st.close();
             con.close();
-            
+
             // TODO add your handling code here:
         } catch (SQLException ex) {
-            Logger.getLogger(RF23.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
+            //Logger.getLogger(RF23.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_salvar1ActionPerformed
 
@@ -436,7 +384,6 @@ public class RF23 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn_salvar;
     private javax.swing.JButton Btn_salvar1;
     private javax.swing.JLabel Lbl_contagem;
     private javax.swing.JLabel Lbl_corredor;
@@ -453,9 +400,9 @@ public class RF23 extends javax.swing.JFrame {
     private javax.swing.JTextField Tfd_quantidade;
     private javax.swing.JTextField Tfd_rua;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txt_cod;
     private javax.swing.JTextField txt_quantidade;
-    private javax.swing.JTextField txt_recebeEndereco;
     // End of variables declaration//GEN-END:variables
 void etiqueta(String text_a) {
       txt_cod.setText(text_a);

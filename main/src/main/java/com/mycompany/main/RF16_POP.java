@@ -320,7 +320,7 @@ public class RF16_POP extends javax.swing.JFrame {
             
             statement = con.prepareStatement("UPDATE enderecos SET categoria=?, tipo_carga=?, rua=?, corredor=?, pilha=?, nivel=?, endereco=? WHERE id = ?");
             
-            String endereco = ((txt_Rua.getText()) + "."+ (txt_Corredor.getText()) +"."+(txt_Pilha.getText())+"."+(txt_Nivel.getText()));
+            String endereco = ((txt_Rua.getText()) + ""+ (txt_Corredor.getText()) +""+(txt_Pilha.getText())+""+(txt_Nivel.getText()));
             
             statement.setString(1, cbx_categoria.getSelectedItem().toString());
             statement.setString(2, cbx_tipoCarga.getSelectedItem().toString());
@@ -364,7 +364,7 @@ public class RF16_POP extends javax.swing.JFrame {
             statement = con.prepareStatement("INSERT INTO enderecos(categoria, tipo_carga, rua, corredor, pilha, nivel, endereco) VALUES (?, ?, ?, ?, ?, ?, ?)");
             
             
-            String endereco = ((txt_Rua.getText()) + "."+ (txt_Corredor.getText()) +"."+(txt_Pilha.getText())+"."+(txt_Nivel.getText()));
+            String endereco = ((txt_Rua.getText()) + ""+ (txt_Corredor.getText()) +""+(txt_Pilha.getText())+""+(txt_Nivel.getText()));
             
             statement.setString(1, cbx_categoria.getSelectedItem().toString().toUpperCase());
             statement.setString(2, cbx_tipoCarga.getSelectedItem().toString().toUpperCase());
