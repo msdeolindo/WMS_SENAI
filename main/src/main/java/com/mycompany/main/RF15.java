@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class RF15 extends javax.swing.JFrame {
        RF02 enviatexto;
+       String id = "";
     /**
      * Creates new form Protipagem15_RegistroDeCarga
      */
@@ -64,7 +65,6 @@ public class RF15 extends javax.swing.JFrame {
         btn_Retirar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         pnl_PlanoDeFundo.setBackground(new java.awt.Color(217, 217, 217));
         pnl_PlanoDeFundo.setPreferredSize(new java.awt.Dimension(1920, 1080));
@@ -352,14 +352,15 @@ public class RF15 extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_EditarActionPerformed
 
     private void btn_RetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RetirarActionPerformed
-        RF02 Agendamento = new RF02();
-        Agendamento.setVisible(true);
+        enviatexto = new RF02();
+        enviatexto.setVisible(true);
+        enviatexto.recebendo15(id);
         this.dispose();
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btn_RetirarActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-    RF30 menu = new RF30();
+        RF30 menu = new RF30();
          menu.setVisible(true);
          this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
@@ -431,6 +432,7 @@ public class RF15 extends javax.swing.JFrame {
     private javax.swing.JTextField txt_tipoCarga;
     // End of variables declaration//GEN-END:variables
 void recebendo_valor_tb(String text_a, String text_b, String text_c, String text_d, String text_e, String text_f, String text_g, String text_h, String text_i, String text_j, String text_k, String text_l) {
+        id = text_b;
         txt_CodigoDaEtiqueta.setText(text_a);
         txt_Produto.setText(text_c);
         txt_Categoria.setText(text_d);

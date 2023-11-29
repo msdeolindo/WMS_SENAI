@@ -60,6 +60,37 @@ public class RF02 extends javax.swing.JFrame {
              Logger.getLogger(RF02.class.getName()).log(Level.SEVERE, null, ex);
          }
     }
+    
+    public void PopularRetirada(String sql) {
+       
+     
+        try {
+        String url = "jdbc:mysql://10.145.41.252:3306/DB_WMS_PRD";
+        String usuario = "dds16_wms";
+        String senha = "";
+            
+            Connection con=(Connection)DriverManager.getConnection(url,usuario,senha);
+            PreparedStatement st = (PreparedStatement)con.prepareStatement(sql);
+            
+            ResultSet resultado = st.executeQuery(sql);
+            while (resultado.next()){
+                Tfd_cliente.setText(resultado.getString("id"));
+                Tfd_nomeResponsavel.setText(resultado.getString("nome_responsavel"));
+                Tfd_categoria.setText(resultado.getString("categoria"));
+                Tfd_carga.setText(resultado.getString("carga"));
+                Tfd_quantidade.setText(resultado.getString("quantidade"));
+                Tfd_dataAgendamento.setText(resultado.getString("data_agendamento"));
+                Tfd_transportadora.setText(resultado.getString("transportadora"));
+                Tfd_codCarga.setText(resultado.getString("id"));
+            }
+           
+            st.close();
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(RF17.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -595,5 +626,12 @@ public class RF02 extends javax.swing.JFrame {
                     
          
         
+    }
+     
+    
+    public void recebendo15(String a){
+        id = Integer.parseInt(a);
+        
+        this.PopularRetirada(" SELECT * FROM clientes WHERE id="+id);
     }
 }
